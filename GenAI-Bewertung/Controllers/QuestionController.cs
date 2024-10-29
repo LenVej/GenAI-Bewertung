@@ -1,5 +1,5 @@
 ﻿using GenAI_Bewertung.Data;
-using GenAI_Bewertung.Models;
+using GenAI_Bewertung.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -44,14 +44,14 @@ public class QuestionsController : ControllerBase
         _context.Questions.Add(question);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
+        return CreatedAtAction("GetQuestion", new { id = question.QuestionId }, question);
     }
 
     // PUT: api/questions/5
     [HttpPut("{id}")]
     public async Task<IActionResult> PutQuestion(int id, Question question)
     {
-        if (id != question.Id)
+        if (id != question.QuestionId)
         {
             return BadRequest();
         }
@@ -95,6 +95,6 @@ public class QuestionsController : ControllerBase
 
     private bool QuestionExists(int id)
     {
-        return _context.Questions.Any(e => e.Id == id);
+        return _context.Questions.Any(e => e.QuestionId == id);
     }
 }

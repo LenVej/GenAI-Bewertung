@@ -1,4 +1,4 @@
-﻿using GenAI_Bewertung.Models;
+﻿using GenAI_Bewertung.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace GenAI_Bewertung.Data;

@@ -1,6 +1,6 @@
 ﻿using GenAI_Bewertung.Controllers;
 using GenAI_Bewertung.Data;
-using GenAI_Bewertung.Models;
+using GenAI_Bewertung.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
