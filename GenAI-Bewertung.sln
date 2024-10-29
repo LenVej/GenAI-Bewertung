@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenAI-Bewertung", "GenAI-Bewertung\GenAI-Bewertung.csproj", "{892B62A2-977F-4EC7-8E8D-5925C14CF143}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenAI-Bewertung.Tests", "GenAI-Bewertung.Tests\GenAI-Bewertung.Tests.csproj", "{D01EB34C-5A8E-4F1B-9323-08C7EE6CE2AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{892B62A2-977F-4EC7-8E8D-5925C14CF143}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{892B62A2-977F-4EC7-8E8D-5925C14CF143}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{892B62A2-977F-4EC7-8E8D-5925C14CF143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D01EB34C-5A8E-4F1B-9323-08C7EE6CE2AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D01EB34C-5A8E-4F1B-9323-08C7EE6CE2AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D01EB34C-5A8E-4F1B-9323-08C7EE6CE2AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D01EB34C-5A8E-4F1B-9323-08C7EE6CE2AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
