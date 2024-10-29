@@ -398,4 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Ignore Angular cache
-ClientApp/.angular/cache/
+ClientApp/.angular/
