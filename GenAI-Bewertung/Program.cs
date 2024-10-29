@@ -1,7 +1,7 @@
 using GenAI_Bewertung.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +17,12 @@ builder.Services.AddCors(options =>
     {
         builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
     });
+});
+
+// Add Swagger services
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "GenAI Bewertung API", Version = "v1" });
 });
 
 var app = builder.Build();
@@ -38,6 +44,16 @@ app.UseRouting();
 app.UseCors();
 
 app.UseAuthorization();
+
+// Enable middleware to serve generated Swagger as a JSON endpoint.
+app.UseSwagger();
+
+// Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.)
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "GenAI Bewertung API v1");
+    c.RoutePrefix = "swagger"; // Swagger UI auf die Root-URL setzen
+});
 
 app.MapControllerRoute(
     name: "default",

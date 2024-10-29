@@ -399,3 +399,6 @@ FodyWeavers.xsd
 
 # Ignore Angular cache
 ClientApp/.angular/
+
+# Ignore JetBrains Rider project files
+.idea/
