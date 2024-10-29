@@ -65,3 +65,71 @@
 
 ### Tool
 - **Swagger**: API-Dokumentation und -Testwerkzeug für ASP.NET Core.
+
+## 5. Datenbankstruktur
+### 5.1 Übersicht
+
+Die Datenbank speichert Informationen zu Fragetypen, Nutzerantworten, Bewertungsergebnissen und Benutzereinstellungen. Die Struktur ist so gestaltet, dass sie eine effiziente Verwaltung und Abfrage der Daten ermöglicht.
+
+### 5.2 Datenbanktabellen
+
+### **Users**
+UserID (Primary Key): Eindeutige Identifikation des Benutzers.
+
+Username: Name des Benutzers.
+
+PasswordHash: Hash des Passworts.
+
+Email: E-Mail-Adresse des Benutzers.
+
+CreatedAt: Zeitpunkt der Erstellung des Benutzerkontos.
+
+### **Questions**
+QuestionID (Primary Key): Eindeutige Identifikation der Frage.
+
+QuestionText: Text der Frage.
+
+QuestionType: Typ der Frage (z.B. Multiple-Choice, Freitext).
+
+CreatedBy (Foreign Key): ID des Benutzers, der die Frage erstellt hat.
+
+CreatedAt: Zeitpunkt der Erstellung der Frage.
+
+### **Answers**
+AnswerID (Primary Key): Eindeutige Identifikation der Antwort.
+
+UserID (Foreign Key): ID des Benutzers, der die Antwort gegeben hat.
+
+QuestionID (Foreign Key): ID der Frage, auf die die Antwort gegeben wurde.
+
+AnswerText: Text der gegebenen Antwort.
+
+SubmittedAt: Zeitpunkt der Abgabe der Antwort.
+
+### **Evaluations**
+EvaluationID (Primary Key): Eindeutige Identifikation der Bewertung.
+
+AnswerID (Foreign Key): ID der bewerteten Antwort.
+
+IsCorrect: Gibt Korrektheit der Antwort an.
+
+Score: Punktzahl, die der Antwort zugewiesen wurde.
+
+Feedback: Textuelles Feedback zur Antwort.
+
+EvaluatedAt: Zeitpunkt der Bewertung.
+
+### **Settings**
+SettingID (Primary Key): Eindeutige Identifikation der Benutzereinstellungen.
+
+UserID (Foreign Key): ID des Benutzers, zu dem die Einstellungen gehören.
+
+ToleranceLevel: Einstellungswert für Tippfehler.
+
+CaseSensitivity: Einstellung, ob Groß-/Kleinschreibung berücksichtigt werden soll.
+
+AccuracyThreshold: Genauigkeitsgrenze für Schätzfragen.
+
+## 5.3 ER-Diagramm
+
+![Alternativer Text](/Dokumentation/Database_Structure.png)
