@@ -86,7 +86,9 @@
 ### 3.2 Benutzeroberfläche und Einstellungen
 > Benutzer können Fragen erstellen, Einstellungen anpassen und Bewertungsergebnisse einsehen.
 
-### Mockups
+#### Mockups:
+
+Futur Pictures:
 
 
 ### 3.3 Fragenmanagement
@@ -119,6 +121,18 @@
 - Benutzerfreundlichkeit: Die Benutzeroberfläche muss intuitiv und benutzerfreundlich gestaltet sein, sodass Benutzer ohne umfangreiche Schulung effektiv mit dem System interagieren können.
 - Barrierefreiheit: Die Anwendung sollte die WCAG-Richtlinien (Web Content Accessibility Guidelines) einhalten, um sicherzustellen, dass sie für alle Benutzer, einschließlich Menschen mit Behinderungen, zugänglich ist.
 
+### 4.5 Architektur
+Das System basiert auf einer Schichtenarchitektur, die mehrere klar definierte Schichten umfasst:
+
+- Präsentationsschicht (Frontend): Implementiert mit Angular, ermöglicht die Benutzeroberfläche, in der Nutzer ihre Antworten eingeben und Bewertungsergebnisse anzeigen können.
+
+- Anwendungsschicht: Diese Schicht enthält die Geschäftslogik und die Steuerung der Anwendung, die in den Controllers und Services organisiert ist. Hier wird die Logik zur Verarbeitung der Benutzeranfragen und -antworten implementiert.
+
+- Datenschicht: Verantwortlich für den Zugriff auf die PostgreSQL-Datenbank, erfolgt über Repositories, die den Datenzugriff abstrahieren und Datenoperationen kapseln.
+
+Zusätzlich wird eine service-orientierte Architektur (SOA) verwendet, die eine Kommunikation zwischen dem Frontend und dem Backend über REST-APIs ermöglicht. Dies fördert die Modularität und ermöglicht eine unabhängige Entwicklung und Bereitstellung von Anwendungsteilen.
+
+Das Projekt berücksichtigt testgetriebene Entwicklung (TDD), indem eine Teststruktur (GenAI-GenAI_Bewertung.Tests) implementiert wird, die sowohl Unit-Tests mit xUnit als auch End-to-End-Tests mit Cypress umfasst. Diese Tests stellen sicher, dass die Anwendung qualitativ hochwertig und stabil ist.
 
 ## 5. Datenbankstruktur
 ### 5.1 Übersicht
