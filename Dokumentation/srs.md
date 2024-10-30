@@ -22,9 +22,9 @@
 - **REST-API**: Schnittstelle zur Kommunikation zwischen Frontend und Backend.
   
 ### 1.4 Referenzen
-- **Angular-Dokumentation**: [Angular](https://angular.io/), Zugriff im Oktober 2023.
-- **ASP.NET Core-Dokumentation**: [.NET Documentation](https://docs.microsoft.com/de-de/aspnet/core/), Zugriff im Oktober 2023.
-- **OpenAI API**: [OpenAI API Docs](https://beta.openai.com/docs/), Zugriff im Oktober 2023.
+- **Angular-Dokumentation**: [Angular](https://angular.io/), Zugriff im Oktober 2024.
+- **ASP.NET Core-Dokumentation**: [.NET Documentation](https://docs.microsoft.com/de-de/aspnet/core/), Zugriff im Oktober 2024.
+- **OpenAI API**: [OpenAI API Docs](https://beta.openai.com/docs/), Zugriff im Oktober 2024.
 
 ## 2. Technologieübersicht
 
