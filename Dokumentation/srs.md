@@ -130,6 +130,36 @@ CaseSensitivity: Einstellung, ob Groß-/Kleinschreibung berücksichtigt werden s
 
 AccuracyThreshold: Genauigkeitsgrenze für Schätzfragen.
 
-## 5.3 ER-Diagramm
+### 5.3 ER-Diagramm
 
 ![Alternativer Text](/Dokumentation/Database_Structure.png)
+
+
+## Evaluation von AIs
+
+### 1. AI APIs
+
+#### OpenAI GPT-4 / ChatGPT API:
+- Stärken: GPT-4 kann Antworten kontextbezogen bewerten, Synonyme erkennen, Tippfehler tolerieren und Freitext sowie multiple Fragentypen gut verarbeiten. Es bietet auch Flexibilität für Schätzfragen und Textanalysen in Freitextantworten.
+- Einschränkungen: GPT-4 benötigt oft eine spezifische Eingabeanweisung, um auf bestimmte Fehler-Toleranzen (z. B. Synonyme) zu reagieren. Einige Bewertungsparameter (z. B. Toleranzlevel) müssen über das Backend gesteuert werden.
+
+#### Google Cloud AI (BERT-basierte Modelle):
+- Stärken: BERT und ähnliche Modelle können präzise Synonyme und ähnliche Begriffe erkennen und einfache Tippfehler tolerieren. BERT ist besonders gut darin, verschiedene Antwortformate zu bewerten, kann aber komplexere Bewertungen (wie Kontext oder tiefergehende Textanalyse) weniger flexibel bewältigen.
+- Einschränkungen: Begrenzte Konfigurierbarkeit bei flexiblen Toleranz-Leveln. Eine genaue Bewertung von Rechen- und Schätzfragen erfordert zusätzliche Logik.
+(300€ Guthaben für 90 Tage)
+
+#### Anthropic Claude:
+- Stärken: Claude bietet solide Flexibilität für Synonym- und Kontextanalyse, Fehler-Toleranz und Freitextbewertungen. Es kann „fuzzy“ Abgleiche durchführen, was bei variablen Antworten hilfreich ist.
+- Einschränkungen: Anpassung der Toleranz-Level könnte im Vergleich zu anderen Modellen begrenzter sein, sodass die Backend-Logik hier mehr eingreifen müsste.
+
+#### Microsoft Azure Cognitive Services:
+- Stärken: Microsofts Modelle erkennen Tippfehler, Synonyme und einfache grammatische Fehler. Sie können gut bei kurzen, präzisen Antwortformaten helfen und lassen sich für grundlegende Synonymanalyse und Bewertung nutzen.
+- Einschränkungen: Azure bietet weniger Flexibilität für komplexe Textanalysen und könnte Einschränkungen bei Freitext- und Schätzfragen haben, da es keine ausgeprägte generative Komponente hat.
+
+#### Cohere API:
+- Stärken: Cohere-Modelle bieten eine zuverlässige Erkennung von Synonymen, Wort-Varianten und können für flexible Antwortbewertung gut angepasst werden.
+- Einschränkungen: Die Modelle haben in der Regel weniger tiefgehende Textanalysefähigkeiten und könnten bei Freitextbewertungen in größeren, variableren Kontexten -Schwierigkeiten haben.
+
+#### Hugging Face API (z.B. T5, GPT-Neo):
+- Stärken: Die Hugging Face-Modelle bieten eine gute Anpassungsfähigkeit und kostenfreundliche Optionen, die Synonyme und einfache Fehler erkennen können. Viele Modelle sind für einfache Bewertungsaufgaben ideal.
+- Einschränkungen: Oft weniger ausgeprägte Genauigkeit bei komplexeren Analysen (wie Schätzfragen), sodass eine Kombination mit Backend-Logik für höhere Präzision nötig sein könnte.
