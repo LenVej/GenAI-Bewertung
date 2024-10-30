@@ -26,31 +26,7 @@
 - **ASP.NET Core-Dokumentation**: [.NET Documentation](https://docs.microsoft.com/de-de/aspnet/core/), Zugriff im Oktober 2023.
 - **OpenAI API**: [OpenAI API Docs](https://beta.openai.com/docs/), Zugriff im Oktober 2023.
 
-## 2. Funktionale Anforderungen
-### 2.1 Übersicht 
-> Das System ermöglicht die Erstellung, Verwaltung und Bewertung von verschiedenen Fragetypen. Mithilfe der GenAI-Bewertung können Antworten flexibel und präzise ausgewertet werden.
-
-### 2.2 Benutzeroberfläche und Einstellungen
-> Benutzer können Fragen erstellen, Einstellungen anpassen und Bewertungsergebnisse einsehen.
-
-#### Mockups
-
-
-### 2.3 Fragenmanagement
-- **Fragentypen**: Multiple-Choice, Ein-Wort-Antworten, Rechenfragen, Entweder/Oder-Fragen, Schätzfragen, Lückentext, Freitext.
-
-> **Vorbedingungen**: Backend-Server muss aktiv sein.
-> **Nachbedingungen**: Alle ausgehenden Routen der Funktionen müssen korrekt arbeiten.
-
-### 2.4 Bewertung durch Generative AI
-> GenAI wird zur flexiblen Bewertung eingesetzt, einschließlich Toleranz bei Tippfehlern, Groß-/Kleinschreibung und Synonym-Erkennung.
-
-## 3. Zukünftige Erweiterungen (Ideen)
-- **Adaptive Lernpfade**: Personalisierte Empfehlungen basierend auf den Bewertungen.
-- **Mehrsprachigkeit**: Unterstützung für mehrere Sprachen, z.B. Deutsch und Englisch.
-- **Integration von Sprach- und Bilderkennung**: Erweiterung um Sprach- und Bildanalyse-Optionen für Antworten.
-
-## 4. Technologieübersicht
+## 2. Technologieübersicht
 
 ### Projektmanagement:
 - **GitHub Kanban**: Projektmanagement und Aufgabenverfolgung.
@@ -65,6 +41,84 @@
 
 ### Tool
 - **Swagger**: API-Dokumentation und -Testwerkzeug für ASP.NET Core.
+
+### Projekttree
+
+```
+∨GenAI-GenAI_Bewertung  
+   ∨GenAI-GenAI_Bewertung  
+     >Dependencies  
+     >Properties  
+     >wwwroot  
+     ∨ClientApp  
+       >angular  
+       ∨src  
+         >app
+         >assets
+         >environments
+         index.html
+         main.ts
+         polyfill.ts
+         styles.css
+         test.ts
+     >Controllers
+     >Data
+     >Entities
+     >Migrations
+     >Pages
+     >Reposiotries
+     >Services
+     gitignore
+     appsettings.json
+     appsettings.Development.json
+     Program.cs
+   ∨GenAI-GenAI_Bewertung.Tests
+     >Dependencies
+     ∨Controller
+       >QuestionsControllerTests.cs
+```
+
+
+## 3. Funktionale Anforderungen
+### 3.1 Übersicht 
+> Das System ermöglicht die Erstellung, Verwaltung und Bewertung von verschiedenen Fragetypen. Mithilfe der GenAI-Bewertung können Antworten flexibel und präzise ausgewertet werden.
+
+### 3.2 Benutzeroberfläche und Einstellungen
+> Benutzer können Fragen erstellen, Einstellungen anpassen und Bewertungsergebnisse einsehen.
+
+### Mockups
+
+
+### 3.3 Fragenmanagement
+- **Fragentypen**: Multiple-Choice, Ein-Wort-Antworten, Rechenfragen, Entweder/Oder-Fragen, Schätzfragen, Lückentext, Freitext.
+
+### 3.4 Bewertung durch Generative AI
+> GenAI wird zur flexiblen Bewertung eingesetzt, einschließlich Toleranz bei Tippfehlern, Groß-/Kleinschreibung und Synonym-Erkennung.
+
+
+## 4. Nicht-funktionale Anforderungen
+
+### 4.1 Leistungsanforderungen
+- Reaktionszeit: Die Anwendung muss in der Lage sein, Benutzeranfragen innerhalb weniger Sekunden zu verarbeiten und Ergebnisse zurückzugeben, um eine nahtlose Benutzererfahrung zu gewährleisten.
+- Verfügbarkeit: Die Webanwendung soll eine Verfügbarkeit von 99% im Jahresdurchschnitt aufweisen, um sicherzustellen, dass Benutzer jederzeit auf die Plattform zugreifen können.
+- Skalierbarkeit: Das System muss so entworfen werden, dass es bei steigender Benutzerzahl (z.B. während Tests oder Prüfungen) die Leistung ohne signifikante Verzögerungen oder Ausfälle aufrechterhalten kann.
+- Ressourcennutzung: Die Anwendung soll die Serverressourcen (CPU, RAM) effizient nutzen, um die Betriebskosten zu minimieren und gleichzeitig eine hohe Leistung zu gewährleisten.
+
+### 4.2 Sicherheitsanforderungen
+- Benutzerdaten-Schutz: Alle Benutzerdaten, einschließlich Passwörter und persönliche Informationen, müssen verschlüsselt gespeichert und über sichere Verbindungen (HTTPS) übertragen werden.
+- Zugriffskontrolle: Das System muss ein Rollensystem implementieren, das sicherstellt, dass nur autorisierte Benutzer Zugriff auf bestimmte Funktionen und Daten haben. Administratoren müssen die Möglichkeit haben, Benutzerrechte einfach zu verwalten.
+- Eingabe Validierung: Alle Benutzereingaben müssen validiert werden, um SQL-Injection und andere Angriffe zu verhindern. Das System sollte sicherstellen, dass nur gültige Daten in die Datenbank gelangen.
+
+### 4.3 Wartbarkeit
+- Modularität: Der Code sollte in Module und Komponenten unterteilt werden, um die Wartung und Erweiterung des Systems zu erleichtern. Jedes Modul sollte eine klare Verantwortung haben, um die Verständlichkeit zu erhöhen.
+- Dokumentation: Um die Wartbarkeit zu gewährleisten, muss der Code gut dokumentiert sein. Dies umfasst sowohl Inline-Kommentare als auch externe Dokumentation, die die Architektur, API-Spezifikationen und die Verwendung der Module beschreibt.
+- Testbarkeit: Das System sollte so gestaltet sein, dass Unit-Tests und Integrationstests leicht implementiert werden können. Es sollen entsprechende Teststrategien und -tools bereitgestellt werden, um die Qualität des Codes zu gewährleisten.
+- Update-Management: Das System muss Mechanismen unterstützen, die eine einfache Aktualisierung von Komponenten und Bibliotheken ermöglichen, ohne dass dabei die Funktionalität oder die Benutzererfahrung beeinträchtigt wird.
+
+### 4.4 Usability
+- Benutzerfreundlichkeit: Die Benutzeroberfläche muss intuitiv und benutzerfreundlich gestaltet sein, sodass Benutzer ohne umfangreiche Schulung effektiv mit dem System interagieren können.
+- Barrierefreiheit: Die Anwendung sollte die WCAG-Richtlinien (Web Content Accessibility Guidelines) einhalten, um sicherzustellen, dass sie für alle Benutzer, einschließlich Menschen mit Behinderungen, zugänglich ist.
+
 
 ## 5. Datenbankstruktur
 ### 5.1 Übersicht
@@ -134,19 +188,25 @@ AccuracyThreshold: Genauigkeitsgrenze für Schätzfragen.
 
 ![Alternativer Text](/Dokumentation/Database_Structure.png)
 
+## 6. Zukünftige Erweiterungen (Ideen)
+- **Adaptive Lernpfade**: Personalisierte Empfehlungen basierend auf den Bewertungen.
+- **Mehrsprachigkeit**: Unterstützung für mehrere Sprachen, z.B. Deutsch und Englisch.
+- **Integration von Sprach- und Bilderkennung**: Erweiterung um Sprach- und Bildanalyse-Optionen für Antworten.
 
-## Evaluation von AIs
+
+## 7. Evaluation von AIs
 
 ### 1. AI APIs
 
 #### OpenAI GPT-4 / ChatGPT API:
 - Stärken: GPT-4 kann Antworten kontextbezogen bewerten, Synonyme erkennen, Tippfehler tolerieren und Freitext sowie multiple Fragentypen gut verarbeiten. Es bietet auch Flexibilität für Schätzfragen und Textanalysen in Freitextantworten.
 - Einschränkungen: GPT-4 benötigt oft eine spezifische Eingabeanweisung, um auf bestimmte Fehler-Toleranzen (z. B. Synonyme) zu reagieren. Einige Bewertungsparameter (z. B. Toleranzlevel) müssen über das Backend gesteuert werden.
+>Not free at all
 
 #### Google Cloud AI (BERT-basierte Modelle):
 - Stärken: BERT und ähnliche Modelle können präzise Synonyme und ähnliche Begriffe erkennen und einfache Tippfehler tolerieren. BERT ist besonders gut darin, verschiedene Antwortformate zu bewerten, kann aber komplexere Bewertungen (wie Kontext oder tiefergehende Textanalyse) weniger flexibel bewältigen.
 - Einschränkungen: Begrenzte Konfigurierbarkeit bei flexiblen Toleranz-Leveln. Eine genaue Bewertung von Rechen- und Schätzfragen erfordert zusätzliche Logik.
-(300€ Guthaben für 90 Tage)
+>(300€ Guthaben für 90 Tage)
 
 #### Anthropic Claude:
 - Stärken: Claude bietet solide Flexibilität für Synonym- und Kontextanalyse, Fehler-Toleranz und Freitextbewertungen. Es kann „fuzzy“ Abgleiche durchführen, was bei variablen Antworten hilfreich ist.
