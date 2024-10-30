@@ -1,100 +1,82 @@
-﻿using GenAI_Bewertung.Data;
-using GenAI_Bewertung.Entities;
+﻿using GenAI_Bewertung.Entities;
+using GenAI_Bewertung.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace GenAI_Bewertung.Controllers;
-
-[ApiController]
-[Route("api/[controller]")]
-public class QuestionsController : ControllerBase
+namespace GenAI_Bewertung.Controllers
 {
-    private readonly ApplicationDbContext _context;
-
-    public QuestionsController(ApplicationDbContext context)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class QuestionsController : ControllerBase
     {
-        _context = context;
-    }
+        private readonly QuestionService _service;
 
-    // GET: api/questions
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Question>>> GetQuestions()
-    {
-        return await _context.Questions.ToListAsync();
-    }
-
-    // GET: api/questions/5
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Question>> GetQuestion(int id)
-    {
-        var question = await _context.Questions.FindAsync(id);
-
-        if (question == null)
+        public QuestionsController(QuestionService service)
         {
-            return NotFound();
+            _service = service;
         }
 
-        return question;
-    }
-
-    // POST: api/questions
-    [HttpPost]
-    public async Task<ActionResult<Question>> PostQuestion(Question question)
-    {
-        _context.Questions.Add(question);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction("GetQuestion", new { id = question.QuestionId }, question);
-    }
-
-    // PUT: api/questions/5
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutQuestion(int id, Question question)
-    {
-        if (id != question.QuestionId)
+        // GET: api/questions
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Question>>> GetQuestions()
         {
-            return BadRequest();
+            var questions = await _service.GetAllQuestionsAsync();
+            return Ok(questions); // Ensure this returns Ok with the list of questions
         }
 
-        _context.Entry(question).State = EntityState.Modified;
+        // GET: api/questions/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Question>> GetQuestion(int id)
+        {
+            var question = await _service.GetQuestionByIdAsync(id);
 
-        try
-        {
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!QuestionExists(id))
+            if (question == null)
             {
-                return NotFound();
+                return NotFound(); // Return NotFound if the question is not found
             }
-            else
-            {
-                throw;
-            }
+
+            return Ok(question); // Return Ok with the found question
         }
 
-        return NoContent();
-    }
-
-    // DELETE: api/questions/5
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteQuestion(int id)
-    {
-        var question = await _context.Questions.FindAsync(id);
-        if (question == null)
+        // POST: api/questions
+        [HttpPost]
+        public async Task<ActionResult<Question>> PostQuestion(Question question)
         {
-            return NotFound();
+            await _service.AddQuestionAsync(question);
+            return CreatedAtAction(nameof(GetQuestion), new { id = question.QuestionId }, question); // Return Created response
         }
 
-        _context.Questions.Remove(question);
-        await _context.SaveChangesAsync();
+        // PUT: api/questions/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutQuestion(int id, Question question)
+        {
+            if (id != question.QuestionId)
+            {
+                return BadRequest(); // Return BadRequest if IDs do not match
+            }
 
-        return NoContent();
-    }
+            if (!await _service.QuestionExistsAsync(id))
+            {
+                return NotFound(); // Return NotFound if the question does not exist
+            }
 
-    private bool QuestionExists(int id)
-    {
-        return _context.Questions.Any(e => e.QuestionId == id);
+            await _service.UpdateQuestionAsync(question);
+            return NoContent(); // Return NoContent on successful update
+        }
+
+        // DELETE: api/questions/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteQuestion(int id)
+        {
+            var question = await _service.GetQuestionByIdAsync(id);
+            if (question == null)
+            {
+                return NotFound(); // Return NotFound if the question does not exist
+            }
+
+            await _service.DeleteQuestionAsync(question);
+            return NoContent(); // Return NoContent on successful deletion
+        }
     }
 }

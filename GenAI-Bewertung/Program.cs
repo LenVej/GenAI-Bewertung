@@ -1,4 +1,6 @@
 using GenAI_Bewertung.Data;
+using GenAI_Bewertung.Repositories;
+using GenAI_Bewertung.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -10,6 +12,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();  // Register repository
+builder.Services.AddScoped<QuestionService>();  // Register service
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddCors(options =>
 {
@@ -52,7 +57,7 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "GenAI Bewertung API v1");
-    c.RoutePrefix = "swagger"; // Swagger UI auf die Root-URL setzen
+    c.RoutePrefix = "swagger"; // Set Swagger UI to root URL
 });
 
 app.MapControllerRoute(
