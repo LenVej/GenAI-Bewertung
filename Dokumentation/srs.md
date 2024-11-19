@@ -110,6 +110,7 @@ Futur Pictures:
 - Benutzerdaten-Schutz: Alle Benutzerdaten, einschließlich Passwörter und persönliche Informationen, müssen verschlüsselt gespeichert und über sichere Verbindungen (HTTPS) übertragen werden.
 - Zugriffskontrolle: Das System muss ein Rollensystem implementieren, das sicherstellt, dass nur autorisierte Benutzer Zugriff auf bestimmte Funktionen und Daten haben. Administratoren müssen die Möglichkeit haben, Benutzerrechte einfach zu verwalten.
 - Eingabe Validierung: Alle Benutzereingaben müssen validiert werden, um SQL-Injection und andere Angriffe zu verhindern. Das System sollte sicherstellen, dass nur gültige Daten in die Datenbank gelangen.
+- (Let's Encrypt)
 
 ### 4.3 Wartbarkeit
 - Modularität: Der Code sollte in Module und Komponenten unterteilt werden, um die Wartung und Erweiterung des Systems zu erleichtern. Jedes Modul sollte eine klare Verantwortung haben, um die Verständlichkeit zu erhöhen.
