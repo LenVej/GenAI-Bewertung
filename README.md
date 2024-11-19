@@ -11,16 +11,16 @@ Dieses Projekt bietet eine AI-basierte Bewertungsplattform zur automatischen Bew
 ## Einrichtung und Installation
 
 ### 1. Repository klonen
-Klonen Sie das Projekt von GitHub:
+Klone das Projekt von GitHub:
 ```bash
-git clone https://github.com/DeinBenutzername/GenAI-Bewertung.git
+git clone https://github.com/LenVej/GenAI-Bewertung.git
 cd GenAI-Bewertung/GenAI-Bewertung
 ```
 
 ## 2. PostgreSQL-Datenbank einrichten
 
-1. Erstellen Sie eine neue PostgreSQL-Datenbank.
-2. Aktualisieren Sie die Verbindungszeichenfolge in der Datei `appsettings.json`:
+1. Erstelle eine neue PostgreSQL-Datenbank.
+2. Aktualisiere die Verbindungszeichenfolge in der Datei `appsettings.json`:
  ```json
    "ConnectionStrings": {
      "DefaultConnection": "Host=localhost;Database=DeinDatenbankname;Username=DeinBenutzername;Password=DeinPasswort"
@@ -28,28 +28,29 @@ cd GenAI-Bewertung/GenAI-Bewertung
 ```
 
 ## 3. Datenbank-Migrationen anwenden
-Führen Sie die Migrationsbefehle aus, um die Datenbanktabellen zu erstellen:
+Führe die Migrationsbefehle aus, um die Datenbanktabellen zu erstellen:
 
 ```bash
 dotnet ef database update
 ```
 
 ## 4. Abhängigkeiten installieren
-Navigieren Sie zum ClientApp-Verzeichnis und installieren Sie die Node.js-Abhängigkeiten:
+Navigiere zum ClientApp-Verzeichnis und installieren Sie die Node.js-Abhängigkeiten:
 ```bash
 cd ClientApp
 npm install
 ```
 
 ## 5. Projekt starten
-Das Projekt ist nun bereit. Sie können es mit folgendem Befehl starten:
+Das Projekt ist nun bereit. Starte es mit folgendem Befehl:
 
 ```bash
 cd ..
 dotnet run
 ```
 
-
+##
+Swagger: https://localhost:7087/swagger/index.html
 
 ## Projektstruktur
 - ClientApp: Enthält das Angular-Frontend.
