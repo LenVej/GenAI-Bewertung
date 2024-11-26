@@ -238,10 +238,19 @@ Bestimmte Features, wie der OpenAI-kompatible Endpoint, befinden sich noch in de
 - Stärken: Cohere-Modelle bieten eine zuverlässige Erkennung von Synonymen, Wort-Varianten und können für flexible Antwortbewertung gut angepasst werden.
 - Einschränkungen: Die Modelle haben in der Regel weniger tiefgehende Textanalysefähigkeiten und könnten bei Freitextbewertungen in größeren, variableren Kontexten -Schwierigkeiten haben.
 
+### 2. Vergleich der Kosten pro Millionen Tokens
 
-#### **Wenig Informationen und schlecht organisierte Webseite:**
+| API                     | Input ($) | Cached Input ($) | Output ($) | Caching Write ($) | Caching Read ($) |
+|--------------------------|-----------|------------------|------------|-------------------|------------------|
+| OpenAI (gpt-4o)         | 2.50      | 1.25             | 10.00      | -                 | -                |
+| OpenAI (gpt-4o-mini)    | 0.15      | 0.075            | 0.60       | -                 | -                |
+| OpenAI (o1-preview)     | 15.00     | 7.50             | 60.00      | -                 | -                |
+| OpenAI (o1-mini)        | 3.00      | 1.50             | 12.00      | -                 | -                |
+| Gemini (Flash 1.5)      | 0.075     | 0.01875          | 0.30       | -                 | -                |
+| Claude 3.5 Haiku        | 1.00      | 1.25             | 5.00       | 1.25              | 0.10             |
+| Azure (GPT-4o)          | 2.55      | 1.27             | 10.19      | -                 | -                |
+| Azure (GPT-4o-mini)     | 0.15      | 0.077            | 0.61       | -                 | -                |
+| Azure (o1-preview)      | 15.28     | 7.64             | 61.12      | -                 | -                |
+| Cohere (Command R+)     | 2.50      | -                | 10.00      | -                 | -                |
+| Cohere (Command R)      | 0.15      | -                | 0.60       | -                 | -                |
 
-#### Google Cloud AI (BERT-basierte Modelle):
->- Stärken: BERT und ähnliche Modelle können präzise Synonyme und ähnliche Begriffe erkennen und einfache Tippfehler tolerieren. BERT ist besonders gut darin, >verschiedene Antwortformate zu bewerten, kann aber komplexere Bewertungen (wie Kontext oder tiefergehende Textanalyse) weniger flexibel bewältigen.
->- Einschränkungen: Begrenzte Konfigurierbarkeit bei flexiblen Toleranz-Leveln. Eine genaue Bewertung von Rechen- und Schätzfragen erfordert zusätzliche Logik.
->(300€ Guthaben für 90 Tage))
