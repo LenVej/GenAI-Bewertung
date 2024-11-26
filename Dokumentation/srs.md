@@ -218,10 +218,13 @@ AccuracyThreshold: Genauigkeitsgrenze für Schätzfragen.
 - Einschränkungen: GPT-4 benötigt oft eine spezifische Eingabeanweisung, um auf bestimmte Fehler-Toleranzen (z. B. Synonyme) zu reagieren. Einige Bewertungsparameter (z. B. Toleranzlevel) müssen über das Backend gesteuert werden.
 >Not free at all
 
-#### Google Cloud AI (BERT-basierte Modelle):
-- Stärken: BERT und ähnliche Modelle können präzise Synonyme und ähnliche Begriffe erkennen und einfache Tippfehler tolerieren. BERT ist besonders gut darin, verschiedene Antwortformate zu bewerten, kann aber komplexere Bewertungen (wie Kontext oder tiefergehende Textanalyse) weniger flexibel bewältigen.
-- Einschränkungen: Begrenzte Konfigurierbarkeit bei flexiblen Toleranz-Leveln. Eine genaue Bewertung von Rechen- und Schätzfragen erfordert zusätzliche Logik.
->(300€ Guthaben für 90 Tage)
+#### Gemini API:
+- Stärken: Unterstützt multimodale Verarbeitung (Text und Bilder), wodurch zukünftige Erweiterungen wie Bildanalyse oder Sprachverarbeitung nahtlos integriert werden können. 
+Großes Kontextfenster von bis zu 1 Million Tokens ermöglicht präzise Analysen langer Texte oder umfangreicher Antworten.
+Flexible NLP-Fähigkeiten für Synonym-Erkennung, Tippfehler-Toleranz und Abweichungen in Antwortformaten, besonders für Freitextanalysen geeignet.
+- Schwächen: Einige Funktionen wie strukturiertes Setzen von Bewertungstoleranzen (z. B. Tippfehlergrenzen) könnten mehr Backend-Logik erfordern.
+Generative Textverarbeitung im Vergleich zu OpenAI möglicherweise weniger ausgereift bei komplexen Freitextanalysen.
+Bestimmte Features, wie der OpenAI-kompatible Endpoint, befinden sich noch in der Beta-Phase und sind nicht vollständig stabil.
 
 #### Anthropic Claude:
 - Stärken: Claude bietet solide Flexibilität für Synonym- und Kontextanalyse, Fehler-Toleranz und Freitextbewertungen. Es kann „fuzzy“ Abgleiche durchführen, was bei variablen Antworten hilfreich ist.
@@ -235,6 +238,10 @@ AccuracyThreshold: Genauigkeitsgrenze für Schätzfragen.
 - Stärken: Cohere-Modelle bieten eine zuverlässige Erkennung von Synonymen, Wort-Varianten und können für flexible Antwortbewertung gut angepasst werden.
 - Einschränkungen: Die Modelle haben in der Regel weniger tiefgehende Textanalysefähigkeiten und könnten bei Freitextbewertungen in größeren, variableren Kontexten -Schwierigkeiten haben.
 
-#### Hugging Face API (z.B. T5, GPT-Neo):
-- Stärken: Die Hugging Face-Modelle bieten eine gute Anpassungsfähigkeit und kostenfreundliche Optionen, die Synonyme und einfache Fehler erkennen können. Viele Modelle sind für einfache Bewertungsaufgaben ideal.
-- Einschränkungen: Oft weniger ausgeprägte Genauigkeit bei komplexeren Analysen (wie Schätzfragen), sodass eine Kombination mit Backend-Logik für höhere Präzision nötig sein könnte.
+
+#### **Wenig Informationen und schlecht organisierte Webseite:**
+
+#### Google Cloud AI (BERT-basierte Modelle):
+>- Stärken: BERT und ähnliche Modelle können präzise Synonyme und ähnliche Begriffe erkennen und einfache Tippfehler tolerieren. BERT ist besonders gut darin, >verschiedene Antwortformate zu bewerten, kann aber komplexere Bewertungen (wie Kontext oder tiefergehende Textanalyse) weniger flexibel bewältigen.
+>- Einschränkungen: Begrenzte Konfigurierbarkeit bei flexiblen Toleranz-Leveln. Eine genaue Bewertung von Rechen- und Schätzfragen erfordert zusätzliche Logik.
+>(300€ Guthaben für 90 Tage))
