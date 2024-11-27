@@ -99,7 +99,8 @@ Die Anzahl von 10.000 Anfragen wurde bewusst großzügig gewählt, um eine ausre
 
 ### Zusammenfassung der Annahmen
 
-- **500 Tokens pro Antwort**: Durchschnitt basierend auf den Fragetypen und der erwarteten Antwortkomplexität, inkl. Begründungen und Synonymvorschlägen.
+- **2.000 Tokens pro Frage**: Durchschnitt basierend auf den Fragetypen und zusätzliche benötigter Informationen, die das Modell benötigt, um die Frage zu bewerten.
+- **500 Tokens pro Antwort**: Durchschnitt basierend auf den Fragetypen und der erwarteten Antwortkomplexität, inkl. Begründungen und Feedback.
 - **10.000 Anfragen im MVP**: Realistischer Umfang für umfangreiche Tests, basierend auf einer Nutzerbasis von 100 Personen, die je 100 Fragen bearbeiten.
 
 ## Kostenschätzung
@@ -172,3 +173,8 @@ Da das MVP kosteneffizient entwickelt werden soll, werden die Berechnungen nur f
   OpenAI gpt-4o mini, Cohere Command R und Azure GPT-4o mini sind ebenfalls in einem akzeptablen Preisbereich.
 - **Teuerste Option**: Azure o1 preview mit 611,20 USD.
 - **Kosten für populäre Modelle**: OpenAI gpt-4o liegt bei 100,00 USD, während Claude 3.5 bei 45,00 USD liegt.
+- Gamini flash 1.5 bietet jedoch auch eine kostenlose API an mit begrenzter Nutzung zum Testen mit folgenden Begrenzungen:
+  - 15 Anfragen pro Minute 
+  - 1 Million TPM (Tokens pro Minute)
+  - 1.500 Anfragen pro Tag
+
