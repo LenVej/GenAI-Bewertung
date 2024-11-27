@@ -29,7 +29,7 @@ Für realistische Szenarien ergibt sich daher:
 ### Anpassung für unterschiedliche Fragetypen
 
 | Fragetyp            | Geschätzte Tokens (Input) | Begründung                                                                                     |
-|---------------------|--------------------------|------------------------------------------------------------------------------------------------|
+|---------------------|---------------------------|------------------------------------------------------------------------------------------------|
 | Multiple-Choice      | 500–800                  | Kurze Frage, wenige Optionen, minimaler Kontext.                                                |
 | Ein-Wort-Antworten   | 500–1.000                | Fragetext + zusätzliche Hinweise, wie Synonyme oder Groß-/Kleinschreibung zu behandeln.         |
 | Rechenfragen         | 700–1.500                | Komplexere Fragestellung + Erläuterung, wie numerische Toleranzen angewendet werden.             |
@@ -38,14 +38,14 @@ Für realistische Szenarien ergibt sich daher:
 | Lückentextfragen     | 1.500–2.000              | Fragetext + mehrere mögliche richtige Antworten für Lücken + Erläuterung für Synonyme und Tippfehler. |
 | Freitextantworten    | 2.000–2.500              | Frage + umfangreicher Kontext + mögliche Zwischenschritte bei der Beurteilung.                   |
 
-## Antworten
+## Benutzer Antworten
 
 ### Typische Token-Anzahl für Antworten pro Fragetyp
 
 Die verschiedenen Fragetypen haben unterschiedliche Antwortlängen:
 
-| Fragetyp            | Geschätzte Tokens (Output) | Begründung                                                                                     |
-|---------------------|---------------------------|------------------------------------------------------------------------------------------------|
+| Fragetyp            | Geschätzte Tokens (Input)  | Begründung                                                                                     |
+|---------------------|----------------------------|------------------------------------------------------------------------------------------------|
 | Multiple-Choice      | 10–50                     | Die Antwort besteht in der Regel nur aus einer Auswahl (z. B. "A" oder "A, C"). Falls Begründungen benötigt werden, könnte es bis zu 50 Tokens umfassen. |
 | Ein-Wort-Antworten   | 5–20                      | Einfache, kurze Antworten, z. B. "Haus" oder "42".                                              |
 | Rechenfragen         | 50–150                    | Antwort enthält oft eine Zahl, aber je nach Einstellung könnte auch eine Schritt-für-Schritt-Lösung generiert werden (z. B. Rechenweg). |
@@ -54,13 +54,20 @@ Die verschiedenen Fragetypen haben unterschiedliche Antwortlängen:
 | Lückentextfragen     | 50–150                    | Füllt die Lücken mit Wörtern und könnte mehrere Varianten oder Synonyme vorschlagen.            |
 | Freitextantworten    | 200–1.000                 | Längere Freitext-Antworten können komplexe Erklärungen oder Interpretationen erfordern. Der Tokenverbrauch variiert je nach Fragestellung. |
 
-### Durchschnittliche Antwortkomplexität
+## Bewertung der AI
 
-Da das MVP Antworten auch begründen oder alternative Vorschläge liefern soll (z. B. Synonyme, Hinweise auf Fehler), wurde ein konservativer Durchschnitt von 500 Tokens pro Antwort gewählt. Dies berücksichtigt:
+| **Fragetyp**          | **Geschätzte Tokens (Output)** |
+|-----------------------|--------------------------------|
+| **Multiple-Choice**   | 15–30                          |
+| **Ein-Wort-Antworten**| 10–20                          |
+| **Rechenfragen**      | 80–150                         |
+| **Entweder/Oder**     | 15–25                          |
+| **Schätzfragen**      | 25–50                          |
+| **Lückentextfragen**  | 150–250                        |
+| **Freitextantworten** | 300–1.000                      |
 
-- Einfache Antworten (z. B. Multiple-Choice, Ein-Wort-Antworten) mit wenigen Tokens.
-- Komplexe Antworten (z. B. Freitext, Lückentext) mit erheblich mehr Tokens.
-- Flexibles Antwortmatching: Zusatzinformationen wie Synonyme und Erklärungen erhöhen die Tokenanzahl.
+- Einfache Bewertung: Die KI gibt nur eine Punktzahl oder eine kurze Bewertung aus (z. B. "Richtig", "Falsch", "Teilweise korrekt").
+- Detaillierte Bewertung mit Feedback: Hier wird Feedback zur Begründung gegeben, mit Hinweisen auf Verbesserungspotenziale und ggf. alternative Lösungen.
 
 ### Token-Overhead durch die API
 
@@ -99,8 +106,8 @@ Die Anzahl von 10.000 Anfragen wurde bewusst großzügig gewählt, um eine ausre
 
 ### Zusammenfassung der Annahmen
 
-- **2.000 Tokens pro Frage**: Durchschnitt basierend auf den Fragetypen und zusätzliche benötigter Informationen, die das Modell benötigt, um die Frage zu bewerten.
-- **500 Tokens pro Antwort**: Durchschnitt basierend auf den Fragetypen und der erwarteten Antwortkomplexität, inkl. Begründungen und Feedback.
+- **2.000 Tokens pro Frage und Antwort**: Durchschnitt basierend auf den Fragetypen und zusätzliche benötigter Informationen, die das Modell benötigt, ebenso wie die Antwort, welche zu bewerten ist.
+- **500 Tokens pro Bewertung**: Durchschnitt basierend auf den Fragetypen und der erwarteten Bewertungskomplexität, inkl. Begründungen und Feedback.
 - **10.000 Anfragen im MVP**: Realistischer Umfang für umfangreiche Tests, basierend auf einer Nutzerbasis von 100 Personen, die je 100 Fragen bearbeiten.
 
 ## Kostenschätzung
@@ -109,8 +116,8 @@ Die Anzahl von 10.000 Anfragen wurde bewusst großzügig gewählt, um eine ausre
 
 Mit den zuvor gemachten Annahmen werden wir nun die Berechnungen für die durchschnittlichen Kosten der unterschiedlichen APIs ausführen:
 
-1. **Input-Tokens pro Anfrage**: 2.000 (z.B. inklusive Frage, Kontext, Benutzereingabe).
-2. **Output-Tokens pro Antwort**: 500 (z.B. KI-generierte Antwort oder Bewertung).
+1. **Input-Tokens pro Anfrage**: 2.000 (z.B. inklusive Frage, Antwort, Kontext, Benutzereingabe).
+2. **Output-Tokens pro Bewertung**: 500 (z.B. KI-generierte Bewertung).
 3. **Gesamtanzahl der Anfragen**: 10.000 Anfragen im MVP.
 
 ### Schritte
