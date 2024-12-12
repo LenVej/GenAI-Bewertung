@@ -33,9 +33,9 @@ Algorithmische Ansätze:
 
 
 ## Einschränkungen traditioneller Algorithmen:
-Kontextunabhängigkeit: Oftmals wird der Kontext der Frage nicht ausreichend berücksichtigt.
-Flexibilität: Die Algorithmen sind oft nicht flexibel genug, um mit unterschiedlichen Formulierungen und Sprachvariationen umzugehen.
-Subjektivität: Die Bewertung von Freitextantworten kann subjektiv sein und erfordert oft menschliche Beurteilung.
+- Kontextunabhängigkeit: Oftmals wird der Kontext der Frage nicht ausreichend berücksichtigt.
+- Flexibilität: Die Algorithmen sind oft nicht flexibel genug, um mit unterschiedlichen Formulierungen und Sprachvariationen umzugehen.
+- Subjektivität: Die Bewertung von Freitextantworten kann subjektiv sein und erfordert oft menschliche Beurteilung.
 
 
 # Literaturen:
