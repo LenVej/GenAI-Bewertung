@@ -1,0 +1,7 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{Abbildungsverzeichnis}{4}{}%
+\contentsline {section}{Abkürzungsverzeichnis}{5}{}%
+\contentsline {section}{\numberline {1}Ziele Dieses Dokuments}{6}{}%
+\contentsline {section}{\numberline {2}Anlass und Aufbau des Projekts}{6}{}%
+\contentsline {section}{\numberline {3}Technischer Hintergrund}{7}{}%
+\contentsline {subsection}{\numberline {3.1}Swagger}{8}{}%
