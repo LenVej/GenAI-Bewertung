@@ -2,7 +2,7 @@
 
 ## 1. Einführung
 ### 1.1 Übersicht
-> Das Ziel dieses Projekts ist die Entwicklung eines Minimum Viable Product (MVP), das den Einsatz von GenAI zur flexiblen und genauen Bewertung von Antworten in Lernsystemen ermöglicht.
+> Das Ziel dieses Projekts "Einsatz von GenAI-Technologien zur Bewertung von Antworten" ist die Entwicklung eines Minimum Viable Product (MVP), das den Einsatz von GenAI zur flexiblen und genauen Bewertung von Antworten in Lernsystemen ermöglicht.
 
 ### 1.2 Umfang
 > Dieses Software Requirements Specification (SRS)-Dokument umfasst die funktionalen und nicht-funktionalen Anforderungen des Systems. Es bietet eine detaillierte Übersicht der Architektur, der Merkmale und der Einschränkungen der Plattform, um das Ziel des Projekts zu verdeutlichen.
