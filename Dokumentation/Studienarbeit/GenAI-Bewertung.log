@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.7)  12 DEC 2024 02:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.7)  12 DEC 2024 04:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -827,24 +827,15 @@ LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
 (Font)              scaled to size 16.41594pt on input line 106.
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
 (Font)              scaled to size 16.41594pt on input line 106.
- (GenAI-Bewertung.toc)
+ (GenAI-Bewertung.toc [3])
 \tf@toc=\write4
 \openout4 = `GenAI-Bewertung.toc'.
 
- [3] (GenAI-Bewertung.lof)
+ [4] (GenAI-Bewertung.lof)
 \tf@lof=\write5
 \openout5 = `GenAI-Bewertung.lof'.
 
- [4]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[5]
+ [5]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -854,6 +845,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
+LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
+(Font)              scaled to size 13.67995pt on input line 148.
+LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
+(Font)              scaled to size 13.67995pt on input line 148.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -863,11 +859,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 161.
-LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 161.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -878,7 +869,70 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [8]
 
-LaTeX Warning: Empty bibliography on input line 167.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]
+
+LaTeX Warning: Empty bibliography on input line 215.
 
 (GenAI-Bewertung.aux)
  ***********
@@ -900,8 +954,8 @@ Package logreq Info: Writing requests to 'GenAI-Bewertung.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  15671 strings out of 475247
- 287647 string characters out of 5756377
- 1927801 words of memory out of 5000000
+ 287699 string characters out of 5756377
+ 1930801 words of memory out of 5000000
  36987 multiletter control sequences out of 15000+600000
  617445 words of font info for 66 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -909,9 +963,9 @@ Here is how much of TeX's memory you used:
 <C:/Users/lvejsada/AppData/Local/Programs/MiKTeX/fonts/type1/urw/arial/ua1b8a
 .pfb><C:/Users/lvejsada/AppData/Local/Programs/MiKTeX/fonts/type1/urw/arial/ua1
 r8a.pfb>
-Output written on GenAI-Bewertung.pdf (8 pages, 77349 bytes).
+Output written on GenAI-Bewertung.pdf (15 pages, 86750 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
+ 65 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
