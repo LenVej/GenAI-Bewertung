@@ -2,7 +2,7 @@
 
 ## Multiple Choice / Entweder/Oder-Fragen
 Algorithmische Ansätze:
-- Vergleichsbasierte Algorithmen: Direkter Vergleich der ausgewählten Antworten mit der gespeicherten richtigen Antwort.
+- Vergleichsbasierte Algorithmen: Direkter Vergleich der ausgewählten Antworten mit der gespeicherten richtigen Antwort (Vergleichsmatrix-Algorithmus)
 - Gewichtete Punktesysteme: Möglichkeit, Teilpunkte für teilweise korrekte Antworten zu vergeben.
 - Logische Entscheidungsbäume: Kann bei komplexeren Multiple-Choice-Fragen mit Abhängigkeiten zwischen Antworten verwendet werden.
 - Regular Expressions: Für komplexere Muster, wie z.B. Datumsformate oder bestimmte Wortfolgen, können reguläre Ausdrücke verwendet werden.
