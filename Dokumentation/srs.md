@@ -240,17 +240,18 @@ Bestimmte Features, wie der OpenAI-kompatible Endpoint, befinden sich noch in de
 
 ### 2. Vergleich der Kosten pro Millionen Tokens
 
-| API                     | Input ($) | Cached Input ($) | Output ($) | Caching Write ($) | Caching Read ($) |
-|--------------------------|-----------|------------------|------------|-------------------|------------------|
-| OpenAI (gpt-4o)         | 2.50      | 1.25             | 10.00      | -                 | -                |
-| OpenAI (gpt-4o-mini)    | 0.15      | 0.075            | 0.60       | -                 | -                |
-| OpenAI (o1-preview)     | 15.00     | 7.50             | 60.00      | -                 | -                |
-| OpenAI (o1-mini)        | 3.00      | 1.50             | 12.00      | -                 | -                |
-| Gemini (Flash 1.5)      | 0.075     | 0.01875          | 0.30       | -                 | -                |
-| Claude 3.5 Haiku        | 1.00      | 1.25             | 5.00       | 1.25              | 0.10             |
-| Azure (GPT-4o)          | 2.55      | 1.27             | 10.19      | -                 | -                |
-| Azure (GPT-4o-mini)     | 0.15      | 0.077            | 0.61       | -                 | -                |
-| Azure (o1-preview)      | 15.28     | 7.64             | 61.12      | -                 | -                |
-| Cohere (Command R+)     | 2.50      | -                | 10.00      | -                 | -                |
-| Cohere (Command R)      | 0.15      | -                | 0.60       | -                 | -                |
-
+| API                         | Input ($) | Cached Input ($) | Output ($) | Caching Write ($) | Caching Read ($) |
+|-----------------------------|-----------|------------------|------------|-------------------|------------------|
+| OpenAI (gpt-4o)             | 2.50      | 1.25             | 10.00      | -                 | -                |
+| OpenAI (gpt-4o-mini)        | 0.15      | 0.075            | 0.60       | -                 | -                |
+| OpenAI (o1-preview)         | 15.00     | 7.50             | 60.00      | -                 | -                |
+| OpenAI (o1-mini)            | 3.00      | 1.50             | 12.00      | -                 | -                |
+| Gemini (Flash 1.5)          | 0.075     | 0.01875          | 0.30       | -                 | -                |
+| Claude 3.5 Haiku            | 1.00      | 1.25             | 5.00       | 1.25              | 0.10             |
+| Azure (GPT-4o)              | 2.55      | 1.27             | 10.19      | -                 | -                |
+| Azure (GPT-4o-mini)         | 0.15      | 0.077            | 0.61       | -                 | -                |
+| Azure (o1-preview)          | 15.28     | 7.64             | 61.12      | -                 | -                |
+| Cohere (Command R+)         | 2.50      | -                | 10.00      | -                 | -                |
+| Cohere (Command R)          | 0.15      | -                | 0.60       | -                 | -                |
+| DeepSeek (deepseek-chat)    | 0.27      | 0.07             | 1.10       | -                 | -                |
+| DeepSeek (deepseek-reasoner)| 0.55      | 0.14             | 2.19       | -                 | -                |
