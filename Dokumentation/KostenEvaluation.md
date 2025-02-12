@@ -110,7 +110,7 @@ Die Anzahl von 10.000 Anfragen wurde bewusst großzügig gewählt, um eine ausre
 - **500 Tokens pro Bewertung**: Durchschnitt basierend auf den Fragetypen und der erwarteten Bewertungskomplexität, inkl. Begründungen und Feedback.
 - **10.000 Anfragen im MVP**: Realistischer Umfang für umfangreiche Tests, basierend auf einer Nutzerbasis von 100 Personen, die je 100 Fragen bearbeiten.
 
-## Kostenschätzung
+## Kostenschätzung (Stand  Nov 27, 2024)
 
 ### Kosten pro  Millionen Tokens
 
