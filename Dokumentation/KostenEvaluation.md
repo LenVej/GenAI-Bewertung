@@ -157,22 +157,30 @@ Da das MVP kosteneffizient entwickelt werden soll, werden die Berechnungen nur f
   - Input-Kosten: 20 MTok × 0,15 USD = 3,00 USD
   - Output-Kosten: 5 MTok × 0,60 USD = 3,00 USD
   - Gesamtkosten: 3,00 + 3,00 = 6,00 USD
+ 
+- **DeepSeek (deepseek-chat)**
+  - Input-Kosten: 20 MTok × 0,27 USD = 5,40 USD
+  - Output-Kosten: 5 MTok × 1,10 USD = 5,50 USD
+  - Gesamtkosten: 5,40 + 5,50 = 10,90 USD
+
 
 ### API-Kostenübersicht
 
-| API                  | Gesamtkosten (USD) |
-|----------------------|-------------------|
-| Gemini Flash 1.5      | 3,00              |
-| OpenAI gpt-4o mini    | 6,00              |
-| Cohere Command R      | 6,00              |
-| Azure GPT-4o mini     | 6,05              |
-| Claude 3.5 Haiku      | 45,00             |
-| OpenAI gpt-4o         | 100,00            |
-| Cohere Command R+     | 100,00            |
-| Azure GPT-4o          | 101,95            |
-| OpenAI o1 mini        | 120,00            |
-| OpenAI o1 preview     | 600,00            |
-| Azure o1 preview      | 611,20            |
+| API                       | Gesamtkosten (USD) |
+|---------------------------|-------------------|
+| Gemini Flash 1.5          | 3,00              |
+| OpenAI gpt-4o mini        | 6,00              |
+| Cohere Command R          | 6,00              |
+| Azure GPT-4o mini         | 6,05              |
+| DeepSeek deepseek-chat    | 10,90             |
+| DeepSeek deepseek-reasoner| 21,95             |
+| Claude 3.5 Haiku          | 45,00             |
+| OpenAI gpt-4o             | 100,00            |
+| Cohere Command R+         | 100,00            |
+| Azure GPT-4o              | 101,95            |
+| OpenAI o1 mini            | 120,00            |
+| OpenAI o1 preview         | 600,00            |
+| Azure o1 preview          | 611,20            |
 
 ### Schlussfolgerungen
 
