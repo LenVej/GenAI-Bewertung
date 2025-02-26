@@ -54,6 +54,7 @@ Die Tests basieren auf realistischen Szenarien für verschiedene Fragentypen. Je
 - Bewertungskriterien:
   - Erkennt die KI Formatierungen (z. B. Tiefstellen von Zahlen)?
   - Werden Synonyme oder alternative Schreibweisen berücksichtigt?
+  - Werden Synonyme akzeptiert
 
 ### Testfall 3: Rechenaufgaben
 - Beispiel: Was ist 12 × 8?
@@ -104,7 +105,8 @@ Allgemeiner Prompt:
 Gegeben sind eine Frage, eine Antwort auf die Frage und eine Erwartete richtige Antwort.
 Bei machen Fragetypen gibt es noch Parameter, Antwortmöglichkeit und Unterschiedliche Kriterien.
 Bitte bewerte die gegebene Antwort mit einer Punktzahl von 0 bis 100 mithilfe der gegebenen Bewertungskriterien und gib die Antwort im gegebenen Format aus.
-Falls nötig, gib dem User ein kurzes Feedback für die Bewertung.
+Falls nötig, gib dem User ein kurzes Feedback für die Bewertung in "Begründung", da dies dem User helfen soll zu verstehen wo seine Fehler liegen.
+Gehe beim der Begründung nicht ausschließlich auf die Bewertungskriterien ein. Gibt ein kurzes benutzerfreundliches Feedback!
 
 **Frage:** [Hier die Testfrage einfügen]  
 **Antwort:** [Hier die Nutzerantwort einfügen]  
@@ -123,6 +125,8 @@ Antwort bitte in diesem Format:
   "Begründung": "..."
 }
 ```
+**!!Prompt wurde mehrfach geändert, da ChatGPT und DeepSeek unkonstruktives Feedback gegeben haben**
+Vorallem ab des Ein-Wort-Antworten Fragentyps, kann es zu Änderungen des Outputs kommen zu vorherigen Fragen. 
 
 ## Multiple-Choice Prompts
 
@@ -160,17 +164,72 @@ Antwort bitte in diesem Format:
   "Begründung": "..."
 }
 
+## Ein-Wort-Antworten Prompts
+
+**Frage:** [Wie heißt die chemische Formel für Wasser?]  
+**Antwort:** [H2O]  
+**Antwort Typ** [Ein-Wort-Antwort]  
+**Parameter von Typen** []  
+**Erwartete richtige Antwort:** [H₂O]  
+**Bewertungskriterien:**  
+- Ist die Antwort korrekt?
+- Erlaube Rechtschreibfehler, so lange sie die Antwort nicht zu stark ändern
+- Synonyme, die im Kontext korrekt sind, sollen auch akzeptiert werden
+
+Antwort bitte in diesem Format:
+{
+  "Punktzahl": X,
+  "Begründung": "..."
+}
+
+---------------------------
+
+**Frage:** [Wer schrieb das Buch „Faust“?]  
+**Antwort:** [Göthe]  
+**Antwort Typ** [Ein-Wort-Antwort]  
+**Parameter von Typen** []  
+**Erwartete richtige Antwort:** [Goethe]  
+**Bewertungskriterien:**  
+- Ist die Antwort korrekt?
+- Erlaube Rechtschreibfehler, so lange sie die Antwort nicht zu stark ändern
+- Synonyme, die im Kontext korrekt sind, sollen auch akzeptiert werden
+
+Antwort bitte in diesem Format:
+{
+  "Punktzahl": X,
+  "Begründung": "..."
+}
+
+-------------------------------
+
+**Frage:** [Wie nennt man das größte Organ des menschlichen Körpers?]  
+**Antwort:** [Leber]  
+**Antwort Typ** [Ein-Wort-Antwort] 
+**Parameter von Typen** []  
+**Erwartete richtige Antwort:** [Haut]  
+**Bewertungskriterien:**  
+- Ist die Antwort korrekt?
+- Erlaube Rechtschreibfehler, so lange sie die Antwort nicht zu stark ändern
+- Synonyme, die im Kontext korrekt sind, sollen auch akzeptiert werden
+
+Antwort bitte in diesem Format:
+{
+  "Punktzahl": X,
+  "Begründung": "..."
+}
+
+
 # 5. Ergebnisdokumentation & Analyse
 
 ## ChatGPT 
 
-### Multiple-Choice 
+### 1. Multiple-Choice 
 
 Photosynthese
 ```JSON
 {
-  "Punktzahl": 100,
-  "Begründung": "Die gegebene Antwort 'Paris' entspricht genau der erwarteten richtigen Antwort. Daher wird die volle Punktzahl vergeben."
+  "Punktzahl": 0,
+  "Begründung": "Die gegebene Antwort 'Zellkern' ist falsch, da die Photosynthese in den Chloroplasten stattfindet. Die richtige Antwort wäre 'Chloroplasten' gewesen."
 }
 ```
 Hauptstadt Frankreich
@@ -180,4 +239,146 @@ Hauptstadt Frankreich
   "Begründung": "Die gegebene Antwort 'Paris' entspricht genau der erwarteten richtigen Antwort. Daher wird die volle Punktzahl vergeben."
 }
 ```
+
+### 2. Ein-Wort-Antworten
+
+Wasser
+```JSON
+{
+  "Punktzahl": 100,
+  "Begründung": "Die Antwort 'H2O' ist korrekt und entspricht der chemischen Formel für Wasser. Der Unterschied zur erwarteten Antwort 'H₂O' liegt nur in der Schreibweise der tiefgestellten Zahl, was keinen inhaltlichen Unterschied macht."
+}
+```
+
+Goethe
+```JSON
+{
+  "Punktzahl": 90,
+  "Begründung": "Die Antwort ist fast korrekt, jedoch enthält sie einen kleinen Rechtschreibfehler ('Göthe' statt 'Goethe'). Da die Bedeutung der Antwort nicht verändert wird und klar erkennbar ist, was gemeint war, gibt es nur einen kleinen Abzug."
+}
+```
+
+Haut
+```JSON
+{
+  "Punktzahl": 0,
+  "Begründung": "Die gegebene Antwort 'Leber' ist leider falsch. Das größte Organ des menschlichen Körpers ist die 'Haut'. Bitte überprüfe die Antwort noch einmal."
+}
+```
+## DeepSeek
+
+### 1. Multiple-Choice
+
+Photosynthese
+```JSON
+{
+"Punktzahl": 0,
+"Begründung": "Die gegebene Antwort 'Zellkern' entspricht nicht der erwarteten richtigen Antwort 'Chloroplasten'. Die Photosynthese findet in den Chloroplasten der Pflanzenzelle statt, nicht im Zellkern."
+}
+```
+
+Hauptstadt Frankreich
+```JSON
+{
+"Punktzahl": 100,
+"Begründung": "Die gegebene Antwort 'Paris' entspricht der erwarteten richtigen Antwort 'Paris'. Die Antwort ist korrekt und vollständig."
+}
+```
+
+### 2. Ein-Wort-Antworten
+
+Wasser
+```JSON
+{
+"Punktzahl": 100,
+"Begründung": "Die gegebene Antwort 'H2O' ist korrekt und entspricht der erwarteten richtigen Antwort 'H₂O'. Die Verwendung von '2' anstelle des tiefgestellten '₂' ist in diesem Kontext akzeptabel, da es die chemische Formel nicht verändert und die Lesbarkeit nicht beeinträchtigt. Die Antwort ist somit vollständig richtig."
+}
+```
+
+Goethe  
+**Mehrfaches testen führte zu stark abweichenden Ergebnissen!!!**  
+Mal 80 Punkte, mal 50 Punkte
+
+```JSON
+{
+"Punktzahl": 80,
+"Begründung": "Die Antwort 'Göthe' ist fast korrekt, enthält jedoch einen kleinen Rechtschreibfehler. Der korrekte Name des Autors ist 'Goethe'. Der Fehler ändert die Bedeutung der Antwort nicht wesentlich, da die Aussprache und der Kontext klar erkennbar sind. Dennoch ist die Schreibweise nicht vollständig korrekt, daher gibt es einen kleinen Punktabzug."
+}
+```
+
+Haut
+```JSON
+{
+"Punktzahl": 0,
+"Begründung": "Die Antwort 'Leber' ist leider nicht korrekt. Das größte Organ des menschlichen Körpers ist die Haut. Die Leber ist zwar ein wichtiges Organ, aber nicht das größte. Achte darauf, bei solchen Fragen die genaue Bezeichnung des gesuchten Organs zu verwenden."
+}
+```
+
+## Gemini
+
+### 1. Multiple Choice 
+
+Photosynthese
+```JSON
+{
+  "Punktzahl": 0,
+  "Begründung": "Die Photosynthese findet in den Chloroplasten statt, nicht im Zellkern. Der Zellkern ist für die Speicherung und Verarbeitung der genetischen Information zuständig."
+}
+```
+
+Hauptstadt Frankreich
+```JSON
+{
+  "Punktzahl": 100,
+  "Begründung": "Die Antwort 'Paris' ist die korrekte Hauptstadt von Frankreich und entspricht somit der erwarteten richtigen Antwort."
+}
+```
+
+### 2. Ein-Wort-Antworten
+
+Wasser
+```JSON
+{
+ "Punktzahl": 100,
+ "Begründung": "Die Antwort ist perfekt! Die chemische Formel für Wasser ist H₂O (mit tiefgestellter 2). Deine Antwort H2O ist zwar nicht ganz korrekt formatiert, aber da es sich um eine Ein-Wort-Antwort handelt und die Bedeutung klar ist, gebe ich dir trotzdem die volle Punktzahl. Super gemacht!"
+}
+```
+
+Goethe
+```JSON
+{
+ "Punktzahl": 90,
+ "Begründung": "Fast perfekt! Die Antwort ist inhaltlich richtig, aber der Nachname wird im Deutschen üblicherweise 'Goethe' geschrieben, nicht 'Göthe'. Da es sich aber nur um einen kleinen Rechtschreibfehler handelt, der die Bedeutung nicht verfälscht, gibt es fast die volle Punktzahl. Sehr gut!"
+}
+```
+
+Haut
+```JSON
+{
+ "Punktzahl": 0,
+ "Begründung": "Die Antwort ist leider falsch. Das größte Organ des menschlichen Körpers ist die Haut und nicht die Leber. Die Leber ist zwar ein sehr wichtiges Organ und auch das größte innere Organ, aber die Haut übertrifft sie in ihrer Fläche um ein Vielfaches. Daher ist die Antwort 'Leber' nicht korrekt."
+}
+```
+
+## Cohere
+
+### 1. Multiple-Choice
+
+Photosynthese
+```JSON
+{
+"Punktzahl": 0,
+"Begründung": "Die Antwort entspricht nicht der Lösung. Die Photosynthese findet in den Chloroplasten statt, nicht im Zellkern. Bitte überprüfen Sie Ihre Antwort und versuchen Sie es noch einmal."
+}
+```
+
+Hauptstadt Frankreich
+```JSON
+{
+"Punktzahl": 100,
+"Begründung": "Die Antwort entspricht der Lösung. Paris ist die Hauptstadt von Frankreich. Gut gemacht!"
+}
+```
+
+
 # 6. Fazit & Nächste Schritte
