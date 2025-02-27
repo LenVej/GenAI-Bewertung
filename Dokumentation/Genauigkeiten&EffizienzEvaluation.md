@@ -88,13 +88,12 @@ Die Tests basieren auf realistischen Szenarien für verschiedene Fragentypen. Je
   - Kann sie Tippfehler tolerieren?
  
 ### Testfall 7: Freitextantworten
-Beispiel: Erkläre das Prinzip der Relativitätstheorie in zwei Sätzen.
-Erwartete Antwort: Die Relativitätstheorie beschreibt die Beziehung zwischen Raum und Zeit. 
-Sie zeigt, dass sich die Zeit in starken Gravitationsfeldern verlangsamt.
-Bewertungskriterien:
-Kann die KI den Inhalt richtig interpretieren?
-Erkennt sie kleine Fehler und falsche Aussagen?
-Gibt es Teilpunkte für teilweise korrekte Antworten?
+- Beispiel: Warum halten manche Tiere Winterschlaf?
+- Erwartete Antwort: Manche Tiere halten Winterschlaf, um Energie zu sparen, weil im Winter Nahrung knapp ist. Ihr Stoffwechsel verlangsamt sich, die Körpertemperatur sinkt, und sie überleben mit gespeicherten Reserven.
+- Bewertungskriterien:
+  - Kann die KI den Inhalt richtig interpretieren?
+  - Erkennt sie kleine Fehler und falsche Aussagen?
+  - Gibt es Teilpunkte für teilweise korrekte Antworten?
 
 
 # 4. Standardisierte Prompts für die Tests
@@ -125,7 +124,7 @@ Antwort bitte in diesem Format:
   "Begründung": "..."
 }
 ```
-**!!Prompt wurde mehrfach geändert, da ChatGPT und DeepSeek unkonstruktives Feedback gegeben haben**
+**!!Prompt wurde mehrfach geändert, da ChatGPT und DeepSeek unkonstruktives Feedback gegeben haben**  
 Vorallem ab des Ein-Wort-Antworten Fragentyps, kann es zu Änderungen des Outputs kommen zu vorherigen Fragen. 
 
 ## Multiple-Choice Prompts
