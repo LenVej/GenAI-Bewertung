@@ -253,7 +253,7 @@ Antwort bitte in diesem Format:
   "Begründung": "..."  
 }  
 
-### Entweder-Oder-Frage: Bewertungs-Prompt
+## Entweder-Oder-Frage: Bewertungs-Prompt
 
 **Frage:** [Ist der Eiffelturm höher als der Kölner Dom?]  
 **Antwort:** [Nein]  
@@ -271,6 +271,26 @@ Antwort bitte in diesem Format:
   "Begründung": "..."  
 }  
 
+## Schätzfragen Prompts
+
+**Frage:** [Wie hoch ist der Eiffelturm?]  
+**Antwort:** [350m]  
+**Antwort Typ:** [Schätzfrage]  
+**Parameter von Typen:** [  
+**Akzeptabler Bereich:** [±10%]  
+]  
+**Erwartete richtige Antwort:** [330m]  
+**Bewertungskriterien:**  
+- Wird eine Toleranz bei der Bewertung berücksichtigt?  
+- Gibt die KI eine Begründung für die Bewertung?  
+- Kann die KI die Abweichung berechnen oder muss der Bereich vorgegeben werden?
+
+Antwort bitte in diesem Format:  
+{  
+  "Punktzahl": X,  
+  "Begründung": "..."  
+}  
+
 # 5. Ergebnisdokumentation & Analyse
 
 ## ChatGPT 
@@ -278,14 +298,14 @@ Antwort bitte in diesem Format:
 ### 1. Multiple-Choice 
 
 Photosynthese
-```
+```JSON
 {
   "Punktzahl": 0,
   "Begründung": "Die gegebene Antwort 'Zellkern' ist falsch, da die Photosynthese in den Chloroplasten stattfindet. Die richtige Antwort wäre 'Chloroplasten' gewesen."
 }
 ```
 Hauptstadt Frankreich
-```
+```JSON
 {
   "Punktzahl": 100,
   "Begründung": "Die gegebene Antwort 'Paris' entspricht genau der erwarteten richtigen Antwort. Daher wird die volle Punktzahl vergeben."
@@ -295,7 +315,7 @@ Hauptstadt Frankreich
 ### 2. Ein-Wort-Antworten
 
 Wasser
-```
+```JSON
 {
   "Punktzahl": 100,
   "Begründung": "Die Antwort 'H2O' ist korrekt und entspricht der chemischen Formel für Wasser. Der Unterschied zur erwarteten Antwort 'H₂O' liegt nur in der Schreibweise der tiefgestellten Zahl, was keinen inhaltlichen Unterschied macht."
@@ -303,7 +323,7 @@ Wasser
 ```
 
 Goethe
-```
+```JSON
 {
   "Punktzahl": 90,
   "Begründung": "Die Antwort ist fast korrekt, jedoch enthält sie einen kleinen Rechtschreibfehler ('Göthe' statt 'Goethe'). Da die Bedeutung der Antwort nicht verändert wird und klar erkennbar ist, was gemeint war, gibt es nur einen kleinen Abzug."
@@ -311,7 +331,7 @@ Goethe
 ```
 
 Haut
-```
+```JSON
 {
   "Punktzahl": 0,
   "Begründung": "Die gegebene Antwort 'Leber' ist leider falsch. Das größte Organ des menschlichen Körpers ist die 'Haut'. Bitte überprüfe die Antwort noch einmal."
@@ -321,7 +341,7 @@ Haut
 ### 3. Rechenfragen
 
 Äpfel
-```
+```JSON
 {
 "Punktzahl": 10,
 "Begründung": "Die Antwort '3,5' ist leider falsch, da 12 Äpfel gleichmäßig auf 4 Schüsseln verteilt genau 3 Äpfel pro Schüssel ergibt. Die Division 12 ÷ 4 = 3 ist eine einfache Rechenaufgabe, bei der die Antwort eine ganze Zahl sein muss, weil man keine halben Äpfel verteilt, wenn nichts dergleichen erwähnt ist. Gut wäre es, die Grundrechenarten sicher zu beherrschen."
@@ -329,7 +349,7 @@ Haut
 ```
 
 Fläche
-```
+```JSON
 {
 "Punktzahl": 10,
 "Begründung": "Die Antwort ist leider falsch. Der Flächeninhalt eines Rechtecks berechnet sich aus Länge mal Breite, also 12 cm × 7 cm = 84 cm². Die Antwort 96 cm ist daher ein Rechenfehler. Außerdem fehlt die korrekte Einheit (cm²). Achte beim nächsten Mal darauf, die richtige Formel zu verwenden und das Ergebnis zu überprüfen."
@@ -339,20 +359,29 @@ Fläche
 ### 4. Entwerder-oder-Fragen
 
 Eiffelturm
-```
+```JSON
 {
 "Punktzahl": 0,
 "Begründung": "Die Antwort ist inhaltlich falsch – der Eiffelturm ist mit etwa 330 Metern deutlich höher als der Kölner Dom mit rund 157 Metern. Da es sich um eine Entweder/Oder-Frage handelt, kommt es allein auf die inhaltliche Richtigkeit an, alternative Formulierungen sind hier nicht relevant. Achte beim nächsten Mal einfach darauf, kurz zu prüfen, welche Struktur wirklich höher ist – das hilft schon enorm!"
 }
 ```
 
+### Schätzfrage
+
+Höhe
+```JSON
+{
+"Punktzahl": 91,
+"Begründung": "Deine Schätzung von 350 m liegt nur 6,1 % über der erwarteten Höhe von 330 m und damit im akzeptablen Bereich von ±10 %. Die Antwort ist also sehr nah dran – gut geschätzt! Für eine perfekte Punktzahl hätte eine noch genauere Angabe (z. B. 330 m oder 331 m) gesorgt."
+}
+```
 
 ## DeepSeek
 
 ### 1. Multiple-Choice
 
 Photosynthese
-```
+```JSON
 {
 "Punktzahl": 0,
 "Begründung": "Die gegebene Antwort 'Zellkern' entspricht nicht der erwarteten richtigen Antwort 'Chloroplasten'. Die Photosynthese findet in den Chloroplasten der Pflanzenzelle statt, nicht im Zellkern."
@@ -417,12 +446,29 @@ Fläche
 ### 4. Entwerder-oder-Fragen
 
 Eiffelturm
-```
+```JSON
 {
   "Punktzahl": 0,
   "Begründung": "Die Antwort ist inhaltlich nicht korrekt. Der Eiffelturm (ca. 330 m) ist tatsächlich höher als der Kölner Dom (ca. 157 m). Achte bei Entweder/Oder-Fragen darauf, die Fakten richtig zu überprüfen, bevor du antwortest."
 }
 ```
+### Schätzfrage
+
+Höhe
+```JSON
+{
+  "Punktzahl": 75,
+  "Begründung": "Deine Schätzung von 350 m liegt knapp außerhalb des akzeptablen Bereichs (±10% der tatsächlichen Höhe von 330 m, also 297 m bis 363 m). Die Abweichung beträgt etwa 6% über dem oberen Limit. Für eine bessere Bewertung solltest du dich möglichst nah am erwarteten Wert orientieren. Trotzdem war die Schätzung schon recht nah dran!"
+
+{
+  "Punktzahl": 100,
+  "Begründung": "Die Antwort liegt innerhalb des akzeptablen Bereichs von ±10%. Die tatsächliche Höhe des Eiffelturms beträgt 330 Meter. Eine Abweichung von 20 Metern liegt innerhalb der Toleranz."
+}
+}
+```
+Zwei komplett unterschiedliche Ausgaben bei gleicher Eingabe!
+
+
 
 ## Gemini
 
@@ -491,10 +537,20 @@ Fläche
 ### 4. Entwerder-oder-Fragen
 
 Eiffelturm
-```
+```JSON
 {
   "Punktzahl": 0,
   "Begründung": "Die Antwort ist inhaltlich falsch. Der Eiffelturm ist mit 330 Metern deutlich höher als der Kölner Dom mit 157 Metern."
+}
+```
+
+### Schätzfrage
+
+Höhe
+```JSON
+{
+  "Punktzahl": 100,
+  "Begründung": "Die Antwort liegt innerhalb des akzeptablen Bereichs von ±10%. Die tatsächliche Höhe des Eiffelturms beträgt 330 Meter. Eine Abweichung von 20 Metern liegt innerhalb der Toleranz."
 }
 ```
 
@@ -521,7 +577,7 @@ Hauptstadt Frankreich
 ### 2. Ein-Wort-Antworten
 
 Wasser
-```
+```JSON
 {
 "Punktzahl": 100,
 "Begründung": "Die Antwort ist korrekt. Die chemische Formel für Wasser lautet tatsächlich H₂O. Ihre Antwort H2O ist eine akzeptable Schreibweise, da der Unterschied nur in der Darstellung des Index liegt, was in diesem Kontext vernachlässigbar ist. Gut gemacht!"
@@ -529,7 +585,7 @@ Wasser
 ```
 
 Goethe
-```
+```JSON
 {
 "Punktzahl": 80,
 "Begründung": "Die Antwort ist fast korrekt. Der Autor von ‚Faust‘ ist tatsächlich Goethe, nicht ‚Göthe‘. Der kleine Rechtschreibfehler (das fehlende ‚e‘) ändert die Bedeutung nicht stark, aber es ist wichtig, den Namen korrekt zu schreiben. Gut versucht – achten Sie beim nächsten Mal auf die genaue Schreibweise!"
@@ -537,7 +593,7 @@ Goethe
 ```
 
 Haut
-```
+```JSON
 {
 "Punktzahl": 0,
 "Begründung": "Die Antwort ist leider nicht korrekt. Das größte Organ des menschlichen Körpers ist die Haut, nicht die Leber. Die Leber ist zwar ein wichtiges Organ, aber sie ist viel kleiner als die Haut. Versuchen Sie es beim nächsten Mal mit der richtigen Antwort – die Haut bedeckt den gesamten Körper und ist daher das größte Organ!"
@@ -547,7 +603,7 @@ Haut
 ### 3. Rechenfragen
 
 Äpfel
-```
+```JSON
 {
 "Punktzahl": 50,
 "Begründung": "Die Antwort [3,5] ist teilweise korrekt, da die Division von 12 Äpfeln durch 4 Schüsseln tatsächlich 3 Äpfel pro Schüssel ergibt. Allerdings ist die Angabe von ,5 (also 0,5) nicht sinnvoll, da man keine halben Äpfel verteilen kann. Die erwartete richtige Antwort ist [3], da die Äpfel gleichmäßig verteilt werden und keine Reste übrig bleiben. Die mathematische Berechnung ist korrekt, aber die Angabe von ,5 führt zu einem Abzug in der Punktzahl."
@@ -561,7 +617,7 @@ Haut
 Zwei sehr unterschiedliche Antworten!
 
 Fläche
-```
+```JSON
 {
 "Punktzahl": 0,
 "Begründung": "Die Antwort ist falsch, da die Rechnung nicht korrekt durchgeführt wurde. Der Flächeninhalt eines Rechtecks berechnet sich durch Multiplikation von Länge und Breite (12 cm * 7 cm = 84 cm²). Die gegebene Antwort '96 cm' ist nicht nur falsch, sondern auch die Einheit ist unvollständig, da es sich um eine Fläche handelt und 'cm²' fehlt. Es gibt keine Hinweise auf alternative Formate, die akzeptiert werden könnten, da die Antwort inhaltlich und formal fehlerhaft ist."
@@ -571,11 +627,27 @@ Fläche
 ### 4. Entwerder-oder-Fragen
 
 Eiffelturm
-```
+```JSON
 {
 "Punktzahl": 0,
 "Begründung": "Die Antwort ist inhaltlich falsch, da der Eiffelturm (330 Meter) tatsächlich höher ist als der Kölner Dom (157 Meter). Auch wenn kleinere sprachliche Abweichungen akzeptabel wären, ändert dies nichts an der falschen Aussage. Die Antwort ‚Nein‘ ist daher nicht korrekt."
 }
 ```
+
+### Schätzfrage
+
+Höhe
+```JSON
+{
+"Punktzahl": 0,
+"Begründung": "Die Antwort ‚350 m‘ liegt außerhalb des akzeptablen Bereichs von ±10 % der erwarteten Höhe von 330 m. Der akzeptable Bereich liegt zwischen 297 m und 363 m. Da 350 m den oberen Grenzwert von 363 m überschreitet, ist die Antwort falsch. Die Bewertung berücksichtigt die vorgegebene Toleranz, und die Abweichung wurde korrekt berechnet."
+}
+
+{
+"Punktzahl": 100,
+"Begründung": "Die gegebene Antwort von 350m liegt innerhalb des akzeptablen Bereichs von ±10% der erwarteten richtigen Antwort von 330m. Die Abweichung beträgt etwa +6%, was innerhalb der Toleranz liegt. Daher erhält die Antwort die volle Punktzahl."
+}
+```
+Zwei komplett unterschiedliche Ausgaben bei gleicher Eingabe!
 
 # 6. Fazit & Nächste Schritte
