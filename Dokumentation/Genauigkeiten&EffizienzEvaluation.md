@@ -221,13 +221,49 @@ Antwort bitte in diesem Format:
 
 **Frage:** [Ein Schüler hat 12 Äpfel. Er möchte sie gleichmäßig auf 4 Schüsseln verteilen. Wie viele Äpfel kommen in jede Schüssel?]  
 **Antwort:** [3,5]  
-**Antwort Typ** [Rechenaufgaben]  
+**Antwort Typ** [Rechenaufgabe]  
 **Parameter von Typen** []  
 **Erwartete richtige Antwort:** [3]  
 **Bewertungskriterien:**  
 - Erkennt die KI korrekte und falsche Antworten?
 - Kann die KI mathematische Aufgaben (Division) lösen oder bewerten?
 - Wird auf richtige Einheiten, Zahlenformat und Vollständigkeit geachtet?
+
+Antwort bitte in diesem Format:  
+{  
+  "Punktzahl": X,  
+  "Begründung": "..."  
+}  
+
+-------------------------------
+
+**Frage:** [Ein Rechteck hat eine Länge von 12 cm und eine Breite von 7 cm. Wie groß ist der Flächeninhalt?]  
+**Antwort:** [96cm]  
+**Antwort Typ** [Rechenaufgabe]  
+**Parameter von Typen** []  
+**Erwartete richtige Antwort:** [84cm²]  
+**Bewertungskriterien:**  
+- Wurde die Rechnung korrekt durchgeführt?
+- Ist die Antwort korrekt, auch wenn keine Einheit angegeben wurde?
+- Werden alternative Formate akzeptiert? (z. B. „84 cm“ vs. „84“)
+
+Antwort bitte in diesem Format:  
+{  
+  "Punktzahl": X,  
+  "Begründung": "..."  
+}  
+
+### Entweder-Oder-Frage: Bewertungs-Prompt
+
+**Frage:** [Ist der Eiffelturm höher als der Kölner Dom?]  
+**Antwort:** [Nein]  
+**Antwort Typ:** [Entweder/Oder]  
+**Parameter von Typen:** []  
+**Erwartete richtige Antwort:** [Ja]  
+**Bewertungskriterien:**  
+- Ist die Antwort inhaltlich korrekt?  
+- Werden alternative Schreibweisen berücksichtigt (z. B. „ja“, „Ja, natürlich“, „nein“)?  
+- Sind kleinere sprachliche Abweichungen akzeptabel?
 
 Antwort bitte in diesem Format:  
 {  
@@ -242,14 +278,14 @@ Antwort bitte in diesem Format:
 ### 1. Multiple-Choice 
 
 Photosynthese
-```JSON
+```
 {
   "Punktzahl": 0,
   "Begründung": "Die gegebene Antwort 'Zellkern' ist falsch, da die Photosynthese in den Chloroplasten stattfindet. Die richtige Antwort wäre 'Chloroplasten' gewesen."
 }
 ```
 Hauptstadt Frankreich
-```JSON
+```
 {
   "Punktzahl": 100,
   "Begründung": "Die gegebene Antwort 'Paris' entspricht genau der erwarteten richtigen Antwort. Daher wird die volle Punktzahl vergeben."
@@ -259,7 +295,7 @@ Hauptstadt Frankreich
 ### 2. Ein-Wort-Antworten
 
 Wasser
-```JSON
+```
 {
   "Punktzahl": 100,
   "Begründung": "Die Antwort 'H2O' ist korrekt und entspricht der chemischen Formel für Wasser. Der Unterschied zur erwarteten Antwort 'H₂O' liegt nur in der Schreibweise der tiefgestellten Zahl, was keinen inhaltlichen Unterschied macht."
@@ -267,7 +303,7 @@ Wasser
 ```
 
 Goethe
-```JSON
+```
 {
   "Punktzahl": 90,
   "Begründung": "Die Antwort ist fast korrekt, jedoch enthält sie einen kleinen Rechtschreibfehler ('Göthe' statt 'Goethe'). Da die Bedeutung der Antwort nicht verändert wird und klar erkennbar ist, was gemeint war, gibt es nur einen kleinen Abzug."
@@ -275,7 +311,7 @@ Goethe
 ```
 
 Haut
-```JSON
+```
 {
   "Punktzahl": 0,
   "Begründung": "Die gegebene Antwort 'Leber' ist leider falsch. Das größte Organ des menschlichen Körpers ist die 'Haut'. Bitte überprüfe die Antwort noch einmal."
@@ -285,19 +321,38 @@ Haut
 ### 3. Rechenfragen
 
 Äpfel
-```JSON
+```
 {
 "Punktzahl": 10,
 "Begründung": "Die Antwort '3,5' ist leider falsch, da 12 Äpfel gleichmäßig auf 4 Schüsseln verteilt genau 3 Äpfel pro Schüssel ergibt. Die Division 12 ÷ 4 = 3 ist eine einfache Rechenaufgabe, bei der die Antwort eine ganze Zahl sein muss, weil man keine halben Äpfel verteilt, wenn nichts dergleichen erwähnt ist. Gut wäre es, die Grundrechenarten sicher zu beherrschen."
 }
 ```
 
+Fläche
+```
+{
+"Punktzahl": 10,
+"Begründung": "Die Antwort ist leider falsch. Der Flächeninhalt eines Rechtecks berechnet sich aus Länge mal Breite, also 12 cm × 7 cm = 84 cm². Die Antwort 96 cm ist daher ein Rechenfehler. Außerdem fehlt die korrekte Einheit (cm²). Achte beim nächsten Mal darauf, die richtige Formel zu verwenden und das Ergebnis zu überprüfen."
+}
+```
+
+### 4. Entwerder-oder-Fragen
+
+Eiffelturm
+```
+{
+"Punktzahl": 0,
+"Begründung": "Die Antwort ist inhaltlich falsch – der Eiffelturm ist mit etwa 330 Metern deutlich höher als der Kölner Dom mit rund 157 Metern. Da es sich um eine Entweder/Oder-Frage handelt, kommt es allein auf die inhaltliche Richtigkeit an, alternative Formulierungen sind hier nicht relevant. Achte beim nächsten Mal einfach darauf, kurz zu prüfen, welche Struktur wirklich höher ist – das hilft schon enorm!"
+}
+```
+
+
 ## DeepSeek
 
 ### 1. Multiple-Choice
 
 Photosynthese
-```JSON
+```
 {
 "Punktzahl": 0,
 "Begründung": "Die gegebene Antwort 'Zellkern' entspricht nicht der erwarteten richtigen Antwort 'Chloroplasten'. Die Photosynthese findet in den Chloroplasten der Pflanzenzelle statt, nicht im Zellkern."
@@ -348,6 +403,24 @@ Haut
 {
 "Punktzahl": 0,
 "Begründung": "Die gegebene Antwort '3,5' ist falsch, da 12 Äpfel gleichmäßig auf 4 Schüsseln verteilt genau 3 Äpfel pro Schüssel ergeben. Es gibt keine halben Äpfel in dieser Aufgabe. Achte darauf, dass du bei solchen Aufgaben immer prüfst, ob das Ergebnis sinnvoll und ganzzahlig ist."
+}
+```
+
+Fläche
+```JSON
+{
+  "Punktzahl": 33,
+  "Begründung": "Die Rechnung wurde nicht korrekt durchgeführt, da der Flächeninhalt eines Rechtecks mit Länge 12 cm und Breite 7 cm 84 cm² beträgt, nicht 96 cm. Die Einheit wurde zwar angegeben, aber in der falschen Form (cm statt cm²). Achte darauf, die Formel für den Flächeninhalt (Länge × Breite) richtig anzuwenden und die korrekte Einheit zu verwenden."
+}
+```
+
+### 4. Entwerder-oder-Fragen
+
+Eiffelturm
+```
+{
+  "Punktzahl": 0,
+  "Begründung": "Die Antwort ist inhaltlich nicht korrekt. Der Eiffelturm (ca. 330 m) ist tatsächlich höher als der Kölner Dom (ca. 157 m). Achte bei Entweder/Oder-Fragen darauf, die Fakten richtig zu überprüfen, bevor du antwortest."
 }
 ```
 
@@ -407,6 +480,24 @@ Haut
 }
 ```
 
+Fläche
+```JSON
+{
+  "Punktzahl": 50,
+  "Begründung": "Die Rechnung wurde nicht korrekt durchgeführt. Zudem wurde die Einheit nicht richtig angegeben. Die korrekte Antwort lautet 84cm²."
+}
+```
+
+### 4. Entwerder-oder-Fragen
+
+Eiffelturm
+```
+{
+  "Punktzahl": 0,
+  "Begründung": "Die Antwort ist inhaltlich falsch. Der Eiffelturm ist mit 330 Metern deutlich höher als der Kölner Dom mit 157 Metern."
+}
+```
+
 ## Cohere
 
 ### 1. Multiple-Choice
@@ -438,7 +529,7 @@ Wasser
 ```
 
 Goethe
-```JSON
+```
 {
 "Punktzahl": 80,
 "Begründung": "Die Antwort ist fast korrekt. Der Autor von ‚Faust‘ ist tatsächlich Goethe, nicht ‚Göthe‘. Der kleine Rechtschreibfehler (das fehlende ‚e‘) ändert die Bedeutung nicht stark, aber es ist wichtig, den Namen korrekt zu schreiben. Gut versucht – achten Sie beim nächsten Mal auf die genaue Schreibweise!"
@@ -446,7 +537,7 @@ Goethe
 ```
 
 Haut
-```JSON
+```
 {
 "Punktzahl": 0,
 "Begründung": "Die Antwort ist leider nicht korrekt. Das größte Organ des menschlichen Körpers ist die Haut, nicht die Leber. Die Leber ist zwar ein wichtiges Organ, aber sie ist viel kleiner als die Haut. Versuchen Sie es beim nächsten Mal mit der richtigen Antwort – die Haut bedeckt den gesamten Körper und ist daher das größte Organ!"
@@ -456,7 +547,7 @@ Haut
 ### 3. Rechenfragen
 
 Äpfel
-```JSON
+```
 {
 "Punktzahl": 50,
 "Begründung": "Die Antwort [3,5] ist teilweise korrekt, da die Division von 12 Äpfeln durch 4 Schüsseln tatsächlich 3 Äpfel pro Schüssel ergibt. Allerdings ist die Angabe von ,5 (also 0,5) nicht sinnvoll, da man keine halben Äpfel verteilen kann. Die erwartete richtige Antwort ist [3], da die Äpfel gleichmäßig verteilt werden und keine Reste übrig bleiben. Die mathematische Berechnung ist korrekt, aber die Angabe von ,5 führt zu einem Abzug in der Punktzahl."
@@ -469,5 +560,22 @@ Haut
 ```
 Zwei sehr unterschiedliche Antworten!
 
+Fläche
+```
+{
+"Punktzahl": 0,
+"Begründung": "Die Antwort ist falsch, da die Rechnung nicht korrekt durchgeführt wurde. Der Flächeninhalt eines Rechtecks berechnet sich durch Multiplikation von Länge und Breite (12 cm * 7 cm = 84 cm²). Die gegebene Antwort '96 cm' ist nicht nur falsch, sondern auch die Einheit ist unvollständig, da es sich um eine Fläche handelt und 'cm²' fehlt. Es gibt keine Hinweise auf alternative Formate, die akzeptiert werden könnten, da die Antwort inhaltlich und formal fehlerhaft ist."
+}
+```
+
+### 4. Entwerder-oder-Fragen
+
+Eiffelturm
+```
+{
+"Punktzahl": 0,
+"Begründung": "Die Antwort ist inhaltlich falsch, da der Eiffelturm (330 Meter) tatsächlich höher ist als der Kölner Dom (157 Meter). Auch wenn kleinere sprachliche Abweichungen akzeptabel wären, ändert dies nichts an der falschen Aussage. Die Antwort ‚Nein‘ ist daher nicht korrekt."
+}
+```
 
 # 6. Fazit & Nächste Schritte
