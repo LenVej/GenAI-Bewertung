@@ -217,6 +217,23 @@ Antwort bitte in diesem Format:
   "Begründung": "..."
 }
 
+## Rechenaufgaben Promts
+
+**Frage:** [Ein Schüler hat 12 Äpfel. Er möchte sie gleichmäßig auf 4 Schüsseln verteilen. Wie viele Äpfel kommen in jede Schüssel?]  
+**Antwort:** [3,5]  
+**Antwort Typ** [Rechenaufgaben]  
+**Parameter von Typen** []  
+**Erwartete richtige Antwort:** [3]  
+**Bewertungskriterien:**  
+- Erkennt die KI korrekte und falsche Antworten?
+- Kann die KI mathematische Aufgaben (Division) lösen oder bewerten?
+- Wird auf richtige Einheiten, Zahlenformat und Vollständigkeit geachtet?
+
+Antwort bitte in diesem Format:  
+{  
+  "Punktzahl": X,  
+  "Begründung": "..."  
+}  
 
 # 5. Ergebnisdokumentation & Analyse
 
@@ -264,6 +281,17 @@ Haut
   "Begründung": "Die gegebene Antwort 'Leber' ist leider falsch. Das größte Organ des menschlichen Körpers ist die 'Haut'. Bitte überprüfe die Antwort noch einmal."
 }
 ```
+
+### 3. Rechenfragen
+
+Äpfel
+```JSON
+{
+"Punktzahl": 10,
+"Begründung": "Die Antwort '3,5' ist leider falsch, da 12 Äpfel gleichmäßig auf 4 Schüsseln verteilt genau 3 Äpfel pro Schüssel ergibt. Die Division 12 ÷ 4 = 3 ist eine einfache Rechenaufgabe, bei der die Antwort eine ganze Zahl sein muss, weil man keine halben Äpfel verteilt, wenn nichts dergleichen erwähnt ist. Gut wäre es, die Grundrechenarten sicher zu beherrschen."
+}
+```
+
 ## DeepSeek
 
 ### 1. Multiple-Choice
@@ -313,6 +341,16 @@ Haut
 }
 ```
 
+### 3. Rechenfragen
+
+Äpfel
+```JSON
+{
+"Punktzahl": 0,
+"Begründung": "Die gegebene Antwort '3,5' ist falsch, da 12 Äpfel gleichmäßig auf 4 Schüsseln verteilt genau 3 Äpfel pro Schüssel ergeben. Es gibt keine halben Äpfel in dieser Aufgabe. Achte darauf, dass du bei solchen Aufgaben immer prüfst, ob das Ergebnis sinnvoll und ganzzahlig ist."
+}
+```
+
 ## Gemini
 
 ### 1. Multiple Choice 
@@ -359,6 +397,16 @@ Haut
 }
 ```
 
+### 3. Rechenfragen
+
+Äpfel
+```JSON
+{
+"Punktzahl": 0,
+"Begründung": "Die Antwort ist komplett falsch. Der Schüler hat wahrscheinlich versucht, die Äpfel durch die Schüsseln zu teilen, hat dies jedoch falsch berechnet. Zudem kann man Äpfel nicht in Dezimalzahlen aufteilen."
+}
+```
+
 ## Cohere
 
 ### 1. Multiple-Choice
@@ -378,6 +426,48 @@ Hauptstadt Frankreich
 "Begründung": "Die Antwort entspricht der Lösung. Paris ist die Hauptstadt von Frankreich. Gut gemacht!"
 }
 ```
+
+### 2. Ein-Wort-Antworten
+
+Wasser
+```
+{
+"Punktzahl": 100,
+"Begründung": "Die Antwort ist korrekt. Die chemische Formel für Wasser lautet tatsächlich H₂O. Ihre Antwort H2O ist eine akzeptable Schreibweise, da der Unterschied nur in der Darstellung des Index liegt, was in diesem Kontext vernachlässigbar ist. Gut gemacht!"
+}
+```
+
+Goethe
+```JSON
+{
+"Punktzahl": 80,
+"Begründung": "Die Antwort ist fast korrekt. Der Autor von ‚Faust‘ ist tatsächlich Goethe, nicht ‚Göthe‘. Der kleine Rechtschreibfehler (das fehlende ‚e‘) ändert die Bedeutung nicht stark, aber es ist wichtig, den Namen korrekt zu schreiben. Gut versucht – achten Sie beim nächsten Mal auf die genaue Schreibweise!"
+}
+```
+
+Haut
+```JSON
+{
+"Punktzahl": 0,
+"Begründung": "Die Antwort ist leider nicht korrekt. Das größte Organ des menschlichen Körpers ist die Haut, nicht die Leber. Die Leber ist zwar ein wichtiges Organ, aber sie ist viel kleiner als die Haut. Versuchen Sie es beim nächsten Mal mit der richtigen Antwort – die Haut bedeckt den gesamten Körper und ist daher das größte Organ!"
+}
+```
+
+### 3. Rechenfragen
+
+Äpfel
+```JSON
+{
+"Punktzahl": 50,
+"Begründung": "Die Antwort [3,5] ist teilweise korrekt, da die Division von 12 Äpfeln durch 4 Schüsseln tatsächlich 3 Äpfel pro Schüssel ergibt. Allerdings ist die Angabe von ,5 (also 0,5) nicht sinnvoll, da man keine halben Äpfel verteilen kann. Die erwartete richtige Antwort ist [3], da die Äpfel gleichmäßig verteilt werden und keine Reste übrig bleiben. Die mathematische Berechnung ist korrekt, aber die Angabe von ,5 führt zu einem Abzug in der Punktzahl."
+}
+
+{
+"Punktzahl": 0,
+"Begründung": "Die Antwort [3,5] ist falsch, da bei der gleichmäßigen Verteilung von 12 Äpfeln auf 4 Schüsseln in jede Schüssel genau 3 Äpfel kommen (12 ÷ 4 = 3). Die Angabe von ,5 (also 0,5) ist nicht korrekt, da man keine halben Äpfel verteilen kann. Die Antwort berücksichtigt nicht die Vollständigkeit und das richtige Zahlenformat. Die erwartete richtige Antwort ist [3]."
+}
+```
+Zwei sehr unterschiedliche Antworten!
 
 
 # 6. Fazit & Nächste Schritte
