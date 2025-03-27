@@ -253,7 +253,7 @@ Antwort bitte in diesem Format:
   "Begründung": "..."  
 }  
 
-## Entweder-Oder-Frage: Bewertungs-Prompt
+## Entweder-Oder-Fragen Prompts
 
 **Frage:** [Ist der Eiffelturm höher als der Kölner Dom?]  
 **Antwort:** [Nein]  
@@ -833,4 +833,148 @@ Treibhauseffekt
 }
 ```
 
-# 6. Fazit & Nächste Schritte
+# 6. Auswertung und Vergleich
+
+## Allgemeine Übersicht zur Evaluierung der KIs
+
+**Getestete Modelle:**
+- ChatGPT
+- DeepSeek
+- Gemini
+- Cohere
+
+**Fragetypen:**
+- Multiple-Choice-Fragen
+- Ein-Wort-Antworten
+- Rechenaufgaben
+- Entweder/Oder-Fragen
+- Schätzfragen
+- Lückentextfragen
+- Freitextfragen
+
+---
+
+## Detaillierte Evaluierung nach Fragetypen
+
+### 1. Multiple-Choice-Fragen
+
+| KI        | Genauigkeit | Feedback Qualität      |
+|-----------|-------------|------------------------|
+| ChatGPT   | ✅ Korrekt  | 🟢 Klar und nachvollziehbar |
+| DeepSeek  | ✅ Korrekt  | 🟢 Präzise, kompakt    |
+| Gemini    | ✅ Korrekt  | 🟢 Informativ          |
+| Cohere    | ✅ Korrekt  | 🟢 Freundlich, klar    |
+
+**Fazit:** Alle KIs liefern zuverlässig korrekte Bewertungen.
+
+---
+
+### 2. Ein-Wort-Antworten
+
+| KI        | Genauigkeit | Flexibilität bei Schreibweise | Konsistenz        |
+|-----------|-------------|-------------------------------|-------------------|
+| ChatGPT   | 🟢 Hoch      | 🟢 Sehr flexibel               | 🟢 Sehr stabil     |
+| DeepSeek  | 🟢 Hoch      | 🟡 Mittelmäßig                 | 🔴 Schwankend      |
+| Gemini    | 🟢 Hoch      | 🟢 Hoch                        | 🟢 Stabil          |
+| Cohere    | 🟢 Hoch      | 🟢 Flexibel                    | 🟢 Stabil          |
+
+**Problematisch:** DeepSeek variiert stark bei Rechtschreibfehlern („Göthe“).  
+**Stark:** ChatGPT & Gemini erkennen fehlerhafte, aber verständliche Schreibweisen zuverlässig.
+
+---
+
+### 3. Rechenaufgaben
+
+| KI        | Genauigkeit | Mathematische Kompetenz | Feedback Qualität    |
+|-----------|-------------|-------------------------|----------------------|
+| ChatGPT   | 🟢 Hoch      | 🟢 Sehr gut              | 🟢 Didaktisch wertvoll |
+| DeepSeek  | 🟡 Mittel    | 🟢 Gut                   | 🟡 Inkonsequent       |
+| Gemini    | 🟡 Mittel    | 🔴 Schwach               | 🟡 Unpräzise          |
+| Cohere    | 🟡 Mittel    | 🟡 Mäßig                 | 🟡 Variabel           |
+
+---
+
+### 4. Entweder/Oder-Fragen
+
+| KI        | Genauigkeit | Sprachliche Flexibilität |
+|-----------|-------------|--------------------------|
+| ChatGPT   | 🟢 Hoch      | 🟢 Hoch                   |
+| DeepSeek  | 🟢 Hoch      | 🟢 Hoch                   |
+| Gemini    | 🟢 Hoch      | 🟢 Hoch                   |
+| Cohere    | 🟢 Hoch      | 🟢 Hoch                   |
+
+**Fazit:** Alle KIs liefern konstante und richtige Antworten.
+
+---
+
+### 5. Schätzfragen
+
+| KI        | Genauigkeit | Umgang mit Toleranz      | Konsistenz        |
+|-----------|-------------|--------------------------|-------------------|
+| ChatGPT   | 🟢 Hoch      | 🟡 Teils variabel         | 🟡 Mittelmäßig     |
+| DeepSeek  | 🟡 Mittel    | 🔴 Sehr inkonsistent      | 🔴 Unstabil        |
+| Gemini    | 🟢 Hoch      | 🟢 Berechnet genau        | 🟢 Stabil          |
+| Cohere    | 🔴 Widersprüchlich | 🔴 Teils falsch berechnet | 🔴 Unzuverlässig |
+
+---
+
+### 6. Lückentextfragen
+
+| KI        | Genauigkeit | Teilbewertung | Umgang mit Varianten |
+|-----------|-------------|---------------|-----------------------|
+| ChatGPT   | 🟢 Hoch      | 🟢 Sehr gut    | 🟢 Hoch                |
+| DeepSeek  | 🟢 Hoch      | 🟢 Gut         | 🟡 Mittel              |
+| Gemini    | 🟡 Mittel    | 🟡 Eingeschränkt | 🟡 Teilweise            |
+| Cohere    | 🟢 Hoch      | 🟢 Gut         | 🟡 Mittel              |
+
+**Auffällig:** Gemini mit faktischem Fehler (z. B. WWII-Frage).
+
+---
+
+### 7. Freitextfragen
+
+| KI        | Differenzierung | Feedbackqualität      | Wissenschaftliche Tiefe |
+|-----------|------------------|-----------------------|--------------------------|
+| ChatGPT   | 🟢 Sehr gut       | 🟢 Konstruktiv & hilfreich | 🟢 Hoch                  |
+| DeepSeek  | 🟢 Gut            | 🟢 Verständlich        | 🟡 Mäßig                 |
+| Gemini    | 🟡 Mittel         | 🟢 Freundlich          | 🟡 Vereinfacht           |
+| Cohere    | 🟢 Gut            | 🟢 Klar                | 🟡 Wenig spezifisch      |
+
+---
+
+## 📈 Gesamtbewertung
+
+| Kategorie            | ChatGPT   | DeepSeek | Gemini   | Cohere   |
+|----------------------|-----------|----------|----------|----------|
+| Genauigkeit          | 🟢 Hoch    | 🟡 Mittel | 🟡 Mittel | 🟡 Mittel |
+| Konsistenz           | 🟢 Stabil  | 🔴 Variabel | 🟡 Teils | 🔴 Unstabil |
+| Feedbackqualität     | 🟢 Sehr gut | 🟢 Gut    | 🟢 Gut    | 🟢 Gut    |
+| Mathematisches Verständnis | 🟢 Hoch | 🟢 Hoch | 🔴 Schwach | 🟡 Mittel |
+| Flexibilität         | 🟢 Hoch    | 🟡 Teilweise | 🟢 Hoch | 🟢 Hoch |
+| Teilbewertung & Differenzierung | 🟢 Sehr gut | 🟢 Gut | 🟡 Wenig | 🟢 Gut |
+
+---
+
+## Empfehlung
+
+** Empfohlene KI für automatische Bewertung:**  
+**→ ChatGPT**  
+- Beste Kombination aus Genauigkeit, Feedback, Differenzierung und Stabilität.
+- Ideal für den didaktischen Einsatz in Lernplattformen.
+
+** Mit Vorsicht zu nutzen:**  
+- **DeepSeek & Cohere** bei Aufgaben mit Toleranz oder komplexer Teilbewertung.
+
+** Ergänzender Einsatz möglich:**  
+- **Gemini** als schnelle, freundliche Hilfe – aber weniger verlässlich in komplexen Fällen.
+
+---
+
+## Fazit & Nächste Schritte
+
+- **ChatGPT** als Standard für Feedback-basierte Lernbewertung nutzen.
+- Andere KIs ggf. durch spezifische Prompt-Tuning verbessern.
+- Weitere Testläufe mit größeren Datensätzen für Langzeitvergleich sinnvoll.
+- Bei Einsatz mehrerer KIs: **Cross-Check** bei kritischen Aufgaben empfohlen.
+
+
