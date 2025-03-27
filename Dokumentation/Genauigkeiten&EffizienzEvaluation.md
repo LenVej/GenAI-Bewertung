@@ -955,7 +955,7 @@ Treibhauseffekt
 
 ---
 
-## Empfehlung
+## bewertung
 
 ** Empfohlene KI für automatische Bewertung:**  
 **→ ChatGPT**  
