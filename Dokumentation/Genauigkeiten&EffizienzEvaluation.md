@@ -291,6 +291,50 @@ Antwort bitte in diesem Format:
   "Begründung": "..."  
 }  
 
+## Lückentextfragen
+
+### Lückentextfrage mit mehreren Lücken: Bewertungs-Prompt
+
+**Frage:** [Die Photosynthese findet in den ___ der Pflanzenzelle statt. Dabei wird mit Hilfe von ___ und Lichtenergie ___ in Glukose umgewandelt.]  
+**Antwort:** [Chloroplasten, Wasser, Kohlendioxid]  
+**Antwort Typ:** [Lückentextfrage]  
+**Parameter von Typen:** [
+**Antwortmöglichkeiten:**[Wasser, Sonne, Chloroplasten, Zellkern, Kohlendioxid, Sauerstoff]
+]  
+**Erwartete richtige Antwort:** [Chloroplasten, Wasser, Kohlendioxid]  
+**Bewertungskriterien:**  
+- Sind alle Lücken korrekt und fachlich richtig ausgefüllt?  
+- Werden alternative Begriffe akzeptiert (z. B. „CO₂“ statt „Kohlendioxid“)?  
+- Werden kleinere Schreibfehler toleriert?  
+- Kann die KI teilweise korrekte Antworten differenziert bewerten?
+
+Antwort bitte in diesem Format:  
+{  
+  "Punktzahl": X,  
+  "Begründung": "..."  
+}  
+
+-------------------------------
+
+**Frage:** [Im Jahr ___ begann der Zweite Weltkrieg mit dem Überfall Deutschlands auf ___. Der Krieg endete im Jahr ___ mit der Kapitulation ___.]  
+**Antwort:** [1936, Polen, 1945, Russlands]  
+**Antwort Typ:** [Lückentextfrage]  
+**Parameter von Typen:** [
+**Antwortmöglichkeiten:**[1936, 1939, 1945, Polen, Russlands, Deutschlands, Tschechien]
+]  
+**Erwartete richtige Antwort:** [1939, Polen, 1945, Deutschlands]  
+**Bewertungskriterien:**  
+- Sind alle Lücken historisch korrekt ausgefüllt?  
+- Werden alternative Schreibweisen akzeptiert (z. B. „BRD“ oder „NS-Deutschland“ für „Deutschland“)?  
+- Können kleine Tippfehler oder Datumsformate (z. B. „'39“) toleriert werden?  
+- Gibt es eine Teilbewertung bei teilweise richtigen Angaben?
+
+Antwort bitte in diesem Format:  
+{  
+  "Punktzahl": X,  
+  "Begründung": "..."  
+}  
+
 # 5. Ergebnisdokumentation & Analyse
 
 ## ChatGPT 
@@ -366,7 +410,7 @@ Eiffelturm
 }
 ```
 
-### Schätzfrage
+### 5. Schätzfrage
 
 Höhe
 ```JSON
@@ -375,6 +419,25 @@ Höhe
 "Begründung": "Deine Schätzung von 350 m liegt nur 6,1 % über der erwarteten Höhe von 330 m und damit im akzeptablen Bereich von ±10 %. Die Antwort ist also sehr nah dran – gut geschätzt! Für eine perfekte Punktzahl hätte eine noch genauere Angabe (z. B. 330 m oder 331 m) gesorgt."
 }
 ```
+
+### 6. Lückentextfragen
+
+Zelle
+```JSON
+{
+"Punktzahl": 100,
+"Begründung": "Super gemacht! Alle Lücken wurden korrekt und fachlich richtig ausgefüllt: Die Photosynthese findet in den Chloroplasten statt, dabei wird Wasser zusammen mit Kohlendioxid und Lichtenergie in Glukose umgewandelt. Es gibt nichts zu beanstanden!"
+}
+```
+
+WWII
+```JSON
+{
+"Punktzahl": 50,
+"Begründung": "Du hast zwei von vier Lücken korrekt ausgefüllt – 'Polen' und '1945' sind richtig. Der Beginn des Zweiten Weltkriegs war jedoch 1939, nicht 1936. Auch endete der Krieg mit der Kapitulation Deutschlands, nicht Russlands. Es ist gut, dass du Polen und das Endjahr korrekt erkannt hast, aber achte bitte auf die historischen Details, besonders bei solch zentralen Ereignissen."
+}
+```
+
 
 ## DeepSeek
 
@@ -452,23 +515,40 @@ Eiffelturm
   "Begründung": "Die Antwort ist inhaltlich nicht korrekt. Der Eiffelturm (ca. 330 m) ist tatsächlich höher als der Kölner Dom (ca. 157 m). Achte bei Entweder/Oder-Fragen darauf, die Fakten richtig zu überprüfen, bevor du antwortest."
 }
 ```
-### Schätzfrage
+### 5. Schätzfrage
 
 Höhe
 ```JSON
 {
   "Punktzahl": 75,
   "Begründung": "Deine Schätzung von 350 m liegt knapp außerhalb des akzeptablen Bereichs (±10% der tatsächlichen Höhe von 330 m, also 297 m bis 363 m). Die Abweichung beträgt etwa 6% über dem oberen Limit. Für eine bessere Bewertung solltest du dich möglichst nah am erwarteten Wert orientieren. Trotzdem war die Schätzung schon recht nah dran!"
+}
 
 {
   "Punktzahl": 100,
   "Begründung": "Die Antwort liegt innerhalb des akzeptablen Bereichs von ±10%. Die tatsächliche Höhe des Eiffelturms beträgt 330 Meter. Eine Abweichung von 20 Metern liegt innerhalb der Toleranz."
 }
-}
+
 ```
 Zwei komplett unterschiedliche Ausgaben bei gleicher Eingabe!
 
+### 6. Lückentextfrage
 
+Zelle
+```JSON
+{
+  "Punktzahl": 100,
+  "Begründung": "Perfekt! Alle Lücken wurden korrekt und fachlich genau ausgefüllt. Du hast die richtigen Begriffe 'Chloroplasten', 'Wasser' und 'Kohlendioxid' gewählt, die genau den biologischen Prozess der Photosynthese beschreiben. Weiter so!"
+}
+```
+
+WWII
+```JSON
+{
+  "Punktzahl": 50,
+  "Begründung": "Die Antwort enthält zwei richtige und zwei falsche Angaben. Richtig sind: Polen als angegriffenes Land und 1945 als Kriegsende. Die Fehler: Der Krieg begann 1939 (nicht 1936) und endete mit der Kapitulation Deutschlands (nicht Russlands). Historisch wichtige Daten solltest du noch genauer lernen. Die Hälfte der Antworten war aber korrekt!"
+}
+```
 
 ## Gemini
 
@@ -544,7 +624,7 @@ Eiffelturm
 }
 ```
 
-### Schätzfrage
+### 5. Schätzfrage
 
 Höhe
 ```JSON
@@ -553,6 +633,25 @@ Höhe
   "Begründung": "Die Antwort liegt innerhalb des akzeptablen Bereichs von ±10%. Die tatsächliche Höhe des Eiffelturms beträgt 330 Meter. Eine Abweichung von 20 Metern liegt innerhalb der Toleranz."
 }
 ```
+
+### 6. Lückentextfrage
+
+Zelle
+```JSON
+{
+  "Punktzahl": 100,
+  "Begründung": "Die Antwort ist vollständig korrekt und fachlich richtig. Alle Lücken wurden mit den korrekten Begriffen aus den vorgegebenen Antwortmöglichkeiten gefüllt."
+}
+```
+
+WWII
+```JSON
+{
+  "Punktzahl": 50,
+  "Begründung": "Die Jahreszahl für den Beginn des Zweiten Weltkrieges ist falsch. Der Krieg begann 1939 und nicht 1936. Die anderen Lücken wurden richtig ausgefüllt."
+}
+```
+Extrem falsch!!
 
 ## Cohere
 
@@ -649,5 +748,24 @@ Höhe
 }
 ```
 Zwei komplett unterschiedliche Ausgaben bei gleicher Eingabe!
+
+
+### Lückentextfrage
+
+Zelle
+```JSON
+{
+"Punktzahl": 100,
+"Begründung": "Deine Antwort ist vollständig korrekt. Alle Lücken wurden fachlich richtig ausgefüllt: Die Photosynthese findet in den Chloroplasten statt, dabei wird mit Hilfe von Wasser und Lichtenergie Kohlendioxid in Glukose umgewandelt. Da deine Antwort exakt mit der erwarteten richtigen Antwort übereinstimmt, erhältst du die volle Punktzahl."
+}
+```
+
+WWII
+```JSON
+{
+"Punktzahl": 50,
+"Begründung": "Deine Antwort ist teilweise korrekt. Das Jahr 1945 für das Ende des Zweiten Weltkriegs und Polen als das Land, auf das Deutschland überfiel, sind richtig. Allerdings begann der Zweite Weltkrieg im Jahr 1939, nicht 1936, und der Krieg endete mit der Kapitulation Deutschlands, nicht Russlands. Da zwei von vier Lücken korrekt sind, erhältst du eine Teilbewertung. Achte beim nächsten Mal auf die genauen Daten und die historischen Fakten!"
+}
+```
 
 # 6. Fazit & Nächste Schritte
