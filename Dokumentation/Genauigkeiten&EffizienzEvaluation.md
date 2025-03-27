@@ -291,7 +291,7 @@ Antwort bitte in diesem Format:
   "Begründung": "..."  
 }  
 
-## Lückentextfragen
+## Lückentextfragen Prompts
 
 ### Lückentextfrage mit mehreren Lücken: Bewertungs-Prompt
 
@@ -334,6 +334,27 @@ Antwort bitte in diesem Format:
   "Punktzahl": X,  
   "Begründung": "..."  
 }  
+
+## Freitextantworten Prompts
+
+**Frage:** [Erkläre, warum der Treibhauseffekt sowohl für das Leben auf der Erde notwendig als auch in seiner verstärkten Form problematisch ist.]  
+**Antwort:** [Der Treibhauseffekt sorgt dafür, dass die Erde warm genug bleibt, damit Leben existieren kann. Wenn er aber zu stark wird, weil zu viele Gase wie CO₂ ausgestoßen werden, wird es zu heiß, was zum Klimawandel führt.]  
+**Antwort Typ:** [Freitextantwort]  
+**Parameter von Typen:** []  
+**Erwartete richtige Antwort:** [Der natürliche Treibhauseffekt ist entscheidend für das Leben auf der Erde, da er die durchschnittliche Temperatur auf einem Niveau hält, das flüssiges Wasser und damit Leben ermöglicht. In seiner verstärkten Form – verursacht durch den Anstieg menschengemachter Treibhausgase wie CO₂ und Methan – führt er jedoch zur globalen Erwärmung. Diese bringt schwerwiegende Folgen mit sich, etwa häufigere Extremwetterereignisse, das Abschmelzen von Gletschern und den Anstieg des Meeresspiegels.]  
+**Bewertungskriterien:**  
+- Wird der Unterschied zwischen natürlichem und verstärktem Treibhauseffekt korrekt dargestellt?  
+- Werden die positiven und negativen Aspekte nachvollziehbar erklärt?  
+- Sind wissenschaftlich relevante Begriffe korrekt verwendet (z. B. „Treibhausgase“, „globale Erwärmung“)?  
+- Ist die Antwort logisch aufgebaut und sprachlich klar formuliert?  
+- Gibt es sachliche Fehler, Auslassungen oder vereinfachende Verkürzungen?  
+- Wird bei teilrichtigen Antworten differenziert bewertet?
+
+Antwort bitte in diesem Format:  
+{  
+  "Punktzahl": X,  
+  "Begründung": "..."  
+}
 
 # 5. Ergebnisdokumentation & Analyse
 
@@ -415,10 +436,15 @@ Eiffelturm
 Höhe
 ```JSON
 {
+"Punktzahl": 80,
+"Begründung": "Deine Antwort liegt mit 350 m nur knapp außerhalb des akzeptablen Bereichs von ±10 % (297 m bis 363 m). Allerdings wäre der richtige Wert für den Eiffelturm etwa 330 m, was deine Schätzung ziemlich nah dran macht. Gute Arbeit – kleine Abweichung, aber insgesamt eine solide Schätzung!"
+}
+{
 "Punktzahl": 91,
 "Begründung": "Deine Schätzung von 350 m liegt nur 6,1 % über der erwarteten Höhe von 330 m und damit im akzeptablen Bereich von ±10 %. Die Antwort ist also sehr nah dran – gut geschätzt! Für eine perfekte Punktzahl hätte eine noch genauere Angabe (z. B. 330 m oder 331 m) gesorgt."
 }
 ```
+Zwei ambivalente Aussagen!!
 
 ### 6. Lückentextfragen
 
@@ -438,6 +464,15 @@ WWII
 }
 ```
 
+### 7. Freitextfragen
+
+Treibhauseffekt 
+```JSON
+{
+"Punktzahl": 80,
+"Begründung": "Die Antwort ist klar formuliert und trifft die grundlegende Aussage: Der Treibhauseffekt ist wichtig für das Leben, kann aber in seiner verstärkten Form problematisch sein. Der Unterschied zwischen natürlichem und verstärktem Treibhauseffekt wird angedeutet, aber nicht explizit benannt. Begriffe wie 'CO₂' und 'Klimawandel' sind korrekt verwendet, jedoch fehlt die Verwendung zentraler wissenschaftlicher Begriffe wie 'globale Erwärmung' oder die Nennung weiterer Treibhausgase (z. B. Methan). Auch konkrete Folgen wie Extremwetterereignisse oder Meeresspiegelanstieg bleiben unerwähnt. Insgesamt eine gute, aber etwas vereinfachte Antwort."
+}
+```
 
 ## DeepSeek
 
@@ -550,6 +585,16 @@ WWII
 }
 ```
 
+### 7. Freitextfragen
+
+Treibhauseffekt 
+```JSON
+{
+  "Punktzahl": 80,
+  "Begründung": "Deine Antwort erklärt die Grundlagen des Treibhauseffekts gut und nennt die wichtigsten Punkte: die lebenswichtige Funktion des natürlichen Effekts und die Probleme durch den verstärkten Effekt. Du hast die zentrale Rolle von CO₂ und den Klimawandel korrekt erwähnt. Zur Verbesserung könntest du noch etwas präziser werden (z.B. konkrete Folgen wie Extremwetter nennen) und wissenschaftliche Begriffe wie 'globale Erwärmung' konsequenter verwenden. Insgesamt aber eine klare und weitgehend vollständige Erklärung!"
+}
+```
+
 ## Gemini
 
 ### 1. Multiple Choice 
@@ -652,6 +697,16 @@ WWII
 }
 ```
 Extrem falsch!!
+
+### 7. Freitextfragen
+
+Treibhauseffekt 
+```JSON
+{
+  "Punktzahl": 100,
+  "Begründung": "Die Antwort ist sehr gut und erklärt sowohl die Notwendigkeit als auch die Problematik des Treibhauseffekts verständlich. Es werden die wichtigsten Aspekte genannt und korrekt erklärt. Die Antwort ist sachlich richtig, logisch aufgebaut und sprachlich klar formuliert."
+}
+```
 
 ## Cohere
 
@@ -765,6 +820,16 @@ WWII
 {
 "Punktzahl": 50,
 "Begründung": "Deine Antwort ist teilweise korrekt. Das Jahr 1945 für das Ende des Zweiten Weltkriegs und Polen als das Land, auf das Deutschland überfiel, sind richtig. Allerdings begann der Zweite Weltkrieg im Jahr 1939, nicht 1936, und der Krieg endete mit der Kapitulation Deutschlands, nicht Russlands. Da zwei von vier Lücken korrekt sind, erhältst du eine Teilbewertung. Achte beim nächsten Mal auf die genauen Daten und die historischen Fakten!"
+}
+```
+
+### 7. Freitextfragen
+
+Treibhauseffekt 
+```JSON
+{
+"Punktzahl": 80,
+"Begründung": "Deine Antwort ist gut und trifft die Kernpunkte des Treibhauseffekts. Du hast sowohl die Notwendigkeit des natürlichen Treibhauseffekts für das Leben auf der Erde als auch die Probleme des verstärkten Treibhauseffekts durch menschliche Aktivitäten korrekt dargestellt. Die Verwendung von Begriffen wie CO₂ und Klimawandel ist angemessen. Allerdings fehlen einige Details, wie die Erwähnung anderer Treibhausgase (z. B. Methan) und konkrete Folgen wie Extremwetterereignisse oder der Anstieg des Meeresspiegels. Diese Ergänzungen würden die Antwort vollständiger machen. Insgesamt eine starke Leistung, aber mit Potenzial für mehr Tiefe!"
 }
 ```
 
