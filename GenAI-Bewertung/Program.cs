@@ -24,14 +24,6 @@ if (string.IsNullOrWhiteSpace(jwtKey))
 }
 
 var keyBytes = Encoding.UTF8.GetBytes(jwtKey);
-Console.WriteLine($"JWT-Key geladen ({keyBytes.Length} Bytes)");
-
-Console.WriteLine(jwtKey);
-if (string.IsNullOrWhiteSpace(jwtKey) || Encoding.UTF8.GetBytes(jwtKey).Length < 32 || jwtKey == "PLACEHOLDER_CHANGE_ME_IN_ENV")
-{
-    
-    throw new Exception("JWT-Key fehlt oder ist zu kurz (mind. 32 Bytes erforderlich).");
-}
 
 // Add database context with PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,15 +39,22 @@ namespace GenAI_Bewertung.Services
             return (true, "Benutzer erfolgreich registriert");
         }
 
-        public async Task<(bool Success, string Message, string? Token)> LoginUserAsync(LoginDto dto)
+        public async Task<(bool Success, string Message, string? AccessToken, string? RefreshToken)> LoginUserAsync(LoginDto dto)
         {
             var user = await _repository.GetUserByEmailAsync(dto.Email);
             if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
-                return (false, "Ungültige Zugangsdaten", null);
+                return (false, "Ungültige Zugangsdaten", null, null);
 
-            var token = GenerateJwtToken(user);
-            return (true, "Login erfolgreich", token);
+            var accessToken = GenerateJwtToken(user);
+            var refreshToken = GenerateRefreshToken();
+
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7); // z.B. 7 Tage gültig
+            await _repository.UpdateUserAsync(user);
+
+            return (true, "Login erfolgreich", accessToken, refreshToken);
         }
+
 
         public async Task<User?> GetUserByIdAsync(int userId)
         {
@@ -71,5 +79,27 @@ namespace GenAI_Bewertung.Services
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+        
+        public async Task<(bool Success, string? AccessToken, string? NewRefreshToken)> RefreshLoginAsync(string refreshToken)
+        {
+            var user = await _repository.GetUserByRefreshTokenAsync(refreshToken);
+            if (user == null || user.RefreshTokenExpiryTime < DateTime.UtcNow)
+                return (false, null, null);
+
+            var newAccessToken = GenerateJwtToken(user);
+            var newRefreshToken = GenerateRefreshToken();
+
+            user.RefreshToken = newRefreshToken;
+            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+            await _repository.UpdateUserAsync(user);
+
+            return (true, newAccessToken, newRefreshToken);
+        }
+
+        private string GenerateRefreshToken()
+        {
+            return Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
+        }
+
     }
 }

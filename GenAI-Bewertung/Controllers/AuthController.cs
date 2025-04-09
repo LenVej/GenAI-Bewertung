@@ -40,12 +40,17 @@ namespace GenAI_Bewertung.Controllers
             if (!result.Success)
                 return Unauthorized(result.Message);
 
-            return Ok(new { token = result.Token });
+            return Ok(new
+            {
+                accessToken = result.AccessToken,
+                refreshToken = result.RefreshToken
+            });
+
         }
 
-        // GET: api/auth/me
+        // GET: api/auth/profile
         [Authorize]
-        [HttpGet("me")]
+        [HttpGet("profile")]
         public async Task<IActionResult> GetProfile()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -59,5 +64,19 @@ namespace GenAI_Bewertung.Controllers
 
             return Ok(new { user.Username, user.Email, user.CreatedAt });
         }
+        
+        [HttpPost("refresh")]
+        public async Task<IActionResult> Refresh([FromBody] string refreshToken)
+        {
+            var (success, newAccessToken, newRefreshToken) = await _authService.RefreshLoginAsync(refreshToken);
+            if (!success) return Unauthorized("Refresh Token ungültig oder abgelaufen");
+
+            return Ok(new
+            {
+                accessToken = newAccessToken,
+                refreshToken = newRefreshToken
+            });
+        }
+
     }
 }

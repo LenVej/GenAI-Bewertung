@@ -34,5 +34,17 @@ namespace GenAI_Bewertung.Repositories
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
         }
+        
+        public async Task UpdateUserAsync(User user)
+        {
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<User?> GetUserByRefreshTokenAsync(string refreshToken)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+        }
+
     }
 }
