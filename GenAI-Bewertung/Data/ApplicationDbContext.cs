@@ -10,7 +10,8 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    public DbSet<Question> Questions { get; set; }  // Beispiel: Frage-Typ
-    public DbSet<Answer> Answers { get; set; }      // Beispiel: Antworten
+    public DbSet<Question> Questions { get; set; }  
+    public DbSet<Answer> Answers { get; set; }      
+    public DbSet<User> Users { get; set; }
     // Füge hier weitere DbSets für andere Entitäten hinzu
 }

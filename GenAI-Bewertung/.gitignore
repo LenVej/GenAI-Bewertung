@@ -233,3 +233,5 @@ _Pvt_Extensions
 
 # Ignore Angular cache
 ClientApp/.angular/
+
+.env

@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { Profile } from './profile/profile';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     HomeComponent,
     QuestionsComponent,
-    FetchDataComponent
+    Profile
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -25,7 +25,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'questions', component: QuestionsComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'profile', component: Profile },
     ])
   ],
   providers: [],

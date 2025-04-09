@@ -22,7 +22,7 @@ namespace GenAI_Bewertung.Controllers
         public async Task<ActionResult<IEnumerable<Question>>> GetQuestions()
         {
             var questions = await _service.GetAllQuestionsAsync();
-            return Ok(questions); // Ensure this returns Ok with the list of questions
+            return Ok(questions);
         }
 
         // GET: api/questions/{id}
@@ -33,10 +33,10 @@ namespace GenAI_Bewertung.Controllers
 
             if (question == null)
             {
-                return NotFound(); // Return NotFound if the question is not found
+                return NotFound();
             }
 
-            return Ok(question); // Return Ok with the found question
+            return Ok(question);
         }
 
         // POST: api/questions
@@ -44,7 +44,7 @@ namespace GenAI_Bewertung.Controllers
         public async Task<ActionResult<Question>> PostQuestion(Question question)
         {
             await _service.AddQuestionAsync(question);
-            return CreatedAtAction(nameof(GetQuestion), new { id = question.QuestionId }, question); // Return Created response
+            return CreatedAtAction(nameof(GetQuestion), new { id = question.QuestionId }, question);
         }
 
         // PUT: api/questions/{id}
@@ -53,16 +53,16 @@ namespace GenAI_Bewertung.Controllers
         {
             if (id != question.QuestionId)
             {
-                return BadRequest(); // Return BadRequest if IDs do not match
+                return BadRequest();
             }
 
             if (!await _service.QuestionExistsAsync(id))
             {
-                return NotFound(); // Return NotFound if the question does not exist
+                return NotFound();
             }
 
             await _service.UpdateQuestionAsync(question);
-            return NoContent(); // Return NoContent on successful update
+            return NoContent();
         }
 
         // DELETE: api/questions/{id}
@@ -72,11 +72,11 @@ namespace GenAI_Bewertung.Controllers
             var question = await _service.GetQuestionByIdAsync(id);
             if (question == null)
             {
-                return NotFound(); // Return NotFound if the question does not exist
+                return NotFound();
             }
 
             await _service.DeleteQuestionAsync(question);
-            return NoContent(); // Return NoContent on successful deletion
+            return NoContent();
         }
     }
 }
