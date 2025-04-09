@@ -26,9 +26,9 @@ namespace GenAI_Bewertung.Controllers
             var result = await _authService.RegisterUserAsync(dto);
 
             if (!result.Success)
-                return BadRequest(result.Message);
+                return BadRequest(new { message = result.Message });
 
-            return Ok(result.Message);
+            return Ok(new { message = result.Message });
         }
 
         // POST: api/auth/login
@@ -77,6 +77,23 @@ namespace GenAI_Bewertung.Controllers
                 refreshToken = newRefreshToken
             });
         }
+        
+        [Authorize]
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteAccount()
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userIdStr)) return Unauthorized();
+
+            var userId = int.Parse(userIdStr);
+            var success = await _authService.DeleteUserAsync(userId);
+
+            if (!success)
+                return NotFound(new { message = "Benutzer nicht gefunden" });
+
+            return Ok(new { message = "Benutzer erfolgreich gelöscht" });
+        }
+
 
     }
 }

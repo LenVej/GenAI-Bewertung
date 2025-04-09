@@ -100,6 +100,16 @@ namespace GenAI_Bewertung.Services
         {
             return Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
         }
+        
+        public async Task<bool> DeleteUserAsync(int userId)
+        {
+            var user = await _repository.GetUserByIdAsync(userId);
+            if (user == null) return false;
+
+            await _repository.DeleteUserAsync(user);
+            return true;
+        }
+
 
     }
 }

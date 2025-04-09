@@ -45,6 +45,11 @@ namespace GenAI_Bewertung.Repositories
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
         }
-
+        
+        public async Task DeleteUserAsync(User user)
+        {
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+        }
     }
 }

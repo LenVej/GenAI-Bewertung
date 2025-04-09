@@ -11,5 +11,6 @@ namespace GenAI_Bewertung.Repositories
         Task AddUserAsync(User user);
         Task UpdateUserAsync(User user);
         Task<User?> GetUserByRefreshTokenAsync(string refreshToken);
+        Task DeleteUserAsync(User user);
     }
 }
