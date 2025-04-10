@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { Profile } from './profile/profile';
+import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {AuthGuard} from "./auth.guard";
@@ -22,7 +22,7 @@ import { JwtInterceptor } from './jwt.interceptor';
     NavMenuComponent,
     HomeComponent,
     QuestionsComponent,
-    Profile,
+    ProfileComponent,
     LoginComponent,
     RegisterComponent
   ],
@@ -35,7 +35,7 @@ import { JwtInterceptor } from './jwt.interceptor';
       { path: 'questions', component: QuestionsComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-      { path: 'profile', component: Profile },
+      { path: 'profile', component: ProfileComponent },
     ])
   ],
   providers: [

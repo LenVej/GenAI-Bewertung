@@ -1,7 +1,5 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container">
       <a class="navbar-brand" [routerLink]="['/']">GenAI_Bewertung</a>
       <button
@@ -11,32 +9,32 @@
         data-target=".navbar-collapse"
         aria-label="Toggle navigation"
         [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
+        (click)="toggle()">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-        [ngClass]="{ show: isExpanded }"
-      >
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
         <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
+
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
             <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
           </li>
+
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/questions']"
-              >Questions</a
-            >
+            <a class="nav-link text-dark" [routerLink]="['/questions']">Questions</a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/profile']"
-              >Profile</a
-            >
+
+          <li class="nav-item" *ngIf="auth.isLoggedIn()" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/profile']">Profile</a>
           </li>
+
+          <li class="nav-item" *ngIf="!auth.isLoggedIn()" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/login']">Login</a>
+          </li>
+
+          <li class="nav-item" *ngIf="auth.isLoggedIn()">
+            <a class="nav-link text-danger" style="cursor: pointer" (click)="logout()">Logout</a>
+          </li>
+
         </ul>
       </div>
     </div>

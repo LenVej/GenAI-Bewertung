@@ -35,4 +35,9 @@ export class AuthService {
   isLoggedIn(): boolean {
     return !!this.getAccessToken();
   }
+
+  deleteAccount() {
+    return this.http.delete('https://localhost:44382/api/auth/delete');
+  }
+
 }

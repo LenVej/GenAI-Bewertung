@@ -1,24 +1,12 @@
-<h1 id="tableLabel">Weather forecast</h1>
+<h2>Mein Profil</h2>
 
-<p>This component demonstrates fetching data from the server.</p>
+<div *ngIf="error" style="color: red">{{ error }}</div>
 
-<p *ngIf="!forecasts?.length"><em>Loading...</em></p>
+<div *ngIf="user">
+  <p><strong>Benutzername:</strong> {{ user.username }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>Registriert seit:</strong> {{ user.createdAt | date:'short' }}</p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts.length">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
-    </tr>
-  </tbody>
-</table>
+  <button (click)="logout()">🔓 Logout</button>
+  <button (click)="deleteUser()" style="color: red; margin-left: 10px;">🗑️ Konto löschen</button>
+</div>
