@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import {environment} from "../environments/environment.local";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private api = 'https://localhost:44382/api/auth';
+  private api = `${environment.apiBaseUrl}/api/auth`;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -37,7 +38,8 @@ export class AuthService {
   }
 
   deleteAccount() {
-    return this.http.delete('https://localhost:44382/api/auth/delete');
+    return this.http.delete(`${this.api}/delete`);
   }
 
 }
+console.log('API Base URL:', environment.apiBaseUrl);

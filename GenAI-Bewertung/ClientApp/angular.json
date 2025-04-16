@@ -64,6 +64,14 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -73,6 +81,9 @@
           "configurations": {
             "production": {
               "browserTarget": "GenAI_Bewertung:build:production"
+            },
+            "local": {
+              "browserTarget": "GenAI_Bewertung:build:local"
             },
             "development": {
               "browserTarget": "GenAI_Bewertung:build:development",

@@ -1,19 +1,61 @@
-<h2>Registrieren</h2>
+<div class="auth-container">
+  <h2 class="auth-title">📝 Registrieren</h2>
 
-<div *ngIf="message" style="color: green">{{ message }}</div>
-<div *ngIf="error" style="color: red">{{ error }}</div>
+  <div *ngIf="message" class="success-message">{{ message }}</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
 
-<form (ngSubmit)="register()">
-  <label>Benutzername:</label><br>
-  <input [(ngModel)]="username" name="username" required /><br><br>
+  <form #form="ngForm" (ngSubmit)="register()" class="auth-form" novalidate>
 
-  <label>Email:</label><br>
-  <input [(ngModel)]="email" name="email" type="email" required /><br><br>
+    <!-- Benutzername -->
+    <label>Benutzername:</label>
+    <input
+      [(ngModel)]="username"
+      name="username"
+      required
+      minlength="3"
+      #usernameRef="ngModel"
+    />
+    <div class="text-danger" *ngIf="usernameRef.invalid && usernameRef.touched">
+      <small *ngIf="usernameRef.errors?.['required']">Benutzername ist erforderlich.</small>
+      <small *ngIf="usernameRef.errors?.['minlength']">Mindestens 3 Zeichen erforderlich.</small>
+    </div>
 
-  <label>Passwort:</label><br>
-  <input [(ngModel)]="password" name="password" type="password" required /><br><br>
+    <!-- Email -->
+    <label>Email:</label>
+    <input
+      [(ngModel)]="email"
+      name="email"
+      type="email"
+      required
+      pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+      #emailRef="ngModel"
+    />
+    <div class="text-danger" *ngIf="emailRef.invalid && emailRef.touched">
+      <small *ngIf="emailRef.errors?.['required']">E-Mail ist erforderlich.</small>
+      <small *ngIf="emailRef.errors?.['email']">Bitte gib eine gültige E-Mail ein.</small>
+      <small *ngIf="emailRef.errors?.['pattern']">Ungültiges E-Mail-Format.</small>
+    </div>
 
-  <button type="submit">Registrieren</button>
-</form>
+    <!-- Passwort -->
+    <label>Passwort:</label>
+    <input
+      [(ngModel)]="password"
+      name="password"
+      type="password"
+      required
+      pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$"
+      #passwordRef="ngModel"
+    />
+    <div class="text-danger" *ngIf="passwordRef.invalid && passwordRef.touched">
+      <small *ngIf="passwordRef.errors?.['required']">Passwort ist erforderlich.</small>
+      <small *ngIf="passwordRef.errors?.['pattern']">
+        Mindestens 8 Zeichen, mit Groß-, Kleinbuchstaben und Zahl.
+      </small>
+    </div>
 
-<p>Schon registriert? <a routerLink="/login">Zum Login</a></p>
+    <!-- Button -->
+    <button type="submit" class="btn register-btn" [disabled]="form.invalid">Registrieren</button>
+  </form>
+
+  <p class="auth-footer">Schon registriert? <a routerLink="/login">Zum Login</a></p>
+</div>

@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import {environment} from "../../environments/environment.local";
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile.component.html'
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
   user: any = null;
@@ -16,7 +18,7 @@ export class ProfileComponent {
   }
 
   loadProfile() {
-    this.http.get('https://localhost:44382/api/auth/profile').subscribe({
+    this.http.get(`${environment.apiBaseUrl}/api/auth/profile`).subscribe({
       next: data => this.user = data,
       error: err => {
         this.error = 'Fehler beim Laden des Profils.';

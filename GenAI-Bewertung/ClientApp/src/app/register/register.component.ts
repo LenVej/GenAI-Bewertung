@@ -4,7 +4,8 @@ import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html'
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   username = '';
@@ -18,14 +19,23 @@ export class RegisterComponent {
   register() {
     this.auth.register({ username: this.username, email: this.email, password: this.password }).subscribe({
       next: res => {
-        this.message = res;
-        setTimeout(() => this.router.navigate(['/login']), 1500);
+        this.auth.login({ email: this.email, password: this.password }).subscribe({
+          next: loginRes => {
+            this.auth.saveTokens(loginRes.accessToken, loginRes.refreshToken);
+            this.router.navigate(['/profile']);
+          },
+          error: loginErr => {
+            this.message = res;
+            this.error = 'Registrierung war erfolgreich, aber Login schlug fehl.';
+            console.error('Login nach Registrierung fehlgeschlagen:', loginErr);
+          }
+        });
       },
       error: err => {
         console.error('Registrierung fehlgeschlagen:', err);
 
         if (err.status === 0) {
-          this.error = 'Server nicht erreichbar – läuft das Backend?';
+          this.error = 'Server nicht erreichbar! Läuft das Backend?';
         } else if (typeof err.error === 'string') {
           this.error = err.error;
         } else if (err.error?.message) {
@@ -34,7 +44,6 @@ export class RegisterComponent {
           this.error = 'Registrierung fehlgeschlagen – Details siehe Konsole.';
         }
       }
-
     });
   }
 }

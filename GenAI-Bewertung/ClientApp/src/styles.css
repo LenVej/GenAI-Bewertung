@@ -1,20 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+/* =========================
+   🌐 GLOBAL STYLES
+   ========================= */
 
-/* Provide sufficient contrast against white background */
+/* Base Typography & Layout */
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* Link Styling */
 a {
   color: #0366d6;
+  text-decoration: none;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+a:hover {
+  text-decoration: underline;
 }
 
+/* Code color */
 code {
   color: #e01a76;
+  background-color: #f2f2f2;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
+/* =========================
+   🔘 Buttons
+   ========================= */
+
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  outline: none;
+}
+
+/* Primary button */
 .btn-primary {
-  color: #fff;
   background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: #fff;
+  border: 1px solid #1861ac;
+}
+
+.btn-primary:hover {
+  background-color: #155ab1;
+}
+
+/* Secondary (green) */
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #1e7e34;
+}
+
+/* Danger (red) */
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* =========================
+   🧩 Form Elements
+   ========================= */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #258cfb;
+  box-shadow: 0 0 0 0.2rem rgba(37, 140, 251, 0.25);
+}
+
+/* =========================
+   ⚠️ Utility Classes
+   ========================= */
+
+.text-center {
+  text-align: center;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.text-success {
+  color: #28a745;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
