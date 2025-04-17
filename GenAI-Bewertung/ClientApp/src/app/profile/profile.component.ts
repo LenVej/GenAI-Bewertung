@@ -38,4 +38,18 @@ export class ProfileComponent {
       });
     }
   }
+
+  tab = 'progress';
+
+
+  stats = {
+    questionsAnswered: 25,
+    correctAnswers: 19
+  };
+
+  settings = {
+    tolerance: 'medium',
+    caseSensitive: false,
+    estimateTolerance: 10
+  };
 }

@@ -1,16 +1,49 @@
-<div class="profile-container">
-  <h2 class="profile-title">👤 Mein Profil</h2>
+<div class="profile-wrapper">
+  <!-- Linke Spalte: Benutzerinfo -->
+  <div class="profile-sidebar">
+    <h2>👤 Mein Profil</h2>
 
-  <div *ngIf="error" class="error-message">{{ error }}</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
 
-  <div *ngIf="user" class="profile-card">
-    <p><strong>Benutzername:</strong> {{ user.username }}</p>
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    <p><strong>Registriert seit:</strong> {{ user.createdAt | date:'short' }}</p>
+    <div *ngIf="user" class="user-info">
+      <p><strong>Benutzername:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Seit:</strong> {{ user.createdAt | date:'short' }}</p>
 
-    <div class="profile-actions">
       <button class="btn logout-btn" (click)="logout()">🔓 Logout</button>
       <button class="btn delete-btn" (click)="deleteUser()">🗑️ Konto löschen</button>
     </div>
+  </div>
+
+  <!-- Rechte Spalte: Inhalt mit Tabs -->
+  <div class="profile-content">
+    <nav class="tabs">
+      <button [class.active]="tab === 'progress'" (click)="tab = 'progress'">📈 Fortschritt</button>
+      <button [class.active]="tab === 'settings'" (click)="tab = 'settings'">⚙️ Einstellungen</button>
+    </nav>
+
+    <div *ngIf="tab === 'progress'" class="tab-content">
+      <h3>Lernfortschritt</h3>
+      <p>Beantwortete Fragen: {{ stats.questionsAnswered }}</p>
+      <p>Richtige Antworten: {{ stats.correctAnswers }}</p>
+      <p>Erfolg: {{ (stats.correctAnswers / stats.questionsAnswered * 100) | number:'1.0-0' }}%</p>
+    </div>
+
+    <div *ngIf="tab === 'settings'" class="tab-content">
+      <h3>Bewertungseinstellungen</h3>
+      <label>Tippfehler-Toleranz:</label>
+      <select [(ngModel)]="settings.tolerance">
+        <option value="low">Niedrig</option>
+        <option value="medium">Mittel</option>
+        <option value="high">Hoch</option>
+      </select>
+
+      <label>Groß-/Kleinschreibung beachten:</label>
+      <input type="checkbox" [(ngModel)]="settings.caseSensitive" />
+
+      <label>Schätztoleranz (%):</label>
+      <input type="number" [(ngModel)]="settings.estimateTolerance" min="0" max="100" />
+    </div>
+
   </div>
 </div>

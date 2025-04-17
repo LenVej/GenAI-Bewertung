@@ -1,24 +1,26 @@
-<h2>Questions</h2>
+<div class="questions-container">
+  <h2 class="questions-title">📚 Fragenübersicht</h2>
 
-<table *ngIf="questions.length > 0; else noQuestions" border="1" cellspacing="0" cellpadding="8">
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Type</th>
-    <th>Subject</th>
-    <th>Text</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let q of questions">
-    <td>{{ q.questionId }}</td>
-    <td>{{ q.questionType }}</td>
-    <td>{{ q.subject }}</td>
-    <td>{{ q.questionText }}</td>
-  </tr>
-  </tbody>
-</table>
+  <table *ngIf="questions.length > 0; else noQuestions" class="styled-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Typ</th>
+      <th>Thema</th>
+      <th>Fragetext</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let q of questions">
+      <td>{{ q.questionId }}</td>
+      <td>{{ q.questionType }}</td>
+      <td>{{ q.subject }}</td>
+      <td>{{ q.questionText }}</td>
+    </tr>
+    </tbody>
+  </table>
 
-<ng-template #noQuestions>
-  <p>No questions found.</p>
-</ng-template>
+  <ng-template #noQuestions>
+    <p class="no-questions">Keine Fragen gefunden.</p>
+  </ng-template>
+</div>
