@@ -27,6 +27,35 @@
       <p>Beantwortete Fragen: {{ stats.questionsAnswered }}</p>
       <p>Richtige Antworten: {{ stats.correctAnswers }}</p>
       <p>Erfolg: {{ (stats.correctAnswers / stats.questionsAnswered * 100) | number:'1.0-0' }}%</p>
+
+      <!-- 👇 Deine erstellten Fragen -->
+      <div *ngIf="userQuestions.length > 0" class="user-questions">
+        <h3>📝 Deine erstellten Fragen</h3>
+        <table class="styled-table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Typ</th>
+            <th>Thema</th>
+            <th>Fragetext</th>
+            <th>Erstellt am</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let q of userQuestions">
+            <td>{{ q.questionId }}</td>
+            <td>{{ q.questionType }}</td>
+            <td>{{ q.subject }}</td>
+            <td>{{ q.questionText }}</td>
+            <td>{{ q.createdAt | date:'short' }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div *ngIf="userQuestions.length === 0" class="no-questions">
+        <p>Du hast noch keine Fragen erstellt.</p>
+      </div>
     </div>
 
     <div *ngIf="tab === 'settings'" class="tab-content">

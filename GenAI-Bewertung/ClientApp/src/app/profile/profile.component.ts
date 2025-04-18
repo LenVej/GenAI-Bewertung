@@ -14,6 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 export class ProfileComponent {
   user: any = null;
+  userQuestions: any[] = [];
   error: string = '';
   tab = 'progress';
   currentLang = 'de'; // Default
@@ -36,6 +37,7 @@ export class ProfileComponent {
     private translate: TranslateService
   ) {
     this.loadProfile();
+    this.loadMyQuestions();
     this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();
   }
 
@@ -46,6 +48,13 @@ export class ProfileComponent {
         this.error = 'Fehler beim Laden des Profils.';
         console.error(err);
       }
+    });
+  }
+
+  loadMyQuestions() {
+    this.http.get<any[]>(`${environment.apiBaseUrl}/api/questions/by-user`).subscribe({
+      next: data => this.userQuestions = data,
+      error: err => console.error('Fehler beim Laden der Fragen', err)
     });
   }
 

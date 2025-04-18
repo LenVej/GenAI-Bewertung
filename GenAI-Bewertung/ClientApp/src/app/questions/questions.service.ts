@@ -15,4 +15,9 @@ export class QuestionService {
   getQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>(this.apiUrl);
   }
+
+  createQuestion(q: Partial<Question>) {
+    return this.http.post<Question>(this.apiUrl, q);
+  }
+
 }

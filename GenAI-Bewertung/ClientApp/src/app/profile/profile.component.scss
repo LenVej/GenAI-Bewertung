@@ -172,3 +172,29 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.user-questions {
+  margin-top: 2rem;
+
+  table.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f3f3f3;
+    }
+  }
+
+  .no-questions {
+    font-style: italic;
+    color: #888;
+    margin-top: 1rem;
+  }
+}

@@ -10,4 +10,6 @@ public interface IQuestionRepository
     Task UpdateQuestionAsync(Question question);
     Task DeleteQuestionAsync(Question question);
     Task<bool> QuestionExistsAsync(int id);
+    Task<IEnumerable<Question>> GetQuestionsByUserIdAsync(int userId);
+
 }

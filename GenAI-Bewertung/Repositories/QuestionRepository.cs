@@ -45,5 +45,11 @@ namespace GenAI_Bewertung.Repositories
         {
             return await _context.Questions.AnyAsync(e => e.QuestionId == id);
         }
+        
+        public async Task<IEnumerable<Question>> GetQuestionsByUserIdAsync(int userId)
+        {
+            return await _context.Questions.Where(q => q.CreatedBy == userId).ToListAsync();
+        }
+
     }
 }

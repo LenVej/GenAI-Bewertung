@@ -20,5 +20,7 @@ namespace GenAI_Bewertung.Services
         public Task UpdateQuestionAsync(Question question) => _repository.UpdateQuestionAsync(question);
         public Task DeleteQuestionAsync(Question question) => _repository.DeleteQuestionAsync(question);
         public Task<bool> QuestionExistsAsync(int id) => _repository.QuestionExistsAsync(id);
+        public Task<IEnumerable<Question>> GetQuestionsByUserIdAsync(int userId) => _repository.GetQuestionsByUserIdAsync(userId);
+
     }
 }

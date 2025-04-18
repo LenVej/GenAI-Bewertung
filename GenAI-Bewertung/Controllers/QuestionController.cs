@@ -87,5 +87,19 @@ namespace GenAI_Bewertung.Controllers
             await _service.DeleteQuestionAsync(question);
             return NoContent();
         }
+        
+        [HttpGet("by-user")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<Question>>> GetMyQuestions()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null) return Unauthorized();
+
+            int userId = int.Parse(userIdClaim.Value);
+            var questions = await _service.GetQuestionsByUserIdAsync(userId);
+
+            return Ok(questions);
+        }
+
     }
 }

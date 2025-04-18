@@ -1,36 +1,89 @@
 .questions-container {
-  max-width: 900px;
+  max-width: 960px;
   margin: 2rem auto;
-  padding: 1rem;
-}
+  padding: 2rem;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
 
-.questions-title {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
+  .questions-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #1b6ec2;
+  }
 
-.styled-table {
-  width: 100%;
-  border-collapse: collapse;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-  font-family: Arial, sans-serif;
-}
+  .create-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
 
-.styled-table th,
-.styled-table td {
-  text-align: left;
-  padding: 0.75rem;
-  border-bottom: 1px solid #ddd;
-}
+    input,
+    select {
+      margin-top: 0;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      flex: 1 1 200px;
+      min-width: 180px;
+      transition: border-color 0.2s ease;
 
-.styled-table thead {
-  background-color: #1b6ec2;
-  color: white;
-}
+      &:focus {
+        border-color: #1b6ec2;
+        outline: none;
+      }
+    }
 
-.no-questions {
-  text-align: center;
-  font-style: italic;
-  color: #888;
-  margin-top: 2rem;
+    .btn.create-btn {
+      margin-top: 0 !important;
+      padding: 0.6rem 1.2rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #388e3c;
+      }
+    }
+  }
+
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+
+    th,
+    td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    thead {
+      background-color: #1b6ec2;
+      color: white;
+    }
+
+    tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+  }
+
+  .no-questions {
+    margin-top: 2rem;
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
 }

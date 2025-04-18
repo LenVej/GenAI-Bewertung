@@ -1,8 +1,19 @@
 <div class="questions-container">
   <h2 class="questions-title">{{ 'questions.title' | translate }}</h2>
 
+  <!-- Formular -->
+  <div class="create-form">
+    <input [(ngModel)]="newQuestion.questionText" placeholder="📝 Fragetext" />
+    <input [(ngModel)]="newQuestion.subject" placeholder="📚 Thema" />
+    <select [(ngModel)]="newQuestion.questionType">
+      <option *ngFor="let type of questionTypes" [value]="type">
+        {{ 'questions.type.' + type | translate }}
+      </option>
+    </select>
+    <button class="btn create-btn" (click)="createQuestion()">Frage erstellen</button>
+  </div>
 
-  
+  <!-- Tabelle -->
   <table *ngIf="questions.length > 0; else noQuestions" class="styled-table">
     <thead>
     <tr>
