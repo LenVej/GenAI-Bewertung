@@ -1,19 +1,21 @@
 <div class="questions-container">
-  <h2 class="questions-title">📚 Fragenübersicht</h2>
+  <h2 class="questions-title">{{ 'questions.title' | translate }}</h2>
 
+
+  
   <table *ngIf="questions.length > 0; else noQuestions" class="styled-table">
     <thead>
     <tr>
       <th>ID</th>
-      <th>Typ</th>
-      <th>Thema</th>
-      <th>Fragetext</th>
+      <th>{{ 'questions.typeLabel' | translate }}</th>
+      <th>{{ 'questions.subject' | translate }}</th>
+      <th>{{ 'questions.text' | translate }}</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let q of questions">
       <td>{{ q.questionId }}</td>
-      <td>{{ q.questionType }}</td>
+      <td>{{ ('questions.type.' + q.questionType) | translate }}</td>
       <td>{{ q.subject }}</td>
       <td>{{ q.questionText }}</td>
     </tr>
@@ -21,6 +23,6 @@
   </table>
 
   <ng-template #noQuestions>
-    <p class="no-questions">Keine Fragen gefunden.</p>
+    <p class="no-questions">{{ 'questions.empty' | translate }}</p>
   </ng-template>
 </div>

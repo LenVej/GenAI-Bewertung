@@ -3,18 +3,40 @@ import { AuthService } from '../auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {environment} from "../../environments/environment.local";
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
+
 export class ProfileComponent {
   user: any = null;
   error: string = '';
+  tab = 'progress';
+  currentLang = 'de'; // Default
 
-  constructor(private http: HttpClient, private auth: AuthService, private router: Router) {
+  stats = {
+    questionsAnswered: 25,
+    correctAnswers: 19
+  };
+
+  settings = {
+    tolerance: 'medium',
+    caseSensitive: false,
+    estimateTolerance: 10
+  };
+
+  constructor(
+    private http: HttpClient,
+    private auth: AuthService,
+    private router: Router,
+    private translate: TranslateService
+  ) {
     this.loadProfile();
+    this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();
   }
 
   loadProfile() {
@@ -39,17 +61,11 @@ export class ProfileComponent {
     }
   }
 
-  tab = 'progress';
-
-
-  stats = {
-    questionsAnswered: 25,
-    correctAnswers: 19
-  };
-
-  settings = {
-    tolerance: 'medium',
-    caseSensitive: false,
-    estimateTolerance: 10
-  };
+  changeLanguage(lang: string) {
+    this.translate.use(lang);
+    this.currentLang = lang;
+    localStorage.setItem('lang', lang);
+    console.log(this.translate.currentLang)
+  }
 }
+

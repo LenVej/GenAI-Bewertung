@@ -31,6 +31,13 @@
 
     <div *ngIf="tab === 'settings'" class="tab-content">
       <h3>Bewertungseinstellungen</h3>
+
+      <h3>Sprache auswählen</h3>
+      <select #langSelect (change)="changeLanguage(langSelect.value)">
+        <option value="de" [selected]="currentLang === 'de'">Deutsch</option>
+        <option value="en" [selected]="currentLang === 'en'">English</option>
+      </select>
+
       <label>Tippfehler-Toleranz:</label>
       <select [(ngModel)]="settings.tolerance">
         <option value="low">Niedrig</option>
@@ -44,6 +51,5 @@
       <label>Schätztoleranz (%):</label>
       <input type="number" [(ngModel)]="settings.estimateTolerance" min="0" max="100" />
     </div>
-
   </div>
 </div>

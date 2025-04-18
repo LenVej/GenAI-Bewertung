@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "GenAI Evaluation",
+    "welcome": "Welcome",
+    "logout": "Logout"
+  },
+  "questions": {
+    "title": "📚 Question Overview",
+    "type": {
+      "MultipleChoice": "Multiple choice",
+      "EitherOr": "Either/Or",
+      "OneWord": "One word answer",
+      "Math": "Math question",
+      "Estimation": "Estimation",
+      "FillInTheBlank": "Cloze text",
+      "FreeText": "Free text"
+    },
+    "typeLabel": "Type",
+    "subject": "Subject",
+    "text": "Question text",
+    "empty": "No questions found."
+  },
+  "profile": {
+    "language": "Select language",
+    "profile": {
+      "username": "Username",
+      "email": "Email",
+      "since": "Since",
+      "delete": "Delete account",
+      "logout": "Logout"
+    }
+  }
+}

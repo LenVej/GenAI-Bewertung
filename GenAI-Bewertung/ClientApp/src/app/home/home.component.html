@@ -1,14 +1,21 @@
 <div class="home-container">
   <h1 class="home-title">
-    👋 Willkommen bei <span class="highlight">GenAI Bewertung</span>
+    👋 <span class="highlight">Willkommen bei GenAI Bewertung</span>
   </h1>
 
   <p class="home-description">
-    Diese Plattform nutzt generative KI zur flexiblen und präzisen Bewertung von Lernantworten in verschiedenen Formaten – von Multiple Choice bis Freitext.
+    Eine moderne Plattform zur KI-gestützten Bewertung von Lernantworten – von Multiple Choice über Lückentext bis Freitext.
   </p>
 
-  <div class="home-links">
-    <a routerLink="/login" class="btn login-btn">🔐 Login</a>
-    <a routerLink="/register" class="btn register-btn">📝 Registrieren</a>
+  <div class="home-box">
+    <div *ngIf="!auth.isLoggedIn(); else loggedIn" class="home-actions">
+      <a routerLink="/login" class="btn primary-btn">🔐 Login</a>
+      <a routerLink="/register" class="btn secondary-btn">📝 Registrieren</a>
+    </div>
+
+    <ng-template #loggedIn>
+      <p class="welcome-message">👋 Schön, dass du wieder da bist!</p>
+      <a routerLink="/profile" class="btn profile-btn">➡️ Zum Profil</a>
+    </ng-template>
   </div>
 </div>

@@ -2,7 +2,9 @@
 using GenAI_Bewertung.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GenAI_Bewertung.Controllers
 {
@@ -41,11 +43,18 @@ namespace GenAI_Bewertung.Controllers
 
         // POST: api/questions
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Question>> PostQuestion(Question question)
         {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null) return Unauthorized("Kein Benutzer-Token gefunden.");
+
+            question.CreatedBy = int.Parse(userIdClaim.Value);
             await _service.AddQuestionAsync(question);
+
             return CreatedAtAction(nameof(GetQuestion), new { id = question.QuestionId }, question);
         }
+
 
         // PUT: api/questions/{id}
         [HttpPut("{id}")]

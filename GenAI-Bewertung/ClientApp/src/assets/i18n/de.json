@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "GenAI Bewertung",
+    "welcome": "Willkommen",
+    "logout": "Abmelden"
+  },
+  "questions": {
+    "title": "📚 Fragenübersicht",
+    "type": {
+      "MultipleChoice": "Ankreuzfrage",
+      "EitherOr": "Entweder-Oder",
+      "OneWord": "Ein-Wort-Antwort",
+      "Math": "Rechenfrage",
+      "Estimation": "Schätzfrage",
+      "FillInTheBlank": "Lückentext",
+      "FreeText": "Freitext"
+    },
+    "empty": "Keine Fragen gefunden.",
+    "typeLabel": "Typ",
+    "subject": "Thema",
+    "text": "Fragetext"
+  },
+  "profile": {
+    "language": "Sprache auswählen",
+    "profile": {
+      "username": "Benutzername",
+      "email": "Email",
+      "since": "Seit",
+      "delete": "Konto löschen",
+      "logout": "Logout"
+    }
+  }
+}
