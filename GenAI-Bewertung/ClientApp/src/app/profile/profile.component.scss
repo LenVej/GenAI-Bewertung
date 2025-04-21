@@ -198,3 +198,18 @@ select {
     margin-top: 1rem;
   }
 }
+
+.btn.mini-btn.danger-btn {
+  padding: 0.3rem 0.6rem;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #c62828;
+  }
+}

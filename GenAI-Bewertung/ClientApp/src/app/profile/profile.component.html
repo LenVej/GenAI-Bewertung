@@ -39,6 +39,7 @@
             <th>Thema</th>
             <th>Fragetext</th>
             <th>Erstellt am</th>
+            <th>Aktion</th>
           </tr>
           </thead>
           <tbody>
@@ -48,6 +49,9 @@
             <td>{{ q.subject }}</td>
             <td>{{ q.questionText }}</td>
             <td>{{ q.createdAt | date:'short' }}</td>
+            <td>
+              <button class="btn mini-btn danger-btn" (click)="deleteQuestion(q.questionId)">🗑️</button>
+            </td>
           </tr>
           </tbody>
         </table>

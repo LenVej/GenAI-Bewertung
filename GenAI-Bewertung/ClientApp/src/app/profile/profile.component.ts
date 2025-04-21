@@ -76,5 +76,17 @@ export class ProfileComponent {
     localStorage.setItem('lang', lang);
     console.log(this.translate.currentLang)
   }
+
+  deleteQuestion(id: number) {
+    if (confirm('Möchtest du diese Frage wirklich löschen?')) {
+      this.http.delete(`${environment.apiBaseUrl}/api/questions/${id}`).subscribe({
+        next: () => {
+          this.userQuestions = this.userQuestions.filter(q => q.questionId !== id);
+        },
+        error: err => console.error('Fehler beim Löschen der Frage', err)
+      });
+    }
+  }
+
 }
 
