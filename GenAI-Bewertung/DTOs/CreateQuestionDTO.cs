@@ -22,7 +22,7 @@ public class CreateQuestionDto
     public double? CorrectValue { get; set; }
 
     public string? ClozeText { get; set; }
-    public List<string>? Solutions { get; set; }
+    public List<CreateBlankGapDto>? Gaps { get; set; }
 
     public string? ExpectedKeywords { get; set; }
 }

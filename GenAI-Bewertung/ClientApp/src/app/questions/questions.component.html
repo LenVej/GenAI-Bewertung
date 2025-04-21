@@ -41,13 +41,19 @@
     </div>
 
     <div *ngIf="newQuestion.questionType === 'FillInTheBlank'">
-      <input [(ngModel)]="newQuestion.clozeText" placeholder="Text mit { {gap} } Lücken" />
-      <input [(ngModel)]="newSolution" placeholder="Lösungswort hinzufügen" />
-      <button class="btn mini-btn" (click)="addSolution()">➕ Lösung hinzufügen</button>
-      <ul>
-        <li *ngFor="let sol of newQuestion.solutions">{{ sol }}</li>
-      </ul>
+      <input [(ngModel)]="newQuestion.clozeText" [attr.placeholder]="'Text mit {{0}}, {{1}}, ... für Lücken'" />
+
+      <div *ngFor="let gap of newQuestion.gaps; let i = index; trackBy: trackByIndex">
+        <h5>Lücke {{ gap.index }}</h5>
+        <div *ngFor="let s of gap.solutions; let j = index; trackBy: trackByIndex">
+          <input [(ngModel)]="gap.solutions[j]" placeholder="Lösung {{ j + 1 }}" />
+        </div>
+        <button class="btn mini-btn" (click)="addSolutionToGap(i)">➕ Lösung hinzufügen</button>
+      </div>
+
+      <button class="btn mini-btn" (click)="addGap()">➕ Neue Lücke</button>
     </div>
+
 
     <div *ngIf="newQuestion.questionType === 'FreeText'">
       <input [(ngModel)]="newQuestion.expectedKeywords" placeholder="Wichtige Schlüsselwörter" />
@@ -118,9 +124,11 @@
       <tr *ngIf="q.questionType === 'FillInTheBlank'">
         <td colspan="4">
           <strong>Lückentext:</strong> {{ q.clozeText }}<br />
-          <strong>Lösungen:</strong>
+          <strong>Lücken & Lösungen:</strong>
           <ul>
-            <li *ngFor="let s of q.solutions">{{ s }}</li>
+            <li *ngFor="let gap of q.gaps">
+              <strong>Lücke {{ gap.index }}:</strong> {{ gap.solutions.join(', ') }}
+            </li>
           </ul>
         </td>
       </tr>

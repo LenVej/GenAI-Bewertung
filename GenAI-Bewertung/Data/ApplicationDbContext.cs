@@ -21,6 +21,7 @@ namespace GenAI_Bewertung.Data
         public DbSet<FillInTheBlankQuestion> FillInTheBlankQuestions { get; set; }
         public DbSet<FreeTextQuestion> FreeTextQuestions { get; set; }
 
+        public DbSet<BlankGap> BlankGaps { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<User> Users { get; set; }
 
@@ -40,7 +41,16 @@ namespace GenAI_Bewertung.Data
             modelBuilder.Entity<FillInTheBlankQuestion>().ToTable("FillInTheBlankQuestions");
             modelBuilder.Entity<FreeTextQuestion>().ToTable("FreeTextQuestions");
 
-            // Optional: Weitere Konfigurationen hier (z. B. Beziehungen, Constraints etc.)
+            modelBuilder.Entity<FillInTheBlankQuestion>()
+                .HasMany(q => q.Gaps)
+                .WithOne(g => g.FillInTheBlankQuestion)
+                .HasForeignKey(g => g.FillInTheBlankQuestionId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<BlankGap>()
+                .ToTable("BlankGaps") // Explicit table for clarity
+                .Property(g => g.Solutions)
+                .HasColumnType("jsonb");
         }
     }
 }

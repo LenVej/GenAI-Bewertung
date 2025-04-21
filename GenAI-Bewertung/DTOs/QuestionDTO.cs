@@ -31,7 +31,7 @@ public class QuestionDto
 
     // FillInTheBlank
     public string? ClozeText { get; set; }
-    public List<string>? Solutions { get; set; }
+    public List<BlankGapDto>? Gaps { get; set; }
 
     // FreeText
     public string? ExpectedKeywords { get; set; }

@@ -1,3 +1,5 @@
+import {BlankGap} from "./blank-gap.model";
+
 export interface Question {
   questionId: number;
   questionText: string;
@@ -6,22 +8,28 @@ export interface Question {
   createdBy: number;
   createdAt: string;
 
-  // typ-spezifische Felder (alle optional)
+  // Multiple Choice
   choices?: string[];
   correctIndices?: number[];
 
+  // EitherOr
   optionA?: string;
   optionB?: string;
   correctAnswer?: string;
 
+  // OneWord
   expectedAnswer?: string;
 
+  // Math
   expectedResult?: number;
 
+  // Estimation
   correctValue?: number;
 
+  // FillInTheBlank
   clozeText?: string;
-  solutions?: string[];
+  gaps?: BlankGap[];
 
+  // FreeText
   expectedKeywords?: string;
 }

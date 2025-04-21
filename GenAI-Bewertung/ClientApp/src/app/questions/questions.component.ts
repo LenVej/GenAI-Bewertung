@@ -25,7 +25,7 @@ export class QuestionsComponent implements OnInit {
     correctValue: null,
     tolerancePercent: null,
     clozeText: '',
-    solutions: [],
+    gaps: [],
     expectedKeywords: ''
   };
 
@@ -76,9 +76,10 @@ export class QuestionsComponent implements OnInit {
           expectedAnswer: '',
           expectedResult: null,
           correctValue: null,
-          tolerancePercent: null,
           clozeText: '',
-          solutions: [],
+          gaps: [
+            { index: 0, solutions: [] }
+          ],
           expectedKeywords: ''
         };
       },
@@ -99,15 +100,16 @@ export class QuestionsComponent implements OnInit {
     }
   }
 
-  addSolution() {
-    if (this.newSolution.trim()) {
-      this.newQuestion.solutions.push(this.newSolution.trim());
-      this.newSolution = '';
-    }
+  addGap() {
+    const nextIndex = this.newQuestion.gaps.length;
+    this.newQuestion.gaps.push({ index: nextIndex, solutions: [] });
+  }
+
+  addSolutionToGap(gapIndex: number) {
+    this.newQuestion.gaps[gapIndex].solutions.push('');
   }
 
   trackByIndex(index: number, item: any): number {
     return index;
   }
-
 }

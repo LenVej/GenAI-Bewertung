@@ -41,8 +41,13 @@ public static class QuestionMapper
                 break;
             case FillInTheBlankQuestion fib:
                 dto.ClozeText = fib.ClozeText;
-                dto.Solutions = fib.Solutions;
+                dto.Gaps = fib.Gaps.Select(g => new BlankGapDto
+                {
+                    Index = g.Index,
+                    Solutions = g.Solutions
+                }).ToList();
                 break;
+
             case FreeTextQuestion ft:
                 dto.ExpectedKeywords = ft.ExpectedKeywords;
                 break;
@@ -113,7 +118,11 @@ public static class QuestionMapper
             CreatedBy = userId,
             CreatedAt = createdAt,
             ClozeText = dto.ClozeText ?? "",
-            Solutions = dto.Solutions ?? new()
+            Gaps = dto.Gaps?.Select(g => new Entities.QuestionTypes.BlankGap
+            {
+                Index = g.Index,
+                Solutions = g.Solutions ?? new()
+            }).ToList() ?? new()
         },
         QuestionType.FreeText => new FreeTextQuestion
         {
