@@ -58,12 +58,13 @@
       <button class="btn mini-btn" (click)="addGap()">➕ Neue Lücke</button>
     </div>
 
-
-
     <div *ngIf="newQuestion.questionType === 'FreeText'">
       <input [(ngModel)]="newQuestion.expectedKeywords" placeholder="Wichtige Schlüsselwörter" />
     </div>
+  </div>
 
+  <!-- 🔽 Fixierter Button außerhalb des Formulars -->
+  <div class="button-container">
     <button class="btn create-btn" (click)="createQuestion()">✅ Frage erstellen</button>
   </div>
 
@@ -79,7 +80,6 @@
     </thead>
     <tbody>
     <ng-container *ngFor="let q of questions">
-      <!-- Hauptzeile -->
       <tr>
         <td>{{ q.questionId }}</td>
         <td>{{ ('questions.type.' + q.questionType) | translate }}</td>
@@ -87,14 +87,12 @@
         <td>{{ q.questionText }}</td>
       </tr>
 
-      <!-- Detailzeile je nach Typ -->
       <tr *ngIf="q.questionType === 'MultipleChoice'">
         <td colspan="4">
           <strong>Antwortmöglichkeiten:</strong>
           <ul>
             <li *ngFor="let choice of q.choices; let i = index">
-              {{ i + 1 }}. {{ choice }}
-              <span *ngIf="q.correctIndices?.includes(i)">✅</span>
+              {{ i + 1 }}. {{ choice }} <span *ngIf="q.correctIndices?.includes(i)">✅</span>
             </li>
           </ul>
         </td>
@@ -109,21 +107,15 @@
       </tr>
 
       <tr *ngIf="q.questionType === 'OneWord'">
-        <td colspan="4">
-          <strong>Erwartete Antwort:</strong> {{ q.expectedAnswer }}
-        </td>
+        <td colspan="4"><strong>Erwartete Antwort:</strong> {{ q.expectedAnswer }}</td>
       </tr>
 
       <tr *ngIf="q.questionType === 'Math'">
-        <td colspan="4">
-          <strong>Erwartetes Ergebnis:</strong> {{ q.expectedResult }}
-        </td>
+        <td colspan="4"><strong>Erwartetes Ergebnis:</strong> {{ q.expectedResult }}</td>
       </tr>
 
       <tr *ngIf="q.questionType === 'Estimation'">
-        <td colspan="4">
-          <strong>Richtiger Wert:</strong> {{ q.correctValue }}
-        </td>
+        <td colspan="4"><strong>Richtiger Wert:</strong> {{ q.correctValue }}</td>
       </tr>
 
       <tr *ngIf="q.questionType === 'FillInTheBlank'">
@@ -139,13 +131,9 @@
       </tr>
 
       <tr *ngIf="q.questionType === 'FreeText'">
-        <td colspan="4">
-          <strong>Schlüsselwörter:</strong> {{ q.expectedKeywords }}
-        </td>
+        <td colspan="4"><strong>Schlüsselwörter:</strong> {{ q.expectedKeywords }}</td>
       </tr>
     </ng-container>
-
-
     </tbody>
   </table>
 

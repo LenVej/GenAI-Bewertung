@@ -2,35 +2,37 @@
   max-width: 960px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #fdfdfd;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
   font-family: 'Segoe UI', sans-serif;
+  color: #333;
 
   .questions-title {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
     color: #1b6ec2;
   }
 
   .create-form {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-    margin-bottom: 2rem;
-    justify-content: center;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: #f5faff;
+    border: 1px solid #ddeeff;
+    border-radius: 12px;
 
     input,
     select {
-      margin-top: 0;
-      padding: 0.6rem 1rem;
+      padding: 0.7rem 1rem;
       font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 8px;
-      flex: 1 1 200px;
-      min-width: 180px;
       transition: border-color 0.2s ease;
+      width: 100%;
 
       &:focus {
         border-color: #1b6ec2;
@@ -38,19 +40,55 @@
       }
     }
 
-    .btn.create-btn {
-      margin-top: 0;
+    .btn {
+      margin-top: 0.5rem;
       padding: 0.6rem 1.2rem;
-      background-color: #4caf50;
-      color: white;
+      font-weight: bold;
       border: none;
       border-radius: 8px;
-      font-weight: bold;
       cursor: pointer;
       transition: background-color 0.2s ease;
 
-      &:hover {
-        background-color: #388e3c;
+      &.create-btn {
+        background-color: #4caf50;
+        color: white;
+
+        &:hover {
+          background-color: #388e3c;
+        }
+      }
+
+      &.mini-btn {
+        background-color: #1b6ec2;
+        color: white;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+
+        &:hover {
+          background-color: #1558a2;
+        }
+
+        &.danger-btn {
+          background-color: #e53935;
+
+          &:hover {
+            background-color: #c62828;
+          }
+        }
+      }
+    }
+
+    h5 {
+      margin: 0.5rem 0 0.2rem;
+      color: #444;
+    }
+
+    ul {
+      margin: 0.5rem 0;
+      padding-left: 1.2rem;
+
+      li {
+        margin-bottom: 0.3rem;
       }
     }
   }
@@ -61,13 +99,14 @@
     font-size: 0.95rem;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 
     th,
     td {
       padding: 0.9rem 1rem;
       text-align: left;
       border-bottom: 1px solid #eee;
+      vertical-align: top;
     }
 
     thead {
@@ -76,7 +115,19 @@
     }
 
     tbody tr:hover {
+      background-color: #f7faff;
+    }
+
+    tr + tr td[colspan="4"] {
       background-color: #f9f9f9;
+      font-size: 0.9rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.7rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.4rem 0;
     }
   }
 
@@ -84,13 +135,38 @@
     margin-top: 2rem;
     text-align: center;
     font-style: italic;
-    color: #888;
+    color: #777;
   }
 }
 
-.styled-table tr + tr td[colspan="4"] {
-  background-color: #f9f9f9;
-  font-size: 0.9rem;
-  padding-top: 0;
-  padding-bottom: 0.5rem;
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  .create-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background: linear-gradient(to right, #4caf50, #388e3c);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: linear-gradient(to right, #43a047, #2e7d32);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+  }
 }
+
