@@ -38,7 +38,6 @@ public static class QuestionMapper
                 break;
             case EstimationQuestion est:
                 dto.CorrectValue = est.CorrectValue;
-                dto.TolerancePercent = est.TolerancePercent;
                 break;
             case FillInTheBlankQuestion fib:
                 dto.ClozeText = fib.ClozeText;
@@ -105,7 +104,6 @@ public static class QuestionMapper
             CreatedBy = userId,
             CreatedAt = createdAt,
             CorrectValue = dto.CorrectValue ?? 0,
-            TolerancePercent = dto.TolerancePercent ?? 0
         },
         QuestionType.FillInTheBlank => new FillInTheBlankQuestion
         {

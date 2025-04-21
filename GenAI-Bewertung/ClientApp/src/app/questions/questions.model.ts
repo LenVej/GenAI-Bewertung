@@ -19,7 +19,6 @@ export interface Question {
   expectedResult?: number;
 
   correctValue?: number;
-  tolerancePercent?: number;
 
   clozeText?: string;
   solutions?: string[];

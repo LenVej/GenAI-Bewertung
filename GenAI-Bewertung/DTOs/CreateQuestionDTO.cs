@@ -20,7 +20,6 @@ public class CreateQuestionDto
     public double? ExpectedResult { get; set; }
 
     public double? CorrectValue { get; set; }
-    public double? TolerancePercent { get; set; }
 
     public string? ClozeText { get; set; }
     public List<string>? Solutions { get; set; }

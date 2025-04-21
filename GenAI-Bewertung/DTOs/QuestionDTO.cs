@@ -28,7 +28,6 @@ public class QuestionDto
 
     // Estimation
     public double? CorrectValue { get; set; }
-    public double? TolerancePercent { get; set; }
 
     // FillInTheBlank
     public string? ClozeText { get; set; }
