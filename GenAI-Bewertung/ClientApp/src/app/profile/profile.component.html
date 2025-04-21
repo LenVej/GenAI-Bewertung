@@ -31,31 +31,34 @@
       <!-- 👇 Deine erstellten Fragen -->
       <div *ngIf="userQuestions.length > 0" class="user-questions">
         <h3>📝 Deine erstellten Fragen</h3>
-        <table class="styled-table">
-          <thead>
-          <tr>
-            <th>ID</th>
-            <th>Typ</th>
-            <th>Thema</th>
-            <th>Fragetext</th>
-            <th>Erstellt am</th>
-            <th>Aktion</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let q of userQuestions">
-            <td>{{ q.questionId }}</td>
-            <td>{{ q.questionType }}</td>
-            <td>{{ q.subject }}</td>
-            <td>{{ q.questionText }}</td>
-            <td>{{ q.createdAt | date:'short' }}</td>
-            <td>
-              <button class="btn mini-btn danger-btn" (click)="deleteQuestion(q.questionId)">🗑️</button>
-            </td>
-          </tr>
-          </tbody>
-        </table>
+        <div class="table-wrapper">
+          <table class="styled-table enhanced">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Typ</th>
+              <th>Thema</th>
+              <th>Fragetext</th>
+              <th>Erstellt</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let q of userQuestions">
+              <td>{{ q.questionId }}</td>
+              <td>{{ q.questionType }}</td>
+              <td>{{ q.subject }}</td>
+              <td class="truncate">{{ q.questionText }}</td>
+              <td>{{ q.createdAt | date: 'short' }}</td>
+              <td>
+                <button class="btn small danger" (click)="deleteQuestion(q.questionId)">🗑️</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+
 
       <div *ngIf="userQuestions.length === 0" class="no-questions">
         <p>Du hast noch keine Fragen erstellt.</p>
@@ -83,6 +86,17 @@
 
       <label>Schätztoleranz (%):</label>
       <input type="number" [(ngModel)]="settings.estimateTolerance" min="0" max="100" />
+    </div>
+  </div>
+</div>
+
+<!-- Bestätigungs-Modal -->
+<div class="modal-overlay" *ngIf="showConfirmModal">
+  <div class="modal-box">
+    <h3>{{ confirmMessage }}</h3>
+    <div class="modal-actions">
+      <button class="btn danger-btn" (click)="confirmAction()">Ja, löschen</button>
+      <button class="btn cancel-btn" (click)="cancelAction()">Abbrechen</button>
     </div>
   </div>
 </div>

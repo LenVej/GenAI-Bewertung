@@ -18,6 +18,9 @@ export class ProfileComponent {
   error: string = '';
   tab = 'progress';
   currentLang = 'de'; // Default
+  showConfirmModal = false;
+  confirmMessage = '';
+  private confirmCallback: () => void = () => {};
 
   stats = {
     questionsAnswered: 25,
@@ -63,11 +66,9 @@ export class ProfileComponent {
   }
 
   deleteUser() {
-    if (confirm('Willst du dein Konto wirklich löschen?')) {
-      this.auth.deleteAccount().subscribe(() => {
-        this.auth.logout();
-      });
-    }
+    this.openConfirm('Willst du dein Konto wirklich löschen?', () => {
+      this.auth.deleteAccount().subscribe(() => this.auth.logout());
+    });
   }
 
   changeLanguage(lang: string) {
@@ -78,15 +79,29 @@ export class ProfileComponent {
   }
 
   deleteQuestion(id: number) {
-    if (confirm('Möchtest du diese Frage wirklich löschen?')) {
+    this.openConfirm('Möchtest du diese Frage wirklich löschen?', () => {
       this.http.delete(`${environment.apiBaseUrl}/api/questions/${id}`).subscribe({
         next: () => {
           this.userQuestions = this.userQuestions.filter(q => q.questionId !== id);
         },
         error: err => console.error('Fehler beim Löschen der Frage', err)
       });
-    }
+    });
   }
 
+  openConfirm(message: string, callback: () => void) {
+    this.confirmMessage = message;
+    this.confirmCallback = callback;
+    this.showConfirmModal = true;
+  }
+
+  confirmAction() {
+    this.showConfirmModal = false;
+    this.confirmCallback();
+  }
+
+  cancelAction() {
+    this.showConfirmModal = false;
+  }
 }
 
