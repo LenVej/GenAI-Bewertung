@@ -5,12 +5,56 @@
   <div class="create-form">
     <input [(ngModel)]="newQuestion.questionText" placeholder="📝 Fragetext" />
     <input [(ngModel)]="newQuestion.subject" placeholder="📚 Thema" />
+
     <select [(ngModel)]="newQuestion.questionType">
       <option *ngFor="let type of questionTypes" [value]="type">
         {{ 'questions.type.' + type | translate }}
       </option>
     </select>
-    <button class="btn create-btn" (click)="createQuestion()">Frage erstellen</button>
+
+    <!-- Dynamische Felder je nach Typ -->
+    <div *ngIf="newQuestion.questionType === 'MultipleChoice'">
+      <h4>Antwortmöglichkeiten</h4>
+      <div *ngFor="let choice of newQuestion.choices; let i = index; trackBy: trackByIndex" class="choice-row">
+        <input [(ngModel)]="newQuestion.choices[i]" placeholder="Antwort {{ i + 1 }}" />
+        <input type="checkbox" [checked]="newQuestion.correctIndices?.includes(i)" (change)="toggleCorrect(i)" />
+      </div>
+      <button class="btn mini-btn" (click)="addChoice()">➕ Weitere Option</button>
+    </div>
+
+    <div *ngIf="newQuestion.questionType === 'EitherOr'">
+      <input [(ngModel)]="newQuestion.optionA" placeholder="Option A" />
+      <input [(ngModel)]="newQuestion.optionB" placeholder="Option B" />
+      <input [(ngModel)]="newQuestion.correctAnswer" placeholder="Korrekte Antwort (A/B)" />
+    </div>
+
+    <div *ngIf="newQuestion.questionType === 'OneWord'">
+      <input [(ngModel)]="newQuestion.expectedAnswer" placeholder="Erwartete Antwort" />
+    </div>
+
+    <div *ngIf="newQuestion.questionType === 'Math'">
+      <input type="number" [(ngModel)]="newQuestion.expectedResult" placeholder="Ergebnis" />
+    </div>
+
+    <div *ngIf="newQuestion.questionType === 'Estimation'">
+      <input type="number" [(ngModel)]="newQuestion.correctValue" placeholder="Richtiger Wert" />
+      <input type="number" [(ngModel)]="newQuestion.tolerancePercent" placeholder="Toleranz (%)" />
+    </div>
+
+    <div *ngIf="newQuestion.questionType === 'FillInTheBlank'">
+      <input [(ngModel)]="newQuestion.clozeText" placeholder="Text mit { {gap} } Lücken" />
+      <input [(ngModel)]="newSolution" placeholder="Lösungswort hinzufügen" />
+      <button class="btn mini-btn" (click)="addSolution()">➕ Lösung hinzufügen</button>
+      <ul>
+        <li *ngFor="let sol of newQuestion.solutions">{{ sol }}</li>
+      </ul>
+    </div>
+
+    <div *ngIf="newQuestion.questionType === 'FreeText'">
+      <input [(ngModel)]="newQuestion.expectedKeywords" placeholder="Wichtige Schlüsselwörter" />
+    </div>
+
+    <button class="btn create-btn" (click)="createQuestion()">✅ Frage erstellen</button>
   </div>
 
   <!-- Tabelle -->
@@ -24,12 +68,73 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let q of questions">
-      <td>{{ q.questionId }}</td>
-      <td>{{ ('questions.type.' + q.questionType) | translate }}</td>
-      <td>{{ q.subject }}</td>
-      <td>{{ q.questionText }}</td>
-    </tr>
+    <ng-container *ngFor="let q of questions">
+      <!-- Hauptzeile -->
+      <tr>
+        <td>{{ q.questionId }}</td>
+        <td>{{ ('questions.type.' + q.questionType) | translate }}</td>
+        <td>{{ q.subject }}</td>
+        <td>{{ q.questionText }}</td>
+      </tr>
+
+      <!-- Detailzeile je nach Typ -->
+      <tr *ngIf="q.questionType === 'MultipleChoice'">
+        <td colspan="4">
+          <strong>Antwortmöglichkeiten:</strong>
+          <ul>
+            <li *ngFor="let choice of q.choices; let i = index">
+              {{ i + 1 }}. {{ choice }}
+              <span *ngIf="q.correctIndices?.includes(i)">✅</span>
+            </li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr *ngIf="q.questionType === 'EitherOr'">
+        <td colspan="4">
+          <strong>Option A:</strong> {{ q.optionA }}<br />
+          <strong>Option B:</strong> {{ q.optionB }}<br />
+          <strong>Korrekt:</strong> {{ q.correctAnswer }}
+        </td>
+      </tr>
+
+      <tr *ngIf="q.questionType === 'OneWord'">
+        <td colspan="4">
+          <strong>Erwartete Antwort:</strong> {{ q.expectedAnswer }}
+        </td>
+      </tr>
+
+      <tr *ngIf="q.questionType === 'Math'">
+        <td colspan="4">
+          <strong>Erwartetes Ergebnis:</strong> {{ q.expectedResult }}
+        </td>
+      </tr>
+
+      <tr *ngIf="q.questionType === 'Estimation'">
+        <td colspan="4">
+          <strong>Richtiger Wert:</strong> {{ q.correctValue }}<br />
+          <strong>Toleranz:</strong> ±{{ q.tolerancePercent }} %
+        </td>
+      </tr>
+
+      <tr *ngIf="q.questionType === 'FillInTheBlank'">
+        <td colspan="4">
+          <strong>Lückentext:</strong> {{ q.clozeText }}<br />
+          <strong>Lösungen:</strong>
+          <ul>
+            <li *ngFor="let s of q.solutions">{{ s }}</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr *ngIf="q.questionType === 'FreeText'">
+        <td colspan="4">
+          <strong>Schlüsselwörter:</strong> {{ q.expectedKeywords }}
+        </td>
+      </tr>
+    </ng-container>
+
+
     </tbody>
   </table>
 

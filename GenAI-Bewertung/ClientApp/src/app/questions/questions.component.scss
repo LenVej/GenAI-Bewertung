@@ -39,7 +39,7 @@
     }
 
     .btn.create-btn {
-      margin-top: 0 !important;
+      margin-top: 0;
       padding: 0.6rem 1.2rem;
       background-color: #4caf50;
       color: white;
@@ -86,4 +86,11 @@
     font-style: italic;
     color: #888;
   }
+}
+
+.styled-table tr + tr td[colspan="4"] {
+  background-color: #f9f9f9;
+  font-size: 0.9rem;
+  padding-top: 0;
+  padding-bottom: 0.5rem;
 }

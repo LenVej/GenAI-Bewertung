@@ -11,11 +11,25 @@ import { Question } from './questions.model';
 export class QuestionsComponent implements OnInit {
   questions: Question[] = [];
 
-  newQuestion: Partial<Question> = {
+  newQuestion: any = {
     questionText: '',
     questionType: 'MultipleChoice',
-    subject: ''
+    subject: '',
+    choices: [''],
+    correctIndices: [],
+    optionA: '',
+    optionB: '',
+    correctAnswer: '',
+    expectedAnswer: '',
+    expectedResult: null,
+    correctValue: null,
+    tolerancePercent: null,
+    clozeText: '',
+    solutions: [],
+    expectedKeywords: ''
   };
+
+  newSolution: string = '';
 
   questionTypes = [
     'MultipleChoice',
@@ -50,10 +64,50 @@ export class QuestionsComponent implements OnInit {
     this.questionService.createQuestion(this.newQuestion).subscribe({
       next: (q) => {
         this.questions.push(q);
-        this.newQuestion = { questionText: '', questionType: 'MultipleChoice', subject: '' };
+        this.newQuestion = {
+          questionText: '',
+          questionType: 'MultipleChoice',
+          subject: '',
+          choices: [''],
+          correctIndices: [],
+          optionA: '',
+          optionB: '',
+          correctAnswer: '',
+          expectedAnswer: '',
+          expectedResult: null,
+          correctValue: null,
+          tolerancePercent: null,
+          clozeText: '',
+          solutions: [],
+          expectedKeywords: ''
+        };
       },
       error: (err) => console.error('Fehler beim Erstellen', err)
     });
+  }
+
+  addChoice() {
+    this.newQuestion.choices.push('');
+  }
+
+  toggleCorrect(index: number) {
+    const idx = this.newQuestion.correctIndices.indexOf(index);
+    if (idx > -1) {
+      this.newQuestion.correctIndices.splice(idx, 1);
+    } else {
+      this.newQuestion.correctIndices.push(index);
+    }
+  }
+
+  addSolution() {
+    if (this.newSolution.trim()) {
+      this.newQuestion.solutions.push(this.newSolution.trim());
+      this.newSolution = '';
+    }
+  }
+
+  trackByIndex(index: number, item: any): number {
+    return index;
   }
 
 }
