@@ -45,14 +45,19 @@
 
       <div *ngFor="let gap of newQuestion.gaps; let i = index; trackBy: trackByIndex">
         <h5>Lücke {{ gap.index }}</h5>
+
         <div *ngFor="let s of gap.solutions; let j = index; trackBy: trackByIndex">
           <input [(ngModel)]="gap.solutions[j]" placeholder="Lösung {{ j + 1 }}" />
+          <button class="btn mini-btn danger-btn" (click)="removeSolutionFromGap(i, j)">❌</button>
         </div>
+
         <button class="btn mini-btn" (click)="addSolutionToGap(i)">➕ Lösung hinzufügen</button>
+        <button class="btn mini-btn danger-btn" (click)="removeGap(i)">🗑️ Lücke entfernen</button>
       </div>
 
       <button class="btn mini-btn" (click)="addGap()">➕ Neue Lücke</button>
     </div>
+
 
 
     <div *ngIf="newQuestion.questionType === 'FreeText'">

@@ -112,4 +112,15 @@ export class QuestionsComponent implements OnInit {
   trackByIndex(index: number, item: any): number {
     return index;
   }
+
+  removeSolutionFromGap(gapIndex: number, solutionIndex: number) {
+    this.newQuestion.gaps[gapIndex].solutions.splice(solutionIndex, 1);
+  }
+
+  removeGap(gapIndex: number) {
+    this.newQuestion.gaps.splice(gapIndex, 1);
+    // Optional: Indizes neu setzen, damit {{0}}, {{1}}, ... übereinstimmen
+    this.newQuestion.gaps.forEach((g: any, i: number) => g.index = i);
+  }
+
 }
