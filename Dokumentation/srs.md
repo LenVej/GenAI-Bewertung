@@ -203,6 +203,10 @@ AccuracyThreshold: Genauigkeitsgrenze für Schätzfragen.
 
 ![Alternativer Text](/Dokumentation/Database_Structure.png)
 
+How it's implemented so far (22.04.2025)
+![er_diagram](https://github.com/user-attachments/assets/ca7566ca-51a2-4610-9144-198153973919)
+
+
 ## 6. Zukünftige Erweiterungen (Ideen)
 - **Adaptive Lernpfade**: Personalisierte Empfehlungen basierend auf den Bewertungen.
 - **Mehrsprachigkeit**: Unterstützung für mehrere Sprachen, z.B. Deutsch und Englisch.
