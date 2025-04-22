@@ -37,6 +37,9 @@ builder.Services.AddScoped<QuestionService>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<AuthService>();
 
+builder.Services.AddScoped<IExamRepository, ExamRepository>();
+builder.Services.AddScoped<ExamService>();
+
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options =>
     {
