@@ -15,6 +15,19 @@
       <input [(ngModel)]="filterSubject" name="filterSubject" placeholder="📚 Thema filtern" />
     </div>
 
+    <!-- ✅ Submit -->
+    <button
+      type="submit"
+      class="btn create-btn"
+      [disabled]="!title.trim() || selectedQuestionIds.length === 0">
+      ✅ Prüfung speichern
+    </button>
+    <div *ngIf="!title.trim() || selectedQuestionIds.length === 0" class="form-warning">
+      <small style="color: #d32f2f;">
+        Bitte gib einen Titel ein und wähle mindestens eine Frage aus.
+      </small>
+    </div>
+
     <!-- 📝 Fragen-Auswahl -->
     <table *ngIf="filteredQuestions.length > 0" class="styled-table">
       <thead>
@@ -98,8 +111,5 @@
     <div *ngIf="filteredQuestions.length === 0" class="no-questions">
       Keine passenden Fragen gefunden.
     </div>
-
-    <!-- ✅ Submit -->
-    <button type="submit" class="btn create-btn">✅ Prüfung speichern</button>
   </form>
 </div>

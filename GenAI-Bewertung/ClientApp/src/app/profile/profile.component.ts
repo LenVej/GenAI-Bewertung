@@ -22,6 +22,10 @@ export class ProfileComponent {
   confirmMessage = '';
   private confirmCallback: () => void = () => {};
 
+  userExams: any[] = [];
+  showQuestions = true;
+  showExams = true;
+
   stats = {
     questionsAnswered: 25,
     correctAnswers: 19
@@ -41,6 +45,7 @@ export class ProfileComponent {
   ) {
     this.loadProfile();
     this.loadMyQuestions();
+    this.loadMyExams();
     this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();
   }
 
@@ -103,5 +108,25 @@ export class ProfileComponent {
   cancelAction() {
     this.showConfirmModal = false;
   }
+
+  loadMyExams() {
+    this.http.get<any[]>(`${environment.apiBaseUrl}/api/exams/by-user`).subscribe({
+      next: data => this.userExams = data,
+      error: err => console.error('Fehler beim Laden der Prüfungen', err)
+    });
+  }
+
+  deleteExam(id: number) {
+    this.openConfirm('Möchtest du diese Prüfung wirklich löschen?', () => {
+      this.http.delete(`${environment.apiBaseUrl}/api/exams/${id}`).subscribe({
+        next: () => {
+          this.userExams = this.userExams.filter(e => e.examId !== id);
+        },
+        error: err => console.error('Fehler beim Löschen der Prüfung', err)
+      });
+    });
+  }
+
+
 }
 

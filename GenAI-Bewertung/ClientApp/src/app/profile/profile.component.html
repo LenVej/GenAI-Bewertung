@@ -28,40 +28,77 @@
       <p>Richtige Antworten: {{ stats.correctAnswers }}</p>
       <p>Erfolg: {{ (stats.correctAnswers / stats.questionsAnswered * 100) | number:'1.0-0' }}%</p>
 
-      <!-- 👇 Deine erstellten Fragen -->
-      <div *ngIf="userQuestions.length > 0" class="user-questions">
-        <h3>📝 Deine erstellten Fragen</h3>
-        <div class="table-wrapper">
-          <table class="styled-table enhanced">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Typ</th>
-              <th>Thema</th>
-              <th>Fragetext</th>
-              <th>Erstellt</th>
-              <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let q of userQuestions">
-              <td>{{ q.questionId }}</td>
-              <td>{{ q.questionType }}</td>
-              <td>{{ q.subject }}</td>
-              <td class="truncate">{{ q.questionText }}</td>
-              <td>{{ q.createdAt | date: 'short' }}</td>
-              <td>
-                <button class="btn small danger" (click)="deleteQuestion(q.questionId)">🗑️</button>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+      <!-- 👇 Fragen-Toggle -->
+      <h3 style="cursor: pointer" (click)="showQuestions = !showQuestions">📝 Deine erstellten Fragen {{ showQuestions ? '▲' : '▼' }}</h3>
+      <div *ngIf="showQuestions">
+        <div *ngIf="userQuestions.length > 0" class="user-questions">
+          <div class="table-wrapper">
+            <table class="styled-table enhanced">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Typ</th>
+                <th>Thema</th>
+                <th>Fragetext</th>
+                <th>Erstellt</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let q of userQuestions">
+                <td>{{ q.questionId }}</td>
+                <td>{{ q.questionType }}</td>
+                <td>{{ q.subject }}</td>
+                <td class="truncate">{{ q.questionText }}</td>
+                <td>{{ q.createdAt | date: 'short' }}</td>
+                <td>
+                  <button class="btn small danger" (click)="deleteQuestion(q.questionId)">🗑️</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div *ngIf="userQuestions.length === 0" class="no-questions">
+          <p>Du hast noch keine Fragen erstellt.</p>
         </div>
       </div>
 
-
-      <div *ngIf="userQuestions.length === 0" class="no-questions">
-        <p>Du hast noch keine Fragen erstellt.</p>
+      <!-- 👇 Prüfungen-Toggle -->
+      <h3 style="cursor: pointer" (click)="showExams = !showExams">🧪 Deine erstellten Prüfungen {{ showExams ? '▲' : '▼' }}</h3>
+      <div *ngIf="showExams">
+        <div *ngIf="userExams.length > 0" class="user-questions">
+          <div class="table-wrapper">
+            <table class="styled-table enhanced">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Titel</th>
+                <th>Beschreibung</th>
+                <th>Zeitlimit</th>
+                <th>Erstellt</th>
+                <th>Aktionen</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let e of userExams">
+                <td>{{ e.examId }}</td>
+                <td>{{ e.title }}</td>
+                <td>{{ e.description }}</td>
+                <td>{{ e.timeLimitMinutes ? e.timeLimitMinutes + ' Min' : '⏳ Kein Limit' }}</td>
+                <td>{{ e.createdAt | date: 'short' }}</td>
+                <td>
+                  <button class="btn edit-btn" [routerLink]="['/exams/edit', e.examId]">✏️</button>
+                  <button class="btn small danger" (click)="deleteExam(e.examId)">🗑️</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div *ngIf="userExams.length === 0" class="no-questions">
+          <p>Du hast noch keine Prüfungen erstellt.</p>
+        </div>
       </div>
     </div>
 

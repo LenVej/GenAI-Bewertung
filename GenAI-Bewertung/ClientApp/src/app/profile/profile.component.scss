@@ -101,7 +101,6 @@ input[type="checkbox"] {
 .btn {
   display: block;
   width: 100%;
-  margin-top: 1rem;
   padding: 0.5rem;
   border: none;
   border-radius: 5px;
@@ -112,6 +111,7 @@ input[type="checkbox"] {
 .logout-btn {
   background-color: #1b6ec2;
   color: white;
+  margin-bottom: 1em;
 }
 
 .logout-btn:hover {
@@ -357,4 +357,9 @@ table.styled-table.enhanced {
 
 .cancel-btn:hover {
   background-color: #cbd5e0;
+}
+
+.edit-btn{
+  margin-bottom: 0.5em;
+  background-color: #004cb1;
 }

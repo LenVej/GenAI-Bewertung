@@ -9,4 +9,6 @@ public interface IExamRepository
     Task AddAsync(Exam exam);
     Task DeleteAsync(Exam exam);
     Task<IEnumerable<Exam>> GetByUserIdAsync(int userId);
+    Task UpdateAsync(Exam exam);
+
 }

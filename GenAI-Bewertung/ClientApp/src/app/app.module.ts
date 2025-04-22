@@ -22,6 +22,7 @@ import { ExamListComponent } from './exams/exam-list/exam-list.component';
 import { ExamCreateComponent } from "./exams/exam-create/exam-create.component";
 import { ExamAttemptComponent } from './exams/exam-attempt/exam-attempt.component';
 import { ExamResultComponent } from './exams/exam-result/exam-result.component';
+import { ExamEditComponent } from './exams/exam-edit/exam-edit.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,7 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ExamListComponent,
     ExamCreateComponent,
     ExamAttemptComponent,
-    ExamResultComponent
+    ExamResultComponent,
+    ExamEditComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

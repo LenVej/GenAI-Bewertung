@@ -39,4 +39,18 @@ public static class ExamMapper
             }).ToList()
         };
     }
+    
+    public static void UpdateFromDto(Exam exam, UpdateExamDto dto)
+    {
+        exam.Title = dto.Title;
+        exam.Description = dto.Description;
+        exam.TimeLimitMinutes = dto.TimeLimitMinutes;
+    
+        // Remove existing questions and reassign with new order
+        exam.Questions = dto.QuestionIds.Select((id, idx) => new ExamQuestion
+        {
+            QuestionId = id,
+            Order = idx
+        }).ToList();
+    }
 }

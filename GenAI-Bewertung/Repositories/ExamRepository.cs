@@ -49,4 +49,11 @@ public class ExamRepository : IExamRepository
             .ThenInclude(eq => eq.Question)
             .ToListAsync();
     }
+    
+    public async Task UpdateAsync(Exam exam)
+    {
+        _context.Exams.Update(exam);
+        await _context.SaveChangesAsync();
+    }
+
 }

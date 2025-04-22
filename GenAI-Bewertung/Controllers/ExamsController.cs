@@ -70,4 +70,23 @@ public class ExamsController : ControllerBase
         var exams = await _service.GetByUserIdAsync(userId);
         return Ok(exams.Select(ExamMapper.ToDto));
     }
+    
+    [HttpPut("{id}")]
+    [Authorize]
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateExamDto dto)
+    {
+        var exam = await _service.GetByIdAsync(id);
+        if (exam == null) return NotFound();
+
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+        if (userIdClaim == null) return Unauthorized();
+    
+        var userId = int.Parse(userIdClaim.Value);
+        if (exam.CreatedBy != userId) return Forbid(); // Only allow owner to update
+
+        ExamMapper.UpdateFromDto(exam, dto);
+        await _service.UpdateAsync(exam);
+
+        return Ok(ExamMapper.ToDto(exam));
+    }
 }
