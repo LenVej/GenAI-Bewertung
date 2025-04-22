@@ -10,6 +10,10 @@ import { Question } from './questions.model';
 
 export class QuestionsComponent implements OnInit {
   questions: Question[] = [];
+  filterSubject: string = '';
+  filterType: string = '';
+  filterText: string = '';
+
 
   newQuestion: any = {
     questionText: '',
@@ -119,7 +123,6 @@ export class QuestionsComponent implements OnInit {
 
   removeGap(gapIndex: number) {
     this.newQuestion.gaps.splice(gapIndex, 1);
-    // Optional: Indizes neu setzen, damit {{0}}, {{1}}, ... übereinstimmen
     this.newQuestion.gaps.forEach((g: any, i: number) => g.index = i);
   }
 
@@ -128,6 +131,16 @@ export class QuestionsComponent implements OnInit {
     // Auch aus den korrekten Indices entfernen, wenn vorhanden
     this.newQuestion.correctIndices = this.newQuestion.correctIndices
       .filter((i: number) => i !== index)
-      .map((i: number) => (i > index ? i - 1 : i)); // nachfolgende Indices anpassen
+      .map((i: number) => (i > index ? i - 1 : i));
   }
+
+  get filteredQuestions(): Question[] {
+    return this.questions.filter(q => {
+      const matchesSubject = this.filterSubject ? q.subject.toLowerCase().includes(this.filterSubject.toLowerCase()) : true;
+      const matchesType = this.filterType ? q.questionType === this.filterType : true;
+      const matchesText = this.filterText ? q.questionText.toLowerCase().includes(this.filterText.toLowerCase()) : true;
+      return matchesSubject && matchesType && matchesText;
+    });
+  }
+
 }

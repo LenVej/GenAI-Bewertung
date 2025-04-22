@@ -34,12 +34,27 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return !!this.getAccessToken();
+    const token = this.getAccessToken();
+    return !!token && !this.isTokenExpired(token);
   }
+
 
   deleteAccount() {
     return this.http.delete(`${this.api}/delete`);
   }
 
+  isTokenExpired(token: string): boolean {
+    if (!token) return true;
+
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const expiry = payload.exp;
+      const now = Math.floor(Date.now() / 1000);
+      return expiry < now;
+    } catch (e) {
+      console.error('Invalid token:', e);
+      return true;
+    }
+  }
+
 }
-console.log('API Base URL:', environment.apiBaseUrl);

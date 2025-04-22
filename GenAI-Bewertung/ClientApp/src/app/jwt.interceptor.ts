@@ -12,6 +12,12 @@ export class JwtInterceptor implements HttpInterceptor {
     const token = this.auth.getAccessToken();
 
     if (token) {
+      if (this.auth.isTokenExpired(token)) {
+        console.warn('Token is expired — logging out before request.');
+        this.auth.logout();
+        return throwError(() => new Error('Token expired'));
+      }
+
       req = req.clone({
         setHeaders: {
           Authorization: `Bearer ${token}`
@@ -22,8 +28,8 @@ export class JwtInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((err: HttpErrorResponse) => {
         if (err.status === 401) {
-          console.warn('Token expired or unauthorized — logging out.');
-          this.auth.logout(); // Clears storage and navigates to /login
+          console.warn('401 Unauthorized — logging out.');
+          this.auth.logout();
         }
         return throwError(() => err);
       })

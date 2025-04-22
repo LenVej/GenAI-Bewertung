@@ -69,6 +69,17 @@
     <button class="btn create-btn" (click)="createQuestion()">✅ Frage erstellen</button>
   </div>
 
+  <div class="create-form" style="margin-bottom: 2rem;">
+    <input [(ngModel)]="filterSubject" placeholder="🔍 Thema filtern" />
+    <select [(ngModel)]="filterType">
+      <option value="">Alle Typen</option>
+      <option *ngFor="let type of questionTypes" [value]="type">
+        {{ 'questions.type.' + type | translate }}
+      </option>
+    </select>
+    <input [(ngModel)]="filterText" placeholder="🔍 Fragetext durchsuchen" />
+  </div>
+
   <!-- Tabelle -->
   <table *ngIf="questions.length > 0; else noQuestions" class="styled-table">
     <thead>
@@ -80,8 +91,8 @@
     </tr>
     </thead>
     <tbody>
-    <ng-container *ngFor="let q of questions">
-      <tr>
+    <ng-container *ngFor="let q of filteredQuestions">
+    <tr>
         <td>{{ q.questionId }}</td>
         <td>{{ ('questions.type.' + q.questionType) | translate }}</td>
         <td>{{ q.subject }}</td>
