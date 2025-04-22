@@ -123,4 +123,11 @@ export class QuestionsComponent implements OnInit {
     this.newQuestion.gaps.forEach((g: any, i: number) => g.index = i);
   }
 
+  removeChoice(index: number) {
+    this.newQuestion.choices.splice(index, 1);
+    // Auch aus den korrekten Indices entfernen, wenn vorhanden
+    this.newQuestion.correctIndices = this.newQuestion.correctIndices
+      .filter((i: number) => i !== index)
+      .map((i: number) => (i > index ? i - 1 : i)); // nachfolgende Indices anpassen
+  }
 }

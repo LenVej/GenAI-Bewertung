@@ -18,6 +18,7 @@
       <div *ngFor="let choice of newQuestion.choices; let i = index; trackBy: trackByIndex" class="choice-row">
         <input [(ngModel)]="newQuestion.choices[i]" placeholder="Antwort {{ i + 1 }}" />
         <input type="checkbox" [checked]="newQuestion.correctIndices?.includes(i)" (change)="toggleCorrect(i)" />
+        <button class="btn mini-btn danger-btn" (click)="removeChoice(i)">Antwort entfernen</button>
       </div>
       <button class="btn mini-btn" (click)="addChoice()">➕ Weitere Option</button>
     </div>
@@ -48,7 +49,7 @@
 
         <div *ngFor="let s of gap.solutions; let j = index; trackBy: trackByIndex">
           <input [(ngModel)]="gap.solutions[j]" placeholder="Lösung {{ j + 1 }}" />
-          <button class="btn mini-btn danger-btn" (click)="removeSolutionFromGap(i, j)">❌</button>
+          <button class="btn mini-btn danger-btn" (click)="removeSolutionFromGap(i, j)">❌ Lösung entfernen</button>
         </div>
 
         <button class="btn mini-btn" (click)="addSolutionToGap(i)">➕ Lösung hinzufügen</button>
