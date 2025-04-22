@@ -2,6 +2,7 @@
 using GenAI_Bewertung.Entities.QuestionTypes;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace GenAI_Bewertung.Data
 {
     public class ApplicationDbContext : DbContext
@@ -24,6 +25,10 @@ namespace GenAI_Bewertung.Data
         public DbSet<BlankGap> BlankGaps { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<User> Users { get; set; }
+        
+        public DbSet<Exam> Exams { get; set; }
+        public DbSet<ExamQuestion> ExamQuestions { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -51,6 +56,18 @@ namespace GenAI_Bewertung.Data
                 .ToTable("BlankGaps") // Explicit table for clarity
                 .Property(g => g.Solutions)
                 .HasColumnType("jsonb");
+            
+            modelBuilder.Entity<ExamQuestion>()
+                .HasOne(eq => eq.Exam)
+                .WithMany(e => e.Questions)
+                .HasForeignKey(eq => eq.ExamId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ExamQuestion>()
+                .HasOne(eq => eq.Question)
+                .WithMany()
+                .HasForeignKey(eq => eq.QuestionId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
