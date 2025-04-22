@@ -1,0 +1,32 @@
+<div class="exams-container">
+  <h2 class="exams-title">🧪 Verfügbare Prüfungen</h2>
+
+  <div class="button-container" *ngIf="auth.isLoggedIn()">
+    <button class="btn create-btn" [routerLink]="['/exams/create']">➕ Neue Prüfung erstellen</button>
+  </div>
+
+  <div *ngIf="exams.length === 0" class="no-exams">
+    <p>Es sind aktuell keine Prüfungen verfügbar.</p>
+  </div>
+
+  <table *ngIf="exams.length > 0" class="styled-table">
+    <thead>
+    <tr>
+      <th>Titel</th>
+      <th>Beschreibung</th>
+      <th>Zeitlimit</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let exam of exams">
+      <td>{{ exam.title }}</td>
+      <td>{{ exam.description }}</td>
+      <td>{{ exam.timeLimitMinutes ? (exam.timeLimitMinutes + ' Min') : '⏳ Kein Limit' }}</td>
+      <td>
+        <button class="btn mini-btn" [routerLink]="['/exams/attempt', exam.examId]">📝 Starten</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

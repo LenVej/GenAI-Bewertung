@@ -18,6 +18,10 @@ import { JwtInterceptor } from './jwt.interceptor';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ExamListComponent } from './exams/exam-list/exam-list.component';
+import { ExamCreateComponent } from "./exams/exam-create/exam-create.component";
+import { ExamAttemptComponent } from './exams/exam-attempt/exam-attempt.component';
+import { ExamResultComponent } from './exams/exam-result/exam-result.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,7 +35,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     QuestionsComponent,
     ProfileComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ExamListComponent,
+    ExamCreateComponent,
+    ExamAttemptComponent,
+    ExamResultComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -43,6 +51,15 @@ export function HttpLoaderFactory(http: HttpClient) {
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'profile', component: ProfileComponent },
+      {
+        path: 'exams',
+        children: [
+          { path: '', component: ExamListComponent },
+          { path: 'create', component: ExamCreateComponent },
+          { path: ':id/start', component: ExamAttemptComponent },
+          { path: ':id/result', component: ExamResultComponent }
+        ]
+      }
     ]),
 
     TranslateModule.forRoot({
