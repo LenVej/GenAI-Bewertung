@@ -41,8 +41,16 @@
       }
     }
 
+    .checkbox{
+      margin-bottom: 0.5rem;
+    }
+
+    .space{
+      margin-bottom: 0.5rem;
+    }
+
     .btn {
-      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
       padding: 0.6rem 1.2rem;
       font-weight: bold;
       border: none;
@@ -173,4 +181,14 @@
 
 .dropdown{
   margin-top: 0;
+}
+
+.validation-error {
+  color: #d32f2f;
+  background-color: #fbe9e7;
+  border: 1px solid #ffcdd2;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }

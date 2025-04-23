@@ -17,7 +17,7 @@
       <h4>Antwortmöglichkeiten</h4>
       <div *ngFor="let choice of newQuestion.choices; let i = index; trackBy: trackByIndex" class="choice-row">
         <input [(ngModel)]="newQuestion.choices[i]" placeholder="Antwort {{ i + 1 }}" />
-        <input type="checkbox" [checked]="newQuestion.correctIndices?.includes(i)" (change)="toggleCorrect(i)" />
+        <input class="checkbox" type="checkbox" [checked]="newQuestion.correctIndices?.includes(i)" (change)="toggleCorrect(i)" />
         <button class="btn mini-btn danger-btn" (click)="removeChoice(i)">Antwort entfernen</button>
       </div>
       <button class="btn mini-btn" (click)="addChoice()">➕ Weitere Option</button>
@@ -42,13 +42,13 @@
     </div>
 
     <div *ngIf="newQuestion.questionType === 'FillInTheBlank'">
-      <input [(ngModel)]="newQuestion.clozeText" [attr.placeholder]="'Text mit {{0}}, {{1}}, ... für Lücken'" />
+      <input class="space" [(ngModel)]="newQuestion.clozeText" [attr.placeholder]="'Text mit {{0}}, {{1}}, ... für Lücken'" />
 
       <div *ngFor="let gap of newQuestion.gaps; let i = index; trackBy: trackByIndex">
         <h5>Lücke {{ gap.index }}</h5>
 
         <div *ngFor="let s of gap.solutions; let j = index; trackBy: trackByIndex">
-          <input [(ngModel)]="gap.solutions[j]" placeholder="Lösung {{ j + 1 }}" />
+          <input class="space" [(ngModel)]="gap.solutions[j]" placeholder="Lösung {{ j + 1 }}" />
           <button class="btn mini-btn danger-btn" (click)="removeSolutionFromGap(i, j)">❌ Lösung entfernen</button>
         </div>
 
@@ -62,6 +62,10 @@
     <div *ngIf="newQuestion.questionType === 'FreeText'">
       <input [(ngModel)]="newQuestion.expectedKeywords" placeholder="Wichtige Schlüsselwörter" />
     </div>
+  </div>
+
+  <div *ngIf="validationMessage" class="validation-error">
+    {{ validationMessage }}
   </div>
 
   <!-- 🔽 Fixierter Button außerhalb des Formulars -->

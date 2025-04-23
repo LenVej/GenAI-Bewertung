@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from './questions.service';
 import { Question } from './questions.model';
+import {BlankGap} from "./blank-gap.model";
 
 @Component({
   selector: 'app-questions-component',
@@ -13,6 +14,7 @@ export class QuestionsComponent implements OnInit {
   filterSubject: string = '';
   filterType: string = '';
   filterText: string = '';
+  validationMessage: string = '';
 
 
   newQuestion: any = {
@@ -65,30 +67,40 @@ export class QuestionsComponent implements OnInit {
   }
 
   createQuestion() {
+    const error = this.getValidationError(this.newQuestion);
+    if (error) {
+      this.validationMessage = error;
+      return;
+    }
+
+    this.validationMessage = '';
     this.questionService.createQuestion(this.newQuestion).subscribe({
-      next: (q) => {
-        this.questions.push(q);
-        this.newQuestion = {
-          questionText: '',
-          questionType: 'MultipleChoice',
-          subject: '',
-          choices: [''],
-          correctIndices: [],
-          optionA: '',
-          optionB: '',
-          correctAnswer: '',
-          expectedAnswer: '',
-          expectedResult: null,
-          correctValue: null,
-          clozeText: '',
-          gaps: [
-            { index: 0, solutions: [] }
-          ],
-          expectedKeywords: ''
-        };
+      next: (created) => {
+        this.questions.push(created);
+        this.resetNewQuestion();
       },
       error: (err) => console.error('Fehler beim Erstellen', err)
     });
+  }
+
+
+  resetNewQuestion() {
+    this.newQuestion = {
+      questionText: '',
+      questionType: 'MultipleChoice',
+      subject: '',
+      choices: [''],
+      correctIndices: [],
+      optionA: '',
+      optionB: '',
+      correctAnswer: '',
+      expectedAnswer: '',
+      expectedResult: null,
+      correctValue: null,
+      clozeText: '',
+      gaps: [{ index: 0, solutions: [] }],
+      expectedKeywords: ''
+    };
   }
 
   addChoice() {
@@ -143,4 +155,49 @@ export class QuestionsComponent implements OnInit {
     });
   }
 
+  getValidationError(q: any): string | null {
+    if (!q.questionText.trim()) return '❗️Bitte gib einen Fragetext ein.';
+    if (!q.subject.trim()) return '❗️Bitte gib ein Thema an.';
+
+    switch (q.questionType) {
+      case 'MultipleChoice':
+        if (q.choices.length < 2) return '❗️Mindestens zwei Antwortmöglichkeiten erforderlich.';
+        if (!q.choices.every((c: string) => c.trim())) return '❗️Alle Antwortmöglichkeiten müssen ausgefüllt sein.';
+        if (q.correctIndices.length === 0) return '❗️Mindestens eine richtige Antwort markieren.';
+        break;
+
+      case 'EitherOr':
+        if (!q.optionA.trim() || !q.optionB.trim()) return '❗️Option A und B müssen ausgefüllt sein.';
+        if (q.correctAnswer !== 'A' && q.correctAnswer !== 'B') return '❗️Bitte gib A oder B als richtige Antwort an.';
+        break;
+
+      case 'OneWord':
+        if (!q.expectedAnswer.trim()) return '❗️Bitte gib die erwartete Antwort ein.';
+        break;
+
+      case 'Math':
+        if (q.expectedResult === null) return '❗️Bitte gib ein erwartetes Ergebnis ein.';
+        break;
+
+      case 'Estimation':
+        if (q.correctValue === null) return '❗️Bitte gib den richtigen Wert ein.';
+        break;
+
+      case 'FillInTheBlank':
+        if (!q.clozeText.trim()) return '❗️Bitte gib den Lückentext ein.';
+        if (q.gaps.length === 0) return '❗️Mindestens eine Lücke hinzufügen.';
+        if (!q.gaps.every((g: BlankGap) => g.solutions.length > 0 && g.solutions.every((s: string) => s.trim())))
+          return '❗️Alle Lücken müssen mindestens eine Lösung enthalten.';
+        break;
+
+      case 'FreeText':
+        if (!q.expectedKeywords.trim()) return '❗️Bitte gib Schlüsselwörter ein.';
+        break;
+
+      default:
+        return '❗️Ungültiger Fragetyp.';
+    }
+
+    return null; // alles ok
+  }
 }
