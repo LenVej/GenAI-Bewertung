@@ -19,17 +19,19 @@ export class AuthService {
     return this.http.post<any>(`${this.api}/register`, data);
   }
 
-  saveTokens(access: string, refresh: string) {
-    localStorage.setItem('access_token', access);
-    localStorage.setItem('refresh_token', refresh);
+  saveTokens(access: string, refresh: string, remember: boolean = true) {
+    const storage = remember ? localStorage : sessionStorage;
+    storage.setItem('access_token', access);
+    storage.setItem('refresh_token', refresh);
   }
 
   getAccessToken() {
-    return localStorage.getItem('access_token');
+    return localStorage.getItem('access_token') || sessionStorage.getItem('access_token');
   }
 
   logout() {
     localStorage.clear();
+    sessionStorage.clear();
     this.router.navigate(['/login']);
   }
 

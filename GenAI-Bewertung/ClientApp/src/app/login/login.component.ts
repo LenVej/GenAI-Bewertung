@@ -11,25 +11,19 @@ export class LoginComponent {
   email = '';
   password = '';
   error = '';
+  keepLoggedIn = true;
 
   constructor(private auth: AuthService, private router: Router) {}
 
   login() {
     this.auth.login({ email: this.email, password: this.password }).subscribe({
       next: res => {
-        this.auth.saveTokens(res.accessToken, res.refreshToken);
+        this.auth.saveTokens(res.accessToken, res.refreshToken, this.keepLoggedIn);
         this.router.navigate(['/profile']);
       },
       error: err => {
-        if (err.status === 0) {
-          this.error = 'Server nicht erreichbar – läuft das Backend?';
-        } else if (err.error && typeof err.error === 'string') {
-          this.error = err.error;
-        } else {
-          this.error = 'Unbekannter Fehler beim Login';
-        }
+        this.error = err.error?.toString() ?? 'Unbekannter Fehler beim Login';
       }
-
     });
   }
 }

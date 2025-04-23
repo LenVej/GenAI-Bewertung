@@ -10,8 +10,14 @@
     <label>Passwort:</label>
     <input [(ngModel)]="password" name="password" type="password" required />
 
+    <label class="remember-label">
+      <input type="checkbox" [(ngModel)]="keepLoggedIn" name="keepLoggedIn" />
+      Eingeloggt bleiben
+    </label>
+
     <button type="submit" class="btn login-btn">Login</button>
   </form>
+
 
   <p class="auth-footer">Noch kein Konto? <a routerLink="/register">Jetzt registrieren</a></p>
 </div>
