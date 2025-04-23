@@ -1,1 +1,88 @@
-<p>exam-edit works!</p>
+<div class="exam-create-container">
+  <h2 class="exam-title">✏️ Prüfung bearbeiten</h2>
+
+  <form *ngIf="examLoaded" (ngSubmit)="updateExam()" class="exam-form">
+    <input type="text" [(ngModel)]="title" name="title" placeholder="Titel der Prüfung" required />
+    <textarea [(ngModel)]="description" name="description" placeholder="Beschreibung" rows="3"></textarea>
+
+    <label for="time">⏱️ Zeitlimit (Minuten, optional)</label>
+    <input type="number" id="time" [(ngModel)]="timeLimitMinutes" name="time" min="0" />
+
+    <div class="create-form filter-form">
+      <input [(ngModel)]="filterText" name="filterText" placeholder="🔍 Fragetext durchsuchen" />
+      <input [(ngModel)]="filterSubject" name="filterSubject" placeholder="📚 Thema filtern" />
+    </div>
+
+    <table *ngIf="filteredQuestions.length > 0" class="styled-table">
+      <thead>
+      <tr>
+        <th>✔️</th>
+        <th>Typ</th>
+        <th>Thema</th>
+        <th>Fragetext</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let q of filteredQuestions">
+        <tr>
+          <td>
+            <input
+              type="checkbox"
+              [checked]="selectedQuestionIds.includes(q.questionId)"
+              (change)="toggleQuestion(q.questionId, $event)" />
+          </td>
+          <td>{{ q.questionType }}</td>
+          <td>{{ q.subject }}</td>
+          <td>{{ q.questionText }}</td>
+        </tr>
+        <tr *ngIf="q.questionType === 'MultipleChoice'">
+          <td colspan="4">
+            <strong>Antwortmöglichkeiten:</strong>
+            <ul>
+              <li *ngFor="let choice of q.choices; let i = index">
+                {{ i + 1 }}. {{ choice }} <span *ngIf="q.correctIndices?.includes(i)">✅</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr *ngIf="q.questionType === 'EitherOr'">
+          <td colspan="4">
+            <strong>Option A:</strong> {{ q.optionA }}<br />
+            <strong>Option B:</strong> {{ q.optionB }}<br />
+            <strong>Korrekt:</strong> {{ q.correctAnswer }}
+          </td>
+        </tr>
+        <tr *ngIf="q.questionType === 'OneWord'">
+          <td colspan="4"><strong>Erwartete Antwort:</strong> {{ q.expectedAnswer }}</td>
+        </tr>
+        <tr *ngIf="q.questionType === 'Math'">
+          <td colspan="4"><strong>Erwartetes Ergebnis:</strong> {{ q.expectedResult }}</td>
+        </tr>
+        <tr *ngIf="q.questionType === 'Estimation'">
+          <td colspan="4"><strong>Richtiger Wert:</strong> {{ q.correctValue }}</td>
+        </tr>
+        <tr *ngIf="q.questionType === 'FillInTheBlank'">
+          <td colspan="4">
+            <strong>Lückentext:</strong> {{ q.clozeText }}<br />
+            <strong>Lücken & Lösungen:</strong>
+            <ul>
+              <li *ngFor="let gap of q.gaps">
+                <strong>Lücke {{ gap.index }}:</strong> {{ gap.solutions.join(', ') }}
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr *ngIf="q.questionType === 'FreeText'">
+          <td colspan="4"><strong>Schlüsselwörter:</strong> {{ q.expectedKeywords }}</td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+
+    <div *ngIf="filteredQuestions.length === 0" class="no-questions">
+      Keine passenden Fragen gefunden.
+    </div>
+
+    <button type="submit" class="btn create-btn">💾 Änderungen speichern</button>
+  </form>
+</div>

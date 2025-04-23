@@ -58,8 +58,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         children: [
           { path: '', component: ExamListComponent },
           { path: 'create', component: ExamCreateComponent },
-          { path: ':id/start', component: ExamAttemptComponent },
-          { path: ':id/result', component: ExamResultComponent }
+          { path: 'start/:id', component: ExamAttemptComponent },
+          { path: 'result/:id', component: ExamResultComponent },
+          { path: 'edit/:id', component: ExamEditComponent }
         ]
       }
     ]),
