@@ -23,12 +23,13 @@ namespace GenAI_Bewertung.Data
         public DbSet<FreeTextQuestion> FreeTextQuestions { get; set; }
 
         public DbSet<BlankGap> BlankGaps { get; set; }
-        public DbSet<Answer> Answers { get; set; }
+        public DbSet<ExamAnswer> ExamAnswers { get; set; }
         public DbSet<User> Users { get; set; }
-        
         public DbSet<Exam> Exams { get; set; }
         public DbSet<ExamQuestion> ExamQuestions { get; set; }
 
+        public DbSet<AiEvaluationResult> AiEvaluationResults { get; set; }
+        public DbSet<ExamAttempt> ExamAttempts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -56,7 +57,7 @@ namespace GenAI_Bewertung.Data
                 .ToTable("BlankGaps") // Explicit table for clarity
                 .Property(g => g.Solutions)
                 .HasColumnType("jsonb");
-            
+
             modelBuilder.Entity<ExamQuestion>()
                 .HasOne(eq => eq.Exam)
                 .WithMany(e => e.Questions)
@@ -68,6 +69,32 @@ namespace GenAI_Bewertung.Data
                 .WithMany()
                 .HasForeignKey(eq => eq.QuestionId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            // ExamAttempt ↔ Answers
+            modelBuilder.Entity<ExamAttempt>()
+                .HasMany(ea => ea.Answers)
+                .WithOne(a => a.ExamAttempt)
+                .HasForeignKey(a => a.ExamAttemptId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // ExamAnswer ↔ Question
+            modelBuilder.Entity<ExamAnswer>()
+                .HasOne(a => a.Question)
+                .WithMany()
+                .HasForeignKey(a => a.QuestionId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // ExamAnswer ↔ Evaluation
+            modelBuilder.Entity<ExamAnswer>()
+                .HasOne(a => a.Evaluation)
+                .WithOne(ev => ev.ExamAnswer)
+                .HasForeignKey<AiEvaluationResult>(ev => ev.ExamAnswerId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // JSON support for selectedIndices
+            modelBuilder.Entity<ExamAnswer>()
+                .Property(a => a.SelectedIndices)
+                .HasColumnType("jsonb");
         }
     }
 }

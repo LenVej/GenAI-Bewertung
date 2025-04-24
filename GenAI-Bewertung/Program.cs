@@ -40,6 +40,9 @@ builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<IExamRepository, ExamRepository>();
 builder.Services.AddScoped<ExamService>();
 
+builder.Services.AddScoped<IExamAttemptRepository, ExamAttemptRepository>();
+builder.Services.AddScoped<ExamAttemptService>();
+
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options =>
     {

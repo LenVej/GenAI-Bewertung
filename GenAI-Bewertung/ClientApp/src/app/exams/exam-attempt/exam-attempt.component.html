@@ -1,1 +1,90 @@
-<p>exam-attempt works!</p>
+<div class="exam-attempt-container">
+  <h2 class="exam-title">🧪 {{ title }}</h2>
+
+  <div *ngIf="timeLimitMinutes" class="timer">
+    ⏳ Zeit verbleibend: <span class="time">{{ timerDisplay }}</span>
+  </div>
+
+  <!-- Exam Layout -->
+  <div class="exam-body">
+    <!-- Sidebar: Question Navigator -->
+    <aside class="question-sidebar">
+      <ul>
+        <li *ngFor="let q of questions; let i = index"
+            [class.active]="i === currentIndex"
+            [class.answered]="isAnswered(i)"
+            (click)="currentIndex = i">
+          {{ i + 1 }}
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Area: Question Display -->
+    <div class="question-display" *ngIf="questions[currentIndex] as current">
+      <h3>Frage {{ currentIndex + 1 }} von {{ questions.length }}</h3>
+      <p class="question-text">{{ current.questionText }}</p>
+
+      <!-- Answer Input -->
+      <div [ngSwitch]="current.questionType">
+        <!-- Multiple Choice -->
+        <div *ngSwitchCase="'MultipleChoice'">
+          <label *ngFor="let choice of current.choices; let i = index">
+            <input type="checkbox"
+                   [value]="i"
+                   [checked]="isSelected(current.questionId, i)"
+                   (change)="onCheckboxChange($event, current.questionId)" />
+            {{ choice }}
+          </label>
+        </div>
+        <!-- EitherOr -->
+        <div *ngSwitchCase="'EitherOr'" class="either-or-box">
+          <p><strong>Option A:</strong> {{ current.optionA }}</p>
+          <p><strong>Option B:</strong> {{ current.optionB }}</p>
+          <input [formControl]="getControl(current.questionId)" placeholder="Antwort: A oder B" />
+        </div>
+
+        <!-- OneWord -->
+        <div *ngSwitchCase="'OneWord'" class="text-answer">
+          <input [formControl]="getControl(current.questionId)" placeholder="Ein-Wort Antwort" />
+        </div>
+
+        <!-- Math -->
+        <div *ngSwitchCase="'Math'" class="text-answer">
+          <input type="number" [formControl]="getControl(current.questionId)" placeholder="Zahl eingeben" />
+        </div>
+
+        <!-- Estimation -->
+        <div *ngSwitchCase="'Estimation'" class="text-answer">
+          <input type="number" [formControl]="getControl(current.questionId)" placeholder="Schätzwert eingeben" />
+        </div>
+
+        <!-- FillInTheBlank -->
+        <div *ngSwitchCase="'FillInTheBlank'" class="text-answer">
+          <p><strong>Text mit Lücken:</strong> {{ current.clozeText }}</p>
+          <textarea [formControl]="getControl(current.questionId)" rows="3" placeholder="Lücken ausfüllen..."></textarea>
+        </div>
+
+        <!-- FreeText -->
+        <div *ngSwitchCase="'FreeText'" class="text-answer">
+          <textarea [formControl]="getControl(current.questionId)" rows="4" placeholder="Freitextantwort"></textarea>
+        </div>
+
+        <!-- Default Input (text or textarea) -->
+        <div *ngSwitchDefault>
+          <textarea [formControl]="getControl(current.questionId)"
+                    rows="4"
+                    placeholder="Antwort hier..."></textarea>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="navigation-buttons">
+        <button class="btn nav-btn" (click)="prev()" [disabled]="currentIndex === 0">⬅️ Zurück</button>
+        <button class="btn nav-btn" (click)="next()" [disabled]="currentIndex === questions.length - 1">Weiter ➡️</button>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="btn submit-btn" (click)="submit()">✅ Prüfung abschließen</button>
+    </div>
+  </div>
+</div>

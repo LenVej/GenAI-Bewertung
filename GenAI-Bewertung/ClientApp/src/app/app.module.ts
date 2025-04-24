@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'questions', component: QuestionsComponent },
@@ -58,7 +60,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         children: [
           { path: '', component: ExamListComponent },
           { path: 'create', component: ExamCreateComponent },
-          { path: 'start/:id', component: ExamAttemptComponent },
+          { path: 'attempt/:id', component: ExamAttemptComponent },
           { path: 'result/:id', component: ExamResultComponent },
           { path: 'edit/:id', component: ExamEditComponent }
         ]
