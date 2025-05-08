@@ -24,6 +24,8 @@ import { ExamCreateComponent } from "./exams/exam-create/exam-create.component";
 import { ExamAttemptComponent } from './exams/exam-attempt/exam-attempt.component';
 import { ExamResultComponent } from './exams/exam-result/exam-result.component';
 import { ExamEditComponent } from './exams/exam-edit/exam-edit.component';
+import { FillInTheBlanksPipe } from './exams/exam-attempt/fill-in-the-blanks.pipe'
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,7 +44,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ExamCreateComponent,
     ExamAttemptComponent,
     ExamResultComponent,
-    ExamEditComponent
+    ExamEditComponent,
+    FillInTheBlanksPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

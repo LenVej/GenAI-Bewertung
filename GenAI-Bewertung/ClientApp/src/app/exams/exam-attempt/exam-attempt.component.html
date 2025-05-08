@@ -60,9 +60,21 @@
 
         <!-- FillInTheBlank -->
         <div *ngSwitchCase="'FillInTheBlank'" class="text-answer">
-          <p><strong>Text mit Lücken:</strong> {{ current.clozeText }}</p>
-          <textarea [formControl]="getControl(current.questionId)" rows="3" placeholder="Lücken ausfüllen..."></textarea>
+          <p><strong>Text mit Lücken:</strong></p>
+          <span *ngFor="let part of (current.clozeText || '') | fillInTheBlanks">
+    <ng-container *ngIf="part.isGap; else normalText">
+      <input
+        type="text"
+        [formControl]="getGapControl(current.questionId, part.index)"
+        class="gap-input"
+        placeholder="Lücke {{ part.index + 1 }}"
+      />
+    </ng-container>
+    <ng-template #normalText>{{ part.text }}</ng-template>
+  </span>
         </div>
+
+
 
         <!-- FreeText -->
         <div *ngSwitchCase="'FreeText'" class="text-answer">

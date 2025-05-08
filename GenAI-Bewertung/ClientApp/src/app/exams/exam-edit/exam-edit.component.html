@@ -13,6 +13,8 @@
       <input [(ngModel)]="filterSubject" name="filterSubject" placeholder="📚 Thema filtern" />
     </div>
 
+    <button type="submit" class="btn create-btn">💾 Änderungen speichern</button>
+
     <table *ngIf="filteredQuestions.length > 0" class="styled-table">
       <thead>
       <tr>
@@ -83,6 +85,5 @@
       Keine passenden Fragen gefunden.
     </div>
 
-    <button type="submit" class="btn create-btn">💾 Änderungen speichern</button>
   </form>
 </div>

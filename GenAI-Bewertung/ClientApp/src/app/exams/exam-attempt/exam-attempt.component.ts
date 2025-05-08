@@ -4,6 +4,7 @@ import {Question} from "../../questions/questions.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment.local";
+import { HostListener } from '@angular/core';
 
 
 @Component({
@@ -52,10 +53,18 @@ export class ExamAttemptComponent implements OnInit {
   initForm(): void {
     const group: any = {};
     this.questions.forEach(q => {
-      group[q.questionId] = this.fb.control('');
+      if (q.questionType === 'FillInTheBlank') {
+        const gapCount = (q.clozeText?.match(/{{\d+}}/g) || []).length;
+        for (let i = 0; i < gapCount; i++) {
+          group[`${q.questionId}_${i}`] = this.fb.control('');
+        }
+      } else {
+        group[q.questionId] = this.fb.control('');
+      }
     });
     this.form = this.fb.group(group);
   }
+
 
   next(): void {
     if (this.currentIndex < this.questions.length - 1) this.currentIndex++;
@@ -67,16 +76,56 @@ export class ExamAttemptComponent implements OnInit {
 
   isAnswered(index: number): boolean {
     const q = this.questions[index];
-    const val = this.form.get(q.questionId.toString())?.value;
-    return val !== null && val !== '';
+
+    if (q.questionType === 'FillInTheBlank') {
+      const gapCount = (q.clozeText?.match(/{{\d+}}/g) || []).length;
+
+      for (let i = 0; i < gapCount; i++) {
+        const control = this.form.get(`${q.questionId}_${i}`);
+        const value = control?.value;
+
+        if (typeof value !== 'string' || value.trim() === '') {
+          return false;
+        }
+      }
+
+      return true; // alle Lücken sind ausgefüllt
+    }
+
+    const control = this.form.get(q.questionId.toString());
+    const value = control?.value;
+
+    if (q.questionType === 'MultipleChoice') {
+      return Array.isArray(value) && value.length > 0;
+    }
+
+    if (q.questionType === 'Math' || q.questionType === 'Estimation') {
+      return value !== null && value !== undefined && value !== '';
+    }
+
+    return typeof value === 'string' && value.trim() !== '';
   }
+
+
+
 
   submit(): void {
     const answers = this.questions.map(q => {
+      if (q.questionType === 'FillInTheBlank') {
+        const gapCount = (q.clozeText?.match(/({{\d+}})/g) || []).length;
+        const textAnswer = Array.from({ length: gapCount }, (_, i) =>
+          this.form.get(`${q.questionId}_${i}`)?.value
+        );
+        return {
+          questionId: q.questionId,
+          textAnswer: JSON.stringify(textAnswer)
+        };
+      }
+
       const value = this.form.get(q.questionId.toString())?.value;
       return {
         questionId: q.questionId,
-        textAnswer: typeof value === 'string' ? value : null,
+        textAnswer: value !== null && value !== undefined ? value.toString().replace(',', '.') : null,
         selectedIndices: Array.isArray(value) ? value : null
       };
     });
@@ -88,6 +137,7 @@ export class ExamAttemptComponent implements OnInit {
       this.router.navigate([`/exams/${this.examId}/result`]);
     });
   }
+
 
   startTimer(): void {
     this.timerInterval = setInterval(() => {
@@ -138,6 +188,10 @@ export class ExamAttemptComponent implements OnInit {
 
   getControl(questionId: number): FormControl {
     return this.form.get(questionId.toString()) as FormControl;
+  }
+
+  getGapControl(questionId: number, gapIndex: number): FormControl {
+    return this.form.get(`${questionId}_${gapIndex}`) as FormControl;
   }
 
 }
