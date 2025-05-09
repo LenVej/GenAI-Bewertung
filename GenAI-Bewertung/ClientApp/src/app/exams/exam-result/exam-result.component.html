@@ -1,1 +1,33 @@
-<p>exam-result works!</p>
+<div class="result-container" *ngIf="!loading && result">
+  <h2>📊 Ergebnis: {{ result.examTitle }}</h2>
+
+  <div class="meta">
+    <p>🕒 Gestartet: {{ result.startedAt | date: 'short' }}</p>
+    <p>✅ Abgegeben: {{ result.submittedAt | date: 'short' }}</p>
+    <p>🎯 Gesamtpunktzahl:
+      <strong [ngClass]="{ 'high-score': result.scorePercent >= 70, 'low-score': result.scorePercent < 70 }">
+        {{ result.scorePercent }}%
+      </strong>
+    </p>
+  </div>
+
+  <hr />
+
+  <div *ngFor="let r of result.results" class="result-question">
+    <h3>🧠 {{ r.questionText }}</h3>
+
+    <div class="answer-block">
+      <p><strong>Deine Antwort:</strong> {{ r.textAnswer || '—' }}</p>
+      <p *ngIf="r.feedback"><strong>💬 AI Feedback:</strong> {{ r.feedback }}</p>
+      <p>
+        <strong>Bewertung:</strong>
+        <span [ngClass]="{ 'correct': r.isCorrect, 'incorrect': !r.isCorrect }">
+          {{ r.isCorrect ? '✅ Richtig' : '❌ Falsch' }}
+        </span>
+        <span class="score">({{ r.score * 100 | number: '1.0-0' }}%)</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loading">⏳ Lade Ergebnis...</div>

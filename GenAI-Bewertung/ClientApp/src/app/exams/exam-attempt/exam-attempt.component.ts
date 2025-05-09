@@ -56,8 +56,10 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
 
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any): void {
-    $event.preventDefault();
-    $event.returnValue = true; // zeigt Browser-Warnung
+    if (!this.hasSubmitted) {
+      $event.preventDefault();
+      $event.returnValue = true;
+    }
   }
 
   canExit(): boolean {
@@ -155,11 +157,16 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
     this.http.post(`${environment.apiBaseUrl}/api/ExamAttempts/submit`, {
       attemptId: this.attemptId,
       answers
-    }).subscribe(() => {
-      this.snackBar.open('✅ Prüfung erfolgreich abgegeben!', 'OK', {
-        duration: 3000
-      });
-      this.router.navigate([`/exams/${this.examId}/result`]);
+    }).subscribe({
+      next: () => {
+        console.log('Submitted attemptId:', this.attemptId); // <== ID prüfen
+        this.snackBar.open('✅ Prüfung erfolgreich abgegeben!', 'OK', { duration: 3000 });
+        this.router.navigate([`/exams/result/${this.attemptId}`]);
+      },
+      error: (err) => {
+        console.error('Submit failed:', err);
+        this.snackBar.open('❌ Fehler beim Abschicken!', 'OK', { duration: 3000 });
+      }
     });
   }
 

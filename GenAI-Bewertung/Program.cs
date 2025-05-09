@@ -43,6 +43,9 @@ builder.Services.AddScoped<ExamService>();
 builder.Services.AddScoped<IExamAttemptRepository, ExamAttemptRepository>();
 builder.Services.AddScoped<ExamAttemptService>();
 
+builder.Services.AddScoped<OpenAiService>();
+
+
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options =>
     {

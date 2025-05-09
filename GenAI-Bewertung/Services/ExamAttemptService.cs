@@ -24,7 +24,7 @@ public class ExamAttemptService
         return await _repo.SaveAnswersAndEvaluateAsync(dto);
     }
 
-    public async Task<ExamAttemptResultDto?> GetResultAsync(int attemptId, int userId)
+    public async Task<ExamAttemptResultDto?> GetAttemptResultAsync(int attemptId, int userId)
     {
         var result = await _repo.GetAttemptResultAsync(attemptId, userId);
         return result;

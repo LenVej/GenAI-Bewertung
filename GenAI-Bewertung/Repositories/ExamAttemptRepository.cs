@@ -1,7 +1,9 @@
 ﻿using GenAI_Bewertung.Data;
 using GenAI_Bewertung.DTOs;
 using GenAI_Bewertung.Entities;
+using GenAI_Bewertung.Entities.QuestionTypes;
 using GenAI_Bewertung.Mappers;
+using GenAI_Bewertung.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace GenAI_Bewertung.Repositories;
@@ -9,10 +11,12 @@ namespace GenAI_Bewertung.Repositories;
 public class ExamAttemptRepository : IExamAttemptRepository
 {
     private readonly ApplicationDbContext _context;
+    private readonly OpenAiService _openAI;
 
-    public ExamAttemptRepository(ApplicationDbContext context)
+    public ExamAttemptRepository(ApplicationDbContext context, OpenAiService openAI)
     {
         _context = context;
+        _openAI = openAI;
     }
 
     public async Task<ExamAttempt?> CreateAttemptAsync(int examId, int userId)
@@ -49,37 +53,76 @@ public class ExamAttemptRepository : IExamAttemptRepository
             .ThenInclude(eq => eq.Question)
             .FirstOrDefaultAsync(a => a.ExamAttemptId == dto.AttemptId);
 
-        if (attempt == null || attempt.SubmittedAt != null) return null;
+        if (attempt == null || attempt.SubmittedAt != null)
+            return null;
 
         var now = DateTime.UtcNow;
+        var answerEntities = new List<ExamAnswer>();
 
-        var answerEntities = dto.Answers.Select(a => new ExamAnswer
+        // Phase 1: Speichere Antworten ohne Evaluation
+        foreach (var submitted in dto.Answers)
         {
-            ExamAttemptId = attempt.ExamAttemptId,
-            QuestionId = a.QuestionId,
-            TextAnswer = a.TextAnswer,
-            SelectedIndices = a.SelectedIndices,
-            AnsweredAt = now
-        }).ToList();
+            var question = attempt.Exam.Questions.FirstOrDefault(q => q.QuestionId == submitted.QuestionId)?.Question;
+            if (question == null) continue;
 
-        _context.ExamAnswers.AddRange(answerEntities);
+            var answer = new ExamAnswer
+            {
+                ExamAttemptId = attempt.ExamAttemptId,
+                QuestionId = submitted.QuestionId,
+                TextAnswer = submitted.TextAnswer,
+                SelectedIndices = submitted.SelectedIndices,
+                AnsweredAt = now
+            };
+
+            answerEntities.Add(answer);
+            _context.ExamAnswers.Add(answer);
+        }
+
+        // Save to get generated Answer IDs
         await _context.SaveChangesAsync();
+
+        // Phase 2: Evaluationen nachträglich hinzufügen
+        foreach (var answer in answerEntities)
+        {
+            var question = attempt.Exam.Questions.FirstOrDefault(q => q.QuestionId == answer.QuestionId)?.Question;
+            if (question == null) continue;
+
+            var eval = await _openAI.EvaluateAsync(question.QuestionText, answer.TextAnswer ?? "");
+            if (eval != null)
+            {
+                var evaluation = new AiEvaluationResult
+                {
+                    ExamAnswerId = answer.ExamAnswerId,
+                    Feedback = eval.Feedback,
+                    Score = eval.Score,
+                    IsCorrect = eval.Score >= 0.6
+                };
+
+                _context.AiEvaluationResults.Add(evaluation);
+
+                // Verbinde für spätere Anzeige (z. B. in DTO)
+                answer.Evaluation = evaluation;
+            }
+        }
 
         attempt.SubmittedAt = now;
         await _context.SaveChangesAsync();
 
+        // Generiere Result-DTO
         var results = answerEntities.Select(ans => new AnswerResultDto
         {
             QuestionId = ans.QuestionId,
             QuestionText = attempt.Exam.Questions.First(q => q.QuestionId == ans.QuestionId).Question.QuestionText,
             TextAnswer = ans.TextAnswer,
             SelectedIndices = ans.SelectedIndices,
-            IsCorrect = false, // ❗ Placeholder
-            Score = 0.0,
-            Feedback = "Feedback folgt nach AI-Auswertung"
+            IsCorrect = ans.Evaluation?.IsCorrect ?? false,
+            Score = ans.Evaluation?.Score ?? 0.0,
+            Feedback = ans.Evaluation?.Feedback ?? "Keine Bewertung"
         }).ToList();
 
-        var resultDto = new ExamAttemptResultDto
+        var scorePercent = results.Any() ? Math.Round(results.Average(r => r.Score) * 100, 2) : 0.0;
+
+        return new ExamAttemptResultDto
         {
             AttemptId = attempt.ExamAttemptId,
             UserId = attempt.UserId,
@@ -88,11 +131,10 @@ public class ExamAttemptRepository : IExamAttemptRepository
             StartedAt = attempt.StartedAt,
             SubmittedAt = now,
             Results = results,
-            ScorePercent = 0.0 // Berechnung folgt
+            ScorePercent = scorePercent
         };
-
-        return resultDto;
     }
+
 
     public async Task<ExamAttemptResultDto?> GetAttemptResultAsync(int attemptId, int userId)
     {

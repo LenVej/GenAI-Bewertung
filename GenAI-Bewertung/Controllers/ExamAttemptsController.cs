@@ -40,14 +40,21 @@ public class ExamAttemptsController : ControllerBase
         return Ok(result);
     }
 
-    [HttpGet("{id}/result")]
+    [HttpGet("result/{attemptId}")]
     [Authorize]
-    public async Task<ActionResult<ExamAttemptResultDto>> GetResult(int id)
+    public async Task<ActionResult<ExamAttemptResultDto>> GetResult(int attemptId)
     {
         var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-        var result = await _service.GetResultAsync(id, userId);
-        if (result == null) return NotFound();
+        var result = await _service.GetAttemptResultAsync(attemptId, userId);
+
+        if (result == null)
+        {
+            Console.WriteLine($"AttemptId {attemptId} not found or not owned by user {userId}");
+            return NotFound();
+        }
 
         return Ok(result);
     }
+
+
 }
