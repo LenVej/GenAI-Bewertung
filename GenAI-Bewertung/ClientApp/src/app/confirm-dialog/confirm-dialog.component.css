@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  padding: 1.5rem;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+}
+
+mat-dialog-content {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+mat-dialog-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+button[mat-button] {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-transform: none;
+  transition: background-color 0.3s ease;
+}
+
+button[mat-button]:first-child {
+  color: #555;
+  border: 1px solid #bbb;
+  background-color: #f9f9f9;
+}
+
+button[mat-button]:first-child:hover {
+  background-color: #eee;
+}
+
+button[mat-button]:last-child {
+  color: white;
+  background-color: #1976d2;
+  border: none;
+}
+
+button[mat-button]:last-child:hover {
+  background-color: #125ea6;
+}

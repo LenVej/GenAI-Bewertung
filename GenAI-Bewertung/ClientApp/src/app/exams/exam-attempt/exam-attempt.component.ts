@@ -5,6 +5,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment.local";
 import { HostListener } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CanExitComponent } from '../../guards/confirm-exit.guard';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { HostListener } from '@angular/core';
   templateUrl: './exam-attempt.component.html',
   styleUrls: ['./exam-attempt.component.scss']
 })
-export class ExamAttemptComponent implements OnInit {
+export class ExamAttemptComponent implements OnInit, CanExitComponent  {
   attemptId!: number;
   examId!: number;
   title = '';
@@ -24,12 +26,14 @@ export class ExamAttemptComponent implements OnInit {
   timeLeft = 0;
   timerInterval: any;
   protected readonly FormControl = FormControl;
+  private hasSubmitted = false;
 
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +52,16 @@ export class ExamAttemptComponent implements OnInit {
 
       this.initForm();
     });
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any): void {
+    $event.preventDefault();
+    $event.returnValue = true; // zeigt Browser-Warnung
+  }
+
+  canExit(): boolean {
+    return this.hasSubmitted;
   }
 
   initForm(): void {
@@ -110,6 +124,14 @@ export class ExamAttemptComponent implements OnInit {
 
 
   submit(): void {
+    const confirmed = confirm('❗ Willst du die Prüfung wirklich abschließen?');
+
+    if (!confirmed) {
+      return;
+    }
+
+    this.hasSubmitted = true;
+
     const answers = this.questions.map(q => {
       if (q.questionType === 'FillInTheBlank') {
         const gapCount = (q.clozeText?.match(/({{\d+}})/g) || []).length;
@@ -134,6 +156,9 @@ export class ExamAttemptComponent implements OnInit {
       attemptId: this.attemptId,
       answers
     }).subscribe(() => {
+      this.snackBar.open('✅ Prüfung erfolgreich abgegeben!', 'OK', {
+        duration: 3000
+      });
       this.router.navigate([`/exams/${this.examId}/result`]);
     });
   }

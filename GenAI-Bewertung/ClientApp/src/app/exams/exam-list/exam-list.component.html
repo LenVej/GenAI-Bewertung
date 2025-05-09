@@ -24,7 +24,7 @@
       <td>{{ exam.description }}</td>
       <td>{{ exam.timeLimitMinutes ? (exam.timeLimitMinutes + ' Min') : '⏳ Kein Limit' }}</td>
       <td>
-        <button class="btn mini-btn" [routerLink]="['/exams/attempt', exam.examId]">📝 Starten</button>
+        <button class="btn mini-btn" (click)="confirmAndStartExam(exam.examId)">📝 Starten</button>
       </td>
     </tr>
     </tbody>

@@ -24,7 +24,13 @@ import { ExamCreateComponent } from "./exams/exam-create/exam-create.component";
 import { ExamAttemptComponent } from './exams/exam-attempt/exam-attempt.component';
 import { ExamResultComponent } from './exams/exam-result/exam-result.component';
 import { ExamEditComponent } from './exams/exam-edit/exam-edit.component';
-import { FillInTheBlanksPipe } from './exams/exam-attempt/fill-in-the-blanks.pipe'
+import { FillInTheBlanksPipe } from './exams/exam-attempt/fill-in-the-blanks.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ConfirmExitGuard } from './guards/confirm-exit.guard';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { MatDialogModule } from "@angular/material/dialog";
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -45,27 +51,30 @@ export function HttpLoaderFactory(http: HttpClient) {
     ExamAttemptComponent,
     ExamResultComponent,
     ExamEditComponent,
-    FillInTheBlanksPipe
+    FillInTheBlanksPipe,
+    ConfirmDialogComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSnackBarModule,
+    MatDialogModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'questions', component: QuestionsComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: 'profile', component: ProfileComponent },
+      {path: '', component: HomeComponent, pathMatch: 'full'},
+      {path: 'questions', component: QuestionsComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'register', component: RegisterComponent},
+      {path: 'profile', component: ProfileComponent},
       {
         path: 'exams',
         children: [
-          { path: '', component: ExamListComponent },
-          { path: 'create', component: ExamCreateComponent },
-          { path: 'attempt/:id', component: ExamAttemptComponent },
-          { path: 'result/:id', component: ExamResultComponent },
-          { path: 'edit/:id', component: ExamEditComponent }
+          {path: '', component: ExamListComponent},
+          {path: 'create', component: ExamCreateComponent},
+          {path: 'attempt/:id', component: ExamAttemptComponent, canDeactivate: [ConfirmExitGuard]},
+          {path: 'result/:id', component: ExamResultComponent},
+          {path: 'edit/:id', component: ExamEditComponent}
         ]
       }
     ]),
@@ -76,7 +85,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [
     AuthGuard,
