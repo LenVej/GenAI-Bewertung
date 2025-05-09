@@ -29,4 +29,10 @@ public class ExamAttemptService
         var result = await _repo.GetAttemptResultAsync(attemptId, userId);
         return result;
     }
+    
+    public async Task<List<ExamAttempt>> GetAttemptsWithEvaluationAsync(int userId)
+    {
+        return await _repo.GetCompletedAttemptsWithEvaluationAsync(userId);
+    }
+
 }

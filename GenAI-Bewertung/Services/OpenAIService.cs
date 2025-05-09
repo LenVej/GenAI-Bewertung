@@ -71,7 +71,7 @@ public class OpenAiService
 
         if (string.IsNullOrWhiteSpace(rawMessage)) return null;
 
-        var match = Regex.Match(rawMessage, @"\{.*\}", RegexOptions.Singleline);
+        var match = Regex.Match(rawMessage, @"\{\s*""score""\s*:\s*\d+(\.\d+)?,\s*""feedback""\s*:\s*"".*?""\s*\}", RegexOptions.Singleline);
         var rightJson = match.Success ? match.Value : rawMessage.Trim();
 
         Console.WriteLine("Final JSON zum Parsen:");

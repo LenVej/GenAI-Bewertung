@@ -26,6 +26,8 @@ export class ProfileComponent {
   showQuestions = true;
   showExams = true;
 
+  examProgress: any[] = [];
+
   stats = {
     questionsAnswered: 25,
     correctAnswers: 19
@@ -46,6 +48,7 @@ export class ProfileComponent {
     this.loadProfile();
     this.loadMyQuestions();
     this.loadMyExams();
+    this.loadExamProgress();
     this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();
   }
 
@@ -65,6 +68,14 @@ export class ProfileComponent {
       error: err => console.error('Fehler beim Laden der Fragen', err)
     });
   }
+
+  loadExamProgress() {
+    this.http.get<any[]>(`${environment.apiBaseUrl}/api/ExamAttempts/my-progress`).subscribe({
+      next: data => this.examProgress = data,
+      error: err => console.error('Fehler beim Laden des Fortschritts', err)
+    });
+  }
+
 
   logout() {
     this.auth.logout();

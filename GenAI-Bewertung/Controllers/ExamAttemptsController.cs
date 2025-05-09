@@ -55,6 +55,26 @@ public class ExamAttemptsController : ControllerBase
 
         return Ok(result);
     }
+    
+    [HttpGet("my-progress")]
+    [Authorize]
+    public async Task<ActionResult<IEnumerable<ExamAttemptOverviewDto>>> GetMyProgress()
+    {
+        var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+    
+        var attempts = await _service.GetAttemptsWithEvaluationAsync(userId);
+
+        var result = attempts.Select(a => new ExamAttemptOverviewDto
+        {
+            AttemptId = a.ExamAttemptId,
+            ExamTitle = a.Exam.Title,
+            SubmittedAt = a.SubmittedAt!.Value,
+            Score = a.Evaluation!.Score,
+            IsPassed = a.Evaluation!.IsPassed
+        }).ToList();
+
+        return Ok(result);
+    }
 
 
 }

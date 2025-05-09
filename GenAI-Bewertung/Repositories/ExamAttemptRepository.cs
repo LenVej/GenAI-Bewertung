@@ -99,8 +99,6 @@ public class ExamAttemptRepository : IExamAttemptRepository
                 };
 
                 _context.AiEvaluationResults.Add(evaluation);
-
-                // Verbinde für spätere Anzeige (z. B. in DTO)
                 answer.Evaluation = evaluation;
             }
         }
@@ -122,6 +120,18 @@ public class ExamAttemptRepository : IExamAttemptRepository
 
         var scorePercent = results.Any() ? Math.Round(results.Average(r => r.Score) * 100, 2) : 0.0;
 
+        var evaluationSummary = new ExamAttemptEvaluation
+        {
+            ExamAttemptId = attempt.ExamAttemptId,
+            Score = scorePercent / 100.0,
+            IsPassed = scorePercent >= 0.6,
+            FeedbackSummary = "Guter Versuch, aber es gibt noch Verbesserungspotenzial.",
+            EvaluatedAt = now
+        };
+
+        _context.ExamAttemptEvaluations.Add(evaluationSummary);
+        await _context.SaveChangesAsync();
+        
         return new ExamAttemptResultDto
         {
             AttemptId = attempt.ExamAttemptId,
@@ -175,4 +185,14 @@ public class ExamAttemptRepository : IExamAttemptRepository
             ScorePercent = score
         };
     }
+    
+    public async Task<List<ExamAttempt>> GetCompletedAttemptsWithEvaluationAsync(int userId)
+    {
+        return await _context.ExamAttempts
+            .Include(a => a.Exam)
+            .Include(a => a.Evaluation)
+            .Where(a => a.UserId == userId && a.SubmittedAt != null && a.Evaluation != null)
+            .ToListAsync();
+    }
+
 }

@@ -8,4 +8,6 @@ public interface IExamAttemptRepository
     Task<ExamAttempt?> CreateAttemptAsync(int examId, int userId);
     Task<ExamAttemptResultDto?> SaveAnswersAndEvaluateAsync(SubmitExamAttemptDto dto);
     Task<ExamAttemptResultDto?> GetAttemptResultAsync(int attemptId, int userId);
+    Task<List<ExamAttempt>> GetCompletedAttemptsWithEvaluationAsync(int userId);
+
 }

@@ -19,10 +19,30 @@
   <div class="profile-content">
     <nav class="tabs">
       <button [class.active]="tab === 'progress'" (click)="tab = 'progress'">📈 Fortschritt</button>
+      <button [class.active]="tab === 'content'" (click)="tab = 'content'">🗂️ Meine Inhalte</button>
       <button [class.active]="tab === 'settings'" (click)="tab = 'settings'">⚙️ Einstellungen</button>
     </nav>
 
     <div *ngIf="tab === 'progress'" class="tab-content">
+      <h3>📊 Prüfungsergebnisse</h3>
+
+      <ul *ngIf="examProgress.length > 0">
+        <li *ngFor="let attempt of examProgress">
+          <a [routerLink]="['/exams/result', attempt.attemptId]">
+          <strong>{{ attempt.examTitle }}</strong>
+          </a> –
+          {{ attempt.submittedAt | date: 'short' }} –
+          <span [ngClass]="{ 'passed': attempt.isPassed, 'failed': !attempt.isPassed }">
+        {{ attempt.score * 100 | number: '1.0-0' }}% ({{ attempt.isPassed ? 'Bestanden' : 'Nicht bestanden' }})
+      </span>
+        </li>
+      </ul>
+
+      <p *ngIf="examProgress.length === 0">Keine abgeschlossenen Prüfungen gefunden.</p>
+    </div>
+
+
+    <div *ngIf="tab === 'content'" class="tab-content">
       <h3>Lernfortschritt</h3>
       <p>Beantwortete Fragen: {{ stats.questionsAnswered }}</p>
       <p>Richtige Antworten: {{ stats.correctAnswers }}</p>

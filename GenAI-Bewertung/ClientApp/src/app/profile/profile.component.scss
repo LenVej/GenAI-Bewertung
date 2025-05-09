@@ -360,3 +360,12 @@ table.styled-table.enhanced {
   margin-bottom: 0.5em;
   background-color: #004cb1;
 }
+
+.passed {
+  color: green;
+  font-weight: bold;
+}
+.failed {
+  color: red;
+  font-weight: bold;
+}

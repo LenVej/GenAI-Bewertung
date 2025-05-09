@@ -13,4 +13,7 @@ public class ExamAttempt
     public DateTime? SubmittedAt { get; set; }
 
     public List<ExamAnswer> Answers { get; set; } = new();
+    
+    public ExamAttemptEvaluation? Evaluation { get; set; }
+
 }

@@ -29,6 +29,8 @@ namespace GenAI_Bewertung.Data
         public DbSet<ExamQuestion> ExamQuestions { get; set; }
 
         public DbSet<AiEvaluationResult> AiEvaluationResults { get; set; }
+        public DbSet<ExamAttemptEvaluation> ExamAttemptEvaluations { get; set; }
+
         public DbSet<ExamAttempt> ExamAttempts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -46,6 +48,7 @@ namespace GenAI_Bewertung.Data
             modelBuilder.Entity<EstimationQuestion>().ToTable("EstimationQuestions");
             modelBuilder.Entity<FillInTheBlankQuestion>().ToTable("FillInTheBlankQuestions");
             modelBuilder.Entity<FreeTextQuestion>().ToTable("FreeTextQuestions");
+            
 
             modelBuilder.Entity<FillInTheBlankQuestion>()
                 .HasMany(q => q.Gaps)
@@ -95,6 +98,12 @@ namespace GenAI_Bewertung.Data
             modelBuilder.Entity<ExamAnswer>()
                 .Property(a => a.SelectedIndices)
                 .HasColumnType("jsonb");
+            
+            modelBuilder.Entity<ExamAttempt>()
+                .HasOne(a => a.Evaluation)
+                .WithOne(e => e.ExamAttempt)
+                .HasForeignKey<ExamAttemptEvaluation>(e => e.ExamAttemptId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
