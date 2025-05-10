@@ -102,6 +102,24 @@ public class ExamAttemptRepository : IExamAttemptRepository
                         answer.SelectedIndices.Select(i => i < mcq.Choices.Count ? mcq.Choices[i] : $"[Ungültig: {i}]"))
                     : "Keine Auswahl";
             }
+            else if (question is EitherOrQuestion eo)
+            {
+                choices = new List<string> { $"A: {eo.OptionA}", $"B: {eo.OptionB}" };
+
+                correctAnswers = eo.CorrectAnswer.ToUpper() switch
+                {
+                    "A" => new List<string> { eo.OptionA },
+                    "B" => new List<string> { eo.OptionB },
+                    _ => null
+                };
+
+                userAnswer = answer.TextAnswer?.ToUpper() switch
+                {
+                    "A" => eo.OptionA,
+                    "B" => eo.OptionB,
+                    _ => answer.TextAnswer ?? "Keine Antwort"
+                };
+            }
             else
             {
                 userAnswer = answer.TextAnswer ?? "Keine Antwort";
