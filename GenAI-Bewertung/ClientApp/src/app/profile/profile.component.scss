@@ -369,3 +369,32 @@ table.styled-table.enhanced {
   color: red;
   font-weight: bold;
 }
+
+.stats-summary {
+  background: #f4f8ff;
+  border: 1px solid #d0e1ff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #333;
+
+  h4 {
+    margin-top: 0;
+    color: #1b6ec2;
+  }
+
+  h5 {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #c62828;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+    margin: 0.5rem 0;
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+  }
+}

@@ -47,7 +47,8 @@ builder.Services.AddScoped<ExamAttemptService>();
 
 builder.Services.AddScoped<OpenAiService>();
 
-
+builder.Services.AddScoped<IStatsRepository, StatsRepository>();
+builder.Services.AddScoped<StatsService>();
 
 
 builder.Services.AddControllersWithViews()

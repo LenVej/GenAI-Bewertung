@@ -2,7 +2,6 @@
 using GenAI_Bewertung.Entities.QuestionTypes;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace GenAI_Bewertung.Data
 {
     public class ApplicationDbContext : DbContext
@@ -48,8 +47,8 @@ namespace GenAI_Bewertung.Data
             modelBuilder.Entity<EstimationQuestion>().ToTable("EstimationQuestions");
             modelBuilder.Entity<FillInTheBlankQuestion>().ToTable("FillInTheBlankQuestions");
             modelBuilder.Entity<FreeTextQuestion>().ToTable("FreeTextQuestions");
-            
 
+            // Beziehungen
             modelBuilder.Entity<FillInTheBlankQuestion>()
                 .HasMany(q => q.Gaps)
                 .WithOne(g => g.FillInTheBlankQuestion)
@@ -57,7 +56,7 @@ namespace GenAI_Bewertung.Data
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<BlankGap>()
-                .ToTable("BlankGaps") // Explicit table for clarity
+                .ToTable("BlankGaps")
                 .Property(g => g.Solutions)
                 .HasColumnType("jsonb");
 
@@ -73,37 +72,40 @@ namespace GenAI_Bewertung.Data
                 .HasForeignKey(eq => eq.QuestionId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // ExamAttempt ↔ Answers
             modelBuilder.Entity<ExamAttempt>()
                 .HasMany(ea => ea.Answers)
                 .WithOne(a => a.ExamAttempt)
                 .HasForeignKey(a => a.ExamAttemptId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // ExamAnswer ↔ Question
             modelBuilder.Entity<ExamAnswer>()
                 .HasOne(a => a.Question)
                 .WithMany()
                 .HasForeignKey(a => a.QuestionId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // ExamAnswer ↔ Evaluation
             modelBuilder.Entity<ExamAnswer>()
                 .HasOne(a => a.Evaluation)
                 .WithOne(ev => ev.ExamAnswer)
                 .HasForeignKey<AiEvaluationResult>(ev => ev.ExamAnswerId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // JSON support for selectedIndices
             modelBuilder.Entity<ExamAnswer>()
                 .Property(a => a.SelectedIndices)
                 .HasColumnType("jsonb");
-            
+
             modelBuilder.Entity<ExamAttempt>()
                 .HasOne(a => a.Evaluation)
                 .WithOne(e => e.ExamAttempt)
                 .HasForeignKey<ExamAttemptEvaluation>(e => e.ExamAttemptId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // 🔍 Indizes für Performance bei Statistiken
+            modelBuilder.Entity<ExamAttempt>()
+                .HasIndex(ea => ea.UserId); // für Stats-Abfragen
+
+            modelBuilder.Entity<Question>()
+                .HasIndex(q => q.Subject); // für Gruppierung nach Thema
         }
     }
 }

@@ -21,6 +21,7 @@ export class ProfileComponent {
   showConfirmModal = false;
   confirmMessage = '';
   private confirmCallback: () => void = () => {};
+  profileStats: any = null;
 
   userExams: any[] = [];
   showQuestions = true;
@@ -49,6 +50,7 @@ export class ProfileComponent {
     this.loadMyQuestions();
     this.loadMyExams();
     this.loadExamProgress();
+    this.loadStats();
     this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();
   }
 
@@ -82,6 +84,12 @@ export class ProfileComponent {
     });
   }
 
+  loadStats() {
+    this.http.get(`${environment.apiBaseUrl}/api/stats/profile-stats`).subscribe({
+      next: data => this.profileStats = data,
+      error: err => console.error('Fehler beim Laden der Statistiken', err)
+    });
+  }
 
   logout() {
     this.auth.logout();
@@ -106,10 +114,22 @@ export class ProfileComponent {
         next: () => {
           this.userQuestions = this.userQuestions.filter(q => q.questionId !== id);
         },
-        error: err => console.error('Fehler beim Löschen der Frage', err)
+        error: err => {
+          console.error('Fehler beim Löschen der Frage', err);
+
+          if (err.status === 500 && err.error?.toString().includes('FK_ExamQuestions_Questions_QuestionId')) {
+            alert('Diese Frage kann nicht gelöscht werden, da sie noch einer Prüfung zugeordnet ist.');
+          } else if (err.status === 500 && err.error?.toString().includes('FK_ExamAnswers_Questions_QuestionId')) {
+            alert('Diese Frage kann nicht gelöscht werden, da sie in bereits beantworteten Prüfungen vorkommt.');
+          } else {
+            alert('Fehler beim Löschen der Frage. Bitte versuche es später erneut.');
+          }
+        }
       });
     });
   }
+
+
 
   openConfirm(message: string, callback: () => void) {
     this.confirmMessage = message;

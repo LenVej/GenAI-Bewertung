@@ -26,6 +26,22 @@
     <div *ngIf="tab === 'progress'" class="tab-content">
       <h3>📊 Prüfungsergebnisse</h3>
 
+      <div *ngIf="profileStats" class="stats-summary">
+        <h4>📈 Leistungsübersicht</h4>
+        <p><strong>Ø Punktzahl:</strong> {{ profileStats.averageScorePercent }}%</p>
+        <p><strong>Richtige Antworten:</strong> {{ profileStats.totalCorrect }}</p>
+        <p><strong>Falsche Antworten:</strong> {{ profileStats.totalIncorrect }}</p>
+
+        <div *ngIf="profileStats.weakSubjects?.length > 0">
+          <h5>❗ Schwächen nach Thema</h5>
+          <ul>
+            <li *ngFor="let s of profileStats.weakSubjects">
+              <strong>{{ s.subject }}:</strong> {{ s.incorrectAnswers }} Fehler bei {{ s.totalQuestions }} Fragen
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <ul *ngIf="examProgress.length > 0">
         <li *ngFor="let attempt of examProgress">
           <a [routerLink]="['/exams/result', attempt.attemptId]">
