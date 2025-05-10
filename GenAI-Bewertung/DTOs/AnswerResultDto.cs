@@ -10,4 +10,7 @@ public class AnswerResultDto
     public bool IsCorrect { get; set; }
     public double Score { get; set; }
     public string Feedback { get; set; } = "";
+    
+    public string? EitherOrOptionA { get; set; }
+    public string? EitherOrOptionB { get; set; }
 }

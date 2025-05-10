@@ -34,10 +34,15 @@ export class ExamResultComponent implements OnInit {
   }
 
   getSelectedAnswerTexts(result: any): string {
-    if (!result.answerChoices || !result.selectedIndices) return result.textAnswer || '—';
+    if (result.answerChoices && result.selectedIndices?.length > 0) {
+      return result.selectedIndices
+        .map((i: number) => result.answerChoices[i] ?? `[?${i}]`)
+        .join(', ');
+    }
 
-    return result.selectedIndices
-      .map((i: number) => result.answerChoices[i] ?? `[?${i}]`)
-      .join(', ');
+    if (result.textAnswer?.toUpperCase?.() === 'A' && result.eitherOrOptionA) return result.eitherOrOptionA;
+    if (result.textAnswer?.toUpperCase?.() === 'B' && result.eitherOrOptionB) return result.eitherOrOptionB;
+
+    return result.textAnswer || '—';
   }
 }

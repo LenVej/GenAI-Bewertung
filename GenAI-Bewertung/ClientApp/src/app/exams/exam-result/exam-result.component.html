@@ -5,8 +5,8 @@
     <p>🕒 Gestartet: {{ result.startedAt | date: 'short' }}</p>
     <p>✅ Abgegeben: {{ result.submittedAt | date: 'short' }}</p>
     <p>🎯 Gesamtpunktzahl:
-      <strong [ngClass]="{ 'high-score': result.scorePercent >= 70, 'low-score': result.scorePercent < 70 }">
-        {{ result.scorePercent }}%
+      <strong [ngClass]="{ 'high-score': result.scorePercent >= 0.7, 'low-score': result.scorePercent < 0.7 }">
+        {{ result.scorePercent * 100 | number: '1.0-0' }}%
       </strong>
     </p>
   </div>
@@ -17,14 +17,7 @@
     <h3>🧠 {{ r.questionText }}</h3>
 
     <div class="answer-block">
-      <p><strong>Deine Antwort:</strong>
-        <ng-container *ngIf="r.answerChoices && r.selectedIndices?.length > 0; else freitext">
-          {{ getSelectedAnswerTexts(r) }}
-        </ng-container>
-        <ng-template #freitext>
-          {{ r.textAnswer || '—' }}
-        </ng-template>
-      </p>
+      <p><strong>Deine Antwort:</strong> {{ getSelectedAnswerTexts(r) }}</p>
       <p *ngIf="r.feedback"><strong>💬 AI Feedback:</strong> {{ r.feedback }}</p>
       <p>
         <strong>Bewertung:</strong>

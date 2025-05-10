@@ -150,6 +150,7 @@ public class ExamAttemptRepository : IExamAttemptRepository
         var results = answerEntities.Select(ans =>
         {
             var question = attempt.Exam.Questions.First(q => q.QuestionId == ans.QuestionId).Question;
+            var eitherOrForDto = question as EitherOrQuestion;
 
             return new AnswerResultDto
             {
@@ -158,6 +159,8 @@ public class ExamAttemptRepository : IExamAttemptRepository
                 TextAnswer = ans.TextAnswer,
                 SelectedIndices = ans.SelectedIndices,
                 AnswerChoices = question is MultipleChoiceQuestion mcq ? mcq.Choices : null,
+                EitherOrOptionA = eitherOrForDto?.OptionA,
+                EitherOrOptionB = eitherOrForDto?.OptionB,
                 IsCorrect = ans.Evaluation?.IsCorrect ?? false,
                 Score = ans.Evaluation?.Score ?? 0.0,
                 Feedback = ans.Evaluation?.Feedback ?? "Keine Bewertung"
@@ -209,6 +212,7 @@ public class ExamAttemptRepository : IExamAttemptRepository
         {
             var question = ans.Question!;
             var choices = question is MultipleChoiceQuestion mcq ? mcq.Choices : null;
+            var eitherOr = question as EitherOrQuestion;
 
             return new AnswerResultDto
             {
@@ -217,6 +221,8 @@ public class ExamAttemptRepository : IExamAttemptRepository
                 TextAnswer = ans.TextAnswer,
                 SelectedIndices = ans.SelectedIndices,
                 AnswerChoices = choices,
+                EitherOrOptionA = eitherOr?.OptionA,
+                EitherOrOptionB = eitherOr?.OptionB,
                 IsCorrect = ans.Evaluation?.IsCorrect ?? false,
                 Score = ans.Evaluation?.Score ?? 0.0,
                 Feedback = ans.Evaluation?.Feedback ?? "Keine Auswertung"
