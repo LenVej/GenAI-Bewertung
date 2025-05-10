@@ -87,7 +87,28 @@ public class ExamAttemptRepository : IExamAttemptRepository
             var question = attempt.Exam.Questions.FirstOrDefault(q => q.QuestionId == answer.QuestionId)?.Question;
             if (question == null) continue;
 
-            var eval = await _openAI.EvaluateAsync(question.QuestionText, answer.TextAnswer ?? "");
+            List<string>? choices = null;
+            List<string>? correctAnswers = null;
+            string userAnswer;
+
+            if (question is MultipleChoiceQuestion mcq)
+            {
+                choices = mcq.Choices;
+                correctAnswers = mcq.CorrectIndices
+                    .Select(i => i < mcq.Choices.Count ? mcq.Choices[i] : $"[Ungültig: {i}]").ToList();
+
+                userAnswer = answer.SelectedIndices != null
+                    ? string.Join(", ",
+                        answer.SelectedIndices.Select(i => i < mcq.Choices.Count ? mcq.Choices[i] : $"[Ungültig: {i}]"))
+                    : "Keine Auswahl";
+            }
+            else
+            {
+                userAnswer = answer.TextAnswer ?? "Keine Antwort";
+            }
+
+            var eval = await _openAI.EvaluateAsync(question.QuestionText, userAnswer, choices, correctAnswers);
+
             if (eval != null)
             {
                 var evaluation = new AiEvaluationResult
@@ -102,6 +123,7 @@ public class ExamAttemptRepository : IExamAttemptRepository
                 answer.Evaluation = evaluation;
             }
         }
+
 
         attempt.SubmittedAt = now;
         await _context.SaveChangesAsync();
@@ -131,7 +153,7 @@ public class ExamAttemptRepository : IExamAttemptRepository
 
         _context.ExamAttemptEvaluations.Add(evaluationSummary);
         await _context.SaveChangesAsync();
-        
+
         return new ExamAttemptResultDto
         {
             AttemptId = attempt.ExamAttemptId,
@@ -185,7 +207,7 @@ public class ExamAttemptRepository : IExamAttemptRepository
             ScorePercent = score
         };
     }
-    
+
     public async Task<List<ExamAttempt>> GetCompletedAttemptsWithEvaluationAsync(int userId)
     {
         return await _context.ExamAttempts
@@ -194,5 +216,4 @@ public class ExamAttemptRepository : IExamAttemptRepository
             .Where(a => a.UserId == userId && a.SubmittedAt != null && a.Evaluation != null)
             .ToListAsync();
     }
-
 }

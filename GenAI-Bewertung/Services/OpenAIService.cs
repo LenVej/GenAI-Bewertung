@@ -18,25 +18,62 @@ public class OpenAiService
         _apiKey = config["OpenAI:ApiKey"]!;
     }
 
-    public async Task<AiEvaluationResultDto?> EvaluateAsync(string question, string answer)
+    public async Task<AiEvaluationResultDto?> EvaluateAsync(
+        string question,
+        string answer,
+        List<string>? choices = null,
+        List<string>? correctAnswers = null)
     {
-        var promptTemplate = """
-                             Du bist ein Lehrer. Bewerte die folgende Schülerantwort auf eine Frage. Gib ein Ergebnis als JSON zurück:
+        var promptTemplate = choices == null
+            ? """
+              Du bist ein Lehrer. Bewerte die folgende Schülerantwort auf eine Frage. Gib ein Ergebnis als JSON zurück.
 
-                             Frage:
-                             {0}
+              Frage:
+              {0}
 
-                             Antwort:
-                             {1}
+              Antwort:
+              {1}
 
-                             Rückgabeformat:
-                             {{
-                               "score": <0-1>,
-                               "feedback": "..."
-                             }}
-                             """;
+              Richtige Antwort(en):
+              {2}
 
-        var prompt = string.Format(promptTemplate, question, answer);
+              Rückgabeformat:
+              {{
+                "score": <0-1>,
+                "feedback": "..."
+              }}
+              """
+            : """
+              Du bist ein Lehrer. Bewerte die folgende Schülerantwort auf eine Multiple-Choice-Frage. Die möglichen Antworten lauten:
+
+              Auswahlmöglichkeiten:
+              {3}
+
+              Frage:
+              {0}
+
+              Antwort (Index oder Text):
+              {1}
+
+              Richtige Antwort(en):
+              {2}
+
+              Rückgabeformat:
+              {{
+                "score": <0-1>,
+                "feedback": "..."
+              }}
+              """;
+
+        var correctAnswerText = correctAnswers != null
+            ? string.Join(", ", correctAnswers)
+            : "nicht angegeben";
+
+        var choicesText = choices != null
+            ? string.Join(", ", choices.Select((c, i) => $"{i}: {c}"))
+            : "";
+
+        var prompt = string.Format(promptTemplate, question, answer, correctAnswerText, choicesText);
 
         Console.WriteLine("Prompt an GPT gesendet:");
         Console.WriteLine(prompt);
@@ -61,29 +98,30 @@ public class OpenAiService
         Console.WriteLine("GPT-Antwort:");
         Console.WriteLine(responseString);
 
-        var root = JsonDocument.Parse(responseString);
-        var rawMessage = root
-            .RootElement
-            .GetProperty("choices")[0]
-            .GetProperty("message")
-            .GetProperty("content")
-            .GetString();
-
-        if (string.IsNullOrWhiteSpace(rawMessage)) return null;
-
-        var match = Regex.Match(rawMessage, @"\{\s*""score""\s*:\s*\d+(\.\d+)?,\s*""feedback""\s*:\s*"".*?""\s*\}", RegexOptions.Singleline);
-        var rightJson = match.Success ? match.Value : rawMessage.Trim();
-
-        Console.WriteLine("Final JSON zum Parsen:");
-        Console.WriteLine(rightJson);
-
-        
         try
         {
+            var root = JsonDocument.Parse(responseString);
+            var rawMessage = root
+                .RootElement
+                .GetProperty("choices")[0]
+                .GetProperty("message")
+                .GetProperty("content")
+                .GetString();
+
+            if (string.IsNullOrWhiteSpace(rawMessage)) return null;
+
+            var match = Regex.Match(rawMessage, @"\{\s*""score""\s*:\s*\d+(\.\d+)?,\s*""feedback""\s*:\s*"".*?""\s*\}",
+                RegexOptions.Singleline);
+            var rightJson = match.Success ? match.Value : rawMessage.Trim();
+
+            Console.WriteLine("Final JSON zum Parsen:");
+            Console.WriteLine(rightJson);
+
             var result = JsonSerializer.Deserialize<AiEvaluationResultDto>(rightJson, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });
+
             return result;
         }
         catch (Exception ex)
