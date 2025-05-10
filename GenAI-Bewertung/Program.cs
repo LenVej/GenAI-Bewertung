@@ -30,6 +30,8 @@ var keyBytes = Encoding.UTF8.GetBytes(jwtKey);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddHttpContextAccessor();
+
 // Dependency Injection
 builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 builder.Services.AddScoped<QuestionService>();
@@ -44,6 +46,8 @@ builder.Services.AddScoped<IExamAttemptRepository, ExamAttemptRepository>();
 builder.Services.AddScoped<ExamAttemptService>();
 
 builder.Services.AddScoped<OpenAiService>();
+
+
 
 
 builder.Services.AddControllersWithViews()

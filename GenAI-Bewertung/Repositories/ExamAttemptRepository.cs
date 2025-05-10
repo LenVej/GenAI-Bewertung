@@ -1,4 +1,5 @@
-﻿using GenAI_Bewertung.Data;
+﻿using System.Security.Claims;
+using GenAI_Bewertung.Data;
 using GenAI_Bewertung.DTOs;
 using GenAI_Bewertung.Entities;
 using GenAI_Bewertung.Entities.QuestionTypes;
@@ -11,12 +12,14 @@ namespace GenAI_Bewertung.Repositories;
 public class ExamAttemptRepository : IExamAttemptRepository
 {
     private readonly ApplicationDbContext _context;
-    private readonly OpenAiService _openAI;
+    private readonly OpenAiService _openAi;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public ExamAttemptRepository(ApplicationDbContext context, OpenAiService openAI)
+    public ExamAttemptRepository(ApplicationDbContext context, OpenAiService openAi, IHttpContextAccessor httpContextAccessor)
     {
         _context = context;
-        _openAI = openAI;
+        _openAi = openAi;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     public async Task<ExamAttempt?> CreateAttemptAsync(int examId, int userId)
@@ -47,6 +50,14 @@ public class ExamAttemptRepository : IExamAttemptRepository
 
     public async Task<ExamAttemptResultDto?> SaveAnswersAndEvaluateAsync(SubmitExamAttemptDto dto)
     {
+        
+        var userIdStr = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (string.IsNullOrEmpty(userIdStr)) return null;
+
+        var userId = int.Parse(userIdStr);
+        var user = await _context.Users.FindAsync(userId);
+        if (user == null) return null;
+
         var attempt = await _context.ExamAttempts
             .Include(a => a.Exam)
             .ThenInclude(e => e.Questions)
@@ -125,7 +136,15 @@ public class ExamAttemptRepository : IExamAttemptRepository
                 userAnswer = answer.TextAnswer ?? "Keine Antwort";
             }
 
-            var eval = await _openAI.EvaluateAsync(question.QuestionText, userAnswer, choices, correctAnswers);
+            var eval = await _openAi.EvaluateAsync(
+                question.QuestionText,
+                userAnswer,
+                choices,
+                correctAnswers,
+                user.Tolerance,
+                user.CaseSensitive,
+                user.EstimateTolerance
+            );
 
             if (eval != null)
             {

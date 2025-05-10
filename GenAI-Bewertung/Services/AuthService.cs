@@ -110,6 +110,11 @@ namespace GenAI_Bewertung.Services
             return true;
         }
 
+        public async Task UpdateUserAsync(User user)
+        {
+            await _repository.UpdateUserAsync(user);
+        }
+
 
     }
 }

@@ -54,15 +54,20 @@ namespace GenAI_Bewertung.Controllers
         public async Task<IActionResult> GetProfile()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            if (string.IsNullOrEmpty(userId))
-                return Unauthorized("Kein Benutzer gefunden");
+            if (string.IsNullOrEmpty(userId)) return Unauthorized();
 
             var user = await _authService.GetUserByIdAsync(int.Parse(userId));
-            if (user == null)
-                return NotFound();
+            if (user == null) return NotFound();
 
-            return Ok(new { user.Username, user.Email, user.CreatedAt });
+            return Ok(new UserProfileDto
+            {
+                Username = user.Username,
+                Email = user.Email,
+                CreatedAt = user.CreatedAt,
+                Tolerance = user.Tolerance,
+                CaseSensitive = user.CaseSensitive,
+                EstimateTolerance = user.EstimateTolerance
+            });
         }
         
         [HttpPost("refresh")]
@@ -92,6 +97,24 @@ namespace GenAI_Bewertung.Controllers
                 return NotFound(new { message = "Benutzer nicht gefunden" });
 
             return Ok(new { message = "Benutzer erfolgreich gelöscht" });
+        }
+
+        [Authorize]
+        [HttpPut("profile/settings")]
+        public async Task<IActionResult> UpdateSettings([FromBody] UpdateUserSettingsDto dto)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId)) return Unauthorized();
+
+            var user = await _authService.GetUserByIdAsync(int.Parse(userId));
+            if (user == null) return NotFound();
+
+            user.Tolerance = dto.Tolerance;
+            user.CaseSensitive = dto.CaseSensitive;
+            user.EstimateTolerance = dto.EstimateTolerance;
+
+            await _authService.UpdateUserAsync(user);
+            return Ok(new { message = "Einstellungen gespeichert" });
         }
 
 

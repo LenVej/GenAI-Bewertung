@@ -53,14 +53,20 @@ export class ProfileComponent {
   }
 
   loadProfile() {
-    this.http.get(`${environment.apiBaseUrl}/api/auth/profile`).subscribe({
-      next: data => this.user = data,
+    this.http.get<any>(`${environment.apiBaseUrl}/api/auth/profile`).subscribe({
+      next: data => {
+        this.user = data;
+        this.settings.tolerance = data.tolerance || 'medium';
+        this.settings.caseSensitive = data.caseSensitive ?? false;
+        this.settings.estimateTolerance = data.estimateTolerance ?? 10;
+      },
       error: err => {
         this.error = 'Fehler beim Laden des Profils.';
         console.error(err);
       }
     });
   }
+
 
   loadMyQuestions() {
     this.http.get<any[]>(`${environment.apiBaseUrl}/api/questions/by-user`).subscribe({
@@ -138,6 +144,11 @@ export class ProfileComponent {
     });
   }
 
-
+  saveSettings() {
+    this.http.put(`${environment.apiBaseUrl}/api/auth/profile/settings`, this.settings).subscribe({
+      next: () => console.log('✅ Einstellungen gespeichert'),
+      error: err => console.error('❌ Fehler beim Speichern', err)
+    });
+  }
 }
 

@@ -22,7 +22,12 @@ public class OpenAiService
         string question,
         string answer,
         List<string>? choices = null,
-        List<string>? correctAnswers = null)
+        List<string>? correctAnswers = null,
+        string tolerance = "medium",
+        bool caseSensitive = false,
+        int estimateTolerance = 10)
+
+
     {
         var promptTemplate = choices == null
             ? """
@@ -34,7 +39,7 @@ public class OpenAiService
               Antwort:
               {1}
 
-              Richtige Antwort(en):
+              Lösung(en):
               {2}
 
               Rückgabeformat:
@@ -55,7 +60,7 @@ public class OpenAiService
               Antwort (Index oder Text):
               {1}
 
-              Richtige Antwort(en):
+              Lösung(en):
               {2}
 
               Rückgabeformat:
@@ -64,6 +69,20 @@ public class OpenAiService
                 "feedback": "..."
               }}
               """;
+        
+        var settingsInfo = $"""
+                            Nutzereinstellungen – Bitte streng beachten:
+                            - Tippfehler-Toleranz: {tolerance}
+                            - Groß-/Kleinschreibung beachten: {(caseSensitive ? "Ja" : "Nein")}
+                            - Schätztoleranz: ±{estimateTolerance}%
+
+                            Anweisungen:
+                            - Wenn Tippfehler erlaubt sind, bewerte kleine Schreibfehler nicht negativ.
+                            - Falls Groß-/Kleinschreibung nicht relevant ist, ignoriere sie vollständig.
+                            - Wenn es sich um eine Schätzfrage handelt, betrachte Werte innerhalb der angegebenen Toleranz noch als korrekt.
+                            - Sei fair, aber auch präzise in der Bewertung. Gib immer Feedback, das zur Verbesserung hilft.
+
+                            """;
 
         var correctAnswerText = correctAnswers != null
             ? string.Join(", ", correctAnswers)
@@ -74,6 +93,7 @@ public class OpenAiService
             : "";
 
         var prompt = string.Format(promptTemplate, question, answer, correctAnswerText, choicesText);
+        prompt = settingsInfo + prompt;
 
         Console.WriteLine("Prompt an GPT gesendet:");
         Console.WriteLine(prompt);
