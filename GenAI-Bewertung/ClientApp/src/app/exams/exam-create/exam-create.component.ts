@@ -13,6 +13,7 @@ import { environment } from '../../../environments/environment.local';
 export class ExamCreateComponent implements OnInit {
   allQuestions: Question[] = [];
   selectedQuestionIds: number[] = [];
+  userQuestionIds: number[] = [];
   title: string = '';
   description: string = '';
   timeLimitMinutes: number | null = null;
@@ -20,6 +21,7 @@ export class ExamCreateComponent implements OnInit {
 
   filterText: string = '';
   filterSubject: string = '';
+  filterOwnQuestions: boolean = false;
 
   exam = {
     title: '',
@@ -37,6 +39,11 @@ export class ExamCreateComponent implements OnInit {
     this.questionService.getQuestions().subscribe({
       next: (data) => (this.questions = data),
       error: (err) => console.error('Fehler beim Laden der Fragen', err)
+    });
+
+    this.http.get<any[]>(`${environment.apiBaseUrl}/api/questions/by-user`).subscribe({
+      next: data => this.userQuestionIds = data.map(q => q.questionId),
+      error: err => console.error('Fehler beim Laden eigener Fragen', err)
     });
   }
 
@@ -65,8 +72,9 @@ export class ExamCreateComponent implements OnInit {
 
   get filteredQuestions(): Question[] {
     return this.questions.filter(q =>
-      (this.filterText ? q.questionText.toLowerCase().includes(this.filterText.toLowerCase()) : true) &&
-      (this.filterSubject ? q.subject.toLowerCase().includes(this.filterSubject.toLowerCase()) : true)
+      (!this.filterText || q.questionText.toLowerCase().includes(this.filterText.toLowerCase())) &&
+      (!this.filterSubject || q.subject.toLowerCase().includes(this.filterSubject.toLowerCase())) &&
+      (!this.filterOwnQuestions || this.userQuestionIds.includes(q.questionId))
     );
   }
 }

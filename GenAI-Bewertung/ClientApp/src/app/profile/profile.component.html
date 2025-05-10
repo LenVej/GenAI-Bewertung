@@ -41,12 +41,7 @@
       <p *ngIf="examProgress.length === 0">Keine abgeschlossenen Prüfungen gefunden.</p>
     </div>
 
-
     <div *ngIf="tab === 'content'" class="tab-content">
-      <h3>Lernfortschritt</h3>
-      <p>Beantwortete Fragen: {{ stats.questionsAnswered }}</p>
-      <p>Richtige Antworten: {{ stats.correctAnswers }}</p>
-      <p>Erfolg: {{ (stats.correctAnswers / stats.questionsAnswered * 100) | number:'1.0-0' }}%</p>
 
       <!-- 👇 Fragen-Toggle -->
       <h3 style="cursor: pointer" (click)="showQuestions = !showQuestions">📝 Deine erstellten Fragen {{ showQuestions ? '▲' : '▼' }}</h3>

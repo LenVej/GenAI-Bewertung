@@ -82,6 +82,14 @@
       </option>
     </select>
     <input [(ngModel)]="filterText" placeholder="🔍 Fragetext durchsuchen" />
+
+    <div class="filter-checkbox-wrapper">
+      <label class="filter-checkbox">
+        <input type="checkbox" [(ngModel)]="filterOwn" />
+        <span>Nur eigene Fragen anzeigen</span>
+      </label>
+    </div>
+
   </div>
 
   <!-- Tabelle -->

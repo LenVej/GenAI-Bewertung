@@ -61,6 +61,7 @@ namespace GenAI_Bewertung.Controllers
 
             return Ok(new UserProfileDto
             {
+                UserId = user.UserId,
                 Username = user.Username,
                 Email = user.Email,
                 CreatedAt = user.CreatedAt,

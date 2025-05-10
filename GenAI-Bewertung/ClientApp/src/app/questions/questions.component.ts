@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionService } from './questions.service';
 import { Question } from './questions.model';
 import {BlankGap} from "./blank-gap.model";
+import {environment} from "../../environments/environment.local";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-questions-component',
@@ -15,6 +17,8 @@ export class QuestionsComponent implements OnInit {
   filterType: string = '';
   filterText: string = '';
   validationMessage: string = '';
+  filterOwn: boolean = false;
+  userId: number | null = null;
 
 
   newQuestion: any = {
@@ -57,12 +61,20 @@ export class QuestionsComponent implements OnInit {
     FreeText: 'Freitext'
   };
 
-  constructor(private questionService: QuestionService) {}
+  constructor(private questionService: QuestionService, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.questionService.getQuestions().subscribe({
       next: (data) => this.questions = data,
       error: (err) => console.error('Failed to load questions', err)
+    });
+
+    this.http.get<any>(`${environment.apiBaseUrl}/api/auth/profile`).subscribe({
+      next: (profile) => {
+        console.log('Profil geladen:', profile); // ✅ Gültig
+        this.userId = profile.userId;
+      },
+      error: (err) => console.error('Fehler beim Laden des Profils', err)
     });
   }
 
@@ -151,7 +163,11 @@ export class QuestionsComponent implements OnInit {
       const matchesSubject = this.filterSubject ? q.subject.toLowerCase().includes(this.filterSubject.toLowerCase()) : true;
       const matchesType = this.filterType ? q.questionType === this.filterType : true;
       const matchesText = this.filterText ? q.questionText.toLowerCase().includes(this.filterText.toLowerCase()) : true;
-      return matchesSubject && matchesType && matchesText;
+      const matchesUser = this.filterOwn ? q.createdBy === this.userId : true;
+
+      console.log('Frage:', q.questionId, 'Erstellt von:', q.createdBy, 'Dein User:', this.userId);
+
+      return matchesSubject && matchesType && matchesText && matchesUser;
     });
   }
 
