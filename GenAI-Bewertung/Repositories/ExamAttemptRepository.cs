@@ -129,16 +129,23 @@ public class ExamAttemptRepository : IExamAttemptRepository
         await _context.SaveChangesAsync();
 
         // Generiere Result-DTO
-        var results = answerEntities.Select(ans => new AnswerResultDto
+        var results = answerEntities.Select(ans =>
         {
-            QuestionId = ans.QuestionId,
-            QuestionText = attempt.Exam.Questions.First(q => q.QuestionId == ans.QuestionId).Question.QuestionText,
-            TextAnswer = ans.TextAnswer,
-            SelectedIndices = ans.SelectedIndices,
-            IsCorrect = ans.Evaluation?.IsCorrect ?? false,
-            Score = ans.Evaluation?.Score ?? 0.0,
-            Feedback = ans.Evaluation?.Feedback ?? "Keine Bewertung"
+            var question = attempt.Exam.Questions.First(q => q.QuestionId == ans.QuestionId).Question;
+
+            return new AnswerResultDto
+            {
+                QuestionId = ans.QuestionId,
+                QuestionText = question.QuestionText,
+                TextAnswer = ans.TextAnswer,
+                SelectedIndices = ans.SelectedIndices,
+                AnswerChoices = question is MultipleChoiceQuestion mcq ? mcq.Choices : null,
+                IsCorrect = ans.Evaluation?.IsCorrect ?? false,
+                Score = ans.Evaluation?.Score ?? 0.0,
+                Feedback = ans.Evaluation?.Feedback ?? "Keine Bewertung"
+            };
         }).ToList();
+
 
         var scorePercent = results.Any() ? Math.Round(results.Average(r => r.Score) * 100, 2) : 0.0;
 
@@ -180,15 +187,22 @@ public class ExamAttemptRepository : IExamAttemptRepository
 
         if (attempt == null || attempt.SubmittedAt == null) return null;
 
-        var results = attempt.Answers.Select(ans => new AnswerResultDto
+        var results = attempt.Answers.Select(ans =>
         {
-            QuestionId = ans.QuestionId,
-            QuestionText = ans.Question!.QuestionText,
-            TextAnswer = ans.TextAnswer,
-            SelectedIndices = ans.SelectedIndices,
-            IsCorrect = ans.Evaluation?.IsCorrect ?? false,
-            Score = ans.Evaluation?.Score ?? 0.0,
-            Feedback = ans.Evaluation?.Feedback ?? "Keine Auswertung"
+            var question = ans.Question!;
+            var choices = question is MultipleChoiceQuestion mcq ? mcq.Choices : null;
+
+            return new AnswerResultDto
+            {
+                QuestionId = ans.QuestionId,
+                QuestionText = question.QuestionText,
+                TextAnswer = ans.TextAnswer,
+                SelectedIndices = ans.SelectedIndices,
+                AnswerChoices = choices,
+                IsCorrect = ans.Evaluation?.IsCorrect ?? false,
+                Score = ans.Evaluation?.Score ?? 0.0,
+                Feedback = ans.Evaluation?.Feedback ?? "Keine Auswertung"
+            };
         }).ToList();
 
         var score = results.Any()

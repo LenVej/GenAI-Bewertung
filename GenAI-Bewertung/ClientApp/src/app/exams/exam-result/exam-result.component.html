@@ -17,7 +17,14 @@
     <h3>🧠 {{ r.questionText }}</h3>
 
     <div class="answer-block">
-      <p><strong>Deine Antwort:</strong> {{ r.textAnswer || '—' }}</p>
+      <p><strong>Deine Antwort:</strong>
+        <ng-container *ngIf="r.answerChoices && r.selectedIndices?.length > 0; else freitext">
+          {{ getSelectedAnswerTexts(r) }}
+        </ng-container>
+        <ng-template #freitext>
+          {{ r.textAnswer || '—' }}
+        </ng-template>
+      </p>
       <p *ngIf="r.feedback"><strong>💬 AI Feedback:</strong> {{ r.feedback }}</p>
       <p>
         <strong>Bewertung:</strong>

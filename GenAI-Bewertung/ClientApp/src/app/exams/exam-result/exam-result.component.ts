@@ -32,4 +32,12 @@ export class ExamResultComponent implements OnInit {
       });
     }
   }
+
+  getSelectedAnswerTexts(result: any): string {
+    if (!result.answerChoices || !result.selectedIndices) return result.textAnswer || '—';
+
+    return result.selectedIndices
+      .map((i: number) => result.answerChoices[i] ?? `[?${i}]`)
+      .join(', ');
+  }
 }
