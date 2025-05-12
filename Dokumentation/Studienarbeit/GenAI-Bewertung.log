@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.7)  5 MAY 2025 14:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.7)  12 MAY 2025 12:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -845,11 +845,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
-LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 149.
-LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 149.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -859,6 +854,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
+LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
+(Font)              scaled to size 13.67995pt on input line 161.
+LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
+(Font)              scaled to size 13.67995pt on input line 161.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -878,21 +878,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [9]
 LaTeX Font Info:    Trying to load font information for TS1+ua1 on input line 1
-77.
+82.
  (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/arial\ts1ua1.fd
 File: ts1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for TS1/ua1.
 )
 LaTeX Font Info:    Font shape `TS1/ua1/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 177.
+(Font)              scaled to size 11.39996pt on input line 182.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-81.
+86.
 (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 181.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 186.
 LaTeX Font Info:    Font shape `T1/ua1/m/it' will be
-(Font)              scaled to size 11.39996pt on input line 181.
+(Font)              scaled to size 11.39996pt on input line 186.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -903,7 +903,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
-Overfull \hbox (38.8184pt too wide) in paragraph at lines 192--193
+Overfull \hbox (38.8184pt too wide) in paragraph at lines 197--198
 \T1/ua1/m/n/12 te-lun-gen und Mi-xins. Die In-ter-na-tio-na-li-sie-rung der An-
 wen-dung er-folgt mit Hil-fe von \T1/cmtt/m/n/12 ngx-translate\T1/ua1/m/n/12 ,
  []
@@ -917,13 +917,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-Overfull \hbox (3.06667pt too wide) in paragraph at lines 206--207
+Overfull \hbox (3.06667pt too wide) in paragraph at lines 211--212
 \T1/cmtt/m/n/12 async/await\T1/ua1/m/n/12 -Paradigma si-cher-ge-stellt wird. Di
 e Au-then-ti-fi-zie-rung er-folgt mit-tels JSON Web
  []
 
 
-Overfull \hbox (21.66766pt too wide) in paragraph at lines 208--209
+Overfull \hbox (21.66766pt too wide) in paragraph at lines 213--214
 []\T1/ua1/m/n/12 Die be-reit-ge-stell-te REST-API um-fasst End-punk-te für die 
 Be-nut-zer-re-gis-trie-rung und -anmeldung,
  []
@@ -983,7 +983,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [17]
 
-LaTeX Warning: Empty bibliography on input line 253.
+LaTeX Warning: Empty bibliography on input line 258.
 
 (GenAI-Bewertung.aux)
  ***********
@@ -993,9 +993,6 @@ L3 programming layer <2023-08-29>
 
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -1019,7 +1016,7 @@ ctt1200.pk><C:/Users/lvejsada/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ari
 al/ua1b8a.pfb><C:/Users/lvejsada/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
 arial/ua1r8a.pfb><C:/Users/lvejsada/AppData/Local/Programs/MiKTeX/fonts/type1/u
 rw/arial/ua1ri8a.pfb>
-Output written on GenAI-Bewertung.pdf (17 pages, 109256 bytes).
+Output written on GenAI-Bewertung.pdf (17 pages, 110935 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

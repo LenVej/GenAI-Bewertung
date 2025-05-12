@@ -1,42 +1,41 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {section}{Abbildungsverzeichnis}{5}{}%
 \contentsline {section}{Abkürzungsverzeichnis}{6}{}%
-\contentsline {section}{\numberline {1}Einleitung}{7}{}%
-\contentsline {subsection}{\numberline {1.1}Ziele des Dokuments}{7}{}%
-\contentsline {subsection}{\numberline {1.2}Anlass und Motivation des Projekts}{7}{}%
-\contentsline {subsection}{\numberline {1.3}Aufbau der Arbeit}{7}{}%
-\contentsline {section}{\numberline {2}Hintergrund und Kontext}{8}{}%
-\contentsline {subsection}{\numberline {2.1}Technischer Hintergrund}{8}{}%
-\contentsline {subsection}{\numberline {2.2}Generative KI-Technologien: Definition und Bedeutung}{8}{}%
-\contentsline {subsection}{\numberline {2.3}Vergleich von KI- und klassischen Algorithmen in der Bewertung}{8}{}%
-\contentsline {section}{\numberline {3}Projektbeschreibung}{9}{}%
-\contentsline {subsection}{\numberline {3.1}Projektziele}{9}{}%
-\contentsline {subsection}{\numberline {3.2}Überblick über das Minimum Viable Product (MVP)}{9}{}%
-\contentsline {subsection}{\numberline {3.3}Abgrenzung und Einschränkungen}{9}{}%
-\contentsline {section}{\numberline {4}Technologien und Architektur}{10}{}%
-\contentsline {subsection}{\numberline {4.1}Frontend}{10}{}%
-\contentsline {subsection}{\numberline {4.2}Backend}{12}{}%
-\contentsline {subsection}{\numberline {4.3}Datenbank}{12}{}%
-\contentsline {subsection}{\numberline {4.4}API-Kommunikation}{12}{}%
-\contentsline {subsection}{\numberline {4.5}Teststrategie}{12}{}%
-\contentsline {section}{\numberline {5}Implementierung}{13}{}%
-\contentsline {subsection}{\numberline {5.1}Implementierung der Fragetypen}{13}{}%
-\contentsline {subsection}{\numberline {5.2}Integration der generativen KI-Bewertung}{13}{}%
-\contentsline {subsection}{\numberline {5.3}Datenbankstruktur und Datenmodelle}{13}{}%
-\contentsline {subsection}{\numberline {5.4}Entwicklung der Benutzeroberfläche}{13}{}%
-\contentsline {section}{\numberline {6}Evaluierung}{14}{}%
-\contentsline {subsection}{\numberline {6.1}Vergleich von GenAI-Lösungen}{14}{}%
-\contentsline {subsection}{\numberline {6.2}Leistung und Genauigkeit der Bewertung}{14}{}%
-\contentsline {subsection}{\numberline {6.3}Kostenanalyse der verschiedenen KI-APIs}{14}{}%
-\contentsline {section}{\numberline {7}Ergebnisse und Diskussion}{15}{}%
-\contentsline {subsection}{\numberline {7.1}Zusammenfassung der Implementierungsergebnisse}{15}{}%
-\contentsline {subsection}{\numberline {7.2}Herausforderungen bei der Entwicklung}{15}{}%
-\contentsline {subsection}{\numberline {7.3}Potenzial für zukünftige Erweiterungen}{15}{}%
-\contentsline {section}{\numberline {8}Zukünftige Arbeiten und Erweiterungsmöglichkeiten}{16}{}%
-\contentsline {subsection}{\numberline {8.1}Adaptive Lernpfade}{16}{}%
-\contentsline {subsection}{\numberline {8.2}Integration von Sprach- und Bilderkennung}{16}{}%
-\contentsline {subsection}{\numberline {8.3}Mehrsprachigkeit}{16}{}%
-\contentsline {section}{\numberline {9}Fazit}{17}{}%
-\contentsline {subsection}{\numberline {9.1}Erfüllung der Projektziele}{17}{}%
-\contentsline {subsection}{\numberline {9.2}Bedeutung der Ergebnisse}{17}{}%
-\contentsline {subsection}{\numberline {9.3}Ausblick}{17}{}%
+\contentsline {section}{\numberline {1}Ziele des Dokuments}{7}{}%
+\contentsline {section}{\numberline {2}Anlass und Motivation des Projekts}{7}{}%
+\contentsline {section}{\numberline {3}Aufbau der Arbeit}{7}{}%
+\contentsline {section}{\numberline {4}Hintergrund und Kontext}{8}{}%
+\contentsline {subsection}{\numberline {4.1}Technischer Hintergrund}{8}{}%
+\contentsline {subsection}{\numberline {4.2}Generative KI-Technologien: Definition und Bedeutung}{8}{}%
+\contentsline {subsection}{\numberline {4.3}Vergleich von KI- und klassischen Algorithmen in der Bewertung}{8}{}%
+\contentsline {section}{\numberline {5}Projektbeschreibung}{9}{}%
+\contentsline {subsection}{\numberline {5.1}Projektziele}{9}{}%
+\contentsline {subsection}{\numberline {5.2}Überblick über das Minimum Viable Product (MVP)}{9}{}%
+\contentsline {subsection}{\numberline {5.3}Abgrenzung und Einschränkungen}{9}{}%
+\contentsline {section}{\numberline {6}Technologien und Architektur}{10}{}%
+\contentsline {subsection}{\numberline {6.1}Frontend}{10}{}%
+\contentsline {subsection}{\numberline {6.2}Backend}{12}{}%
+\contentsline {subsection}{\numberline {6.3}Datenbank}{12}{}%
+\contentsline {subsection}{\numberline {6.4}API-Kommunikation}{12}{}%
+\contentsline {subsection}{\numberline {6.5}Teststrategie}{12}{}%
+\contentsline {section}{\numberline {7}Implementierung}{13}{}%
+\contentsline {subsection}{\numberline {7.1}Implementierung der Fragetypen}{13}{}%
+\contentsline {subsection}{\numberline {7.2}Integration der generativen KI-Bewertung}{13}{}%
+\contentsline {subsection}{\numberline {7.3}Datenbankstruktur und Datenmodelle}{13}{}%
+\contentsline {subsection}{\numberline {7.4}Entwicklung der Benutzeroberfläche}{13}{}%
+\contentsline {section}{\numberline {8}Evaluierung}{14}{}%
+\contentsline {subsection}{\numberline {8.1}Vergleich von GenAI-Lösungen}{14}{}%
+\contentsline {subsection}{\numberline {8.2}Leistung und Genauigkeit der Bewertung}{14}{}%
+\contentsline {subsection}{\numberline {8.3}Kostenanalyse der verschiedenen KI-APIs}{14}{}%
+\contentsline {section}{\numberline {9}Ergebnisse und Diskussion}{15}{}%
+\contentsline {subsection}{\numberline {9.1}Zusammenfassung der Implementierungsergebnisse}{15}{}%
+\contentsline {subsection}{\numberline {9.2}Herausforderungen bei der Entwicklung}{15}{}%
+\contentsline {subsection}{\numberline {9.3}Potenzial für zukünftige Erweiterungen}{15}{}%
+\contentsline {section}{\numberline {10}Zukünftige Arbeiten und Erweiterungsmöglichkeiten}{16}{}%
+\contentsline {subsection}{\numberline {10.1}Adaptive Lernpfade}{16}{}%
+\contentsline {subsection}{\numberline {10.2}Integration von Sprach- und Bilderkennung}{16}{}%
+\contentsline {subsection}{\numberline {10.3}Mehrsprachigkeit}{16}{}%
+\contentsline {section}{\numberline {11}Fazit}{17}{}%
+\contentsline {subsection}{\numberline {11.1}Erfüllung der Projektziele}{17}{}%
+\contentsline {subsection}{\numberline {11.2}Bedeutung der Ergebnisse}{17}{}%
+\contentsline {subsection}{\numberline {11.3}Ausblick}{17}{}%
