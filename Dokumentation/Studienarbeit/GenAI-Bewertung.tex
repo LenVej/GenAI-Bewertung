@@ -154,6 +154,7 @@ Die Bewertung von offenen Antworten stellt nach wie vor eine erhebliche Herausfo
 Das vorliegende Projekt adressiert dieses Defizit durch die Integration generativer KI-Technologien, welche die Fähigkeit besitzen, Antworten kontextbasiert zu analysieren und flexibler zu bewerten. Ziel ist die Entwicklung eines Minimum Viable Product (MVP), das in der Lage ist, verschiedene Fragetypen zu verarbeiten und Antworten präzise zu bewerten – unabhängig von formalen Abweichungen wie Groß-/Kleinschreibung, Synonymen oder Tippfehlern. Durch den Einsatz einer serviceorientierten Webarchitektur soll eine modulare, erweiterbare Plattform entstehen, die sowohl für Bildungseinrichtungen als auch für Lernplattformen von Interesse ist. Die Ergebnisse dieser Arbeit können darüber hinaus als Grundlage für zukünftige Forschung zur adaptiven Lernpfadsteuerung oder multimodalen Antwortverarbeitung dienen.
 
 \section{Aufbau der Arbeit}
+Die Arbeit beginnt mit einer theoretischen Fundierung des Themas und der Einordnung generativer KI-Technologien im Kontext automatisierter Antwortbewertung. Darauf aufbauend wird die Zielsetzung des Projekts beschrieben und die Konzeption des entwickelten Prototyps erläutert. Im Anschluss erfolgt eine detaillierte Darstellung der technischen Architektur, der eingesetzten Technologien sowie der zugrunde liegenden Systemlogik. Es folgt eine Beschreibung der konkreten Implementierungsschritte, einschließlich der Integration der Bewertungslogik und der Gestaltung der Benutzeroberfläche. Ein weiterer Schwerpunkt liegt auf der Analyse und Bewertung verschiedener GenAI-Ansätze hinsichtlich ihrer Leistungsfähigkeit, Genauigkeit und Kosteneffizienz. Abschließend werden die zentralen Ergebnisse zusammengefasst, Entwicklungserfahrungen reflektiert und mögliche Perspektiven für eine zukünftige Weiterentwicklung aufgezeigt.
 
 \newpage
 
@@ -165,9 +166,36 @@ Das vorliegende Projekt adressiert dieses Defizit durch die Integration generati
 \newpage
 
 \section{Projektbeschreibung}
+Die automatisierte Bewertung von Antworten stellt ein zentrales Element in digitalen Lernumgebungen dar. Um diese Herausforderung angemessen zu adressieren, zielt das vorliegende Projekt auf die Entwicklung eines innovativen Bewertungssystems, das generative KI-Technologien nutzt, um die Genauigkeit und Flexibilität der Auswertung zu verbessern. Die folgenden Abschnitte beschreiben die Zielsetzung, den konzeptionellen Aufbau sowie die Abgrenzung des entwickelten Minimum Viable Product (MVP).
+
 \subsection{Projektziele}
+Im Zentrum des Projekts steht die Entwicklung eines webbasierten Systems, das generative KI nutzt, um Antworten in digitalen Lernumgebungen kontextsensitiv und tolerant gegenüber sprachlichen Abweichungen zu bewerten. Dies umfasst insbesondere die Fähigkeit, unterschiedliche Antwortformate, Synonyme sowie orthografische Abweichungen zu erkennen und in die Bewertung einzubeziehen.
+
+Über die isolierte Analyse einzelner Antworten hinaus sollen Nutzerinnen und Nutzer die Möglichkeit erhalten, vollständige Prüfungen zu erstellen, bestehend aus individuell konfigurierbaren Fragetypen. Diese Prüfungen können online bearbeitet werden; nach ihrer Abgabe erfolgt die automatisierte Auswertung durch ein angebundenes generatives KI-Modul auf Basis der OpenAI-API. Diese API ermöglicht eine semantische Analyse der Antworten und generiert differenzierte Bewertungen inklusive punktgenauer Rückmeldungen.
+
+Die Ergebnisse werden den Teilnehmenden unmittelbar nach der Auswertung zur Verfügung gestellt. Zusätzlich erhalten sie Zugang zu persönlichen Ergebnisübersichten sowie zu statistischen Auswertungen, die den individuellen Lernfortschritt über verschiedene Prüfungsdurchläufe hinweg abbilden. Dadurch wird ein kontinuierliches, datenbasiertes Lernen unterstützt.
+
+Ein weiteres Ziel ist der Aufbau einer modularen und erweiterbaren Softwarearchitektur, die zukünftige Erweiterungen – wie adaptive Lernpfade, multimodale Antwortverarbeitung oder differenzierte Bewertungsstrategien – ermöglicht. Die technische Umsetzung legt besonderen Wert auf Wartbarkeit, Skalierbarkeit und die klare Trennung von Verantwortlichkeiten innerhalb der Systemkomponenten.
+
 \subsection{Überblick über das Minimum Viable Product (MVP)}
+Das entwickelte MVP stellt eine funktionale Webanwendung dar, die auf einer modernen, komponentenbasierten Systemarchitektur basiert. Die Benutzeroberfläche wurde mit Angular umgesetzt und ermöglicht eine interaktive Verwaltung von Fragen, Prüfungsszenarien und Auswertungsergebnissen. Das Backend basiert auf ASP.NET Core und bietet über REST-APIs eine standardisierte Schnittstelle für die Kommunikation mit dem Frontend.
+
+Die zentrale Funktionalität besteht in der automatisierten Bewertung von Antworten durch eine angebundene OpenAI-Komponente. Diese analysiert eingereichte Antworten unter Berücksichtigung definierter Bewertungskriterien wie Groß- und Kleinschreibung, semantischer Ähnlichkeit oder zulässiger Abweichung bei Schätzfragen. Dabei können Nutzerinnen und Nutzer individuelle Einstellungen wie Toleranzlevel oder Genauigkeitsgrad festlegen, um die Bewertung an spezifische Anforderungen anzupassen.
+
+Neben der Bewertungslogik umfasst das MVP auch eine persistente Datenhaltung über eine relationale Datenbank, in der alle relevanten Informationen zu Fragen, Nutzereingaben, Bewertungen und Einstellungen gespeichert werden. Eine integrierte Teststruktur stellt die funktionale Stabilität des Systems sicher und erleichtert künftige Erweiterungen.
+
 \subsection{Abgrenzung und Einschränkungen}
+Das entwickelte MVP verfolgt das Ziel, eine funktionsfähige Kernlösung bereitzustellen, die den Einsatz generativer KI für die automatisierte Bewertung in Lernsystemen demonstriert. Der Fokus liegt auf der technischen Realisierbarkeit sowie auf dem didaktischen Potenzial kontextsensitiver Antwortanalysen durch KI-gestützte Verfahren.
+
+Auf erweiterte Funktionalitäten wie ein differenziertes Rollen- und Rechtemanagement wurde im aktuellen Entwicklungsstand verzichtet. Ein solches System, das etwa zwischen Administrator:innen, Lehrkräften und Lernenden unterscheidet, stellt in produktiven Lernplattformen eine wichtige Grundlage für eine sichere und zielgruppenspezifische Nutzung dar. Im vorliegenden Prototyp wurde diese Funktion bewusst ausgeklammert, lässt sich jedoch mit geringem Entwicklungsaufwand ergänzen und bietet eine sinnvolle Erweiterung für zukünftige Versionen.
+
+Auch auf umfassende Mehrsprachigkeit sowie die Einbindung alternativer Eingabeformen – etwa Sprache oder Bilddaten – wurde verzichtet, um den Fokus auf die Kernfunktion der KI-gestützten Bewertung zu legen.
+
+Die Bewertungslogik konzentriert sich im derzeitigen Entwicklungsstand auf grundlegende Kriterien wie Rechtschreibung, semantische Ähnlichkeit und Synonymtoleranz. Erweiterte Konzepte, wie adaptive Gewichtungen von Antworten, dynamische Bewertungsschemata oder eine Lernpfadsteuerung basierend auf individuellen Fortschrittsdaten, sind nicht Bestandteil des Prototyps.
+
+Ein weiterer zentraler Aspekt der Abgrenzung betrifft die Bewertung selbst: Die eingesetzte OpenAI-API liefert zwar bemerkenswert leistungsfähige und flexible Analysen, bringt jedoch auch inhärente Unsicherheiten mit sich. Dazu zählen eine begrenzte Nachvollziehbarkeit der Bewertungsentscheidung, gelegentliche Inkonsistenzen sowie eine nicht deterministische Ergebnisstruktur. Diese Eigenschaften sind technologisch bedingt und stellen eine Herausforderung dar, wenn es um die Reproduzierbarkeit und Objektivierbarkeit von Bewertungen geht. Die Interpretation und Einordnung der Bewertungsergebnisse erfordern daher ein reflektiertes Verständnis der Funktionsweise generativer Modelle.
+
+Trotz dieser Einschränkungen bietet das MVP eine tragfähige Grundlage für weiterführende Entwicklungen und zukünftige Forschungsfragen im Bereich KI-gestützter Lernsysteme.
 
 \newpage
 
@@ -212,8 +240,62 @@ Zur weiteren Unterstützung einer sauberen Softwarearchitektur kommen zusätzlic
 
 Die bereitgestellte REST-API umfasst Endpunkte für die Benutzerregistrierung und -anmeldung, die Verwaltung von Fragen und Prüfungen, das Starten und Abschließen von Prüfungsversuchen sowie die Rückgabe von Ergebnissen, einschließlich einer automatisierten Bewertung durch die Integration eines generativen KI-Moduls auf Basis von ChatGPT.
 
+
+\subsection{Accountsicherheit und Authentifizierung}
+
+Die Benutzerauthentifizierung im System erfolgt auf Basis eines rollenunabhängigen, tokenbasierten Sicherheitskonzepts, das sowohl Zugriffsschutz als auch Wiederanmeldemechanismen umfasst. Für den Login wird ein klassisches E-Mail/Passwort-Verfahren eingesetzt, bei dem alle Passwörter serverseitig mit dem BCrypt-Hashing-Algorithmus gesichert werden. Dies gewährleistet eine starke Einwegverschlüsselung und schützt vor dem Auslesen sensibler Zugangsdaten selbst im Falle eines Datenlecks.
+
+Nach erfolgreicher Anmeldung wird ein zeitlich begrenzt gültiger \textit{Access Token} in Form eines JSON Web Token (JWT) erzeugt. Dieser enthält standardisierte Claims wie \texttt{sub} (Benutzer-ID), \texttt{name} (Benutzername) und \texttt{exp} (Ablaufzeitpunkt). Der Token wird mit dem Algorithmus HMAC-SHA256 signiert und vom Server auf seine Integrität geprüft, bevor Zugriff auf geschützte Endpunkte gewährt wird. Eine Manipulation des Tokens führt automatisch zur Ablehnung durch die Middleware, wodurch unautorisierte Zugriffe verhindert werden.
+
+Der Token wird bei allen API-Anfragen im HTTP-Header mitgeführt und dient zur Authentifizierung. Eine serverseitige Middleware kontrolliert die Gültigkeit jedes Tokens und filtert nicht authentifizierte Zugriffe systematisch heraus. Zusätzlich unterstützt das System die Ausstellung und Verwaltung von \textit{Refresh Tokens}, die dem Zweck dienen, nach Ablauf des Access Tokens eine neue Sitzung zu ermöglichen. Diese Tokens werden serverseitig gespeichert, sind zeitlich auf sieben Tage limitiert und werden bei erfolgreicher Erneuerung automatisch aktualisiert. Dadurch wird eine kontinuierliche Nutzung ohne wiederholte Passworteingabe ermöglicht, ohne dabei die Zugriffssicherheit zu gefährden.
+
+Im Angular-Frontend wird zwischen \texttt{localStorage} und \texttt{sessionStorage} unterschieden, um entweder eine dauerhafte oder eine temporäre Sitzung zu speichern. Die gewählte Speichermethode hängt vom Nutzerwunsch („Angemeldet bleiben“) ab. Gleichzeitig überprüft ein zentraler \texttt{HttpInterceptor} bei jeder HTTP-Anfrage die Gültigkeit des Tokens. Sollte dieser abgelaufen oder manipuliert sein, wird automatisch ein Logout ausgelöst und der Benutzer zur Login-Seite weitergeleitet. Fehler wie 401 Unauthorized werden dadurch sicher und benutzerfreundlich behandelt.
+
+Die Benutzer haben zudem die Möglichkeit, ihr Konto jederzeit selbstständig zu löschen. Dieser Vorgang ist nur nach erfolgreicher Authentifizierung möglich und entfernt alle personenbezogenen Datensätze aus dem System. Einstellungen wie Groß-/Kleinschreibung, Schätztoleranz und Fehlertoleranz sind Bestandteil des Benutzerprofils und können direkt über ein geschütztes Endpoint aktualisiert werden.
+
+Durch die Kombination aus sicherer Passwortspeicherung, tokenbasierter Zugriffskontrolle, serverseitiger Validierung, Refresh-Mechanismen und frontendseitiger Tokenprüfung bietet das System ein hohes Maß an Accountsicherheit, das den Anforderungen moderner Webanwendungen gerecht wird.
+
+
+
 \subsection{Datenbank}
+Die Datenhaltung des Systems basiert auf einer relationalen Datenbankstruktur, welche die Grundlage für eine konsistente und nachvollziehbare Verwaltung sämtlicher prüfungs- und bewertungsbezogener Daten bildet. Die Konzeption der Datenbank folgt einem schichtorientierten Architekturansatz und wurde im Verlauf der Entwicklung iterativ erweitert und verfeinert, um den steigenden funktionalen Anforderungen Rechnung zu tragen. Ziel war es, eine robuste, zugleich jedoch flexibel erweiterbare Struktur zu schaffen, die sowohl aktuelle als auch zukünftige Anforderungen an ein KI-gestütztes Bewertungssystem unterstützt.
+
+Die zentrale Entität innerhalb der Datenbank bildet die Tabelle \textit{User}, welche grundlegende Informationen über registrierte Nutzerinnen und Nutzer enthält. Diese wiederum stehen in einer 1:n-Beziehung zu den \textit{ExamAttempt}-Einträgen, die einzelne Prüfungsversuche repräsentieren. Jede Prüfung ist durch die Entität \textit{Exam} beschrieben, die Metadaten wie Titel, Beschreibung und Erstellerreferenz enthält. Prüfungen bestehen aus einer Menge von Fragen, welche durch die Entität \textit{Question} modelliert werden. Diese sind polymorph aufgebaut: Sie werden durch spezifische Subtypen wie \textit{MultipleChoiceQuestion}, \textit{MathQuestion}, \textit{FreeTextQuestion} oder \textit{FillInTheBlankQuestion} konkretisiert, was die flexible Handhabung unterschiedlicher Fragetypen erlaubt.
+
+Ein besonderes Augenmerk liegt auf der Modellierung der Lückentextfragen, welche über die Entität \textit{FillInTheBlankQuestion} sowie deren abhängige Struktur \textit{BlankGap} realisiert werden. Diese Konstruktion erlaubt die Definition mehrerer Lücken pro Frage inklusive entsprechender Lösungsmöglichkeiten.
+
+Antworten zu gestellten Fragen werden in der Tabelle \textit{ExamAnswer} gespeichert und referenzieren jeweils den zugehörigen Prüfungsversuch und die bearbeitete Frage. Die Auswertung erfolgt durch die Tabelle \textit{AiEvaluationResult}, welche das Ergebnis der Bewertung durch das generative KI-Modul (basierend auf der ChatGPT-API) enthält. Ergänzend dazu dokumentiert die Entität \textit{ExamAttemptEvaluation} das Gesamtergebnis eines Prüfungsversuchs, das sich aus den Einzelbewertungen zusammensetzt.
+
+Die folgende Abbildung zeigt das aktuelle Entity-Relationship-Diagramm der Anwendung:
+
+\vspace{1em}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{er_diagram_highres.png}
+\caption{Entity-Relationship-Diagramm der GenAI-Bewertungsplattform}
+\label{fig:erd}
+\end{figure}
+\vspace{1em}
+
+Wie in Abbildung~\ref{fig:erd} dargestellt, bilden die Entitäten ein klar strukturiertes und normalisiertes Modell, das eine präzise Trennung zwischen Nutzerinteraktionen, Prüfungsstruktur, Antworten und Bewertungen ermöglicht. Diese Modularität ist entscheidend für die Wartbarkeit des Systems und unterstützt die kontinuierliche Weiterentwicklung. Die Struktur wurde im Verlauf des Projekts schrittweise erweitert, insbesondere im Hinblick auf die Differenzierung von Fragetypen und die Integration des generativen Bewertungssystems. Der aktuelle Stand bietet eine tragfähige Grundlage für zukünftige Erweiterungen wie Fortschrittsanalysen, adaptive Frageauswahl oder erweiterte Feedbackmechanismen.
+
 \subsection{API-Kommunikation}
+Die Kommunikation zwischen den verschiedenen Komponenten des Systems folgt dem Prinzip einer serviceorientierten Architektur (SOA) und basiert auf standardisierten RESTful Webservices. Diese Schnittstellen dienen nicht nur der Verbindung zwischen Frontend und Backend, sondern insbesondere auch der Integration externer KI-Dienste, im konkreten Fall der OpenAI-API zur automatisierten Bewertung von Freitext- und anderen offenen Antwortformaten.
+
+\subsubsection{Interne Kommunikation (Frontend–Backend)}
+Sobald ein Prüfungsversuch abgeschlossen wurde, werden die im Frontend eingegebenen Antworten als strukturierte Datenobjekte (SubmitExamAttemptDto) an das Backend gesendet. Diese enthalten neben den Antwortinhalten auch Metadaten wie Prüfungs- und Benutzer-IDs. Im Backend erfolgt zunächst die Speicherung der Antworten in der Datenbank. Anschließend werden sie zur Bewertung vorbereitet, indem die relevante Frage mitsamt ihrer Typ-spezifischen Konfiguration (z. B. Multiple-Choice-Optionen oder erwartete Ergebnisse) analysiert und mit den Benutzereinstellungen (Toleranz für Tippfehler, Groß-/Kleinschreibung, Schätztoleranz) angereichert wird.
+
+\subsubsection{Externe Kommunikation (Backend–OpenAI API)}
+Die anschließende Auswertung erfolgt durch die Integration der OpenAI-API. Für jede zu bewertende Antwort wird im Backend ein spezifisch strukturierter Prompt generiert, der aus der Frage, der Nutzereingabe, der erwarteten Lösung und den Bewertungseinstellungen besteht. Diese Informationen werden als Teil eines JSON-Objekts an die API gesendet. Der Aufruf erfolgt als HTTP-POST-Anfrage mit einem festgelegten Sprachmodell (z. B. gpt-4), wobei ein rollenbasierter Konversationsverlauf (system und user) verwendet wird, um dem Modell klare Bewertungsanweisungen zu geben.
+
+Die API antwortet mit einer textbasierten Rückgabe, die ein JSON-Fragment enthält, bestehend aus einer numerischen Bewertung (score) im Bereich von 0 bis 1 sowie einem erklärenden Feedback. Das System extrahiert dieses JSON aus der Antwort mithilfe regulärer Ausdrücke und deserialisiert es anschließend in eine interne Bewertungsstruktur (AiEvaluationResult). Diese Ergebnisse werden der entsprechenden Nutzerantwort zugeordnet und persistent gespeichert.
+
+\subsubsection{Sicherheitsaspekte und Architekturmerkmale}
+Die API-Schlüssel für den Zugriff auf die OpenAI-API werden über die Konfigurationsdateien des Backends verwaltet und nicht im Quellcode hinterlegt. Die gesamte Kommunikation mit dem externen Dienst erfolgt verschlüsselt über HTTPS. Die REST-API ist durch rollenbasierte Zugriffskontrollen abgesichert, wobei alle prüfungsrelevanten Endpunkte Authentifizierung per JSON Web Token (JWT) voraussetzen.
+
+\subsubsection{Zusammenfassung}
+Die API-Kommunikation stellt die zentrale Brücke zwischen Nutzereingabe und KI-gestützter Bewertung dar. Sie erlaubt die dynamische Generierung von Bewertungen durch den OpenAI-Dienst und liefert eine flexible, semantisch fundierte Rückmeldung, die über klassische Antwort-Matching-Algorithmen weit hinausgeht. Die Entkopplung von Benutzeroberfläche, Bewertungskomponente und Speicherlogik ermöglicht eine klare Trennung von Zuständigkeiten, was sowohl die Wartbarkeit als auch die Erweiterbarkeit der Anwendung unterstützt.
+
 \subsection{Teststrategie}
 
 \newpage
