@@ -146,7 +146,7 @@ public class ExamAttemptRepository : IExamAttemptRepository
     {
         ExamAttemptId = attempt.ExamAttemptId,
         Score = scorePercent / 100.0,
-        IsPassed = scorePercent >= 0.6,
+        IsPassed = scorePercent >= 60,
         FeedbackSummary = "Guter Versuch, aber es gibt noch Verbesserungspotenzial.",
         EvaluatedAt = now
     };

@@ -1,5 +1,6 @@
 ﻿using GenAI_Bewertung.Data;
 using GenAI_Bewertung.Entities;
+using GenAI_Bewertung.Entities.QuestionTypes;
 using Microsoft.EntityFrameworkCore;
 
 namespace GenAI_Bewertung.Repositories
@@ -15,8 +16,21 @@ namespace GenAI_Bewertung.Repositories
 
         public async Task<IEnumerable<Question>> GetQuestionsAsync()
         {
-            return await _context.Questions.ToListAsync();
+            var questions = await _context.Questions.ToListAsync();
+
+            foreach (var q in questions)
+            {
+                if (q is FillInTheBlankQuestion fib)
+                {
+                    await _context.Entry(fib)
+                        .Collection(f => f.Gaps)
+                        .LoadAsync();
+                }
+            }
+
+            return questions;
         }
+
 
         public async Task<Question?> GetQuestionByIdAsync(int id)
         {
