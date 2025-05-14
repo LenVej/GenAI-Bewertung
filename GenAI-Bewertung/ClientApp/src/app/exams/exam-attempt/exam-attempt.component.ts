@@ -27,6 +27,7 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
   timerInterval: any;
   protected readonly FormControl = FormControl;
   private hasSubmitted = false;
+  loading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -127,11 +128,9 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
 
   submit(): void {
     const confirmed = confirm('❗ Willst du die Prüfung wirklich abschließen?');
+    if (!confirmed) return;
 
-    if (!confirmed) {
-      return;
-    }
-
+    this.loading = true;
     this.hasSubmitted = true;
 
     const answers = this.questions.map(q => {
@@ -159,16 +158,17 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
       answers
     }).subscribe({
       next: () => {
-        console.log('Submitted attemptId:', this.attemptId); // <== ID prüfen
         this.snackBar.open('✅ Prüfung erfolgreich abgegeben!', 'OK', { duration: 3000 });
         this.router.navigate([`/exams/result/${this.attemptId}`]);
       },
       error: (err) => {
         console.error('Submit failed:', err);
         this.snackBar.open('❌ Fehler beim Abschicken!', 'OK', { duration: 3000 });
+        this.loading = false;
       }
     });
   }
+
 
 
   startTimer(): void {
