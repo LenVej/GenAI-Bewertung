@@ -126,10 +126,13 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
 
 
 
-  submit(): void {
-    const confirmed = confirm('❗ Willst du die Prüfung wirklich abschließen?');
-    if (!confirmed) return;
+  submit(skipConfirm = false): void {
+    if (!skipConfirm) {
+      const confirmed = confirm('❗ Willst du die Prüfung wirklich abschließen?');
+      if (!confirmed) return;
+    }
 
+    clearInterval(this.timerInterval);
     this.loading = true;
     this.hasSubmitted = true;
 
@@ -170,13 +173,17 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
   }
 
 
-
   startTimer(): void {
     this.timerInterval = setInterval(() => {
       this.timeLeft--;
+
       if (this.timeLeft <= 0) {
         clearInterval(this.timerInterval);
-        this.submit();
+        this.snackBar.open('⏱️ Zeit abgelaufen – deine Prüfung wird jetzt abgegeben...', '', {
+          duration: 3000
+        });
+
+        setTimeout(() => this.submit(true), 1000); // ✅ skipConfirm = true
       }
     }, 1000);
   }
