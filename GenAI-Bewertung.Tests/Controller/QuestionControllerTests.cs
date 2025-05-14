@@ -1,90 +1,158 @@
-﻿using GenAI_Bewertung.Controllers;
+﻿using System.Security.Claims;
+using GenAI_Bewertung.Controllers;
+using GenAI_Bewertung.DTOs;
 using GenAI_Bewertung.Entities;
 using GenAI_Bewertung.Entities.QuestionTypes;
-using GenAI_Bewertung.Services;
-using Microsoft.AspNetCore.Mvc;
-using Moq;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GenAI_Bewertung.Enums;
 using GenAI_Bewertung.Repositories;
-using Xunit;
+using GenAI_Bewertung.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+
 
 namespace GenAI_Bewertung.Tests.Controller
 {
-    public class QuestionsControllerTests
+    public class QuestionsControllerExtendedTests
     {
+        private readonly Mock<IQuestionRepository> _mockRepo;
+        private readonly QuestionService _service;
         private readonly QuestionsController _controller;
 
-        public QuestionsControllerTests()
+        public QuestionsControllerExtendedTests()
         {
-            // Set up mock repository
-            Mock<IQuestionRepository> mockRepository = new();
+            _mockRepo = new Mock<IQuestionRepository>();
+            _service = new QuestionService(_mockRepo.Object);
+            _controller = new QuestionsController(_service);
+        }
 
-            // Sample data: konkrete abgeleitete Klassen verwenden
-            List<Question> sampleQuestions = new()
+        private void SetUser(int userId)
+        {
+            var user = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
             {
-                new MultipleChoiceQuestion
+                new Claim(ClaimTypes.NameIdentifier, userId.ToString())
+            }, "mock"));
+
+            _controller.ControllerContext = new ControllerContext
+            {
+                HttpContext = new DefaultHttpContext { User = user }
+            };
+        }
+
+        [Fact]
+        public async Task PostQuestion_ReturnsOk_WhenValid()
+        {
+            SetUser(1);
+
+            var dto = new CreateQuestionDto
+            {
+                QuestionText = "Testfrage?",
+                QuestionType = QuestionType.OneWord,
+                Subject = "Test",
+                ExpectedAnswer = "Antwort"
+            };
+
+            var result = await _controller.PostQuestion(dto);
+
+            var okResult = Assert.IsType<OkObjectResult>(result);
+            var returnDto = Assert.IsType<QuestionDto>(okResult.Value);
+            Assert.Equal("Testfrage?", returnDto.QuestionText);
+        }
+
+        [Fact]
+        public async Task PostQuestion_ReturnsUnauthorized_WhenNoUser()
+        {
+            _controller.ControllerContext = new ControllerContext
+            {
+                HttpContext = new DefaultHttpContext
                 {
-                    QuestionId = 1,
-                    QuestionText = "Welche Farben sind Primärfarben?",
-                    QuestionType = QuestionType.MultipleChoice,
-                    Subject = "Kunst",
-                    CreatedBy = 1,
-                    Choices = new() { "Rot", "Grün", "Blau" },
-                    CorrectIndices = new() { 0, 2 }
-                },
-                new OneWordQuestion
-                {
-                    QuestionId = 2,
-                    QuestionText = "Hauptstadt von Frankreich?",
-                    QuestionType = QuestionType.OneWord,
-                    Subject = "Geographie",
-                    CreatedBy = 2,
-                    ExpectedAnswer = "Paris"
+                    User = new ClaimsPrincipal() // Kein NameIdentifier vorhanden
                 }
             };
 
-            // Mock Verhalten
-            mockRepository.Setup(r => r.GetQuestionsAsync()).ReturnsAsync(sampleQuestions);
-            mockRepository.Setup(r => r.GetQuestionByIdAsync(It.IsAny<int>()))
-                .ReturnsAsync((int id) => sampleQuestions.FirstOrDefault(q => q.QuestionId == id));
-            mockRepository.Setup(r => r.QuestionExistsAsync(It.IsAny<int>()))
-                .ReturnsAsync((int id) => sampleQuestions.Any(q => q.QuestionId == id));
+            var dto = new CreateQuestionDto
+            {
+                QuestionText = "Testfrage?",
+                QuestionType = QuestionType.OneWord,
+                Subject = "Test",
+                ExpectedAnswer = "Antwort"
+            };
 
-            // Service + Controller
-            var mockService = new QuestionService(mockRepository.Object);
-            _controller = new QuestionsController(mockService);
+            var result = await _controller.PostQuestion(dto);
+            Assert.IsType<UnauthorizedObjectResult>(result);
+        }
+
+
+        [Fact]
+        public async Task PutQuestion_ReturnsNoContent_WhenSuccessful()
+        {
+            var question = new OneWordQuestion
+            {
+                QuestionId = 1,
+                QuestionText = "Test?",
+                QuestionType = QuestionType.OneWord,
+                Subject = "Test",
+                CreatedBy = 1,
+                ExpectedAnswer = "Antwort"
+            };
+
+            _mockRepo.Setup(r => r.QuestionExistsAsync(1)).ReturnsAsync(true);
+
+            var result = await _controller.PutQuestion(1, question);
+            Assert.IsType<NoContentResult>(result);
         }
 
         [Fact]
-        public async Task GetQuestions_ReturnsOkResult_WithListOfQuestions()
+        public async Task PutQuestion_ReturnsBadRequest_WhenIdMismatch()
         {
-            var result = await _controller.GetQuestions();
+            var result = await _controller.PutQuestion(1, new OneWordQuestion { QuestionId = 2 });
+            Assert.IsType<BadRequestResult>(result);
+        }
 
+        [Fact]
+        public async Task PutQuestion_ReturnsNotFound_WhenQuestionDoesNotExist()
+        {
+            var question = new OneWordQuestion { QuestionId = 5 };
+            _mockRepo.Setup(r => r.QuestionExistsAsync(5)).ReturnsAsync(false);
+
+            var result = await _controller.PutQuestion(5, question);
+            Assert.IsType<NotFoundResult>(result);
+        }
+
+        [Fact]
+        public async Task DeleteQuestion_ReturnsNoContent_WhenFound()
+        {
+            var q = new OneWordQuestion { QuestionId = 1 };
+            _mockRepo.Setup(r => r.GetQuestionByIdAsync(1)).ReturnsAsync(q);
+
+            var result = await _controller.DeleteQuestion(1);
+            Assert.IsType<NoContentResult>(result);
+        }
+
+        [Fact]
+        public async Task DeleteQuestion_ReturnsNotFound_WhenMissing()
+        {
+            _mockRepo.Setup(r => r.GetQuestionByIdAsync(99)).ReturnsAsync((Question)null);
+            var result = await _controller.DeleteQuestion(99);
+            Assert.IsType<NotFoundResult>(result);
+        }
+
+        [Fact]
+        public async Task GetMyQuestions_ReturnsOk_WithUserQuestions()
+        {
+            SetUser(2);
+
+            var list = new List<Question>
+            {
+                new OneWordQuestion { QuestionId = 2, CreatedBy = 2, QuestionText = "Hauptstadt?", ExpectedAnswer = "Berlin" }
+            };
+
+            _mockRepo.Setup(r => r.GetQuestionsByUserIdAsync(2)).ReturnsAsync(list);
+
+            var result = await _controller.GetMyQuestions();
             var okResult = Assert.IsType<OkObjectResult>(result.Result);
-            var questions = Assert.IsAssignableFrom<List<Question>>(okResult.Value);
-            Assert.Equal(2, questions.Count);
-        }
-
-        [Fact]
-        public async Task GetQuestion_ReturnsNotFound_ForInvalidId()
-        {
-            var result = await _controller.GetQuestion(999); // Non-existing ID
-
-            Assert.IsType<NotFoundResult>(result.Result);
-        }
-
-        [Fact]
-        public async Task GetQuestion_ReturnsOkResult_WithQuestion_ForValidId()
-        {
-            var result = await _controller.GetQuestion(1);
-
-            var okResult = Assert.IsType<OkObjectResult>(result.Result);
-            var question = Assert.IsType<MultipleChoiceQuestion>(okResult.Value); // Typ beachten!
-            Assert.Equal(1, question.QuestionId);
-            Assert.Equal("Welche Farben sind Primärfarben?", question.QuestionText);
+            var questions = Assert.IsAssignableFrom<IEnumerable<QuestionDto>>(okResult.Value);
+            Assert.Single(questions);
         }
     }
 }
