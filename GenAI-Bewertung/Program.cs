@@ -44,8 +44,9 @@ builder.Services.AddScoped<ExamService>();
 
 builder.Services.AddScoped<IExamAttemptRepository, ExamAttemptRepository>();
 builder.Services.AddScoped<ExamAttemptService>();
+builder.Services.AddScoped<ExamScoringService>();
 
-builder.Services.AddScoped<OpenAiService>();
+builder.Services.AddHttpClient<OpenAiService>();
 
 builder.Services.AddScoped<IStatsRepository, StatsRepository>();
 builder.Services.AddScoped<StatsService>();
