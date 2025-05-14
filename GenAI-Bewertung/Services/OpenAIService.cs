@@ -1,9 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
-using System.Text.RegularExpressions;
 using GenAI_Bewertung.DTOs;
-using GenAI_Bewertung.Entities;
 
 namespace GenAI_Bewertung.Services;
 
@@ -26,8 +24,6 @@ public class OpenAiService
         string tolerance = "medium",
         bool caseSensitive = false,
         int estimateTolerance = 10)
-
-
     {
         var promptTemplate = choices == null
             ? """
@@ -81,7 +77,6 @@ public class OpenAiService
                             - Falls Groß-/Kleinschreibung nicht relevant ist, ignoriere sie vollständig.
                             - Wenn es sich um eine Schätzfrage handelt, betrachte Werte innerhalb der angegebenen Toleranz noch als korrekt.
                             - Sei fair, aber auch präzise in der Bewertung. Gib immer Feedback, das zur Verbesserung hilft.
-
                             """;
 
         var correctAnswerText = correctAnswers != null
@@ -101,7 +96,7 @@ public class OpenAiService
         var requestBody = new
         {
             model = "gpt-4",
-            messages = new[]
+            messages = new[] 
             {
                 new { role = "system", content = "Du bist ein Lehrer, der kurz, fair und objektiv bewertet." },
                 new { role = "user", content = prompt }
@@ -130,24 +125,44 @@ public class OpenAiService
 
             if (string.IsNullOrWhiteSpace(rawMessage)) return null;
 
-            var match = Regex.Match(rawMessage, @"\{\s*""score""\s*:\s*\d+(\.\d+)?,\s*""feedback""\s*:\s*"".*?""\s*\}",
-                RegexOptions.Singleline);
-            var rightJson = match.Success ? match.Value : rawMessage.Trim();
+            // Falls GPT ein verschachteltes JSON zurückgibt (was es oft tut)
+            if (rawMessage.Trim().StartsWith("{") && rawMessage.Contains("\\\""))
+            {
+                // Ent-escape den JSON-String
+                try
+                {
+                    rawMessage = JsonSerializer.Deserialize<string>($"\"{rawMessage}\"");
+                    rawMessage = rawMessage.Replace("\\\"", "\""); // Entfernt unnötige Escape-Zeichen
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Fehler beim Entpacken des verschachtelten JSON:");
+                    Console.WriteLine(e.Message);
+                }
+            }
+
+            if (string.IsNullOrWhiteSpace(rawMessage)) return null;
 
             Console.WriteLine("Final JSON zum Parsen:");
-            Console.WriteLine(rightJson);
+            Console.WriteLine(rawMessage);
 
-            var result = JsonSerializer.Deserialize<AiEvaluationResultDto>(rightJson, new JsonSerializerOptions
+            var result = JsonSerializer.Deserialize<AiEvaluationResultDto>(rawMessage, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });
 
+            if (result == null)
+            {
+                Console.WriteLine("Deserialisierung fehlgeschlagen. RawMessage:");
+                Console.WriteLine(rawMessage);
+            }
+
             return result;
         }
-        catch (Exception ex)
+        catch (JsonException jsonEx)
         {
-            Console.WriteLine("Fehler beim Deserialisieren:");
-            Console.WriteLine(ex.Message);
+            Console.WriteLine("Fehler bei der Deserialisierung des Ergebnisses:");
+            Console.WriteLine(jsonEx.Message);
             return null;
         }
     }
