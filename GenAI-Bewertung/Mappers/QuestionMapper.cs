@@ -55,86 +55,135 @@ public static class QuestionMapper
 
         return dto;
     }
-    
-    public static Question FromCreateDto(CreateQuestionDto dto, int userId)
-{
-    var createdAt = DateTime.UtcNow;
 
-    return dto.QuestionType switch
+    public static Question FromCreateDto(CreateQuestionDto dto, int userId)
     {
-        QuestionType.MultipleChoice => new MultipleChoiceQuestion
+        var createdAt = DateTime.UtcNow;
+
+        return dto.QuestionType switch
         {
-            QuestionText = dto.QuestionText,
-            Subject = dto.Subject,
-            QuestionType = dto.QuestionType,
-            CreatedBy = userId,
-            CreatedAt = createdAt,
-            Choices = dto.Choices ?? new(),
-            CorrectIndices = dto.CorrectIndices ?? new()
-        },
-        QuestionType.EitherOr => new EitherOrQuestion
-        {
-            QuestionText = dto.QuestionText,
-            Subject = dto.Subject,
-            QuestionType = dto.QuestionType,
-            CreatedBy = userId,
-            CreatedAt = createdAt,
-            OptionA = dto.OptionA ?? "",
-            OptionB = dto.OptionB ?? "",
-            CorrectAnswer = dto.CorrectAnswer ?? ""
-        },
-        QuestionType.OneWord => new OneWordQuestion
-        {
-            QuestionText = dto.QuestionText,
-            Subject = dto.Subject,
-            QuestionType = dto.QuestionType,
-            CreatedBy = userId,
-            CreatedAt = createdAt,
-            ExpectedAnswer = dto.ExpectedAnswer ?? ""
-        },
-        QuestionType.Math => new MathQuestion
-        {
-            QuestionText = dto.QuestionText,
-            Subject = dto.Subject,
-            QuestionType = dto.QuestionType,
-            CreatedBy = userId,
-            CreatedAt = createdAt,
-            ExpectedResult = dto.ExpectedResult ?? 0
-        },
-        QuestionType.Estimation => new EstimationQuestion
-        {
-            QuestionText = dto.QuestionText,
-            Subject = dto.Subject,
-            QuestionType = dto.QuestionType,
-            CreatedBy = userId,
-            CreatedAt = createdAt,
-            CorrectValue = dto.CorrectValue ?? 0,
-        },
-        QuestionType.FillInTheBlank => new FillInTheBlankQuestion
-        {
-            QuestionText = dto.QuestionText,
-            Subject = dto.Subject,
-            QuestionType = dto.QuestionType,
-            CreatedBy = userId,
-            CreatedAt = createdAt,
-            ClozeText = dto.ClozeText ?? "",
-            Gaps = dto.Gaps?.Select(g => new Entities.QuestionTypes.BlankGap
+            QuestionType.MultipleChoice => new MultipleChoiceQuestion
             {
-                Index = g.Index,
-                Solutions = g.Solutions ?? new()
-            }).ToList() ?? new()
-        },
-        QuestionType.FreeText => new FreeTextQuestion
+                QuestionText = dto.QuestionText,
+                Subject = dto.Subject,
+                QuestionType = dto.QuestionType,
+                CreatedBy = userId,
+                CreatedAt = createdAt,
+                Choices = dto.Choices ?? new(),
+                CorrectIndices = dto.CorrectIndices ?? new()
+            },
+            QuestionType.EitherOr => new EitherOrQuestion
+            {
+                QuestionText = dto.QuestionText,
+                Subject = dto.Subject,
+                QuestionType = dto.QuestionType,
+                CreatedBy = userId,
+                CreatedAt = createdAt,
+                OptionA = dto.OptionA ?? "",
+                OptionB = dto.OptionB ?? "",
+                CorrectAnswer = dto.CorrectAnswer ?? ""
+            },
+            QuestionType.OneWord => new OneWordQuestion
+            {
+                QuestionText = dto.QuestionText,
+                Subject = dto.Subject,
+                QuestionType = dto.QuestionType,
+                CreatedBy = userId,
+                CreatedAt = createdAt,
+                ExpectedAnswer = dto.ExpectedAnswer ?? ""
+            },
+            QuestionType.Math => new MathQuestion
+            {
+                QuestionText = dto.QuestionText,
+                Subject = dto.Subject,
+                QuestionType = dto.QuestionType,
+                CreatedBy = userId,
+                CreatedAt = createdAt,
+                ExpectedResult = dto.ExpectedResult ?? 0
+            },
+            QuestionType.Estimation => new EstimationQuestion
+            {
+                QuestionText = dto.QuestionText,
+                Subject = dto.Subject,
+                QuestionType = dto.QuestionType,
+                CreatedBy = userId,
+                CreatedAt = createdAt,
+                CorrectValue = dto.CorrectValue ?? 0,
+            },
+            QuestionType.FillInTheBlank => new FillInTheBlankQuestion
+            {
+                QuestionText = dto.QuestionText,
+                Subject = dto.Subject,
+                QuestionType = dto.QuestionType,
+                CreatedBy = userId,
+                CreatedAt = createdAt,
+                ClozeText = dto.ClozeText ?? "",
+                Gaps = dto.Gaps?.Select(g => new Entities.QuestionTypes.BlankGap
+                {
+                    Index = g.Index,
+                    Solutions = g.Solutions ?? new()
+                }).ToList() ?? new()
+            },
+            QuestionType.FreeText => new FreeTextQuestion
+            {
+                QuestionText = dto.QuestionText,
+                Subject = dto.Subject,
+                QuestionType = dto.QuestionType,
+                CreatedBy = userId,
+                CreatedAt = createdAt,
+                ExpectedKeywords = dto.ExpectedKeywords ?? ""
+            },
+            _ => throw new ArgumentException("Unbekannter Fragentyp")
+        };
+    }
+    
+    public static Question FromUpdateDto(UpdateQuestionDto dto, Question existing)
+    {
+        existing.QuestionText = dto.QuestionText;
+        existing.Subject = dto.Subject;
+
+        switch (existing)
         {
-            QuestionText = dto.QuestionText,
-            Subject = dto.Subject,
-            QuestionType = dto.QuestionType,
-            CreatedBy = userId,
-            CreatedAt = createdAt,
-            ExpectedKeywords = dto.ExpectedKeywords ?? ""
-        },
-        _ => throw new ArgumentException("Unbekannter Fragentyp")
-    };
-}
+            case MultipleChoiceQuestion mc:
+                mc.Choices = dto.Choices ?? new();
+                mc.CorrectIndices = dto.CorrectIndices ?? new();
+                break;
+
+            case EitherOrQuestion eo:
+                eo.OptionA = dto.OptionA ?? "";
+                eo.OptionB = dto.OptionB ?? "";
+                eo.CorrectAnswer = dto.CorrectAnswer ?? "";
+                break;
+
+            case OneWordQuestion ow:
+                ow.ExpectedAnswer = dto.ExpectedAnswer ?? "";
+                break;
+
+            case MathQuestion m:
+                m.ExpectedResult = dto.ExpectedResult ?? 0;
+                break;
+
+            case EstimationQuestion est:
+                est.CorrectValue = dto.CorrectValue ?? 0;
+                break;
+
+            case FillInTheBlankQuestion fib:
+                fib.ClozeText = dto.ClozeText ?? "";
+                // Optional: alte Gaps ersetzen
+                fib.Gaps = dto.Gaps?.Select(g => new BlankGap
+                {
+                    Index = g.Index,
+                    Solutions = g.Solutions ?? new(),
+                    FillInTheBlankQuestionId = existing.QuestionId
+                }).ToList() ?? new();
+                break;
+
+            case FreeTextQuestion ft:
+                ft.ExpectedKeywords = dto.ExpectedKeywords ?? "";
+                break;
+        }
+
+        return existing;
+    }
 
 }

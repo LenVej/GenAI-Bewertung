@@ -83,6 +83,7 @@
                 <td class="truncate">{{ q.questionText }}</td>
                 <td>{{ q.createdAt | date: 'short' }}</td>
                 <td>
+                  <button class="btn edit-btn" [routerLink]="['/questions/edit', q.questionId]">✏️</button>
                   <button class="btn small danger" (click)="deleteQuestion(q.questionId)">🗑️</button>
                 </td>
               </tr>

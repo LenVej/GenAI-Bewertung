@@ -1,0 +1,70 @@
+<div class="edit-wrapper" *ngIf="question">
+  <h2>✏️ Frage bearbeiten</h2>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <label>Fragetext</label>
+  <input [(ngModel)]="question.questionText" />
+
+  <label>Thema</label>
+  <input [(ngModel)]="question.subject" />
+
+  <!-- MultipleChoice -->
+  <div *ngIf="question.questionType === 'MultipleChoice' && question.choices">
+    <h4>Antwortmöglichkeiten</h4>
+    <div *ngFor="let choice of question.choices; let i = index; trackBy: trackByIndex">
+      <input [(ngModel)]="question.choices[i]" placeholder="Antwort {{ i + 1 }}" />
+      <input class="checkbox" type="checkbox" [checked]="question.correctIndices?.includes(i)" (change)="toggleCorrect(i)" />
+      <button class="btn mini-btn danger-btn" (click)="removeChoice(i)">Antwort entfernen</button>
+    </div>
+    <button class="btn mini-btn" (click)="addChoice()">➕ Weitere Option</button>
+  </div>
+
+  <!-- EitherOr -->
+  <div *ngIf="question.questionType === 'EitherOr'">
+    <input [(ngModel)]="question.optionA" placeholder="Option A" />
+    <input [(ngModel)]="question.optionB" placeholder="Option B" />
+    <input [(ngModel)]="question.correctAnswer" placeholder="Korrekte Antwort (A/B)" />
+  </div>
+
+  <!-- OneWord -->
+  <div *ngIf="question.questionType === 'OneWord'">
+    <input [(ngModel)]="question.expectedAnswer" placeholder="Erwartete Antwort" />
+  </div>
+
+  <!-- Math -->
+  <div *ngIf="question.questionType === 'Math'">
+    <input type="number" [(ngModel)]="question.expectedResult" placeholder="Erwartetes Ergebnis" />
+  </div>
+
+  <!-- Estimation -->
+  <div *ngIf="question.questionType === 'Estimation'">
+    <input type="number" [(ngModel)]="question.correctValue" placeholder="Richtiger Wert" />
+  </div>
+
+  <!-- FillInTheBlank -->
+  <div *ngIf="question.questionType === 'FillInTheBlank'">
+    <input class="space" [(ngModel)]="question.clozeText" placeholder="Text mit {{0}}, {{1}}, ..." />
+    <div *ngFor="let gap of question.gaps; let i = index; trackBy: trackByIndex">
+      <h5>Lücke {{ gap.index }}</h5>
+      <div *ngFor="let s of gap.solutions; let j = index; trackBy: trackByIndex">
+        <input [(ngModel)]="gap.solutions[j]" placeholder="Lösung {{ j + 1 }}" />
+        <button class="btn mini-btn danger-btn" (click)="removeSolutionFromGap(i, j)">❌ Entfernen</button>
+      </div>
+      <button class="btn mini-btn" (click)="addSolutionToGap(i)">➕ Lösung hinzufügen</button>
+      <button class="btn mini-btn danger-btn" (click)="removeGap(i)">🗑️ Lücke entfernen</button>
+    </div>
+    <button class="btn mini-btn" (click)="addGap()">➕ Neue Lücke</button>
+  </div>
+
+  <!-- FreeText -->
+  <div *ngIf="question.questionType === 'FreeText'">
+    <input [(ngModel)]="question.expectedKeywords" placeholder="Schlüsselwörter" />
+  </div>
+
+  <div class="button-container">
+    <button class="btn save-btn" (click)="save()" [disabled]="saving">💾 Speichern</button>
+  </div>
+</div>
+
+<div *ngIf="!question && !error">⏳ Wird geladen…</div>

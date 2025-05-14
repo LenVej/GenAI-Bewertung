@@ -30,6 +30,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ConfirmExitGuard } from './guards/confirm-exit.guard';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from "@angular/material/dialog";
+import { EditQuestionComponent } from './questions/edit-question/edit-question.component';
 
 
 
@@ -52,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ExamResultComponent,
     ExamEditComponent,
     FillInTheBlanksPipe,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    EditQuestionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
@@ -64,6 +66,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     RouterModule.forRoot([
       {path: '', component: HomeComponent, pathMatch: 'full'},
       {path: 'questions', component: QuestionsComponent},
+      {path: 'questions/edit/:id', component: EditQuestionComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'profile', component: ProfileComponent},

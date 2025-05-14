@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace GenAI_Bewertung.Entities.QuestionTypes;
 
@@ -22,5 +23,7 @@ public class BlankGap
     public int FillInTheBlankQuestionId { get; set; }
 
     [ForeignKey("FillInTheBlankQuestionId")]
+    
+    [JsonIgnore] 
     public FillInTheBlankQuestion FillInTheBlankQuestion { get; set; }
 }

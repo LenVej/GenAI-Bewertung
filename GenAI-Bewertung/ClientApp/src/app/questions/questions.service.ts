@@ -20,4 +20,13 @@ export class QuestionService {
     return this.http.post<Question>(this.apiUrl, q);
   }
 
+  getQuestionById(id: number) {
+    return this.http.get<Question>(`${this.apiUrl}/${id}`);
+  }
+
+  updateQuestion(id: number, updated: Partial<Question>) {
+    return this.http.put(`${this.apiUrl}/${id}`, updated);
+  }
+
+
 }

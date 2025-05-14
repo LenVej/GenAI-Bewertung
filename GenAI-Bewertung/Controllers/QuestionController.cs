@@ -67,21 +67,22 @@ namespace GenAI_Bewertung.Controllers
 
         // PUT: api/questions/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutQuestion(int id, Question question)
+        [Authorize]
+        public async Task<IActionResult> PutQuestion(int id, [FromBody] UpdateQuestionDto dto)
         {
-            if (id != question.QuestionId)
-            {
-                return BadRequest();
-            }
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
 
-            if (!await _service.QuestionExistsAsync(id))
-            {
-                return NotFound();
-            }
+            if (id != dto.QuestionId) return BadRequest("ID mismatch");
 
-            await _service.UpdateQuestionAsync(question);
+            var existing = await _service.GetQuestionByIdAsync(id);
+            if (existing == null) return NotFound();
+            if (existing.CreatedBy != userId) return Forbid();
+
+            var updated = QuestionMapper.FromUpdateDto(dto, existing);
+            await _service.UpdateQuestionAsync(updated);
             return NoContent();
         }
+
 
         // DELETE: api/questions/{id}
         [HttpDelete("{id}")]
@@ -108,5 +109,6 @@ namespace GenAI_Bewertung.Controllers
             var questions = await _service.GetQuestionsByUserIdAsync(userId);
             return Ok(questions.Select(QuestionMapper.ToDto));
         }
+        
     }
 }

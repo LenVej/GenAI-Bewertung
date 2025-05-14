@@ -34,8 +34,22 @@ namespace GenAI_Bewertung.Repositories
 
         public async Task<Question?> GetQuestionByIdAsync(int id)
         {
-            return await _context.Questions.FindAsync(id);
+            var baseQuestion = await _context.Questions
+                .Where(q => q.QuestionId == id)
+                .FirstOrDefaultAsync();
+
+            if (baseQuestion is FillInTheBlankQuestion)
+            {
+                return await _context.Questions
+                    .OfType<FillInTheBlankQuestion>()
+                    .Include(q => q.Gaps)
+                    .FirstOrDefaultAsync(q => q.QuestionId == id);
+            }
+
+            return baseQuestion;
         }
+
+
 
         public async Task AddQuestionAsync(Question question)
         {
@@ -43,11 +57,83 @@ namespace GenAI_Bewertung.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateQuestionAsync(Question question)
+        public async Task UpdateQuestionAsync(Question updated)
         {
-            _context.Entry(question).State = EntityState.Modified;
+            var existing = await _context.Questions
+                .Include(q => (q as FillInTheBlankQuestion)!.Gaps)
+                .FirstOrDefaultAsync(q => q.QuestionId == updated.QuestionId);
+
+            if (existing == null) return;
+
+            _context.Entry(existing).CurrentValues.SetValues(updated);
+
+            switch (updated)
+            {
+                case MultipleChoiceQuestion mc:
+                    ((MultipleChoiceQuestion)existing).Choices = mc.Choices;
+                    ((MultipleChoiceQuestion)existing).CorrectIndices = mc.CorrectIndices;
+                    break;
+
+                case EitherOrQuestion eo:
+                    ((EitherOrQuestion)existing).OptionA = eo.OptionA;
+                    ((EitherOrQuestion)existing).OptionB = eo.OptionB;
+                    ((EitherOrQuestion)existing).CorrectAnswer = eo.CorrectAnswer;
+                    break;
+
+                case OneWordQuestion ow:
+                    ((OneWordQuestion)existing).ExpectedAnswer = ow.ExpectedAnswer;
+                    break;
+
+                case MathQuestion mq:
+                    ((MathQuestion)existing).ExpectedResult = mq.ExpectedResult;
+                    break;
+
+                case EstimationQuestion est:
+                    ((EstimationQuestion)existing).CorrectValue = est.CorrectValue;
+                    break;
+
+                case FillInTheBlankQuestion fib:
+                    var existingFib = (FillInTheBlankQuestion)existing;
+                    existingFib.ClozeText = fib.ClozeText;
+
+                    // Gaps synchronisieren (Update/Add/Delete)
+                    var incomingGaps = fib.Gaps;
+                    var existingGaps = existingFib.Gaps;
+
+                    // 1. Aktualisiere existierende Gaps
+                    foreach (var gap in incomingGaps)
+                    {
+                        var match = existingGaps.FirstOrDefault(g => g.Index == gap.Index);
+                        if (match != null)
+                        {
+                            match.Solutions = gap.Solutions;
+                        }
+                        else
+                        {
+                            existingGaps.Add(new BlankGap
+                            {
+                                Index = gap.Index,
+                                Solutions = gap.Solutions
+                            });
+                        }
+                    }
+
+                    // 2. Entferne Gaps, die nicht mehr vorkommen
+                    var toRemove = existingGaps.Where(g => !incomingGaps.Any(ng => ng.Index == g.Index)).ToList();
+                    _context.RemoveRange(toRemove);
+
+                    break;
+
+
+                case FreeTextQuestion ft:
+                    ((FreeTextQuestion)existing).ExpectedKeywords = ft.ExpectedKeywords;
+                    break;
+            }
+
             await _context.SaveChangesAsync();
         }
+
+
 
         public async Task DeleteQuestionAsync(Question question)
         {
