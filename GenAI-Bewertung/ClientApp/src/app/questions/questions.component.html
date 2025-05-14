@@ -3,10 +3,15 @@
 
   <!-- Formular -->
   <div class="create-form">
-    <input [(ngModel)]="newQuestion.questionText" placeholder="📝 Fragetext" />
-    <input [(ngModel)]="newQuestion.subject" placeholder="📚 Thema" />
+    <textarea
+      [(ngModel)]="newQuestion.questionText"
+      placeholder="📝 Fragetext"
+      rows="3"
+      class="question-textarea"
+    ></textarea>
+    <input [(ngModel)]="newQuestion.subject" placeholder="📚 Thema" class="meta-input" />
 
-    <select class="dropdown" [(ngModel)]="newQuestion.questionType">
+    <select class="dropdown meta-input" [(ngModel)]="newQuestion.questionType">
       <option *ngFor="let type of questionTypes" [value]="type">
         {{ 'questions.type.' + type | translate }}
       </option>

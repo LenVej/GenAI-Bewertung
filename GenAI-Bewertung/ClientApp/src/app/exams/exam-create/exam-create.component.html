@@ -14,6 +14,11 @@
       <div class="filter-inputs">
         <input [(ngModel)]="filterText" name="filterText" placeholder="🔍 Fragetext durchsuchen" />
         <input [(ngModel)]="filterSubject" name="filterSubject" placeholder="📚 Thema filtern" />
+        <select [(ngModel)]="filterType" name="filterType" class="filter-type">
+          <option value="">Alle Typen</option>
+          <option *ngFor="let type of questionTypes" [value]="type">{{ type }}</option>
+        </select>
+
       </div>
 
       <label class="filter-checkbox">

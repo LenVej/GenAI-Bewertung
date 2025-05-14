@@ -24,6 +24,18 @@ export class ExamEditComponent implements OnInit {
 
   examLoaded: boolean = false;
 
+  filterType: string = '';
+  questionTypes: string[] = [
+    'MultipleChoice',
+    'EitherOr',
+    'OneWord',
+    'Math',
+    'Estimation',
+    'FillInTheBlank',
+    'FreeText'
+  ];
+
+
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
@@ -82,9 +94,18 @@ export class ExamEditComponent implements OnInit {
   }
 
   get filteredQuestions(): Question[] {
-    return this.questions.filter(q =>
-      (this.filterText ? q.questionText.toLowerCase().includes(this.filterText.toLowerCase()) : true) &&
-      (this.filterSubject ? q.subject.toLowerCase().includes(this.filterSubject.toLowerCase()) : true)
-    );
+    return this.questions
+      .filter(q =>
+        (!this.filterText || q.questionText.toLowerCase().includes(this.filterText.toLowerCase())) &&
+        (!this.filterSubject || q.subject.toLowerCase().includes(this.filterSubject.toLowerCase())) &&
+        (!this.filterType || q.questionType === this.filterType)
+      )
+      .sort((a, b) => {
+        const aSelected = this.selectedQuestionIds.includes(a.questionId);
+        const bSelected = this.selectedQuestionIds.includes(b.questionId);
+        if (aSelected && !bSelected) return -1;
+        if (!aSelected && bSelected) return 1;
+        return 0;
+      });
   }
 }

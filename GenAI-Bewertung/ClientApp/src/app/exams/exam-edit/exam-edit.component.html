@@ -11,6 +11,10 @@
     <div class="create-form filter-form">
       <input [(ngModel)]="filterText" name="filterText" placeholder="🔍 Fragetext durchsuchen" />
       <input [(ngModel)]="filterSubject" name="filterSubject" placeholder="📚 Thema filtern" />
+      <select class="filter-type" [(ngModel)]="filterType" name="filterType">
+        <option value="">Alle Typen</option>
+        <option *ngFor="let type of questionTypes" [value]="type">{{ type }}</option>
+      </select>
     </div>
 
     <button type="submit" class="btn create-btn">💾 Änderungen speichern</button>

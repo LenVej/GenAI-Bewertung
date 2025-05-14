@@ -29,6 +29,18 @@ export class ExamCreateComponent implements OnInit {
     timeLimitMinutes: 10
   };
 
+  filterType: string = '';
+  questionTypes: string[] = [
+    'MultipleChoice',
+    'EitherOr',
+    'OneWord',
+    'Math',
+    'Estimation',
+    'FillInTheBlank',
+    'FreeText'
+  ];
+
+
   constructor(
     private questionService: QuestionService,
     private http: HttpClient,
@@ -71,10 +83,17 @@ export class ExamCreateComponent implements OnInit {
   }
 
   get filteredQuestions(): Question[] {
-    return this.questions.filter(q =>
-      (!this.filterText || q.questionText.toLowerCase().includes(this.filterText.toLowerCase())) &&
-      (!this.filterSubject || q.subject.toLowerCase().includes(this.filterSubject.toLowerCase())) &&
-      (!this.filterOwnQuestions || this.userQuestionIds.includes(q.questionId))
-    );
+    return this.questions
+      .filter(q =>
+        (!this.filterText || q.questionText.toLowerCase().includes(this.filterText.toLowerCase())) &&
+        (!this.filterSubject || q.subject.toLowerCase().includes(this.filterSubject.toLowerCase())) &&
+        (!this.filterOwnQuestions || this.userQuestionIds.includes(q.questionId)) &&
+        (!this.filterType || q.questionType === this.filterType)
+      )
+      .sort((a, b) => {
+        const aSelected = this.selectedQuestionIds.includes(a.questionId);
+        const bSelected = this.selectedQuestionIds.includes(b.questionId);
+        return aSelected === bSelected ? 0 : aSelected ? -1 : 1;
+      });
   }
 }

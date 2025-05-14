@@ -26,6 +26,20 @@
     border: 1px solid #ddeeff;
     border-radius: 12px;
 
+    textarea.question-textarea {
+      font-size: 1rem;
+      min-height: 80px;
+      max-height: 300px;
+      width: 100%;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        border-color: #1b6ec2;
+        outline: none;
+      }
+    }
+
+
     input,
     select {
       padding: 0.7rem 1rem;
@@ -42,7 +56,33 @@
     }
 
     .checkbox{
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .question-textarea {
+
+      margin-top: 0;
+      flex: 2;
+      min-height: 100px;
+    }
+
+    .meta-input {
+      flex: 1;
+      height: 2.6rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .dropdown.meta-input {
+      padding-right: 2rem;
+    }
+
+    textarea,
+    input,
+    select {
+      width: 100%;
     }
 
     .space{
