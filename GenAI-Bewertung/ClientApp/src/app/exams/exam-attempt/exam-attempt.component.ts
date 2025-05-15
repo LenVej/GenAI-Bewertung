@@ -7,7 +7,8 @@ import {environment} from "../../../environments/environment.local";
 import { HostListener } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CanExitComponent } from '../../guards/confirm-exit.guard';
-
+import { ConfirmDialogComponent} from "../../confirm-dialog/confirm-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-exam-attempt',
@@ -34,7 +35,8 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
     private http: HttpClient,
     private fb: FormBuilder,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -128,13 +130,22 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
 
   submit(skipConfirm = false): void {
     if (!skipConfirm) {
-      const confirmed = confirm('❗ Willst du die Prüfung wirklich abschließen?');
-      if (!confirmed) return;
-    }
+      const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+        width: '350px',
+        data: {
+          title: 'Prüfung abschließen?',
+          message: 'Willst du die Prüfung wirklich abschließen?'
+        }
+      });
 
-    clearInterval(this.timerInterval);
-    this.loading = true;
-    this.hasSubmitted = true;
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.submit(true);
+        }
+      });
+
+      return;
+    }
 
     const answers = this.questions.map(q => {
       if (q.questionType === 'FillInTheBlank') {
@@ -156,11 +167,15 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
       };
     });
 
+    this.loading = true;
+
     this.http.post(`${environment.apiBaseUrl}/api/ExamAttempts/submit`, {
       attemptId: this.attemptId,
       answers
     }).subscribe({
       next: () => {
+        clearInterval(this.timerInterval);
+        this.hasSubmitted = true;
         this.snackBar.open('✅ Prüfung erfolgreich abgegeben!', 'OK', { duration: 3000 });
         this.router.navigate([`/exams/result/${this.attemptId}`]);
       },
@@ -168,9 +183,11 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
         console.error('Submit failed:', err);
         this.snackBar.open('❌ Fehler beim Abschicken!', 'OK', { duration: 3000 });
         this.loading = false;
+        this.hasSubmitted = false;
       }
     });
   }
+
 
 
   startTimer(): void {
