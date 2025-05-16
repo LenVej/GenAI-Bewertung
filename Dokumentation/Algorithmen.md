@@ -37,6 +37,38 @@ Algorithmische Ansätze:
 - Flexibilität: Die Algorithmen sind oft nicht flexibel genug, um mit unterschiedlichen Formulierungen und Sprachvariationen umzugehen.
 - Subjektivität: Die Bewertung von Freitextantworten kann subjektiv sein und erfordert oft menschliche Beurteilung.
 
+---------------------------
+
+
+# Realistisch Umsetzbare Algorithmen:
+
+## Multiple Choice / Entweder-Oder:
+Vergleichsbasierte Algorithmen (Vergleichsmatrix): Sehr einfach zu implementieren.
+
+Gewichtete Punktesysteme: Ebenfalls leicht mit normaler Logik (z. B. JSON-Strukturen) umzusetzen.
+
+## Ein-Wort-Antworten:
+String-Matching-Algorithmen: Leicht (z. B. lower().strip() + Vergleich).
+
+Stemming und Lemmatisierung: Mit z. B. NLTK oder spaCy in Python gut machbar.
+
+Phonetische Ähnlichkeit: Mit fuzzy oder Metaphone realisierbar – einfacher als semantische Methoden.
+
+## Rechenfragen:
+Numerische Berechnung: Simpler Vergleich mit Toleranzbereich – sehr einfach.
+
+## Schätzfragen:
+Toleranzbereiche: Leicht mit einfacher Differenzprüfung (z. B. abs(user - correct) < tol).
+
+## Lückentext:
+Wortübereinstimmung: Direkt umsetzbar über Vergleich pro Lücke.
+
+## Freitext:
+Keyword-Matching: Mit Set- oder Listenvergleichen einfach machbar.
+
+N-gram-Matching: Einfach mit Tokenisierung und Sliding Window.
+
+
 
 # Literaturen:
 - https://pdfs.semanticscholar.org/0f7f/06879d26e3ba5b6fb7feeddc199f24dd4ff6.pdf
