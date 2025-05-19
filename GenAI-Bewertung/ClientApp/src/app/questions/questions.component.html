@@ -17,7 +17,7 @@
       </option>
     </select>
 
-    <!-- Dynamische Felder je nach Typ -->
+    <!-- Fragentypen -->
     <div *ngIf="newQuestion.questionType === 'MultipleChoice'">
       <h4>Antwortmöglichkeiten</h4>
       <div *ngFor="let choice of newQuestion.choices; let i = index; trackBy: trackByIndex" class="choice-row">
@@ -73,7 +73,6 @@
     {{ validationMessage }}
   </div>
 
-  <!-- 🔽 Fixierter Button außerhalb des Formulars -->
   <div class="button-container">
     <button class="btn create-btn" (click)="createQuestion()">✅ Frage erstellen</button>
   </div>

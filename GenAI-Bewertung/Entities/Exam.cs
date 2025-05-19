@@ -8,7 +8,7 @@ public class Exam
     public int CreatedBy { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public int? TimeLimitMinutes { get; set; } // 🕒 Optionales Zeitlimit (z. B. 30 Minuten)
+    public int? TimeLimitMinutes { get; set; }
 
     public List<ExamQuestion> Questions { get; set; } = new();
 }

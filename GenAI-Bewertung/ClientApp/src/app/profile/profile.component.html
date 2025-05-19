@@ -1,5 +1,5 @@
 <div class="profile-wrapper">
-  <!-- Linke Spalte: Benutzerinfo -->
+  <!-- Linke Spalte -->
   <div class="profile-sidebar">
     <h2>👤 Mein Profil</h2>
 
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <!-- Rechte Spalte: Inhalt mit Tabs -->
+  <!-- Rechte Spalte -->
   <div class="profile-content">
     <nav class="tabs">
       <button [class.active]="tab === 'progress'" (click)="tab = 'progress'">📈 Fortschritt</button>
@@ -171,7 +171,6 @@
   </div>
 </div>
 
-<!-- Bestätigungs-Modal -->
 <div class="modal-overlay" *ngIf="showConfirmModal">
   <div class="modal-box">
     <h3>{{ confirmMessage }}</h3>

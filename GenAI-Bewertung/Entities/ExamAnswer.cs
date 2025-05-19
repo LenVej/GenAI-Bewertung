@@ -10,9 +10,9 @@ public class ExamAnswer
     public int QuestionId { get; set; }
     public Question Question { get; set; } = null!;
 
-    public string? TextAnswer { get; set; }          // For OneWord, FreeText, Estimation
-    public List<int>? SelectedIndices { get; set; }  // For MultipleChoice
+    public string? TextAnswer { get; set; }
+    public List<int>? SelectedIndices { get; set; }
     public DateTime AnsweredAt { get; set; } = DateTime.UtcNow;
 
-    public AiEvaluationResult? Evaluation { get; set; }  // Optional
+    public AiEvaluationResult? Evaluation { get; set; }
 }

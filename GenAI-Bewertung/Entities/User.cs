@@ -13,4 +13,4 @@ public class User
     public string Tolerance { get; set; } = "medium"; // "low", "medium", "high"
     public bool CaseSensitive { get; set; } = false;
     public int EstimateTolerance { get; set; } = 10;
-}
+}   

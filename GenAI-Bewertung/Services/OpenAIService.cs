@@ -125,7 +125,7 @@ public class OpenAiService
 
             if (string.IsNullOrWhiteSpace(rawMessage)) return null;
 
-            // Falls GPT ein verschachteltes JSON zurückgibt (was es oft tut)
+            
             if (rawMessage.Trim().StartsWith("{") && rawMessage.Contains("\\\""))
             {
                 // Ent-escape den JSON-String

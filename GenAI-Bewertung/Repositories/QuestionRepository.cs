@@ -96,7 +96,7 @@ namespace GenAI_Bewertung.Repositories
                     var existingFib = (FillInTheBlankQuestion)existing;
                     existingFib.ClozeText = fib.ClozeText;
 
-                    // Gaps synchronisieren (Update/Add/Delete)
+                    
                     var incomingGaps = fib.Gaps;
                     var existingGaps = existingFib.Gaps;
 

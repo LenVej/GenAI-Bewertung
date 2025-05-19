@@ -108,7 +108,7 @@ export class ExamAttemptComponent implements OnInit, CanExitComponent  {
         }
       }
 
-      return true; // alle Lücken sind ausgefüllt
+      return true;
     }
 
     const control = this.form.get(q.questionId.toString());

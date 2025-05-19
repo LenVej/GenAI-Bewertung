@@ -8,7 +8,7 @@ export interface Question {
   createdBy: number;
   createdAt: string;
 
-  // Multiple Choice
+  // MultipleChoice
   choices?: string[];
   correctIndices?: number[];
 

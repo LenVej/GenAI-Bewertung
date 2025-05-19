@@ -169,7 +169,7 @@ public static class QuestionMapper
 
             case FillInTheBlankQuestion fib:
                 fib.ClozeText = dto.ClozeText ?? "";
-                // Optional: alte Gaps ersetzen
+                
                 fib.Gaps = dto.Gaps?.Select(g => new BlankGap
                 {
                     Index = g.Index,

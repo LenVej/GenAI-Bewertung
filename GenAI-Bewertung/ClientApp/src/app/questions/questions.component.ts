@@ -71,7 +71,7 @@ export class QuestionsComponent implements OnInit {
 
     this.http.get<any>(`${environment.apiBaseUrl}/api/auth/profile`).subscribe({
       next: (profile) => {
-        console.log('Profil geladen:', profile); // ✅ Gültig
+        console.log('Profil geladen:', profile);
         this.userId = profile.userId;
       },
       error: (err) => console.error('Fehler beim Laden des Profils', err)
@@ -152,7 +152,6 @@ export class QuestionsComponent implements OnInit {
 
   removeChoice(index: number) {
     this.newQuestion.choices.splice(index, 1);
-    // Auch aus den korrekten Indices entfernen, wenn vorhanden
     this.newQuestion.correctIndices = this.newQuestion.correctIndices
       .filter((i: number) => i !== index)
       .map((i: number) => (i > index ? i - 1 : i));
@@ -214,6 +213,6 @@ export class QuestionsComponent implements OnInit {
         return '❗️Ungültiger Fragetyp.';
     }
 
-    return null; // alles ok
+    return null;
   }
 }

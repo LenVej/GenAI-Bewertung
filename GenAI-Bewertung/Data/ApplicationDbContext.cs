@@ -100,12 +100,12 @@ namespace GenAI_Bewertung.Data
                 .HasForeignKey<ExamAttemptEvaluation>(e => e.ExamAttemptId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // 🔍 Indizes für Performance bei Statistiken
+            
             modelBuilder.Entity<ExamAttempt>()
-                .HasIndex(ea => ea.UserId); // für Stats-Abfragen
+                .HasIndex(ea => ea.UserId);
 
             modelBuilder.Entity<Question>()
-                .HasIndex(q => q.Subject); // für Gruppierung nach Thema
+                .HasIndex(q => q.Subject);
         }
     }
 }

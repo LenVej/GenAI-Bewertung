@@ -66,10 +66,9 @@ public class ExamScoringService
             break;
 
         case FillInTheBlankQuestion fib:
-            // Nutze ClozeText als Frage
+            
             questionText = fib.ClozeText;
-
-            // Sammle alle Lückenlösungen
+            
             correctAnswers = fib.Gaps
                 .Select(g =>
                     $"Lücke {g.Index}: {string.Join(" / ", g.Solutions.Where(s => !string.IsNullOrWhiteSpace(s)))}"

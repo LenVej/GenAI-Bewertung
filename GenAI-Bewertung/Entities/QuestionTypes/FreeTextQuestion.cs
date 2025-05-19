@@ -2,5 +2,5 @@
 
 public class FreeTextQuestion : Question
 {
-    public string ExpectedKeywords { get; set; } = string.Empty; // für AI-Bewertung
+    public string ExpectedKeywords { get; set; } = string.Empty;
 }

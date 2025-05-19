@@ -6,7 +6,6 @@
 
   <form #form="ngForm" (ngSubmit)="register()" class="auth-form" novalidate>
 
-    <!-- Benutzername -->
     <label>Benutzername:</label>
     <input
       [(ngModel)]="username"
@@ -20,7 +19,6 @@
       <small *ngIf="usernameRef.errors?.['minlength']">Mindestens 3 Zeichen erforderlich.</small>
     </div>
 
-    <!-- Email -->
     <label>Email:</label>
     <input
       [(ngModel)]="email"
@@ -36,7 +34,6 @@
       <small *ngIf="emailRef.errors?.['pattern']">Ungültiges E-Mail-Format.</small>
     </div>
 
-    <!-- Passwort -->
     <label>Passwort:</label>
     <input
       [(ngModel)]="password"
@@ -53,7 +50,6 @@
       </small>
     </div>
 
-    <!-- Button -->
     <button type="submit" class="btn register-btn" [disabled]="form.invalid">Registrieren</button>
   </form>
 

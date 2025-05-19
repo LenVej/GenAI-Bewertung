@@ -64,7 +64,7 @@ public class ExamAttemptRepository : IExamAttemptRepository
 
     if (attempt == null || attempt.SubmittedAt != null) return null;
 
-    // Manuell Gaps nachladen
+    
     foreach (var eq in attempt.Exam.Questions)
     {
         if (eq.Question is FillInTheBlankQuestion fib)

@@ -8,6 +8,6 @@ export interface Exam {
   questions: {
     id: number;
     order: number;
-    question: any; // or Question
+    question: any;
   }[];
 }

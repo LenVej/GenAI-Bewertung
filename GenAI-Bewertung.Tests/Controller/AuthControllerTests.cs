@@ -29,7 +29,7 @@ namespace GenAI_Bewertung.Tests.Controller
             var mockConfig = new ConfigurationBuilder()
                 .AddInMemoryCollection(new Dictionary<string, string>
                 {
-                    { "Jwt:Key", "this_is_a_very_secure_test_key_123!" } // >= 256-bit
+                    { "Jwt:Key", "this_is_a_very_secure_test_key_123!" }
                 }!).Build();
 
             _authService = new AuthService(_mockRepo.Object, mockConfig);

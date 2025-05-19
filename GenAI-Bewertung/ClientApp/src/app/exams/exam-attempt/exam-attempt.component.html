@@ -19,7 +19,7 @@
       </ul>
     </aside>
 
-    <!-- Main Area: Question Display -->
+    <!-- Question Display -->
     <div class="question-display" *ngIf="questions[currentIndex] as current">
       <h3>Frage {{ currentIndex + 1 }} von {{ questions.length }}</h3>
       <p class="question-text">{{ current.questionText }}</p>
@@ -81,7 +81,6 @@
           <textarea [formControl]="getControl(current.questionId)" rows="4" placeholder="Freitextantwort"></textarea>
         </div>
 
-        <!-- Default Input (text or textarea) -->
         <div *ngSwitchDefault>
           <textarea [formControl]="getControl(current.questionId)"
                     rows="4"
@@ -89,13 +88,11 @@
         </div>
       </div>
 
-      <!-- Navigation Buttons -->
       <div class="navigation-buttons">
         <button class="btn nav-btn" (click)="prev()" [disabled]="currentIndex === 0">⬅️ Zurück</button>
         <button class="btn nav-btn" (click)="next()" [disabled]="currentIndex === questions.length - 1">Weiter ➡️</button>
       </div>
 
-      <!-- Submit Button -->
       <button class="btn submit-btn" (click)="submit()">✅ Prüfung abschließen</button>
     </div>
   </div>

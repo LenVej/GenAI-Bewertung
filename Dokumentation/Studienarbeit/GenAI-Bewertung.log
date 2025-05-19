@@ -1,104 +1,104 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.7)  12 MAY 2025 12:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.15)  19 MAY 2025 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./GenAI-Bewertung.tex
 (GenAI-Bewertung.tex
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-08-29>
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count185
-\c@section=\count186
-\c@subsection=\count187
-\c@subsubsection=\count188
-\c@paragraph=\count189
-\c@subparagraph=\count190
-\c@figure=\count191
-\c@table=\count192
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2023/08/29 v3.93 The Babel package
-\babel@savecnt=\count193
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count195
 \U@D=\dimen141
 \l@unhyphenated=\language79
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def
-)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count194
+\bbl@dirlevel=\count196
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngerman
-.ldf
-Language: ngerman 2021/02/27 v2.13 German support for babel (post-1996 orthogra
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngerman.ld
+f
+Language: ngerman 2024/12/10 v2.15 German support for babel (post-1996 orthogra
 phy)
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngerman
-b.ldf
-Language: ngermanb 2021/02/27 v2.13 German support for babel (post-1996 orthogr
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngermanb.l
+df
+Language: ngermanb 2024/12/10 v2.15 German support for babel (post-1996 orthogr
 aphy)
 Package babel Info: Making " an active character on input line 122.
 )))
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/de\ba
-bel-ngerman.tex
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/de\babel
+-ngerman.tex
 Package babel Info: Importing font and identification data for ngerman
 (babel)             from babel-de.ini. Reported on input line 11.
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/arial\uarial.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/arial\uarial.sty
 Package: uarial 2006/03/21 1.0 (WaS)
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
 ))
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen142
-)) (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.st
-y
+))
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen143
-) (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count195
+\inf@bad=\count197
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count196
-\leftroot@=\count197
+\uproot@=\count198
+\leftroot@=\count199
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count198
-\DOTSCASE@=\count199
+\classnum@=\count266
+\DOTSCASE@=\count267
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -111,20 +111,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen144
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count266
+\macc@depth=\count268
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count267
+\c@MaxMatrixCols=\count269
 \dotsspace@=\muskip16
-\c@parentequation=\count268
-\dspbrk@lvl=\count269
+\c@parentequation=\count270
+\dspbrk@lvl=\count271
 \tag@help=\toks21
-\row@=\count270
-\column@=\count271
-\maxfields@=\count272
+\row@=\count272
+\column@=\count273
+\maxfields@=\count274
 \andhelp@=\toks22
 \eqnshift@=\dimen145
 \alignsep@=\dimen146
@@ -139,49 +139,56 @@ LaTeX Info: Redefining \Relbar on input line 971.
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/titling\titling.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/titling\titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip53
 \thanksmargin=\skip54
 \droptitle=\skip55
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.st
-y
-Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip56
-\f@nch@O@elh=\skip57
-\f@nch@O@erh=\skip58
-\f@nch@O@olh=\skip59
-\f@nch@O@orh=\skip60
-\f@nch@O@elf=\skip61
-\f@nch@O@erf=\skip62
-\f@nch@O@olf=\skip63
-\f@nch@O@orf=\skip64
-) (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count273
-\calc@Bcount=\count274
+\f@nch@offset@elh=\skip57
+\f@nch@offset@erh=\skip58
+\f@nch@offset@olh=\skip59
+\f@nch@offset@orh=\skip60
+\f@nch@offset@elf=\skip61
+\f@nch@offset@erf=\skip62
+\f@nch@offset@olf=\skip63
+\f@nch@offset@orf=\skip64
+\f@nch@height=\skip65
+\f@nch@footalignment=\skip66
+\f@nch@widthL=\skip67
+\f@nch@widthC=\skip68
+\f@nch@widthR=\skip69
+\@temptokenb=\toks25
+)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count275
+\calc@Bcount=\count276
 \calc@Adimen=\dimen151
 \calc@Bdimen=\dimen152
-\calc@Askip=\skip65
-\calc@Bskip=\skip66
+\calc@Askip=\skip70
+\calc@Bskip=\skip71
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count275
-\calc@Cskip=\skip67
+\calc@Ccount=\count277
+\calc@Cskip=\skip72
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.st
-y
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count276
-\Gm@cntv=\count277
-\c@Gm@tempcnt=\count278
+\Gm@cnth=\count278
+\Gm@cntv=\count279
+\c@Gm@tempcnt=\count280
 \Gm@bindingoffset=\dimen153
 \Gm@wd@mp=\dimen154
 \Gm@odd@mp=\dimen155
@@ -190,74 +197,69 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutheight=\dimen158
 \Gm@layouthoffset=\dimen159
 \Gm@layoutvoffset=\dimen160
-\Gm@dimlist=\toks25
+\Gm@dimlist=\toks26
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cf
-g))
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
-\cftparskip=\skip68
-\cftbeforetoctitleskip=\skip69
-\cftaftertoctitleskip=\skip70
-\cftbeforepartskip=\skip71
-\cftpartnumwidth=\skip72
-\cftpartindent=\skip73
-\cftbeforesecskip=\skip74
-\cftsecindent=\skip75
-\cftsecnumwidth=\skip76
-\cftbeforesubsecskip=\skip77
-\cftsubsecindent=\skip78
-\cftsubsecnumwidth=\skip79
-\cftbeforesubsubsecskip=\skip80
-\cftsubsubsecindent=\skip81
-\cftsubsubsecnumwidth=\skip82
-\cftbeforeparaskip=\skip83
-\cftparaindent=\skip84
-\cftparanumwidth=\skip85
-\cftbeforesubparaskip=\skip86
-\cftsubparaindent=\skip87
-\cftsubparanumwidth=\skip88
-\cftbeforeloftitleskip=\skip89
-\cftafterloftitleskip=\skip90
-\cftbeforefigskip=\skip91
-\cftfigindent=\skip92
-\cftfignumwidth=\skip93
-\c@lofdepth=\count279
-\c@lotdepth=\count280
-\cftbeforelottitleskip=\skip94
-\cftafterlottitleskip=\skip95
-\cftbeforetabskip=\skip96
-\cfttabindent=\skip97
-\cfttabnumwidth=\skip98
+\cftparskip=\skip73
+\cftbeforetoctitleskip=\skip74
+\cftaftertoctitleskip=\skip75
+\cftbeforepartskip=\skip76
+\cftpartnumwidth=\skip77
+\cftpartindent=\skip78
+\cftbeforesecskip=\skip79
+\cftsecindent=\skip80
+\cftsecnumwidth=\skip81
+\cftbeforesubsecskip=\skip82
+\cftsubsecindent=\skip83
+\cftsubsecnumwidth=\skip84
+\cftbeforesubsubsecskip=\skip85
+\cftsubsubsecindent=\skip86
+\cftsubsubsecnumwidth=\skip87
+\cftbeforeparaskip=\skip88
+\cftparaindent=\skip89
+\cftparanumwidth=\skip90
+\cftbeforesubparaskip=\skip91
+\cftsubparaindent=\skip92
+\cftsubparanumwidth=\skip93
+\cftbeforeloftitleskip=\skip94
+\cftafterloftitleskip=\skip95
+\cftbeforefigskip=\skip96
+\cftfigindent=\skip97
+\cftfignumwidth=\skip98
+\c@lofdepth=\count281
+\c@lotdepth=\count282
+\cftbeforelottitleskip=\skip99
+\cftafterlottitleskip=\skip100
+\cftbeforetabskip=\skip101
+\cfttabindent=\skip102
+\cfttabnumwidth=\skip103
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
-y
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.st
-y
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphic
-s.cfg
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.
-def
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen161
 \Gin@req@width=\dimen162
-)
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
-Package: caption 2023/07/31 v3.6n Customizing captions (AR)
-
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen163
 \captionmargin=\dimen164
@@ -269,276 +271,264 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@hangindent=\dimen170
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count281
-\c@continuedfloat=\count282
+\c@caption@flags=\count283
+\c@continuedfloat=\count284
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/acronym\acronym.sty
-Package: acronym 2020/04/17 v1.47 Support for acronyms (Tobias Oetiker)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/acronym\acronym.sty
+Package: acronym 2025/01/17 v1.50 Support for acronyms (Tobias Oetiker)
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/bigfoot\suffix.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/bigfoot\suffix.sty
 Package: suffix 2006/07/15 1.5a Variant command support
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.te
-x
-\xs_counta=\count283
-\xs_countb=\count284
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+\xs_counta=\count285
+\xs_countb=\count286
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 )
-\AC@clearlist=\toks26
-)
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+\AC@clearlist=\toks27
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ))
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.st
-y
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexc
-mds.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarer
-r.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.st
-y
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
-y
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count285
+\etb@tempcnta=\count287
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.
-sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.
-sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-))
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+)) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count286
+\lrq@indent=\count288
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count287
-\c@listtotal=\count288
-\c@listcount=\count289
-\c@liststart=\count290
-\c@liststop=\count291
-\c@citecount=\count292
-\c@citetotal=\count293
-\c@multicitecount=\count294
-\c@multicitetotal=\count295
-\c@instcount=\count296
-\c@maxnames=\count297
-\c@minnames=\count298
-\c@maxitems=\count299
-\c@minitems=\count300
-\c@citecounter=\count301
-\c@maxcitecounter=\count302
-\c@savedcitecounter=\count303
-\c@uniquelist=\count304
-\c@uniquename=\count305
-\c@refsection=\count306
-\c@refsegment=\count307
-\c@maxextratitle=\count308
-\c@maxextratitleyear=\count309
-\c@maxextraname=\count310
-\c@maxextradate=\count311
-\c@maxextraalpha=\count312
-\c@abbrvpenalty=\count313
-\c@highnamepenalty=\count314
-\c@lownamepenalty=\count315
-\c@maxparens=\count316
-\c@parenlevel=\count317
-\blx@tempcnta=\count318
-\blx@tempcntb=\count319
-\blx@tempcntc=\count320
-\c@blx@maxsection=\count321
-\blx@maxsegment@0=\count322
-\blx@notetype=\count323
-\blx@parenlevel@text=\count324
-\blx@parenlevel@foot=\count325
-\blx@sectionciteorder@0=\count326
-\blx@sectionciteorderinternal@0=\count327
-\blx@entrysetcounter=\count328
-\blx@biblioinstance=\count329
-\labelnumberwidth=\skip99
-\labelalphawidth=\skip100
-\biblabelsep=\skip101
-\bibitemsep=\skip102
-\bibnamesep=\skip103
-\bibinitsep=\skip104
-\bibparsep=\skip105
-\bibhang=\skip106
+\c@tabx@nest=\count289
+\c@listtotal=\count290
+\c@listcount=\count291
+\c@liststart=\count292
+\c@liststop=\count293
+\c@citecount=\count294
+\c@citetotal=\count295
+\c@multicitecount=\count296
+\c@multicitetotal=\count297
+\c@instcount=\count298
+\c@maxnames=\count299
+\c@minnames=\count300
+\c@maxitems=\count301
+\c@minitems=\count302
+\c@citecounter=\count303
+\c@maxcitecounter=\count304
+\c@savedcitecounter=\count305
+\c@uniquelist=\count306
+\c@uniquename=\count307
+\c@refsection=\count308
+\c@refsegment=\count309
+\c@maxextratitle=\count310
+\c@maxextratitleyear=\count311
+\c@maxextraname=\count312
+\c@maxextradate=\count313
+\c@maxextraalpha=\count314
+\c@abbrvpenalty=\count315
+\c@highnamepenalty=\count316
+\c@lownamepenalty=\count317
+\c@maxparens=\count318
+\c@parenlevel=\count319
+\blx@tempcnta=\count320
+\blx@tempcntb=\count321
+\blx@tempcntc=\count322
+\c@blx@maxsection=\count323
+\blx@maxsegment@0=\count324
+\blx@notetype=\count325
+\blx@parenlevel@text=\count326
+\blx@parenlevel@foot=\count327
+\blx@sectionciteorder@0=\count328
+\blx@sectionciteorderinternal@0=\count329
+\blx@entrysetcounter=\count330
+\blx@biblioinstance=\count331
+\labelnumberwidth=\skip104
+\labelalphawidth=\skip105
+\biblabelsep=\skip106
+\bibitemsep=\skip107
+\bibnamesep=\skip108
+\bibinitsep=\skip109
+\bibparsep=\skip110
+\bibhang=\skip111
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language80
-\c@mincomprange=\count330
-\c@maxcomprange=\count331
-\c@mincompwidth=\count332
+\c@mincomprange=\count332
+\c@maxcomprange=\count333
+\c@mincompwidth=\count334
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
 File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'authoryear.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count333
-\c@savedafterword=\count334
-\c@annotator=\count335
-\c@savedannotator=\count336
-\c@author=\count337
-\c@savedauthor=\count338
-\c@bookauthor=\count339
-\c@savedbookauthor=\count340
-\c@commentator=\count341
-\c@savedcommentator=\count342
-\c@editor=\count343
-\c@savededitor=\count344
-\c@editora=\count345
-\c@savededitora=\count346
-\c@editorb=\count347
-\c@savededitorb=\count348
-\c@editorc=\count349
-\c@savededitorc=\count350
-\c@foreword=\count351
-\c@savedforeword=\count352
-\c@holder=\count353
-\c@savedholder=\count354
-\c@introduction=\count355
-\c@savedintroduction=\count356
-\c@namea=\count357
-\c@savednamea=\count358
-\c@nameb=\count359
-\c@savednameb=\count360
-\c@namec=\count361
-\c@savednamec=\count362
-\c@translator=\count363
-\c@savedtranslator=\count364
-\c@shortauthor=\count365
-\c@savedshortauthor=\count366
-\c@shorteditor=\count367
-\c@savedshorteditor=\count368
-\c@labelname=\count369
-\c@savedlabelname=\count370
-\c@institution=\count371
-\c@savedinstitution=\count372
-\c@lista=\count373
-\c@savedlista=\count374
-\c@listb=\count375
-\c@savedlistb=\count376
-\c@listc=\count377
-\c@savedlistc=\count378
-\c@listd=\count379
-\c@savedlistd=\count380
-\c@liste=\count381
-\c@savedliste=\count382
-\c@listf=\count383
-\c@savedlistf=\count384
-\c@location=\count385
-\c@savedlocation=\count386
-\c@organization=\count387
-\c@savedorganization=\count388
-\c@origlocation=\count389
-\c@savedoriglocation=\count390
-\c@origpublisher=\count391
-\c@savedorigpublisher=\count392
-\c@publisher=\count393
-\c@savedpublisher=\count394
-\c@language=\count395
-\c@savedlanguage=\count396
-\c@origlanguage=\count397
-\c@savedoriglanguage=\count398
-\c@pageref=\count399
-\c@savedpageref=\count400
-\shorthandwidth=\skip107
-\shortjournalwidth=\skip108
-\shortserieswidth=\skip109
-\shorttitlewidth=\skip110
-\shortauthorwidth=\skip111
-\shorteditorwidth=\skip112
-\locallabelnumberwidth=\skip113
-\locallabelalphawidth=\skip114
-\localshorthandwidth=\skip115
-\localshortjournalwidth=\skip116
-\localshortserieswidth=\skip117
-\localshorttitlewidth=\skip118
-\localshortauthorwidth=\skip119
-\localshorteditorwidth=\skip120
+\c@afterword=\count335
+\c@savedafterword=\count336
+\c@annotator=\count337
+\c@savedannotator=\count338
+\c@author=\count339
+\c@savedauthor=\count340
+\c@bookauthor=\count341
+\c@savedbookauthor=\count342
+\c@commentator=\count343
+\c@savedcommentator=\count344
+\c@editor=\count345
+\c@savededitor=\count346
+\c@editora=\count347
+\c@savededitora=\count348
+\c@editorb=\count349
+\c@savededitorb=\count350
+\c@editorc=\count351
+\c@savededitorc=\count352
+\c@foreword=\count353
+\c@savedforeword=\count354
+\c@holder=\count355
+\c@savedholder=\count356
+\c@introduction=\count357
+\c@savedintroduction=\count358
+\c@namea=\count359
+\c@savednamea=\count360
+\c@nameb=\count361
+\c@savednameb=\count362
+\c@namec=\count363
+\c@savednamec=\count364
+\c@translator=\count365
+\c@savedtranslator=\count366
+\c@shortauthor=\count367
+\c@savedshortauthor=\count368
+\c@shorteditor=\count369
+\c@savedshorteditor=\count370
+\c@labelname=\count371
+\c@savedlabelname=\count372
+\c@institution=\count373
+\c@savedinstitution=\count374
+\c@lista=\count375
+\c@savedlista=\count376
+\c@listb=\count377
+\c@savedlistb=\count378
+\c@listc=\count379
+\c@savedlistc=\count380
+\c@listd=\count381
+\c@savedlistd=\count382
+\c@liste=\count383
+\c@savedliste=\count384
+\c@listf=\count385
+\c@savedlistf=\count386
+\c@location=\count387
+\c@savedlocation=\count388
+\c@organization=\count389
+\c@savedorganization=\count390
+\c@origlocation=\count391
+\c@savedoriglocation=\count392
+\c@origpublisher=\count393
+\c@savedorigpublisher=\count394
+\c@publisher=\count395
+\c@savedpublisher=\count396
+\c@language=\count397
+\c@savedlanguage=\count398
+\c@origlanguage=\count399
+\c@savedoriglanguage=\count400
+\c@pageref=\count401
+\c@savedpageref=\count402
+\shorthandwidth=\skip112
+\shortjournalwidth=\skip113
+\shortserieswidth=\skip114
+\shorttitlewidth=\skip115
+\shortauthorwidth=\skip116
+\shorteditorwidth=\skip117
+\locallabelnumberwidth=\skip118
+\locallabelalphawidth=\skip119
+\localshorthandwidth=\skip120
+\localshortjournalwidth=\skip121
+\localshortserieswidth=\skip122
+\localshorttitlewidth=\skip123
+\localshortauthorwidth=\skip124
+\localshorteditorwidth=\skip125
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.
-def
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
-
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.de
-f
+ (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count401
-\c@textcitetotal=\count402
-\c@textcitemaxnames=\count403
-\c@biburlbigbreakpenalty=\count404
-\c@biburlbreakpenalty=\count405
-\c@biburlnumpenalty=\count406
-\c@biburlucpenalty=\count407
-\c@biburllcpenalty=\count408
+\c@textcitecount=\count403
+\c@textcitetotal=\count404
+\c@textcitemaxnames=\count405
+\c@biburlbigbreakpenalty=\count406
+\c@biburlbreakpenalty=\count407
+\c@biburlnumpenalty=\count408
+\c@biburlucpenalty=\count409
+\c@biburllcpenalty=\count410
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count409
+\c@smartand=\count411
 )
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\authory
-ear.bbx
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\authoryear
+.bbx
 File: authoryear.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standar
-d.bbx
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
+bx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count410
-\c@bbx:relatedtotal=\count411
+\c@bbx:relatedcount=\count412
+\c@bbx:relatedtotal=\count413
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\authory
-ear.cbx
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\authoryear
+.cbx
 File: authoryear.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -551,59 +541,55 @@ Package biblatex Info: Redefining '\textcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cf
-g
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2023-08-29 L3 programming layer (loader) 
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
-pdftex.def
-File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count412
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count414
 \l__pdf_internal_box=\box53
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2023-08-29 L3 programming layer (loader) 
+(biblatex)             2024-01-04 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-ex
-pl3.sty
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xp
-arse.sty
-Package: xparse 2023-08-29 L3 Experimental document command parser
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3
+.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.st
-y
-Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count413
-\csq@gtype=\count414
-\csq@glevel=\count415
-\csq@qlevel=\count416
-\csq@maxlvl=\count417
-\csq@tshold=\count418
-\csq@ltx@everypar=\toks27
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count415
+\csq@gtype=\count416
+\csq@glevel=\count417
+\csq@qlevel=\count418
+\csq@maxlvl=\count419
+\csq@tshold=\count420
+\csq@ltx@everypar=\toks28
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.de
-f
-File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cf
-g
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
 File: csquotes.cfg 
 ))
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/filecontents\filecon
-tents.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/filecontents\fileconten
+ts.sty
 Package: filecontents 2023/04/02 v1.5a Create an external file from within a La
 TeX document
 
@@ -612,45 +598,43 @@ Package filecontents Warning: This package is obsolete. Disabling it and
 (filecontents)                passing control to the filecontents environment
 (filecontents)                defined by the LaTeX kernel.
 
-)
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.st
-y
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-)
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.st
-y
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
-\CenteringLeftskip=\skip121
-\RaggedLeftLeftskip=\skip122
-\RaggedRightLeftskip=\skip123
-\CenteringRightskip=\skip124
-\RaggedLeftRightskip=\skip125
-\RaggedRightRightskip=\skip126
-\CenteringParfillskip=\skip127
-\RaggedLeftParfillskip=\skip128
-\RaggedRightParfillskip=\skip129
-\JustifyingParfillskip=\skip130
-\CenteringParindent=\skip131
-\RaggedLeftParindent=\skip132
-\RaggedRightParindent=\skip133
-\JustifyingParindent=\skip134
-) (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
+\CenteringLeftskip=\skip126
+\RaggedLeftLeftskip=\skip127
+\RaggedRightLeftskip=\skip128
+\CenteringRightskip=\skip129
+\RaggedLeftRightskip=\skip130
+\RaggedRightRightskip=\skip131
+\CenteringParfillskip=\skip132
+\RaggedLeftParfillskip=\skip133
+\RaggedRightParfillskip=\skip134
+\JustifyingParfillskip=\skip135
+\CenteringParindent=\skip136
+\RaggedLeftParindent=\skip137
+\RaggedRightParindent=\skip138
+\JustifyingParindent=\skip139
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip135
+\OuterFrameSep=\skip140
 \fb@frw=\dimen171
 \fb@frh=\dimen172
 \FrameRule=\dimen173
 \FrameSep=\dimen174
-) (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
-Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen175
 \ar@mcellbox=\box54
 \extrarowheight=\dimen176
-\NC@list=\toks28
-\extratabsurround=\skip136
-\backup@length=\skip137
+\NC@list=\toks29
+\extratabsurround=\skip141
+\backup@length=\skip142
 \ar@cellbox=\box55
 )
 \TX@col@width=\dimen177
@@ -658,51 +642,296 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \TX@old@col=\dimen179
 \TX@target=\dimen180
 \TX@delta=\dimen181
-\TX@cols=\count419
-\TX@ftn=\toks29
+\TX@cols=\count421
+\TX@ftn=\toks30
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.st
-y
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip138
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip143
 \enit@outerparindent=\dimen182
-\enit@toks=\toks30
+\enit@toks=\toks31
 \enit@inbox=\box56
-\enit@count@id=\count420
-\enitdp@description=\count421
+\enit@count@id=\count422
+\enitdp@description=\count423
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 )
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count424
+\float@exts=\toks32
+\float@box=\box57
+\@float@everytoks=\toks33
+\@floatcapt=\box58
+)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen183
+\lightrulewidth=\dimen184
+\cmidrulewidth=\dimen185
+\belowrulesep=\dimen186
+\belowbottomsep=\dimen187
+\aboverulesep=\dimen188
+\abovetopsep=\dimen189
+\cmidrulesep=\dimen190
+\cmidrulekern=\dimen191
+\defaultaddspace=\dimen192
+\@cmidla=\count425
+\@cmidlb=\count426
+\@aboverulesep=\dimen193
+\@belowrulesep=\dimen194
+\@thisruleclass=\count427
+\@lastruleclass=\count428
+\@thisrulewidth=\dimen195
+)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count429
+Package zref Info: New property: abspage on input line 67.
+)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
+Package: needspace 2025/03/13 v1.3e reserve vertical space
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+)
+\mdf@templength=\skip144
+\c@mdf@globalstyle@cnt=\count430
+\mdf@skipabove@length=\skip145
+\mdf@skipbelow@length=\skip146
+\mdf@leftmargin@length=\skip147
+\mdf@rightmargin@length=\skip148
+\mdf@innerleftmargin@length=\skip149
+\mdf@innerrightmargin@length=\skip150
+\mdf@innertopmargin@length=\skip151
+\mdf@innerbottommargin@length=\skip152
+\mdf@splittopskip@length=\skip153
+\mdf@splitbottomskip@length=\skip154
+\mdf@outermargin@length=\skip155
+\mdf@innermargin@length=\skip156
+\mdf@linewidth@length=\skip157
+\mdf@innerlinewidth@length=\skip158
+\mdf@middlelinewidth@length=\skip159
+\mdf@outerlinewidth@length=\skip160
+\mdf@roundcorner@length=\skip161
+\mdf@footenotedistance@length=\skip162
+\mdf@userdefinedwidth@length=\skip163
+\mdf@needspace@length=\skip164
+\mdf@frametitleaboveskip@length=\skip165
+\mdf@frametitlebelowskip@length=\skip166
+\mdf@frametitlerulewidth@length=\skip167
+\mdf@frametitleleftmargin@length=\skip168
+\mdf@frametitlerightmargin@length=\skip169
+\mdf@shadowsize@length=\skip170
+\mdf@extratopheight@length=\skip171
+\mdf@subtitleabovelinewidth@length=\skip172
+\mdf@subtitlebelowlinewidth@length=\skip173
+\mdf@subtitleaboveskip@length=\skip174
+\mdf@subtitlebelowskip@length=\skip175
+\mdf@subtitleinneraboveskip@length=\skip176
+\mdf@subtitleinnerbelowskip@length=\skip177
+\mdf@subsubtitleabovelinewidth@length=\skip178
+\mdf@subsubtitlebelowlinewidth@length=\skip179
+\mdf@subsubtitleaboveskip@length=\skip180
+\mdf@subsubtitlebelowskip@length=\skip181
+\mdf@subsubtitleinneraboveskip@length=\skip182
+\mdf@subsubtitleinnerbelowskip@length=\skip183
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box59
+\mdf@footnotebox=\box60
+\mdf@splitbox@one=\box61
+\mdf@splitbox@two=\box62
+\mdf@splitbox@save=\box63
+\mdfsplitboxwidth=\skip184
+\mdfsplitboxtotalwidth=\skip185
+\mdfsplitboxheight=\skip186
+\mdfsplitboxdepth=\skip187
+\mdfsplitboxtotalheight=\skip188
+\mdfframetitleboxwidth=\skip189
+\mdfframetitleboxtotalwidth=\skip190
+\mdfframetitleboxheight=\skip191
+\mdfframetitleboxdepth=\skip192
+\mdfframetitleboxtotalheight=\skip193
+\mdffootnoteboxwidth=\skip194
+\mdffootnoteboxtotalwidth=\skip195
+\mdffootnoteboxheight=\skip196
+\mdffootnoteboxdepth=\skip197
+\mdffootnoteboxtotalheight=\skip198
+\mdftotallinewidth=\skip199
+\mdfboundingboxwidth=\skip256
+\mdfboundingboxtotalwidth=\skip257
+\mdfboundingboxheight=\skip258
+\mdfboundingboxdepth=\skip259
+\mdfboundingboxtotalheight=\skip260
+\mdf@freevspace@length=\skip261
+\mdf@horizontalwidthofbox@length=\skip262
+\mdf@verticalmarginwhole@length=\skip263
+\mdf@horizontalspaceofbox=\skip264
+\mdfsubtitleheight=\skip265
+\mdfsubsubtitleheight=\skip266
+\c@mdfcountframes=\count431
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count432
+\c@mdf@env@i=\count433
+\c@mdf@env@ii=\count434
+\c@mdf@zref@counter=\count435
+Package zref Info: New property: mdf@pagevalue on input line 895.
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+LaTeX Info: Redefining \color on input line 758.
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
+\everycr=\toks34
+\minrowclearance=\skip267
+\rownum=\count436
+) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/mhchem\mhchem.sty
+Package: mhchem 2024/01/29 v4.10 for typesetting chemical formulae
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3k
+eys2e.sty
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/chemgreek\chemgreek.sty
+Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use
+ in chemistry (CN)
+\l__chemgreek_tmpa_int=\count437
+\g__chemgreek_tmpa_int=\count438
+)
+\l__mhchem_ce_distanceFromLastComma_int=\count439
+\__mhchem_arrow_extPgfLength_skip=\skip268
+\mhchem@minispace@tmp=\skip269
+\mhchem@minibackspace@tmp=\skip270
+\mhchem@bondwidth=\skip271
+\mhchem@bondheight=\skip272
+\mhchem@smallbondwidth@tmpA=\skip273
+\mhchem@smallbondwidth@tmpB=\skip274
+\mhchem@smallbondwidth=\skip275
+\mhchem@bondtmp@minussidebearingleft=\skip276
+\mhchem@bondtmp@minussidebearingright=\skip277
+\l__mhchem_option_version_int=\count440
+\mhchem@option@minusmathsidebearingleft=\dimen196
+\mhchem@option@minusmathsidebearingright=\dimen197
+\mhchem@option@minustextsidebearingleft=\dimen198
+\mhchem@option@minustextsidebearingright=\dimen199
+)
+   defining Unicode char U+2082 (decimal 8322)
+   defining Unicode char U+00B1 (decimal 177)
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count441
+\lst@gtempboxa=\box64
+\lst@token=\toks35
+\lst@length=\count442
+\lst@currlwidth=\dimen256
+\lst@column=\count443
+\lst@pos=\count444
+\lst@lostspace=\dimen257
+\lst@width=\dimen258
+\lst@newlines=\count445
+\lst@lineno=\count446
+\lst@maxwidth=\dimen259
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count447
+\lst@skipnumbers=\count448
+\lst@framebox=\box65
+)
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
-LaTeX Font Info:    Trying to load font information for T1+ua1 on input line 68
+LaTeX Font Info:    Trying to load font information for T1+ua1 on input line 83
 .
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/arial\t1ua1.fd
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/arial\t1ua1.fd
 File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
 )
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 68.
+(Font)              scaled to size 11.39996pt on input line 83.
 
-(GenAI-Bewertung.aux)
+(GenAI-Bewertung.aux
+
+LaTeX Warning: Label `fig:transformer' multiply defined.
+
+)
 \openout1 = `GenAI-Bewertung.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -739,51 +968,51 @@ LaTeX Font Info:    ... okay on input line 68.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
-.mkii
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count422
-\scratchdimen=\dimen183
-\scratchbox=\box57
-\nofMPsegments=\count423
-\nofMParguments=\count424
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count425
-\MPscratchDim=\dimen184
-\MPnumerator=\count426
-\makeMPintoPDFobject=\count427
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count449
+\scratchdimen=\dimen260
+\scratchbox=\box66
+\nofMPsegments=\count450
+\nofMParguments=\count451
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count452
+\MPscratchDim=\dimen261
+\MPnumerator=\count453
+\makeMPintoPDFobject=\count454
+\everyMPtoPDFconversion=\toks37
 )
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
-f-base.sty
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sy
-s.cfg
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\ngerman
-.lbx
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\ngerman.lb
+x
 File: ngerman.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'german'...
 Package biblatex Info: ... file 'german.lbx' found.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\german.
-lbx
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\german.lbx
 File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'german'...
 Package biblatex Info: ... file 'german.lbx' found.
 
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\german.
-lbx
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\german.lbx
 File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 ))
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -792,79 +1021,178 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `GenAI-Bewertung.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'GenAI-Bewertung.bbl' not found.
+Package biblatex Info: ... file 'GenAI-Bewertung.bbl' found.
+ (GenAI-Bewertung.bbl)
+Package biblatex Info: Reference section=0 on input line 83.
+Package biblatex Info: Reference segment=0 on input line 83.
 
-No file GenAI-Bewertung.bbl.
-Package biblatex Info: Reference section=0 on input line 68.
-Package biblatex Info: Reference segment=0 on input line 68.
+Package chemgreek Info: Activating mapping `default' on line 83.
+
+\c@lstlisting=\count455
 <Bilder/KardexRemstar.png, id=1, 807.7678pt x 157.33781pt>
 File: Bilder/KardexRemstar.png Graphic file (type png)
 <use Bilder/KardexRemstar.png>
-Package pdftex.def Info: Bilder/KardexRemstar.png  used on input line 72.
+Package pdftex.def Info: Bilder/KardexRemstar.png  used on input line 90.
 (pdftex.def)             Requested size: 452.9679pt x 88.231pt.
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 19.70294pt on input line 77.
+(Font)              scaled to size 19.70294pt on input line 95.
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 19.70294pt on input line 77.
+(Font)              scaled to size 19.70294pt on input line 95.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 5.69998pt on input line 86.
+(Font)              scaled to size 5.69998pt on input line 104.
+
 [1
 
-{C:/Users/lvejsada/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/l
-vejsada/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Bilder/Ka
-rdexRemstar.png>]
+{C:/Users/lenve/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/lenv
+e/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Bilder/KardexRe
+mstar.png>]
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 90.
+(Font)              scaled to size 11.39996pt on input line 108.
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 103.
+(Font)              scaled to size 10.40245pt on input line 121.
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
 [2]
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 106.
+(Font)              scaled to size 16.41594pt on input line 124.
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 16.41594pt on input line 106.
- (GenAI-Bewertung.toc [3])
+(Font)              scaled to size 16.41594pt on input line 124.
+ (GenAI-Bewertung.toc [3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4])
 \tf@toc=\write4
 \openout4 = `GenAI-Bewertung.toc'.
-
- [4] (GenAI-Bewertung.lof)
-\tf@lof=\write5
-\openout5 = `GenAI-Bewertung.lof'.
 
  [5]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
+[6] (GenAI-Bewertung.lof)
+\tf@lof=\write5
+\openout5 = `GenAI-Bewertung.lof'.
+
+ [7] (GenAI-Bewertung.lot)
+\tf@lot=\write6
+\openout6 = `GenAI-Bewertung.lot'.
+
+ [8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[1]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2]
+LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
+(Font)              scaled to size 13.67995pt on input line 187.
+LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
+(Font)              scaled to size 13.67995pt on input line 187.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
+Overfull \hbox (1.7301pt too wide) in paragraph at lines 231--232
+[]\T1/ua1/m/n/12 Mit dem Auf-kom-men neu-ro-na-ler Netz-wer-ke und ins-be-son-d
+e-re trans-for-mer-ba-sier-ter Sprach-
+ []
+
+
+Overfull \hbox (10.29218pt too wide) in paragraph at lines 235--236
+\T1/ua1/m/n/12 schem Prompt kön-nen Aus-ga-ben va-ri-ie-ren, weil in-tern sto-c
+has-ti-sche Sampling-Mechanismen
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 161.
-LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 161.
+<Bilder/Transformer-Modell.png, id=57, 388.45125pt x 565.36218pt>
+File: Bilder/Transformer-Modell.png Graphic file (type png)
+<use Bilder/Transformer-Modell.png>
+Package pdftex.def Info: Bilder/Transformer-Modell.png  used on input line 247.
+
+(pdftex.def)             Requested size: 226.48395pt x 329.63564pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8]
@@ -872,58 +1200,296 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9]
-LaTeX Font Info:    Trying to load font information for TS1+ua1 on input line 1
-82.
- (C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/arial\ts1ua1.fd
-File: ts1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for TS1/ua1.
-)
-LaTeX Font Info:    Font shape `TS1/ua1/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 182.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-86.
-(C:\Users\lvejsada\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 186.
-LaTeX Font Info:    Font shape `T1/ua1/m/it' will be
-(Font)              scaled to size 11.39996pt on input line 186.
+[9 <./Bilder/Transformer-Modell.png>]
+LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
+(Font)              scaled to size 10.40245pt on input line 274.
+
+Underfull \hbox (badness 1824) in paragraph at lines 280--281
+\T1/ua1/m/n/10.95 wie nu-me-ri-sche To-le-ran-zen an-ge-wen-det
+ []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+Underfull \hbox (badness 1448) in paragraph at lines 284--285
+[]|\T1/ua1/m/n/10.95 Frage + De-fi-ni-ti-on der To-le-ranz-span-nen
+ []
 
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10]
-Overfull \hbox (38.8184pt too wide) in paragraph at lines 197--198
-\T1/ua1/m/n/12 te-lun-gen und Mi-xins. Die In-ter-na-tio-na-li-sie-rung der An-
-wen-dung er-folgt mit Hil-fe von \T1/cmtt/m/n/12 ngx-translate\T1/ua1/m/n/12 ,
+Overfull \hbox (3.51111pt too wide) in paragraph at lines 272--291
+ [][] 
  []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
+[10]
+Overfull \hbox (1.39546pt too wide) in paragraph at lines 312--330
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-Overfull \hbox (3.06667pt too wide) in paragraph at lines 211--212
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12]
+LaTeX Font Info:    Trying to load font information for TS1+ua1 on input line 3
+53.
+ (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/arial\ts1ua1.fd
+File: ts1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for TS1/ua1.
+)
+LaTeX Font Info:    Font shape `TS1/ua1/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 353.
+
+Overfull \hbox (6.66078pt too wide) in paragraph at lines 360--362
+\T1/ua1/m/n/12 Entweder/Oder-Fragen, Schätz-fra-gen, Lück-en-text-auf-ga-ben un
+d Frei-textant-wor-ten. Je-de Fra-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+91.
+ (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Package mdframed Info: Not enough space on this page on input line 397.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14]
+LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
+(Font)              scaled to size 7.59998pt on input line 426.
+
+Overfull \hbox (0.83133pt too wide) in paragraph at lines 438--438
+[]|\T1/ua1/m/n/8 Feedbackqualität| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--438
+[]|\T1/ua1/m/n/8 Toleranz-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
+<Bilder/GewichtetePunkte.png, id=89, 251.43938pt x 153.57375pt>
+File: Bilder/GewichtetePunkte.png Graphic file (type png)
+<use Bilder/GewichtetePunkte.png>
+Package pdftex.def Info: Bilder/GewichtetePunkte.png  used on input line 464.
+(pdftex.def)             Requested size: 226.48395pt x 138.32991pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17 <./Bilder/GewichtetePunkte.png>]
+Overfull \hbox (3.59966pt too wide) in paragraph at lines 477--478
+\T1/ua1/m/n/12 Die Be-wer-tung struk-tu-rier-ter Fra-ge-ty-pen wie Multiple-Cho
+ice- und Entweder/Oder-Aufgaben
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18]
+
+LaTeX Warning: Citation 'cormen' on page 19 undefined on input line 520.
+
+
+Overfull \hbox (17.64433pt too wide) in paragraph at lines 534--535
+\T1/ua1/m/n/12 Die hier be-trach-te-ten klas-si-schen Be-wer-tungs-al-go-rith-m
+en zei-gen im Ver-gleich zu KI-gestützten
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+LaTeX Font Info:    Font shape `T1/ua1/m/it' will be
+(Font)              scaled to size 11.39996pt on input line 549.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
+
+LaTeX Warning: Citation 'cormen' on page 27 undefined on input line 670.
+
+
+Overfull \hbox (2.65514pt too wide) in paragraph at lines 669--671
+[]\T1/ua1/m/n/12 wobei $\OML/cmm/m/it/12 f[]$ \T1/ua1/m/n/12 die Kom-ple-xi-tät
+ der Ver-gleichs-funk-ti-on pro Lücke be-zeich-net. Bei ein-fa-chem String-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--671
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 693--708
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 726.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30]
+Overfull \hbox (3.06667pt too wide) in paragraph at lines 751--752
 \T1/cmtt/m/n/12 async/await\T1/ua1/m/n/12 -Paradigma si-cher-ge-stellt wird. Di
 e Au-then-ti-fi-zie-rung er-folgt mit-tels JSON Web
  []
 
 
-Overfull \hbox (21.66766pt too wide) in paragraph at lines 213--214
+Overfull \hbox (21.66766pt too wide) in paragraph at lines 753--754
 []\T1/ua1/m/n/12 Die be-reit-ge-stell-te REST-API um-fasst End-punk-te für die 
 Be-nut-zer-re-gis-trie-rung und -anmeldung,
  []
@@ -932,67 +1498,509 @@ Be-nut-zer-re-gis-trie-rung und -anmeldung,
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12]
+[31]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13]
+[32]
+<Bilder/er_diagram_highres.png, id=151, 3613.5pt x 906.38625pt>
+File: Bilder/er_diagram_highres.png Graphic file (type png)
+<use Bilder/er_diagram_highres.png>
+Package pdftex.def Info: Bilder/er_diagram_highres.png  used on input line 784.
+
+(pdftex.def)             Requested size: 498.26744pt x 124.9708pt.
+
+Overfull \hbox (45.29955pt too wide) in paragraph at lines 784--785
+ [][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14]
+[33 <./Bilder/er_diagram_highres.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15]
+[34]
+Overfull \hbox (4.63702pt too wide) in paragraph at lines 807--808
+\T1/ua1/m/n/12 Die API-Kommunikation stellt die zen-tra-le Brücke zwi-schen Nut
+-zerein-ga-be und KI-gestützter
+ []
+
+
+Overfull \hbox (12.92929pt too wide) in paragraph at lines 807--808
+\T1/ua1/m/n/12 Be-wer-tung dar. Sie er-laubt die dy-na-mi-sche Ge-ne-rie-rung v
+on Be-wer-tun-gen durch den OpenAI-
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16]
+[35]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17]
+[36]
+<Bilder/FragenÃ¼bersicht.png, id=165, 708.39656pt x 395.97937pt>
+File: Bilder/FragenÃ¼bersicht.png Graphic file (type png)
+<use Bilder/FragenÃ¼bersicht.png>
+Package pdftex.def Info: Bilder/FragenÃ¼bersicht.png  used on input line 841.
+(pdftex.def)             Requested size: 317.07614pt x 177.24045pt.
 
-LaTeX Warning: Empty bibliography on input line 258.
 
-(GenAI-Bewertung.aux)
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[37]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[38 <./Bilder/FragenÃ¼bersicht.png>]
+<Bilder/Prompt.png, id=173, 584.1825pt x 515.67656pt>
+File: Bilder/Prompt.png Graphic file (type png)
+<use Bilder/Prompt.png>
+Package pdftex.def Info: Bilder/Prompt.png  used on input line 857.
+(pdftex.def)             Requested size: 452.9679pt x 399.86552pt.
+<Bilder/Prompt2.png, id=174, 610.53094pt x 306.39468pt>
+File: Bilder/Prompt2.png Graphic file (type png)
+<use Bilder/Prompt2.png>
+Package pdftex.def Info: Bilder/Prompt2.png  used on input line 864.
+(pdftex.def)             Requested size: 452.9679pt x 227.33162pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[39 <./Bilder/Prompt.png>]
+Overfull \hbox (6.47333pt too wide) in paragraph at lines 869--870
+\T1/ua1/m/n/12 schlie-ÿend in ei-nem mehr-stu-fi-gen Be-wer-tungs-pro-zess ana-
+ly-siert. Der \T1/cmtt/m/n/12 ExamScoringService
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[40 <./Bilder/Prompt2.png>]
+Package acronym Info: Label `acro:EF' newly defined as it shall be overridden
+although it is yet undefined on input line 878.
+
+Overfull \hbox (12.04575pt too wide) in paragraph at lines 880--881
+\T1/cmtt/m/n/12 MultipleChoiceQuestion\T1/ua1/m/n/12 , \T1/cmtt/m/n/12 FreeText
+Question\T1/ua1/m/n/12 , \T1/cmtt/m/n/12 MathQuestion\T1/ua1/m/n/12 , \T1/cmtt/
+m/n/12 FillInTheBlankQuestion\T1/ua1/m/n/12 )
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[41]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[42]
+Overfull \hbox (11.32582pt too wide) in paragraph at lines 901--902
+\T1/cmtt/m/n/12 Estimation\T1/ua1/m/n/12 -Fragen nu-me-ri-sche Ein-ga-ben vor-g
+e-se-hen, wäh-rend \T1/cmtt/m/n/12 FreeText\T1/ua1/m/n/12 -Fragen ein mehr-
+ []
+
+<Bilder/Exam.png, id=190, 743.02594pt x 413.29407pt>
+File: Bilder/Exam.png Graphic file (type png)
+<use Bilder/Exam.png>
+Package pdftex.def Info: Bilder/Exam.png  used on input line 905.
+(pdftex.def)             Requested size: 452.9679pt x 251.95766pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[43 <./Bilder/Exam.png>]
+<Bilder/Ergebnis.png, id=195, 619.56468pt x 539.01375pt>
+File: Bilder/Ergebnis.png Graphic file (type png)
+<use Bilder/Ergebnis.png>
+Package pdftex.def Info: Bilder/Ergebnis.png  used on input line 914.
+(pdftex.def)             Requested size: 452.9679pt x 394.06894pt.
+
+Overfull \hbox (22.20961pt too wide) in paragraph at lines 919--920
+\T1/ua1/m/n/12 nut-zer-ein-stel-lun-gen. Hier kön-nen un-ter an-de-rem Be-wer-t
+ungs-to-le-ran-zen, Groÿ-/Kleinschreibung
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[44 <./Bilder/Ergebnis.png>]
+<Bilder/settings.png, id=200, 767.11594pt x 455.45157pt>
+File: Bilder/settings.png Graphic file (type png)
+<use Bilder/settings.png>
+Package pdftex.def Info: Bilder/settings.png  used on input line 925.
+(pdftex.def)             Requested size: 452.9679pt x 268.93648pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[45 <./Bilder/settings.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[46]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[47]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[48]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[49]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[50]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[51]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[52]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[53]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[54]
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1124.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
+124.
+ (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
+File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
+1124.
+
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
+File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[55]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[56]
+Overfull \hbox (15.07948pt too wide) in paragraph at lines 1193--1210
+\T1/ua1/m/n/12 Werden al-ter-na-ti-ve Schreib-wei-sen ak-zep-tiert (z.B. ^^RBRD
+^^P oder ^^RNS-Deutschland^^P für ^^RDeutsch-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[57]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[58]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[59]
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1280.
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1280.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[60]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[61]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[62]
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1376.
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1376.
+
+Overfull \hbox (2.01958pt too wide) in paragraph at lines 1397--1399
+\T1/ua1/m/n/12 "Begründung: "Die Ant-wort liegt in-ner-halb des ak-zep-ta-blen 
+Be-reichs von $\OMS/cmsy/m/n/12 ^^F$\T1/ua1/m/n/12 10%.
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[63]
+Overfull \hbox (5.91014pt too wide) in paragraph at lines 1413--1415
+\T1/ua1/m/n/12 ler: Der Krieg be-gann 1939 (nicht 1936) und en-de-te mit der Ka
+-pi-tu-la-ti-on Deutsch-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[64]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[65]
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1472.
+
+Overfull \hbox (2.01958pt too wide) in paragraph at lines 1487--1489
+\T1/ua1/m/n/12 "Begründung: "Die Ant-wort liegt in-ner-halb des ak-zep-ta-blen 
+Be-reichs von $\OMS/cmsy/m/n/12 ^^F$\T1/ua1/m/n/12 10%.
+ []
+
+
+Overfull \hbox (5.28766pt too wide) in paragraph at lines 1495--1497
+\T1/ua1/m/n/12 "Begründung: "Die Ant-wort ist voll-stän-dig kor-rekt und fach-l
+ich rich-tig. Al-le Lücken
+ []
+
+
+Overfull \hbox (4.47377pt too wide) in paragraph at lines 1501--1503
+\T1/ua1/m/n/12 "Begründung: "Die Jah-res-zahl für den Be-ginn des Zwei-ten Welt
+-krie-ges ist falsch.
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[66]
+Overfull \hbox (9.1181pt too wide) in paragraph at lines 1547--1549
+\T1/ua1/m/n/12 "Begründung: "Die Ant-wort ist lei-der nicht kor-rekt. Das gröÿ-
+te Or-gan des mensch-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[67]
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1570.
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1570.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[68]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[69]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[70]
+Overfull \hbox (3.31393pt too wide) in paragraph at lines 1623--1623
+[][]\T1/ua1/m/n/12 Leacock, Clau-dia und Mar-tin Cho-do-row (2003). ^^R  C-rate
+r: Au-to-ma-ted sco-ring of short-answer
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[71]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[72] (GenAI-Bewertung.aux)
  ***********
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-08-29>
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
  ***********
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -1004,21 +2012,32 @@ Package logreq Info: Writing requests to 'GenAI-Bewertung.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15725 strings out of 475247
- 288949 string characters out of 5756377
- 1931801 words of memory out of 5000000
- 37031 multiletter control sequences out of 15000+600000
- 624350 words of font info for 70 fonts, out of 8000000 for 9000
+ 20887 strings out of 474486
+ 382988 string characters out of 5743755
+ 1945542 words of memory out of 5000000
+ 42840 multiletter control sequences out of 15000+600000
+ 647247 words of font info for 93 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 66i,11n,81p,1142b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\lvejsada\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\e
-ctt1200.pk><C:/Users/lvejsada/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ari
-al/ua1b8a.pfb><C:/Users/lvejsada/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
-arial/ua1r8a.pfb><C:/Users/lvejsada/AppData/Local/Programs/MiKTeX/fonts/type1/u
-rw/arial/ua1ri8a.pfb>
-Output written on GenAI-Bewertung.pdf (17 pages, 110935 bytes).
+ 76i,12n,81p,1237b,2871s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\lenve\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss
+1200.pk> <C:\Users\lenve\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ectt1200.pk><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmex10.pfb><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lenve/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lenve/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lenve/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lenve/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lenve/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
+rs/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ar
+ial/ua1b8a.pfb><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ar
+ial/ua1r8a.pfb><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ar
+ial/ua1ri8a.pfb>
+Output written on GenAI-Bewertung.pdf (81 pages, 786153 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 426 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

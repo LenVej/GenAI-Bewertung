@@ -1,41 +1,107 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{Abbildungsverzeichnis}{5}{}%
-\contentsline {section}{Abkürzungsverzeichnis}{6}{}%
-\contentsline {section}{\numberline {1}Ziele des Dokuments}{7}{}%
-\contentsline {section}{\numberline {2}Anlass und Motivation des Projekts}{7}{}%
-\contentsline {section}{\numberline {3}Aufbau der Arbeit}{7}{}%
-\contentsline {section}{\numberline {4}Hintergrund und Kontext}{8}{}%
-\contentsline {subsection}{\numberline {4.1}Technischer Hintergrund}{8}{}%
-\contentsline {subsection}{\numberline {4.2}Generative KI-Technologien: Definition und Bedeutung}{8}{}%
-\contentsline {subsection}{\numberline {4.3}Vergleich von KI- und klassischen Algorithmen in der Bewertung}{8}{}%
-\contentsline {section}{\numberline {5}Projektbeschreibung}{9}{}%
-\contentsline {subsection}{\numberline {5.1}Projektziele}{9}{}%
-\contentsline {subsection}{\numberline {5.2}Überblick über das Minimum Viable Product (MVP)}{9}{}%
-\contentsline {subsection}{\numberline {5.3}Abgrenzung und Einschränkungen}{9}{}%
-\contentsline {section}{\numberline {6}Technologien und Architektur}{10}{}%
-\contentsline {subsection}{\numberline {6.1}Frontend}{10}{}%
-\contentsline {subsection}{\numberline {6.2}Backend}{12}{}%
-\contentsline {subsection}{\numberline {6.3}Datenbank}{12}{}%
-\contentsline {subsection}{\numberline {6.4}API-Kommunikation}{12}{}%
-\contentsline {subsection}{\numberline {6.5}Teststrategie}{12}{}%
-\contentsline {section}{\numberline {7}Implementierung}{13}{}%
-\contentsline {subsection}{\numberline {7.1}Implementierung der Fragetypen}{13}{}%
-\contentsline {subsection}{\numberline {7.2}Integration der generativen KI-Bewertung}{13}{}%
-\contentsline {subsection}{\numberline {7.3}Datenbankstruktur und Datenmodelle}{13}{}%
-\contentsline {subsection}{\numberline {7.4}Entwicklung der Benutzeroberfläche}{13}{}%
-\contentsline {section}{\numberline {8}Evaluierung}{14}{}%
-\contentsline {subsection}{\numberline {8.1}Vergleich von GenAI-Lösungen}{14}{}%
-\contentsline {subsection}{\numberline {8.2}Leistung und Genauigkeit der Bewertung}{14}{}%
-\contentsline {subsection}{\numberline {8.3}Kostenanalyse der verschiedenen KI-APIs}{14}{}%
-\contentsline {section}{\numberline {9}Ergebnisse und Diskussion}{15}{}%
-\contentsline {subsection}{\numberline {9.1}Zusammenfassung der Implementierungsergebnisse}{15}{}%
-\contentsline {subsection}{\numberline {9.2}Herausforderungen bei der Entwicklung}{15}{}%
-\contentsline {subsection}{\numberline {9.3}Potenzial für zukünftige Erweiterungen}{15}{}%
-\contentsline {section}{\numberline {10}Zukünftige Arbeiten und Erweiterungsmöglichkeiten}{16}{}%
-\contentsline {subsection}{\numberline {10.1}Adaptive Lernpfade}{16}{}%
-\contentsline {subsection}{\numberline {10.2}Integration von Sprach- und Bilderkennung}{16}{}%
-\contentsline {subsection}{\numberline {10.3}Mehrsprachigkeit}{16}{}%
-\contentsline {section}{\numberline {11}Fazit}{17}{}%
-\contentsline {subsection}{\numberline {11.1}Erfüllung der Projektziele}{17}{}%
-\contentsline {subsection}{\numberline {11.2}Bedeutung der Ergebnisse}{17}{}%
-\contentsline {subsection}{\numberline {11.3}Ausblick}{17}{}%
+\contentsline {section}{Abbildungsverzeichnis}{vii}{}%
+\contentsline {section}{Abkürzungsverzeichnis}{ix}{}%
+\contentsline {section}{\numberline {1}Ziele des Dokuments}{1}{}%
+\contentsline {section}{\numberline {2}Anlass und Motivation des Projekts}{1}{}%
+\contentsline {section}{\numberline {3}Aufbau der Arbeit}{1}{}%
+\contentsline {section}{\numberline {4}Projektbeschreibung}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Projektziele}{3}{}%
+\contentsline {subsection}{\numberline {4.2}Überblick über das Minimum Viable Product (MVP)}{3}{}%
+\contentsline {subsection}{\numberline {4.3}Abgrenzung und Einschränkungen}{4}{}%
+\contentsline {section}{\numberline {5}Hintergrund und Kontext}{6}{}%
+\contentsline {subsection}{\numberline {5.1}Technischer Hintergrund}{7}{}%
+\contentsline {subsection}{\numberline {5.2}Generative KI-Technologien: Definition und Bedeutung}{8}{}%
+\contentsline {subsection}{\numberline {5.3}Kostenanalyse generativer KI-Modelle zur automatisierten Antwortbewertung}{10}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Grundlagen der Token-basierten Kostenstruktur}{10}{}%
+\contentsline {subsection}{\numberline {5.4}Vergleich generativer KI-Modelle zur automatisierten Antwortbewertung}{13}{}%
+\contentsline {subsubsection}{\numberline {5.4.1}Ergebnisse nach Fragetyp}{14}{}%
+\contentsline {subsubsection}{\numberline {5.4.2}Fazit}{16}{}%
+\contentsline {section}{\numberline {6}Vergleich von KI und klassischen Algorithmen zum Bewertung}{16}{}%
+\contentsline {subsection}{\numberline {6.1}Bewertung von Multiple-Choice- und Entweder/Oder-Fragen}{16}{}%
+\contentsline {subsubsection}{\numberline {6.1.1}Effizienznachweis vergleichsbasierter Bewertungsalgorithmen}{18}{}%
+\contentsline {subsubsection}{\numberline {6.1.2}Vergleichsbasierter Abgleich}{18}{}%
+\contentsline {subsubsection}{\numberline {6.1.3}Gewichtetes Punktesystem}{18}{}%
+\contentsline {subsubsection}{\numberline {6.1.4}Speicher- und Laufzeitkomplexität}{19}{}%
+\contentsline {subsubsection}{\numberline {6.1.5}Vergleich mit generativer KI}{19}{}%
+\contentsline {subsubsection}{\numberline {6.1.6}Schlussfolgerung}{19}{}%
+\contentsline {subsection}{\numberline {6.2}Bewertung von Ein-Wort-Antworten, Rechenfragen und Schätzfragen}{20}{}%
+\contentsline {subsubsection}{\numberline {6.2.1}Effizienznachweis numerikbasierter Bewertungsalgorithmen}{23}{}%
+\contentsline {subsection}{\numberline {6.3}Bewertung von Lückentexten und Freitexten}{24}{}%
+\contentsline {subsubsection}{\numberline {6.3.1}Effizienznachweis für Lückentext- und Freitextbewertung}{26}{}%
+\contentsline {section}{\numberline {7}Technologien und Architektur}{29}{}%
+\contentsline {subsection}{\numberline {7.1}Frontend}{29}{}%
+\contentsline {subsection}{\numberline {7.2}Backend}{31}{}%
+\contentsline {subsection}{\numberline {7.3}Accountsicherheit und Authentifizierung}{31}{}%
+\contentsline {subsection}{\numberline {7.4}Datenbank}{32}{}%
+\contentsline {subsection}{\numberline {7.5}API-Kommunikation}{34}{}%
+\contentsline {subsubsection}{\numberline {7.5.1}Interne Kommunikation (Frontend-Backend)}{34}{}%
+\contentsline {subsubsection}{\numberline {7.5.2}Externe Kommunikation (Backend-OpenAI API)}{34}{}%
+\contentsline {subsubsection}{\numberline {7.5.3}Sicherheitsaspekte und Architekturmerkmale}{35}{}%
+\contentsline {subsubsection}{\numberline {7.5.4}Zusammenfassung}{35}{}%
+\contentsline {subsection}{\numberline {7.6}Teststrategie}{35}{}%
+\contentsline {subsubsection}{\numberline {7.6.1}Backend-Tests mit xUnit}{35}{}%
+\contentsline {subsubsection}{\numberline {7.6.2}Frontend-Komponententests mit Jasmine und Karma}{35}{}%
+\contentsline {subsubsection}{\numberline {7.6.3}Testabdeckung und Validierung}{36}{}%
+\contentsline {subsubsection}{\numberline {7.6.4}Bewertung}{36}{}%
+\contentsline {section}{\numberline {8}Implementierung}{37}{}%
+\contentsline {subsection}{\numberline {8.1}Implementierung der Fragetypen}{37}{}%
+\contentsline {subsection}{\numberline {8.2}Integration der generativen KI-Bewertung}{38}{}%
+\contentsline {subsection}{\numberline {8.3}Datenbankstruktur und Datenmodelle}{41}{}%
+\contentsline {subsection}{\numberline {8.4}Entwicklung der Benutzeroberfläche}{42}{}%
+\contentsline {section}{\numberline {9}Ergebnisse und Diskussion}{46}{}%
+\contentsline {subsection}{\numberline {9.1}Zusammenfassung der Implementierungsergebnisse}{47}{}%
+\contentsline {subsection}{\numberline {9.2}Herausforderungen bei der Entwicklung}{48}{}%
+\contentsline {subsubsection}{\numberline {9.2.1}Nichtdeterminismus und Inkonsistenz generativer KI-Ausgaben}{48}{}%
+\contentsline {subsubsection}{\numberline {9.2.2}Begrenzte Ressourcen und ihr Einfluss auf die Modellbewertung}{49}{}%
+\contentsline {subsubsection}{\numberline {9.2.3}Entwicklung unter begrenzten Ressourcen}{49}{}%
+\contentsline {subsubsection}{\numberline {9.2.4}Technologische Komplexität durch Schnittstellenintegration}{50}{}%
+\contentsline {section}{\numberline {10}Zukünftige Arbeiten und Erweiterungsmöglichkeiten}{51}{}%
+\contentsline {subsection}{\numberline {10.1}Adaptive Lernpfade}{51}{}%
+\contentsline {subsection}{\numberline {10.2}Integration von Sprach- und Bilderkennung}{51}{}%
+\contentsline {subsection}{\numberline {10.3}Mehrsprachigkeit}{51}{}%
+\contentsline {section}{\numberline {11}Fazit}{52}{}%
+\contentsline {subsection}{\numberline {11.1}Erfüllung der Projektziele}{52}{}%
+\contentsline {subsection}{\numberline {11.2}Bedeutung der Ergebnisse}{52}{}%
+\contentsline {subsection}{\numberline {11.3}Ausblick}{52}{}%
+\contentsline {section}{\numberline {12}Anhang}{53}{}%
+\contentsline {section}{\numberline {A}Prompts}{53}{}%
+\contentsline {subsection}{\numberline {A.1}Multiple-Choice Prompts}{53}{}%
+\contentsline {subsection}{\numberline {A.2}Ein-Wort-Antworten Prompts}{54}{}%
+\contentsline {subsection}{\numberline {A.3}Rechenaufgaben Prompts}{55}{}%
+\contentsline {subsection}{\numberline {A.4}Entweder-Oder-Fragen Prompts}{56}{}%
+\contentsline {subsection}{\numberline {A.5}Schätzfragen Prompts}{56}{}%
+\contentsline {subsection}{\numberline {A.6}Lückentextfragen Prompts}{57}{}%
+\contentsline {subsection}{\numberline {A.7}Freitextantworten Prompts}{58}{}%
+\contentsline {section}{\numberline {B}KI Antworten}{59}{}%
+\contentsline {subsection}{\numberline {B.1}ChatGPT}{59}{}%
+\contentsline {subsubsection}{\numberline {B.1.1}Multiple-Choice}{59}{}%
+\contentsline {subsubsection}{\numberline {B.1.2}Ein-Wort-Antworten}{59}{}%
+\contentsline {subsubsection}{\numberline {B.1.3}Rechenfragen}{60}{}%
+\contentsline {subsubsection}{\numberline {B.1.4}Entweder-oder-Fragen}{60}{}%
+\contentsline {subsubsection}{\numberline {B.1.5}Schätzfrage}{60}{}%
+\contentsline {subsubsection}{\numberline {B.1.6}Lückentextfragen}{61}{}%
+\contentsline {subsubsection}{\numberline {B.1.7}Freitextfragen}{61}{}%
+\contentsline {subsection}{\numberline {B.2}DeepSeek}{62}{}%
+\contentsline {subsubsection}{\numberline {B.2.1}Multiple-Choice}{62}{}%
+\contentsline {subsubsection}{\numberline {B.2.2}Ein-Wort-Antworten}{62}{}%
+\contentsline {subsubsection}{\numberline {B.2.3}Rechenfragen}{63}{}%
+\contentsline {subsubsection}{\numberline {B.2.4}Entweder-oder-Fragen}{63}{}%
+\contentsline {subsubsection}{\numberline {B.2.5}Schätzfrage}{63}{}%
+\contentsline {subsubsection}{\numberline {B.2.6}Lückentextfrage}{64}{}%
+\contentsline {subsubsection}{\numberline {B.2.7}Freitextfragen}{64}{}%
+\contentsline {subsection}{\numberline {B.3}Gemini}{64}{}%
+\contentsline {subsubsection}{\numberline {B.3.1}Multiple-Choice}{64}{}%
+\contentsline {subsubsection}{\numberline {B.3.2}Ein-Wort-Antworten}{65}{}%
+\contentsline {subsubsection}{\numberline {B.3.3}Rechenfragen}{65}{}%
+\contentsline {subsubsection}{\numberline {B.3.4}Entweder-oder-Fragen}{66}{}%
+\contentsline {subsubsection}{\numberline {B.3.5}Schätzfrage}{66}{}%
+\contentsline {subsubsection}{\numberline {B.3.6}Lückentextfrage}{66}{}%
+\contentsline {subsubsection}{\numberline {B.3.7}Freitextfragen}{66}{}%
+\contentsline {subsection}{\numberline {B.4}Cohere}{67}{}%
+\contentsline {subsubsection}{\numberline {B.4.1}Multiple-Choice}{67}{}%
+\contentsline {subsubsection}{\numberline {B.4.2}Ein-Wort-Antworten}{67}{}%
+\contentsline {subsubsection}{\numberline {B.4.3}Rechenfragen}{68}{}%
+\contentsline {subsubsection}{\numberline {B.4.4}Entwerder-oder-Fragen}{68}{}%
+\contentsline {subsubsection}{\numberline {B.4.5}Schätzfrage}{69}{}%
+\contentsline {subsubsection}{\numberline {B.4.6}Lückentextfrage}{69}{}%
+\contentsline {subsubsection}{\numberline {B.4.7}Freitextfragen}{70}{}%

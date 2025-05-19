@@ -1,7 +1,7 @@
 <div class="exam-create-container">
   <h2 class="exam-title">📝 Neue Prüfung erstellen</h2>
 
-  <!-- 🧾 Form for exam info -->
+  <!-- Form for exam info -->
   <form (ngSubmit)="createExam()" class="exam-form">
     <input type="text" [(ngModel)]="title" name="title" placeholder="Titel der Prüfung" required />
     <textarea [(ngModel)]="description" name="description" placeholder="Beschreibung" rows="3"></textarea>
@@ -9,7 +9,7 @@
     <label for="time">⏱️ Zeitlimit (Minuten, optional)</label>
     <input type="number" id="time" [(ngModel)]="timeLimitMinutes" name="time" min="0" />
 
-    <!-- 🔍 Filter area ABOVE question list -->
+    <!-- Filter area ABOVE question list -->
     <div class="filter-form">
       <div class="filter-inputs">
         <input [(ngModel)]="filterText" name="filterText" placeholder="🔍 Fragetext durchsuchen" />
@@ -27,7 +27,6 @@
       </label>
     </div>
 
-    <!-- ✅ Submit -->
     <button
       type="submit"
       class="btn create-btn"
@@ -40,7 +39,7 @@
       </small>
     </div>
 
-    <!-- 📝 Fragen-Auswahl -->
+    <!-- Fragen-Auswahl -->
     <table *ngIf="filteredQuestions.length > 0" class="styled-table">
       <thead>
       <tr>

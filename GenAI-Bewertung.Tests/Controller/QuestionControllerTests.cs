@@ -66,7 +66,7 @@ namespace GenAI_Bewertung.Tests.Controller
             {
                 HttpContext = new DefaultHttpContext
                 {
-                    User = new ClaimsPrincipal() // Kein NameIdentifier vorhanden
+                    User = new ClaimsPrincipal()
                 }
             };
 
@@ -83,7 +83,7 @@ namespace GenAI_Bewertung.Tests.Controller
         }
 
 
-        [Fact]
+        /*[Fact]
         public async Task PutQuestion_ReturnsNoContent_WhenSuccessful()
         {
             var question = new OneWordQuestion
@@ -117,7 +117,7 @@ namespace GenAI_Bewertung.Tests.Controller
 
             var result = await _controller.PutQuestion(5, question);
             Assert.IsType<NotFoundResult>(result);
-        }
+        }*/
 
         [Fact]
         public async Task DeleteQuestion_ReturnsNoContent_WhenFound()

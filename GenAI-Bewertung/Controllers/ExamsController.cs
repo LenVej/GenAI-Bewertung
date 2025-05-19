@@ -82,7 +82,7 @@ public class ExamsController : ControllerBase
         if (userIdClaim == null) return Unauthorized();
     
         var userId = int.Parse(userIdClaim.Value);
-        if (exam.CreatedBy != userId) return Forbid(); // Only allow owner to update
+        if (exam.CreatedBy != userId) return Forbid();
 
         ExamMapper.UpdateFromDto(exam, dto);
         await _service.UpdateAsync(exam);

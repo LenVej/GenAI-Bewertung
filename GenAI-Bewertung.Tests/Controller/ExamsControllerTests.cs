@@ -161,7 +161,7 @@ namespace GenAI_Bewertung.Tests.Controller
         {
             var exam = new Exam { ExamId = 1, CreatedBy = 2 };
             _mockRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(exam);
-            SetUser(1); // not the owner
+            SetUser(1);
 
             var result = await _controller.Update(1, new UpdateExamDto());
             Assert.IsType<ForbidResult>(result);

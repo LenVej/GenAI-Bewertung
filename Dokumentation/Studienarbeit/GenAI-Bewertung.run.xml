@@ -80,7 +80,7 @@
       <file>GenAI-Bewertung.bcf</file>
     </requires>
     <requires type="editable">
-      <file>Literature.bib</file>
+      <file>Quellen.bib</file>
     </requires>
   </external>
 </requests>
