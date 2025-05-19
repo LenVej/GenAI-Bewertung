@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'GenAI-Bewertung.blg'
-[141] biber-MSWIN64:340> INFO - === 
-[192] Biber.pm:419> INFO - Reading 'GenAI-Bewertung.bcf'
-[268] Biber.pm:976> INFO - Using all citekeys in bib section 0
-[279] Biber.pm:4419> INFO - Processing section 0
-[298] Biber.pm:4610> INFO - Looking for bibtex file 'Quellen.bib' for section 0
-[334] bibtex.pm:1713> INFO - LaTeX decoding ...
-[355] bibtex.pm:1519> INFO - Found BibTeX data source 'Quellen.bib'
-[519] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[519] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[519] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
-[520] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[541] bbl.pm:660> INFO - Writing 'GenAI-Bewertung.bbl' with encoding 'UTF-8'
-[556] bbl.pm:763> INFO - Output to GenAI-Bewertung.bbl
+[81] biber-MSWIN64:340> INFO - === 
+[106] Biber.pm:419> INFO - Reading 'GenAI-Bewertung.bcf'
+[185] Biber.pm:976> INFO - Using all citekeys in bib section 0
+[195] Biber.pm:4419> INFO - Processing section 0
+[204] Biber.pm:4610> INFO - Looking for bibtex file 'Quellen.bib' for section 0
+[242] bibtex.pm:1713> INFO - LaTeX decoding ...
+[269] bibtex.pm:1519> INFO - Found BibTeX data source 'Quellen.bib'
+[400] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[400] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[400] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[400] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[419] bbl.pm:660> INFO - Writing 'GenAI-Bewertung.bbl' with encoding 'UTF-8'
+[435] bbl.pm:763> INFO - Output to GenAI-Bewertung.bbl

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.15)  19 MAY 2025 17:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.15)  19 MAY 2025 19:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1059,19 +1059,24 @@ LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
 e/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Bilder/KardexRe
 mstar.png>]
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 108.
-LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 121.
+(Font)              scaled to size 11.39996pt on input line 106.
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 106--108
+
+ []
+
+LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
+(Font)              scaled to size 10.40245pt on input line 125.
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
 [2]
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 124.
+(Font)              scaled to size 16.41594pt on input line 128.
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 16.41594pt on input line 124.
+(Font)              scaled to size 16.41594pt on input line 128.
  (GenAI-Bewertung.toc [3]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1080,11 +1085,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4])
-\tf@toc=\write4
-\openout4 = `GenAI-Bewertung.toc'.
-
- [5]
+[4]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1092,7 +1093,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6] (GenAI-Bewertung.lof)
+[5])
+\tf@toc=\write4
+\openout4 = `GenAI-Bewertung.toc'.
+
+ [6] (GenAI-Bewertung.lof)
 \tf@lof=\write5
 \openout5 = `GenAI-Bewertung.lof'.
 
@@ -1126,9 +1131,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 187.
+(Font)              scaled to size 13.67995pt on input line 194.
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 187.
+(Font)              scaled to size 13.67995pt on input line 194.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1162,13 +1167,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
-Overfull \hbox (1.7301pt too wide) in paragraph at lines 231--232
+Overfull \hbox (1.7301pt too wide) in paragraph at lines 238--239
 []\T1/ua1/m/n/12 Mit dem Auf-kom-men neu-ro-na-ler Netz-wer-ke und ins-be-son-d
 e-re trans-for-mer-ba-sier-ter Sprach-
  []
 
 
-Overfull \hbox (10.29218pt too wide) in paragraph at lines 235--236
+Overfull \hbox (10.29218pt too wide) in paragraph at lines 242--243
 \T1/ua1/m/n/12 schem Prompt kön-nen Aus-ga-ben va-ri-ie-ren, weil in-tern sto-c
 has-ti-sche Sampling-Mechanismen
  []
@@ -1184,7 +1189,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Bilder/Transformer-Modell.png, id=57, 388.45125pt x 565.36218pt>
 File: Bilder/Transformer-Modell.png Graphic file (type png)
 <use Bilder/Transformer-Modell.png>
-Package pdftex.def Info: Bilder/Transformer-Modell.png  used on input line 247.
+Package pdftex.def Info: Bilder/Transformer-Modell.png  used on input line 254.
 
 (pdftex.def)             Requested size: 226.48395pt x 329.63564pt.
 
@@ -1205,19 +1210,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [9 <./Bilder/Transformer-Modell.png>]
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 10.40245pt on input line 274.
+(Font)              scaled to size 10.40245pt on input line 281.
 
-Underfull \hbox (badness 1824) in paragraph at lines 280--281
+Underfull \hbox (badness 1824) in paragraph at lines 287--288
 \T1/ua1/m/n/10.95 wie nu-me-ri-sche To-le-ran-zen an-ge-wen-det
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 284--285
+Underfull \hbox (badness 1448) in paragraph at lines 291--292
 []|\T1/ua1/m/n/10.95 Frage + De-fi-ni-ti-on der To-le-ranz-span-nen
  []
 
 
-Overfull \hbox (3.51111pt too wide) in paragraph at lines 272--291
+Overfull \hbox (3.51111pt too wide) in paragraph at lines 279--298
  [][] 
  []
 
@@ -1229,7 +1234,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
-Overfull \hbox (1.39546pt too wide) in paragraph at lines 312--330
+Overfull \hbox (1.39546pt too wide) in paragraph at lines 319--337
  [][] 
  []
 
@@ -1250,14 +1255,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12]
 LaTeX Font Info:    Trying to load font information for TS1+ua1 on input line 3
-53.
+60.
  (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/arial\ts1ua1.fd
 File: ts1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for TS1/ua1.
 )
 LaTeX Font Info:    Font shape `TS1/ua1/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 353.
+(Font)              scaled to size 11.39996pt on input line 360.
 
-Overfull \hbox (6.66078pt too wide) in paragraph at lines 360--362
+Overfull \hbox (6.66078pt too wide) in paragraph at lines 366--368
 \T1/ua1/m/n/12 Entweder/Oder-Fragen, Schätz-fra-gen, Lück-en-text-auf-ga-ben un
 d Frei-textant-wor-ten. Je-de Fra-
  []
@@ -1271,11 +1276,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [13]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-91.
+97.
  (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Package mdframed Info: Not enough space on this page on input line 397.
+Package mdframed Info: Not enough space on this page on input line 403.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1286,14 +1291,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [14]
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 426.
+(Font)              scaled to size 7.59998pt on input line 432.
 
-Overfull \hbox (0.83133pt too wide) in paragraph at lines 438--438
+Overfull \hbox (0.83133pt too wide) in paragraph at lines 444--444
 []|\T1/ua1/m/n/8 Feedbackqualität| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--438
+Underfull \hbox (badness 10000) in paragraph at lines 444--444
 []|\T1/ua1/m/n/8 Toleranz-
  []
 
@@ -1316,7 +1321,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Bilder/GewichtetePunkte.png, id=89, 251.43938pt x 153.57375pt>
 File: Bilder/GewichtetePunkte.png Graphic file (type png)
 <use Bilder/GewichtetePunkte.png>
-Package pdftex.def Info: Bilder/GewichtetePunkte.png  used on input line 464.
+Package pdftex.def Info: Bilder/GewichtetePunkte.png  used on input line 470.
 (pdftex.def)             Requested size: 226.48395pt x 138.32991pt.
 
 
@@ -1327,7 +1332,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17 <./Bilder/GewichtetePunkte.png>]
-Overfull \hbox (3.59966pt too wide) in paragraph at lines 477--478
+Overfull \hbox (3.59966pt too wide) in paragraph at lines 483--484
 \T1/ua1/m/n/12 Die Be-wer-tung struk-tu-rier-ter Fra-ge-ty-pen wie Multiple-Cho
 ice- und Entweder/Oder-Aufgaben
  []
@@ -1340,11 +1345,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18]
-
-LaTeX Warning: Citation 'cormen' on page 19 undefined on input line 520.
-
-
-Overfull \hbox (17.64433pt too wide) in paragraph at lines 534--535
+Overfull \hbox (17.64433pt too wide) in paragraph at lines 540--541
 \T1/ua1/m/n/12 Die hier be-trach-te-ten klas-si-schen Be-wer-tungs-al-go-rith-m
 en zei-gen im Ver-gleich zu KI-gestützten
  []
@@ -1366,7 +1367,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [20]
 LaTeX Font Info:    Font shape `T1/ua1/m/it' will be
-(Font)              scaled to size 11.39996pt on input line 549.
+(Font)              scaled to size 11.39996pt on input line 555.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1408,7 +1409,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
@@ -1420,27 +1421,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
-
-LaTeX Warning: Citation 'cormen' on page 27 undefined on input line 670.
-
-
-Overfull \hbox (2.65514pt too wide) in paragraph at lines 669--671
-[]\T1/ua1/m/n/12 wobei $\OML/cmm/m/it/12 f[]$ \T1/ua1/m/n/12 die Kom-ple-xi-tät
- der Ver-gleichs-funk-ti-on pro Lücke be-zeich-net. Bei ein-fa-chem String-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 669--671
+Underfull \hbox (badness 10000) in paragraph at lines 675--677
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--681
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--691
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
 
  []
 
@@ -1452,7 +1443,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 693--708
+Underfull \hbox (badness 10000) in paragraph at lines 699--714
 
  []
 
@@ -1465,7 +1456,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [28]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 726.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 732.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1483,13 +1474,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [30]
-Overfull \hbox (3.06667pt too wide) in paragraph at lines 751--752
+Overfull \hbox (3.06667pt too wide) in paragraph at lines 757--758
 \T1/cmtt/m/n/12 async/await\T1/ua1/m/n/12 -Paradigma si-cher-ge-stellt wird. Di
 e Au-then-ti-fi-zie-rung er-folgt mit-tels JSON Web
  []
 
 
-Overfull \hbox (21.66766pt too wide) in paragraph at lines 753--754
+Overfull \hbox (21.66766pt too wide) in paragraph at lines 759--760
 []\T1/ua1/m/n/12 Die be-reit-ge-stell-te REST-API um-fasst End-punk-te für die 
 Be-nut-zer-re-gis-trie-rung und -anmeldung,
  []
@@ -1513,11 +1504,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Bilder/er_diagram_highres.png, id=151, 3613.5pt x 906.38625pt>
 File: Bilder/er_diagram_highres.png Graphic file (type png)
 <use Bilder/er_diagram_highres.png>
-Package pdftex.def Info: Bilder/er_diagram_highres.png  used on input line 784.
+Package pdftex.def Info: Bilder/er_diagram_highres.png  used on input line 790.
 
 (pdftex.def)             Requested size: 498.26744pt x 124.9708pt.
 
-Overfull \hbox (45.29955pt too wide) in paragraph at lines 784--785
+Overfull \hbox (45.29955pt too wide) in paragraph at lines 790--791
  [][] 
  []
 
@@ -1537,13 +1528,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [34]
-Overfull \hbox (4.63702pt too wide) in paragraph at lines 807--808
+Overfull \hbox (4.63702pt too wide) in paragraph at lines 813--814
 \T1/ua1/m/n/12 Die API-Kommunikation stellt die zen-tra-le Brücke zwi-schen Nut
 -zerein-ga-be und KI-gestützter
  []
 
 
-Overfull \hbox (12.92929pt too wide) in paragraph at lines 807--808
+Overfull \hbox (12.92929pt too wide) in paragraph at lines 813--814
 \T1/ua1/m/n/12 Be-wer-tung dar. Sie er-laubt die dy-na-mi-sche Ge-ne-rie-rung v
 on Be-wer-tun-gen durch den OpenAI-
  []
@@ -1567,7 +1558,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Bilder/FragenÃ¼bersicht.png, id=165, 708.39656pt x 395.97937pt>
 File: Bilder/FragenÃ¼bersicht.png Graphic file (type png)
 <use Bilder/FragenÃ¼bersicht.png>
-Package pdftex.def Info: Bilder/FragenÃ¼bersicht.png  used on input line 841.
+Package pdftex.def Info: Bilder/FragenÃ¼bersicht.png  used on input line 847.
 (pdftex.def)             Requested size: 317.07614pt x 177.24045pt.
 
 
@@ -1589,12 +1580,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Bilder/Prompt.png, id=173, 584.1825pt x 515.67656pt>
 File: Bilder/Prompt.png Graphic file (type png)
 <use Bilder/Prompt.png>
-Package pdftex.def Info: Bilder/Prompt.png  used on input line 857.
+Package pdftex.def Info: Bilder/Prompt.png  used on input line 863.
 (pdftex.def)             Requested size: 452.9679pt x 399.86552pt.
 <Bilder/Prompt2.png, id=174, 610.53094pt x 306.39468pt>
 File: Bilder/Prompt2.png Graphic file (type png)
 <use Bilder/Prompt2.png>
-Package pdftex.def Info: Bilder/Prompt2.png  used on input line 864.
+Package pdftex.def Info: Bilder/Prompt2.png  used on input line 870.
 (pdftex.def)             Requested size: 452.9679pt x 227.33162pt.
 
 
@@ -1605,7 +1596,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [39 <./Bilder/Prompt.png>]
-Overfull \hbox (6.47333pt too wide) in paragraph at lines 869--870
+Overfull \hbox (6.47333pt too wide) in paragraph at lines 875--876
 \T1/ua1/m/n/12 schlie-ÿend in ei-nem mehr-stu-fi-gen Be-wer-tungs-pro-zess ana-
 ly-siert. Der \T1/cmtt/m/n/12 ExamScoringService
  []
@@ -1619,9 +1610,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [40 <./Bilder/Prompt2.png>]
 Package acronym Info: Label `acro:EF' newly defined as it shall be overridden
-although it is yet undefined on input line 878.
+although it is yet undefined on input line 884.
 
-Overfull \hbox (12.04575pt too wide) in paragraph at lines 880--881
+Overfull \hbox (12.04575pt too wide) in paragraph at lines 886--887
 \T1/cmtt/m/n/12 MultipleChoiceQuestion\T1/ua1/m/n/12 , \T1/cmtt/m/n/12 FreeText
 Question\T1/ua1/m/n/12 , \T1/cmtt/m/n/12 MathQuestion\T1/ua1/m/n/12 , \T1/cmtt/
 m/n/12 FillInTheBlankQuestion\T1/ua1/m/n/12 )
@@ -1643,16 +1634,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [42]
-Overfull \hbox (11.32582pt too wide) in paragraph at lines 901--902
-\T1/cmtt/m/n/12 Estimation\T1/ua1/m/n/12 -Fragen nu-me-ri-sche Ein-ga-ben vor-g
-e-se-hen, wäh-rend \T1/cmtt/m/n/12 FreeText\T1/ua1/m/n/12 -Fragen ein mehr-
- []
-
 <Bilder/Exam.png, id=190, 743.02594pt x 413.29407pt>
 File: Bilder/Exam.png Graphic file (type png)
 <use Bilder/Exam.png>
-Package pdftex.def Info: Bilder/Exam.png  used on input line 905.
+Package pdftex.def Info: Bilder/Exam.png  used on input line 911.
 (pdftex.def)             Requested size: 452.9679pt x 251.95766pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1664,10 +1651,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Bilder/Ergebnis.png, id=195, 619.56468pt x 539.01375pt>
 File: Bilder/Ergebnis.png Graphic file (type png)
 <use Bilder/Ergebnis.png>
-Package pdftex.def Info: Bilder/Ergebnis.png  used on input line 914.
+Package pdftex.def Info: Bilder/Ergebnis.png  used on input line 920.
 (pdftex.def)             Requested size: 452.9679pt x 394.06894pt.
 
-Overfull \hbox (22.20961pt too wide) in paragraph at lines 919--920
+Overfull \hbox (22.20961pt too wide) in paragraph at lines 925--926
 \T1/ua1/m/n/12 nut-zer-ein-stel-lun-gen. Hier kön-nen un-ter an-de-rem Be-wer-t
 ungs-to-le-ran-zen, Groÿ-/Kleinschreibung
  []
@@ -1683,7 +1670,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Bilder/settings.png, id=200, 767.11594pt x 455.45157pt>
 File: Bilder/settings.png Graphic file (type png)
 <use Bilder/settings.png>
-Package pdftex.def Info: Bilder/settings.png  used on input line 925.
+Package pdftex.def Info: Bilder/settings.png  used on input line 931.
 (pdftex.def)             Requested size: 452.9679pt x 268.93648pt.
 
 
@@ -1750,6 +1737,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [52]
+Overfull \hbox (6.07791pt too wide) in paragraph at lines 1021--1022
+\T1/ua1/m/n/12 schied-li-cher Fra-ge-ty-pen ein-setzt. Durch die In-te-gra-ti-o
+n ei-ner leis-tungs-fä-hi-gen Sprachmodell-
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1766,20 +1758,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [54]
-Package textcomp Info: Symbol \texttwosuperior not provided by
-(textcomp)             font family ua1 in TS1 encoding.
-(textcomp)             Default family used instead on input line 1124.
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
-124.
- (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
-File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-1124.
-
-(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
-File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1796,11 +1774,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [56]
-Overfull \hbox (15.07948pt too wide) in paragraph at lines 1193--1210
-\T1/ua1/m/n/12 Werden al-ter-na-ti-ve Schreib-wei-sen ak-zep-tiert (z.B. ^^RBRD
-^^P oder ^^RNS-Deutschland^^P für ^^RDeutsch-
- []
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1156.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
+156.
+ (C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
+File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
+1156.
 
+(C:\Users\lenve\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
+File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1817,6 +1804,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [58]
+Overfull \hbox (15.07948pt too wide) in paragraph at lines 1225--1242
+\T1/ua1/m/n/12 Werden al-ter-na-ti-ve Schreib-wei-sen ak-zep-tiert (z.B. ^^RBRD
+^^P oder ^^RNS-Deutschland^^P für ^^RDeutsch-
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1825,13 +1817,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [59]
-Package textcomp Info: Symbol \texttwosuperior not provided by
-(textcomp)             font family ua1 in TS1 encoding.
-(textcomp)             Default family used instead on input line 1280.
-Package textcomp Info: Symbol \texttwosuperior not provided by
-(textcomp)             font family ua1 in TS1 encoding.
-(textcomp)             Default family used instead on input line 1280.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1848,6 +1833,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [61]
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1312.
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1312.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1856,14 +1848,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [62]
-Package textcomp Info: Symbol \texttwosuperior not provided by
-(textcomp)             font family ua1 in TS1 encoding.
-(textcomp)             Default family used instead on input line 1376.
-Package textcomp Info: Symbol \texttwosuperior not provided by
-(textcomp)             font family ua1 in TS1 encoding.
-(textcomp)             Default family used instead on input line 1376.
 
-Overfull \hbox (2.01958pt too wide) in paragraph at lines 1397--1399
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[63]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[64]
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1408.
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1408.
+
+Overfull \hbox (2.01958pt too wide) in paragraph at lines 1429--1431
 \T1/ua1/m/n/12 "Begründung: "Die Ant-wort liegt in-ner-halb des ak-zep-ta-blen 
 Be-reichs von $\OMS/cmsy/m/n/12 ^^F$\T1/ua1/m/n/12 10%.
  []
@@ -1875,8 +1883,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[63]
-Overfull \hbox (5.91014pt too wide) in paragraph at lines 1413--1415
+[65]
+Overfull \hbox (5.91014pt too wide) in paragraph at lines 1445--1447
 \T1/ua1/m/n/12 ler: Der Krieg be-gann 1939 (nicht 1936) und en-de-te mit der Ka
 -pi-tu-la-ti-on Deutsch-
  []
@@ -1888,7 +1896,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[64]
+[66]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1896,24 +1904,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[65]
+[67]
 Package textcomp Info: Symbol \texttwosuperior not provided by
 (textcomp)             font family ua1 in TS1 encoding.
-(textcomp)             Default family used instead on input line 1472.
+(textcomp)             Default family used instead on input line 1504.
 
-Overfull \hbox (2.01958pt too wide) in paragraph at lines 1487--1489
+Overfull \hbox (2.01958pt too wide) in paragraph at lines 1519--1521
 \T1/ua1/m/n/12 "Begründung: "Die Ant-wort liegt in-ner-halb des ak-zep-ta-blen 
 Be-reichs von $\OMS/cmsy/m/n/12 ^^F$\T1/ua1/m/n/12 10%.
  []
 
 
-Overfull \hbox (5.28766pt too wide) in paragraph at lines 1495--1497
+Overfull \hbox (5.28766pt too wide) in paragraph at lines 1527--1529
 \T1/ua1/m/n/12 "Begründung: "Die Ant-wort ist voll-stän-dig kor-rekt und fach-l
 ich rich-tig. Al-le Lücken
  []
 
 
-Overfull \hbox (4.47377pt too wide) in paragraph at lines 1501--1503
+Overfull \hbox (4.47377pt too wide) in paragraph at lines 1533--1535
 \T1/ua1/m/n/12 "Begründung: "Die Jah-res-zahl für den Be-ginn des Zwei-ten Welt
 -krie-ges ist falsch.
  []
@@ -1925,8 +1933,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[66]
-Overfull \hbox (9.1181pt too wide) in paragraph at lines 1547--1549
+[68]
+Overfull \hbox (9.1181pt too wide) in paragraph at lines 1579--1581
 \T1/ua1/m/n/12 "Begründung: "Die Ant-wort ist lei-der nicht kor-rekt. Das gröÿ-
 te Or-gan des mensch-
  []
@@ -1938,30 +1946,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[67]
-Package textcomp Info: Symbol \texttwosuperior not provided by
-(textcomp)             font family ua1 in TS1 encoding.
-(textcomp)             Default family used instead on input line 1570.
-Package textcomp Info: Symbol \texttwosuperior not provided by
-(textcomp)             font family ua1 in TS1 encoding.
-(textcomp)             Default family used instead on input line 1570.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[68]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [69]
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1602.
+Package textcomp Info: Symbol \texttwosuperior not provided by
+(textcomp)             font family ua1 in TS1 encoding.
+(textcomp)             Default family used instead on input line 1602.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1970,11 +1962,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [70]
-Overfull \hbox (3.31393pt too wide) in paragraph at lines 1623--1623
-[][]\T1/ua1/m/n/12 Leacock, Clau-dia und Mar-tin Cho-do-row (2003). ^^R  C-rate
-r: Au-to-ma-ted sco-ring of short-answer
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1990,35 +1977,48 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[72] (GenAI-Bewertung.aux)
+[72]
+Overfull \hbox (3.31393pt too wide) in paragraph at lines 1655--1655
+[][]\T1/ua1/m/n/12 Leacock, Clau-dia und Mar-tin Cho-do-row (2003). ^^R  C-rate
+r: Au-to-ma-ted sco-ring of short-answer
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[73]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[74] (GenAI-Bewertung.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                GenAI-Bewertung
-(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'GenAI-Bewertung.run.xml'.
 \openout1 = `GenAI-Bewertung.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20887 strings out of 474486
- 382988 string characters out of 5743755
+ 20908 strings out of 474486
+ 383388 string characters out of 5743755
  1945542 words of memory out of 5000000
- 42840 multiletter control sequences out of 15000+600000
+ 42861 multiletter control sequences out of 15000+600000
  647247 words of font info for 93 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 76i,12n,81p,1237b,2871s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 76i,12n,81p,1219b,2872s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lenve\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss
 1200.pk> <C:\Users\lenve\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt1200.pk><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -2035,9 +2035,9 @@ ols/msbm10.pfb><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ar
 ial/ua1b8a.pfb><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ar
 ial/ua1r8a.pfb><C:/Users/lenve/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ar
 ial/ua1ri8a.pfb>
-Output written on GenAI-Bewertung.pdf (81 pages, 786153 bytes).
+Output written on GenAI-Bewertung.pdf (83 pages, 794608 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
+ 432 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

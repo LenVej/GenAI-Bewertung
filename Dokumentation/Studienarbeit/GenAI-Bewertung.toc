@@ -1,9 +1,10 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {section}{Abbildungsverzeichnis}{vii}{}%
+\contentsline {section}{Tabellenverzeichnis}{viii}{}%
 \contentsline {section}{Abkürzungsverzeichnis}{ix}{}%
 \contentsline {section}{\numberline {1}Ziele des Dokuments}{1}{}%
 \contentsline {section}{\numberline {2}Anlass und Motivation des Projekts}{1}{}%
-\contentsline {section}{\numberline {3}Aufbau der Arbeit}{1}{}%
+\contentsline {section}{\numberline {3}Aufbau der Arbeit}{2}{}%
 \contentsline {section}{\numberline {4}Projektbeschreibung}{3}{}%
 \contentsline {subsection}{\numberline {4.1}Projektziele}{3}{}%
 \contentsline {subsection}{\numberline {4.2}Überblick über das Minimum Viable Product (MVP)}{3}{}%
@@ -58,50 +59,51 @@
 \contentsline {section}{\numberline {10}Zukünftige Arbeiten und Erweiterungsmöglichkeiten}{51}{}%
 \contentsline {subsection}{\numberline {10.1}Adaptive Lernpfade}{51}{}%
 \contentsline {subsection}{\numberline {10.2}Integration von Sprach- und Bilderkennung}{51}{}%
-\contentsline {subsection}{\numberline {10.3}Mehrsprachigkeit}{51}{}%
-\contentsline {section}{\numberline {11}Fazit}{52}{}%
-\contentsline {subsection}{\numberline {11.1}Erfüllung der Projektziele}{52}{}%
-\contentsline {subsection}{\numberline {11.2}Bedeutung der Ergebnisse}{52}{}%
-\contentsline {subsection}{\numberline {11.3}Ausblick}{52}{}%
-\contentsline {section}{\numberline {12}Anhang}{53}{}%
-\contentsline {section}{\numberline {A}Prompts}{53}{}%
-\contentsline {subsection}{\numberline {A.1}Multiple-Choice Prompts}{53}{}%
-\contentsline {subsection}{\numberline {A.2}Ein-Wort-Antworten Prompts}{54}{}%
-\contentsline {subsection}{\numberline {A.3}Rechenaufgaben Prompts}{55}{}%
-\contentsline {subsection}{\numberline {A.4}Entweder-Oder-Fragen Prompts}{56}{}%
-\contentsline {subsection}{\numberline {A.5}Schätzfragen Prompts}{56}{}%
-\contentsline {subsection}{\numberline {A.6}Lückentextfragen Prompts}{57}{}%
-\contentsline {subsection}{\numberline {A.7}Freitextantworten Prompts}{58}{}%
-\contentsline {section}{\numberline {B}KI Antworten}{59}{}%
-\contentsline {subsection}{\numberline {B.1}ChatGPT}{59}{}%
-\contentsline {subsubsection}{\numberline {B.1.1}Multiple-Choice}{59}{}%
-\contentsline {subsubsection}{\numberline {B.1.2}Ein-Wort-Antworten}{59}{}%
-\contentsline {subsubsection}{\numberline {B.1.3}Rechenfragen}{60}{}%
-\contentsline {subsubsection}{\numberline {B.1.4}Entweder-oder-Fragen}{60}{}%
-\contentsline {subsubsection}{\numberline {B.1.5}Schätzfrage}{60}{}%
-\contentsline {subsubsection}{\numberline {B.1.6}Lückentextfragen}{61}{}%
-\contentsline {subsubsection}{\numberline {B.1.7}Freitextfragen}{61}{}%
-\contentsline {subsection}{\numberline {B.2}DeepSeek}{62}{}%
-\contentsline {subsubsection}{\numberline {B.2.1}Multiple-Choice}{62}{}%
-\contentsline {subsubsection}{\numberline {B.2.2}Ein-Wort-Antworten}{62}{}%
-\contentsline {subsubsection}{\numberline {B.2.3}Rechenfragen}{63}{}%
-\contentsline {subsubsection}{\numberline {B.2.4}Entweder-oder-Fragen}{63}{}%
-\contentsline {subsubsection}{\numberline {B.2.5}Schätzfrage}{63}{}%
-\contentsline {subsubsection}{\numberline {B.2.6}Lückentextfrage}{64}{}%
-\contentsline {subsubsection}{\numberline {B.2.7}Freitextfragen}{64}{}%
-\contentsline {subsection}{\numberline {B.3}Gemini}{64}{}%
-\contentsline {subsubsection}{\numberline {B.3.1}Multiple-Choice}{64}{}%
-\contentsline {subsubsection}{\numberline {B.3.2}Ein-Wort-Antworten}{65}{}%
-\contentsline {subsubsection}{\numberline {B.3.3}Rechenfragen}{65}{}%
-\contentsline {subsubsection}{\numberline {B.3.4}Entweder-oder-Fragen}{66}{}%
-\contentsline {subsubsection}{\numberline {B.3.5}Schätzfrage}{66}{}%
-\contentsline {subsubsection}{\numberline {B.3.6}Lückentextfrage}{66}{}%
-\contentsline {subsubsection}{\numberline {B.3.7}Freitextfragen}{66}{}%
-\contentsline {subsection}{\numberline {B.4}Cohere}{67}{}%
-\contentsline {subsubsection}{\numberline {B.4.1}Multiple-Choice}{67}{}%
-\contentsline {subsubsection}{\numberline {B.4.2}Ein-Wort-Antworten}{67}{}%
-\contentsline {subsubsection}{\numberline {B.4.3}Rechenfragen}{68}{}%
-\contentsline {subsubsection}{\numberline {B.4.4}Entwerder-oder-Fragen}{68}{}%
-\contentsline {subsubsection}{\numberline {B.4.5}Schätzfrage}{69}{}%
-\contentsline {subsubsection}{\numberline {B.4.6}Lückentextfrage}{69}{}%
-\contentsline {subsubsection}{\numberline {B.4.7}Freitextfragen}{70}{}%
+\contentsline {subsection}{\numberline {10.3}Mehrsprachigkeit}{52}{}%
+\contentsline {subsection}{\numberline {10.4}Erweiterung des Rollen- und Rechtemanagements}{52}{}%
+\contentsline {section}{\numberline {11}Fazit}{53}{}%
+\contentsline {subsection}{\numberline {11.1}Erfüllung der Projektziele}{53}{}%
+\contentsline {subsection}{\numberline {11.2}Bedeutung der Ergebnisse}{53}{}%
+\contentsline {subsection}{\numberline {11.3}Ausblick}{54}{}%
+\contentsline {section}{\numberline {12}Anhang}{55}{}%
+\contentsline {section}{\numberline {A}Prompts}{55}{}%
+\contentsline {subsection}{\numberline {A.1}Multiple-Choice Prompts}{55}{}%
+\contentsline {subsection}{\numberline {A.2}Ein-Wort-Antworten Prompts}{56}{}%
+\contentsline {subsection}{\numberline {A.3}Rechenaufgaben Prompts}{57}{}%
+\contentsline {subsection}{\numberline {A.4}Entweder-Oder-Fragen Prompts}{58}{}%
+\contentsline {subsection}{\numberline {A.5}Schätzfragen Prompts}{58}{}%
+\contentsline {subsection}{\numberline {A.6}Lückentextfragen Prompts}{59}{}%
+\contentsline {subsection}{\numberline {A.7}Freitextantworten Prompts}{60}{}%
+\contentsline {section}{\numberline {B}KI Antworten}{61}{}%
+\contentsline {subsection}{\numberline {B.1}ChatGPT}{61}{}%
+\contentsline {subsubsection}{\numberline {B.1.1}Multiple-Choice}{61}{}%
+\contentsline {subsubsection}{\numberline {B.1.2}Ein-Wort-Antworten}{61}{}%
+\contentsline {subsubsection}{\numberline {B.1.3}Rechenfragen}{62}{}%
+\contentsline {subsubsection}{\numberline {B.1.4}Entweder-oder-Fragen}{62}{}%
+\contentsline {subsubsection}{\numberline {B.1.5}Schätzfrage}{62}{}%
+\contentsline {subsubsection}{\numberline {B.1.6}Lückentextfragen}{63}{}%
+\contentsline {subsubsection}{\numberline {B.1.7}Freitextfragen}{63}{}%
+\contentsline {subsection}{\numberline {B.2}DeepSeek}{64}{}%
+\contentsline {subsubsection}{\numberline {B.2.1}Multiple-Choice}{64}{}%
+\contentsline {subsubsection}{\numberline {B.2.2}Ein-Wort-Antworten}{64}{}%
+\contentsline {subsubsection}{\numberline {B.2.3}Rechenfragen}{65}{}%
+\contentsline {subsubsection}{\numberline {B.2.4}Entweder-oder-Fragen}{65}{}%
+\contentsline {subsubsection}{\numberline {B.2.5}Schätzfrage}{65}{}%
+\contentsline {subsubsection}{\numberline {B.2.6}Lückentextfrage}{66}{}%
+\contentsline {subsubsection}{\numberline {B.2.7}Freitextfragen}{66}{}%
+\contentsline {subsection}{\numberline {B.3}Gemini}{66}{}%
+\contentsline {subsubsection}{\numberline {B.3.1}Multiple-Choice}{66}{}%
+\contentsline {subsubsection}{\numberline {B.3.2}Ein-Wort-Antworten}{67}{}%
+\contentsline {subsubsection}{\numberline {B.3.3}Rechenfragen}{67}{}%
+\contentsline {subsubsection}{\numberline {B.3.4}Entweder-oder-Fragen}{68}{}%
+\contentsline {subsubsection}{\numberline {B.3.5}Schätzfrage}{68}{}%
+\contentsline {subsubsection}{\numberline {B.3.6}Lückentextfrage}{68}{}%
+\contentsline {subsubsection}{\numberline {B.3.7}Freitextfragen}{68}{}%
+\contentsline {subsection}{\numberline {B.4}Cohere}{69}{}%
+\contentsline {subsubsection}{\numberline {B.4.1}Multiple-Choice}{69}{}%
+\contentsline {subsubsection}{\numberline {B.4.2}Ein-Wort-Antworten}{69}{}%
+\contentsline {subsubsection}{\numberline {B.4.3}Rechenfragen}{70}{}%
+\contentsline {subsubsection}{\numberline {B.4.4}Entwerder-oder-Fragen}{70}{}%
+\contentsline {subsubsection}{\numberline {B.4.5}Schätzfrage}{71}{}%
+\contentsline {subsubsection}{\numberline {B.4.6}Lückentextfrage}{71}{}%
+\contentsline {subsubsection}{\numberline {B.4.7}Freitextfragen}{72}{}%
